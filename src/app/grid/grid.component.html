@@ -1,0 +1,6 @@
+<div class="grid-wrapper">
+  <ba-grid-header></ba-grid-header>
+  @for (guess of guesses; track $index) {
+  <ba-grid-row [guess]="guess"></ba-grid-row>
+  }
+</div>

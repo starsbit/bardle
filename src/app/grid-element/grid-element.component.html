@@ -1,0 +1,13 @@
+@if (isStudentElement) {
+<div class="student box">
+  {{ label }}
+</div>
+} @else if (isCorrect) {
+<div class="correct box">
+  {{ label }}
+</div>
+} @else {
+<div class="incorrect box">
+  {{ label }}
+</div>
+}

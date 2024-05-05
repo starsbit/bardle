@@ -1,0 +1,20 @@
+.header-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    width: 100%;
+    gap: 16px;
+}
+
+.header-element {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    margin: 5px;
+    text-align: center;
+}
