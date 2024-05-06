@@ -9,15 +9,15 @@ export class AssetService {
   getRoleImage(role: string): string {
     switch (role) {
       case 'Attacker':
-        return 'assets/images/roles/Icon_role_attacker.webp';
+        return 'assets/images/roles/Icon_role_attacker.png';
       case 'Support':
-        return 'assets/images/roles/Icon_role_support.webp';
+        return 'assets/images/roles/Icon_role_support.png';
       case 'Healer':
-        return 'assets/images/roles/Icon_role_healer.webp';
+        return 'assets/images/roles/Icon_role_healer.png';
       case 'Tank':
-        return 'assets/images/roles/Icon_role_tank.webp';
+        return 'assets/images/roles/Icon_role_tank.png';
       case 'Tactical Support':
-        return 'assets/images/roles/Icon_role_tactical_support.webp';
+        return 'assets/images/roles/Icon_role_tactical_support.png';
       default:
         return 'assets/images/schools/unkown.png';
     }
@@ -26,25 +26,25 @@ export class AssetService {
   getSchoolImage(school: string): string {
     switch (school) {
       case 'Abydos':
-        return 'assets/images/schools/50px-Abydos.webp';
+        return 'assets/images/schools/50px-Abydos.png';
       case 'Arius':
-        return 'assets/images/schools/50px-Arius.webp';
+        return 'assets/images/schools/50px-Arius.png';
       case 'Gehenna':
-        return 'assets/images/schools/50px-Gehenna.webp';
+        return 'assets/images/schools/50px-Gehenna.png';
       case 'Hyakkiyako':
-        return 'assets/images/schools/50px-Hyakkiyako.webp';
+        return 'assets/images/schools/50px-Hyakkiyako.png';
       case 'Millennium':
-        return 'assets/images/schools/50px-Millennium.webp';
+        return 'assets/images/schools/50px-Millennium.png';
       case 'Red Winter':
-        return 'assets/images/schools/50px-Red_Winter.webp';
+        return 'assets/images/schools/50px-Red_Winter.png';
       case 'Shanhaijing':
-        return 'assets/images/schools/50px-Shanhaijing.webp';
+        return 'assets/images/schools/50px-Shanhaijing.png';
       case 'SRT':
-        return 'assets/images/schools/50px-SRT.webp';
+        return 'assets/images/schools/50px-SRT.png';
       case 'Trinity':
-        return 'assets/images/schools/50px-Trinity.webp';
+        return 'assets/images/schools/50px-Trinity.png';
       case 'Valkyrie':
-        return 'assets/images/schools/50px-Valkyrie.webp';
+        return 'assets/images/schools/50px-Valkyrie.png';
       default:
         return 'assets/images/schools/unkown.png';
     }

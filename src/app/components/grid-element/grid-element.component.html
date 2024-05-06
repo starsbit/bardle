@@ -1,7 +1,9 @@
 @if (isRoleElement && winningElement) {
 <div class="win box" [style.animation-delay.ms]="animationDelayInMs">
   <img
-    [src]="assetService.getRoleImage(guessAttribute)"
+    [ngSrc]="assetService.getRoleImage(guessAttribute)"
+    width="76"
+    height="76"
     [alt]="guessAttribute"
     class="icon img-appear"
     [style.animation-delay.ms]="animationDelayInMs"
@@ -10,7 +12,9 @@
 } @else if(isRoleElement && isCorrect) {
 <div class="correct box" [style.animation-delay.ms]="animationDelayInMs">
   <img
-    [src]="assetService.getRoleImage(guessAttribute)"
+    [ngSrc]="assetService.getRoleImage(guessAttribute)"
+    width="76"
+    height="76"
     [alt]="guessAttribute"
     class="icon img-appear"
     [style.animation-delay.ms]="animationDelayInMs"
@@ -19,7 +23,9 @@
 } @else if (isRoleElement) {
 <div class="incorrect box" [style.animation-delay.ms]="animationDelayInMs">
   <img
-    [src]="assetService.getRoleImage(guessAttribute)"
+    [ngSrc]="assetService.getRoleImage(guessAttribute)"
+    width="76"
+    height="76"
     [alt]="guessAttribute"
     class="icon img-appear"
     [style.animation-delay.ms]="animationDelayInMs"
@@ -28,7 +34,9 @@
 } @else if (isSchoolElement && winningElement) {
 <div class="box win" [style.animation-delay.ms]="animationDelayInMs">
   <img
-    [src]="assetService.getSchoolImage(guessAttribute)"
+    [ngSrc]="assetService.getSchoolImage(guessAttribute)"
+    width="76"
+    height="76"
     [alt]="guessAttribute"
     class="icon img-appear"
     [style.animation-delay.ms]="animationDelayInMs"
@@ -37,7 +45,9 @@
 } @else if (isSchoolElement && isCorrect) {
 <div class="correct box" [style.animation-delay.ms]="animationDelayInMs">
   <img
-    [src]="assetService.getSchoolImage(guessAttribute)"
+    [ngSrc]="assetService.getSchoolImage(guessAttribute)"
+    width="76"
+    height="76"
     [alt]="guessAttribute"
     class="icon img-appear"
     [style.animation-delay.ms]="animationDelayInMs"
@@ -46,7 +56,9 @@
 } @else if (isSchoolElement) {
 <div class="incorrect box" [style.animation-delay.ms]="animationDelayInMs">
   <img
-    [src]="assetService.getSchoolImage(guessAttribute)"
+    [ngSrc]="assetService.getSchoolImage(guessAttribute)"
+    width="76"
+    height="76"
     [alt]="guessAttribute"
     class="icon img-appear"
     [style.animation-delay.ms]="animationDelayInMs"
@@ -75,7 +87,9 @@
 } @else if (winningElement && useIconInsteadOfName) {
 <div class="student box win">
   <img
-    [src]="image"
+    [ngSrc]="image"
+    width="76"
+    height="76"
     [alt]="alternativeLabel"
     class="portrait"
     [style.animation-delay.ms]="animationDelayInMs"
@@ -84,7 +98,9 @@
 } @else if (useIconInsteadOfName) {
 <div class="student box correct">
   <img
-    [src]="image"
+    [ngSrc]="image"
+    width="76"
+    height="76"
     [alt]="alternativeLabel"
     class="portrait"
     [style.animation-delay.ms]="animationDelayInMs"

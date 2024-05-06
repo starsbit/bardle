@@ -17,8 +17,9 @@
         (onSelectionChange)="onSelection(option)"
       >
         <img
-          loading="lazy"
-          [src]="'assets/images/characters/' + option.id + '.png'"
+          [ngSrc]="'assets/images/characters/' + option.id + '.png'"
+          width="48"
+          height="48"
           [alt]="option.fullName"
           class="portrait"
         />

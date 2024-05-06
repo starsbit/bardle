@@ -1,10 +1,11 @@
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { AssetService } from '../../services/asset.service';
 
 @Component({
   selector: 'ba-grid-element',
   standalone: true,
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './grid-element.component.html',
   styleUrl: './grid-element.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
