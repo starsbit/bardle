@@ -1,0 +1,22 @@
+.empty-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  width: 100%;
+  gap: 16px;
+}
+
+.empty-box {
+  width: 96px;
+  height: 96px;
+  background-color: transparent;
+  border: 2px solid whitesmoke;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  margin: 5px;
+  text-align: center;
+}

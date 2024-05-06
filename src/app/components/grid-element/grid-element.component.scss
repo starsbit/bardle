@@ -1,0 +1,70 @@
+.box {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  margin: 5px;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid whitesmoke;
+  width: 100px;
+  height: 100px;
+  color: transparent;
+  border-radius: 8px;
+}
+
+.portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 5px;
+}
+
+.img-appear {
+  animation: fadeInSlideUp 500ms ease-out forwards;
+}
+
+.correct {
+  animation: flip 500ms ease forwards, bgCorrect 500ms ease forwards;
+}
+
+.incorrect {
+  animation: flip 500ms ease forwards, bgIncorrect 500ms ease forwards;
+}
+
+@keyframes flip {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bgCorrect {
+  100% {
+    background-color: green;
+    color: whitesmoke;
+  }
+}
+
+@keyframes bgIncorrect {
+  100% {
+    background-color: grey;
+    color: whitesmoke;
+  }
+}

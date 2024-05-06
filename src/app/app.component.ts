@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
-import { GuessGameComponent } from './guess-game/guess-game.component';
+import { GuessGameComponent } from './components/guess-game/guess-game.component';
 
 @Component({
   selector: 'ba-root',
@@ -11,7 +11,7 @@ import { GuessGameComponent } from './guess-game/guess-game.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'BArdle';
+  title = 'Bardle';
 
   constructor(private readonly titleService: Title) {
     this.titleService.setTitle(this.title);

@@ -1,0 +1,22 @@
+@if (isStudentElement && !useIconInsteadOfName) {
+<div class="student box" [style.animation-delay.ms]="animationDelayInMs">
+  {{ label }}
+</div>
+} @else if (isCorrect && !useIconInsteadOfName) {
+<div class="correct box" [style.animation-delay.ms]="animationDelayInMs">
+  {{ label }}
+</div>
+} @else if (!isCorrect && !useIconInsteadOfName){
+<div class="incorrect box" [style.animation-delay.ms]="animationDelayInMs">
+  {{ label }}
+</div>
+} @else if (useIconInsteadOfName) {
+<div class="student box">
+  <img
+    [src]="image"
+    [alt]="alternativeLabel"
+    class="portrait img-appear"
+    [style.animation-delay.ms]="animationDelayInMs"
+  />
+</div>
+}
