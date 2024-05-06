@@ -9,4 +9,36 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+ba-root {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+footer {
+  flex-shrink: 0;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  > * {
+    margin: 16px;
+  }
+
+  p {
+    // forbid line breaks
+    white-space: nowrap;
+    padding-right: 16px;
+  }
+
+  img {
+    height: 48px;
+  }
 }

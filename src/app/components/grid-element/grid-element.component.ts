@@ -44,12 +44,17 @@ export class GridElementComponent {
     ) {
       const guessDate = new Date(this.guessAttribute);
       const targetDate = new Date(this.targetAttribute);
+      // format the guessAttribute to MMM YYYY format
+      const guessDateFormatted = guessDate.toLocaleString('default', {
+        month: 'short',
+        year: 'numeric',
+      });
       if (guessDate < targetDate) {
-        return `🔼${this.guessAttribute}`;
+        return `🔼${guessDateFormatted}`;
       } else if (guessDate > targetDate) {
-        return `🔽${this.guessAttribute}`;
+        return `🔽${guessDateFormatted}`;
       } else {
-        return `${this.guessAttribute}`;
+        return `${guessDateFormatted}`;
       }
     }
     return this.guessAttribute;
