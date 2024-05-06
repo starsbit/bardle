@@ -40,6 +40,7 @@ def generate_info_from_url(url):
     if table:
         # Find relevant elements within the table
         full_name = table.find('th', text='Full Name').find_next('td').text.strip()
+        height = extract_integer(table.find('th', text='Height').find_next('td').text.strip())
         school = table.find('td', title=True).text.strip()
         damage_type = table.find('th', text='Damage Type').find_next('td').text.strip()
         armor_type = table.find('th', text='Armor Type').find_next('td').text.strip()
@@ -76,6 +77,7 @@ def generate_info_from_url(url):
             "combatClass": combat_class,
             "exSkillCost": ex_skill_cost,
             "positioning": positioning,
+            "height": height,
             "outfit": outfit,
         }
 
@@ -86,7 +88,6 @@ def generate_info_from_url(url):
         with open(file_path , 'w') as json_file:
             json.dump(character_info, json_file, indent=4)
 
-        print("Data has been stored in character_info.json file.")
         print("Character Information:", character_info)
         
 def generate_url_from_string(image_name):
@@ -115,7 +116,7 @@ if __name__ == "__main__":
     # Get all the PNG files from the folder
     folder_path = "src/assets/"
 
-    png_files = get_all_pngs_from_folder(folder_path)
+    png_files = get_all_pngs_from_folder(folder_path + "images/characters/")
     for image_name in png_files:
         # Generate the URL from the image name
         url = generate_url_from_string(image_name)

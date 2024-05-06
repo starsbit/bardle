@@ -10,6 +10,7 @@
     "combatClass": "Special",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 160,
     "outfit": "Default"
   },
   "Airi_(Band)": {
@@ -23,6 +24,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Front",
+    "height": 160,
     "outfit": "Band"
   },
   "Akane": {
@@ -36,6 +38,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Middle",
+    "height": 164,
     "outfit": "Default"
   },
   "Akane_(Bunny_Girl)": {
@@ -49,6 +52,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 164,
     "outfit": "Bunny Girl"
   },
   "Akari": {
@@ -62,6 +66,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Middle",
+    "height": 167,
     "outfit": "Default"
   },
   "Akari_(New_Year)": {
@@ -75,6 +80,7 @@
     "combatClass": "Special",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 167,
     "outfit": "New Year"
   },
   "Ako": {
@@ -88,6 +94,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 165,
     "outfit": "Default"
   },
   "Ako_(Dress)": {
@@ -101,6 +108,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Middle",
+    "height": 165,
     "outfit": "Dress"
   },
   "Arisu": {
@@ -114,6 +122,7 @@
     "combatClass": "Striker",
     "exSkillCost": 6,
     "positioning": "Back",
+    "height": 152,
     "outfit": "Default"
   },
   "Arisu_(Maid)": {
@@ -127,6 +136,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 152,
     "outfit": "Maid"
   },
   "Aru": {
@@ -140,6 +150,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 160,
     "outfit": "Default"
   },
   "Aru_(Dress)": {
@@ -153,6 +164,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 160,
     "outfit": "Dress"
   },
   "Aru_(New_Year)": {
@@ -166,6 +178,7 @@
     "combatClass": "Striker",
     "exSkillCost": 6,
     "positioning": "Back",
+    "height": 160,
     "outfit": "New Year"
   },
   "Asuna": {
@@ -179,6 +192,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Middle",
+    "height": 167,
     "outfit": "Default"
   },
   "Asuna_(Bunny_Girl)": {
@@ -192,6 +206,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Middle",
+    "height": 167,
     "outfit": "Bunny Girl"
   },
   "Atsuko": {
@@ -205,6 +220,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Front",
+    "height": 158,
     "outfit": "Default"
   },
   "Ayane": {
@@ -218,6 +234,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 153,
     "outfit": "Default"
   },
   "Ayane_(Swimsuit)": {
@@ -231,6 +248,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 153,
     "outfit": "Swimsuit"
   },
   "Azusa": {
@@ -244,6 +262,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Middle",
+    "height": 149,
     "outfit": "Default"
   },
   "Azusa_(Swimsuit)": {
@@ -257,6 +276,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Middle",
+    "height": 149,
     "outfit": "Swimsuit"
   },
   "Cherino": {
@@ -270,6 +290,7 @@
     "combatClass": "Striker",
     "exSkillCost": 7,
     "positioning": "Middle",
+    "height": 128,
     "outfit": "Default"
   },
   "Cherino_(Hot_Spring)": {
@@ -283,6 +304,7 @@
     "combatClass": "Special",
     "exSkillCost": 6,
     "positioning": "Back",
+    "height": 128,
     "outfit": "Hot Spring"
   },
   "Chihiro": {
@@ -296,6 +318,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 160,
     "outfit": "Default"
   },
   "Chinatsu": {
@@ -309,6 +332,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 159,
     "outfit": "Default"
   },
   "Chinatsu_(Hot_Spring)": {
@@ -322,6 +346,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Middle",
+    "height": 159,
     "outfit": "Hot Spring"
   },
   "Chise": {
@@ -335,6 +360,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Middle",
+    "height": 159,
     "outfit": "Default"
   },
   "Chise_(Swimsuit)": {
@@ -348,6 +374,7 @@
     "combatClass": "Striker",
     "exSkillCost": 6,
     "positioning": "Middle",
+    "height": 159,
     "outfit": "Swimsuit"
   },
   "Eimi": {
@@ -361,6 +388,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Front",
+    "height": 167,
     "outfit": "Default"
   },
   "Eimi_(Swimsuit)": {
@@ -374,6 +402,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 167,
     "outfit": "Swimsuit"
   },
   "Fubuki": {
@@ -387,6 +416,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 148,
     "outfit": "Default"
   },
   "Fuuka": {
@@ -400,6 +430,7 @@
     "combatClass": "Special",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 159,
     "outfit": "Default"
   },
   "Fuuka_(New_Year)": {
@@ -413,6 +444,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 159,
     "outfit": "New Year"
   },
   "Hanae": {
@@ -426,6 +458,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 150,
     "outfit": "Default"
   },
   "Hanae_(Christmas)": {
@@ -439,6 +472,7 @@
     "combatClass": "Special",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 150,
     "outfit": "Christmas"
   },
   "Hanako": {
@@ -452,6 +486,7 @@
     "combatClass": "Special",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 161,
     "outfit": "Default"
   },
   "Hanako_(Swimsuit)": {
@@ -465,6 +500,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Middle",
+    "height": 161,
     "outfit": "Swimsuit"
   },
   "Hare": {
@@ -478,6 +514,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 153,
     "outfit": "Default"
   },
   "Hare_(Camping)": {
@@ -491,6 +528,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Middle",
+    "height": 153,
     "outfit": "Camping"
   },
   "Haruka": {
@@ -504,6 +542,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Front",
+    "height": 157,
     "outfit": "Default"
   },
   "Haruka_(New_Year)": {
@@ -517,6 +556,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 157,
     "outfit": "New Year"
   },
   "Haruna": {
@@ -530,6 +570,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 163,
     "outfit": "Default"
   },
   "Haruna_(New_Year)": {
@@ -543,11 +584,12 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 163,
     "outfit": "New Year"
   },
-  "Haruna_(Track)": {
-    "id": "Haruna_(Track)",
-    "fullName": "Kurodate Haruna (Track)",
+  "Haruna_(Sportswear)": {
+    "id": "Haruna_(Sportswear)",
+    "fullName": "Kurodate Haruna (Sportswear)",
     "nativeName": "\u9ed2\u8218 \u30cf\u30eb\u30ca",
     "school": "Gehenna",
     "damageType": "Sonic",
@@ -556,7 +598,8 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
-    "outfit": "Track"
+    "height": 163,
+    "outfit": "Sportswear"
   },
   "Hasumi": {
     "id": "Hasumi",
@@ -569,11 +612,12 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 179,
     "outfit": "Default"
   },
-  "Hasumi_(Track)": {
-    "id": "Hasumi_(Track)",
-    "fullName": "Hanekawa Hasumi (Track)",
+  "Hasumi_(Sportswear)": {
+    "id": "Hasumi_(Sportswear)",
+    "fullName": "Hanekawa Hasumi (Sportswear)",
     "nativeName": "\u7fbd\u5ddd \u30cf\u30b9\u30df",
     "school": "Trinity",
     "damageType": "Mystic",
@@ -582,7 +626,8 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Back",
-    "outfit": "Track"
+    "height": 179,
+    "outfit": "Sportswear"
   },
   "Hatsune_Miku": {
     "id": "Hatsune_Miku",
@@ -595,6 +640,7 @@
     "combatClass": "Special",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 158,
     "outfit": "Default"
   },
   "Hibiki": {
@@ -608,6 +654,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 154,
     "outfit": "Default"
   },
   "Hibiki_(Cheerleader)": {
@@ -621,6 +668,7 @@
     "combatClass": "Striker",
     "exSkillCost": 7,
     "positioning": "Back",
+    "height": 154,
     "outfit": "Cheerleader"
   },
   "Hifumi": {
@@ -634,6 +682,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Middle",
+    "height": 158,
     "outfit": "Default"
   },
   "Hifumi_(Swimsuit)": {
@@ -647,6 +696,7 @@
     "combatClass": "Special",
     "exSkillCost": 10,
     "positioning": "Back",
+    "height": 158,
     "outfit": "Swimsuit"
   },
   "Himari": {
@@ -660,6 +710,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 162,
     "outfit": "Default"
   },
   "Hina": {
@@ -673,6 +724,7 @@
     "combatClass": "Striker",
     "exSkillCost": 7,
     "positioning": "Back",
+    "height": 142,
     "outfit": "Default"
   },
   "Hinata": {
@@ -686,6 +738,7 @@
     "combatClass": "Striker",
     "exSkillCost": 6,
     "positioning": "Middle",
+    "height": 166,
     "outfit": "Default"
   },
   "Hinata_(Swimsuit)": {
@@ -699,6 +752,7 @@
     "combatClass": "Special",
     "exSkillCost": 6,
     "positioning": "Back",
+    "height": 166,
     "outfit": "Swimsuit"
   },
   "Hina_(Dress)": {
@@ -712,6 +766,7 @@
     "combatClass": "Striker",
     "exSkillCost": 6,
     "positioning": "Back",
+    "height": 142,
     "outfit": "Dress"
   },
   "Hina_(Swimsuit)": {
@@ -725,6 +780,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 142,
     "outfit": "Swimsuit"
   },
   "Hiyori": {
@@ -738,6 +794,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 155,
     "outfit": "Default"
   },
   "Hoshino": {
@@ -751,6 +808,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Front",
+    "height": 145,
     "outfit": "Default"
   },
   "Hoshino_(Swimsuit)": {
@@ -764,6 +822,7 @@
     "combatClass": "Striker",
     "exSkillCost": 6,
     "positioning": "Front",
+    "height": 145,
     "outfit": "Swimsuit"
   },
   "Ibuki": {
@@ -777,6 +836,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Middle",
+    "height": 128,
     "outfit": "Default"
   },
   "Ichika": {
@@ -790,6 +850,7 @@
     "combatClass": "Striker",
     "exSkillCost": 6,
     "positioning": "Middle",
+    "height": 163,
     "outfit": "Default"
   },
   "Iori": {
@@ -803,6 +864,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 157,
     "outfit": "Default"
   },
   "Iori_(Swimsuit)": {
@@ -816,6 +878,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 157,
     "outfit": "Swimsuit"
   },
   "Iroha": {
@@ -829,6 +892,7 @@
     "combatClass": "Special",
     "exSkillCost": 8,
     "positioning": "Back",
+    "height": 151,
     "outfit": "Default"
   },
   "Izumi": {
@@ -842,6 +906,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 161,
     "outfit": "Default"
   },
   "Izumi_(Swimsuit)": {
@@ -855,6 +920,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 161,
     "outfit": "Swimsuit"
   },
   "Izuna": {
@@ -868,6 +934,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Front",
+    "height": 155,
     "outfit": "Default"
   },
   "Izuna_(Swimsuit)": {
@@ -881,6 +948,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Front",
+    "height": 155,
     "outfit": "Swimsuit"
   },
   "Junko": {
@@ -894,6 +962,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Middle",
+    "height": 149,
     "outfit": "Default"
   },
   "Junko_(New_Year)": {
@@ -907,6 +976,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Middle",
+    "height": 149,
     "outfit": "New Year"
   },
   "Juri": {
@@ -920,6 +990,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 170,
     "outfit": "Default"
   },
   "Kaede": {
@@ -933,6 +1004,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 142,
     "outfit": "Default"
   },
   "Kaho": {
@@ -946,6 +1018,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Middle",
+    "height": 173,
     "outfit": "Default"
   },
   "Kanna": {
@@ -959,6 +1032,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 166,
     "outfit": "Default"
   },
   "Karin": {
@@ -972,6 +1046,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 170,
     "outfit": "Default"
   },
   "Karin_(Bunny_Girl)": {
@@ -985,6 +1060,7 @@
     "combatClass": "Striker",
     "exSkillCost": 7,
     "positioning": "Back",
+    "height": 170,
     "outfit": "Bunny Girl"
   },
   "Kasumi": {
@@ -998,6 +1074,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Middle",
+    "height": 148,
     "outfit": "Default"
   },
   "Kayoko": {
@@ -1011,6 +1088,7 @@
     "combatClass": "Striker",
     "exSkillCost": 6,
     "positioning": "Middle",
+    "height": 157,
     "outfit": "Default"
   },
   "Kayoko_(Dress)": {
@@ -1024,6 +1102,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Middle",
+    "height": 157,
     "outfit": "Dress"
   },
   "Kayoko_(New_Year)": {
@@ -1037,6 +1116,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Middle",
+    "height": 157,
     "outfit": "New Year"
   },
   "Kazusa": {
@@ -1050,6 +1130,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 155,
     "outfit": "Default"
   },
   "Kazusa_(Band)": {
@@ -1063,6 +1144,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 155,
     "outfit": "Band"
   },
   "Kikyou": {
@@ -1076,6 +1158,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 160,
     "outfit": "Default"
   },
   "Kirino": {
@@ -1089,6 +1172,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Middle",
+    "height": 161,
     "outfit": "Default"
   },
   "Koharu": {
@@ -1102,6 +1186,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 148,
     "outfit": "Default"
   },
   "Koharu_(Swimsuit)": {
@@ -1115,6 +1200,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 148,
     "outfit": "Swimsuit"
   },
   "Kokona": {
@@ -1128,6 +1214,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Middle",
+    "height": 139,
     "outfit": "Default"
   },
   "Kotama": {
@@ -1141,6 +1228,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 158,
     "outfit": "Default"
   },
   "Kotama_(Camping)": {
@@ -1154,6 +1242,7 @@
     "combatClass": "Striker",
     "exSkillCost": 6,
     "positioning": "Middle",
+    "height": 158,
     "outfit": "Camping"
   },
   "Kotori": {
@@ -1167,6 +1256,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 151,
     "outfit": "Default"
   },
   "Kotori_(Cheerleader)": {
@@ -1180,6 +1270,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 151,
     "outfit": "Cheerleader"
   },
   "Koyuki": {
@@ -1193,6 +1284,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 149,
     "outfit": "Default"
   },
   "Maki": {
@@ -1206,6 +1298,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 149,
     "outfit": "Default"
   },
   "Makoto": {
@@ -1219,6 +1312,7 @@
     "combatClass": "Special",
     "exSkillCost": 6,
     "positioning": "Back",
+    "height": 169,
     "outfit": "Default"
   },
   "Mari": {
@@ -1232,6 +1326,7 @@
     "combatClass": "Special",
     "exSkillCost": 2,
     "positioning": "Back",
+    "height": 151,
     "outfit": "Default"
   },
   "Marina": {
@@ -1245,11 +1340,12 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Front",
+    "height": 166,
     "outfit": "Default"
   },
-  "Mari_(Track)": {
-    "id": "Mari_(Track)",
-    "fullName": "Iochi Mari (Track)",
+  "Mari_(Sportswear)": {
+    "id": "Mari_(Sportswear)",
+    "fullName": "Iochi Mari (Sportswear)",
     "nativeName": "\u4f0a\u843d \u30de\u30ea\u30fc",
     "school": "Trinity",
     "damageType": "Mystic",
@@ -1258,7 +1354,8 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Middle",
-    "outfit": "Track"
+    "height": 151,
+    "outfit": "Sportswear"
   },
   "Mashiro": {
     "id": "Mashiro",
@@ -1271,6 +1368,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 155,
     "outfit": "Default"
   },
   "Mashiro_(Swimsuit)": {
@@ -1284,6 +1382,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 155,
     "outfit": "Swimsuit"
   },
   "Megu": {
@@ -1297,6 +1396,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Front",
+    "height": 164,
     "outfit": "Default"
   },
   "Meru": {
@@ -1310,6 +1410,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Middle",
+    "height": 137,
     "outfit": "Default"
   },
   "Michiru": {
@@ -1323,6 +1424,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Front",
+    "height": 153,
     "outfit": "Default"
   },
   "Midori": {
@@ -1336,6 +1438,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 143,
     "outfit": "Default"
   },
   "Mika": {
@@ -1349,6 +1452,7 @@
     "combatClass": "Striker",
     "exSkillCost": 6,
     "positioning": "Front",
+    "height": 157,
     "outfit": "Default"
   },
   "Mimori": {
@@ -1362,6 +1466,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Middle",
+    "height": 156,
     "outfit": "Default"
   },
   "Mimori_(Swimsuit)": {
@@ -1375,6 +1480,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 156,
     "outfit": "Swimsuit"
   },
   "Mina": {
@@ -1388,6 +1494,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Middle",
+    "height": 166,
     "outfit": "Default"
   },
   "Mine": {
@@ -1401,6 +1508,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Front",
+    "height": 168,
     "outfit": "Default"
   },
   "Minori": {
@@ -1414,6 +1522,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 158,
     "outfit": "Default"
   },
   "Misaka_Mikoto": {
@@ -1427,6 +1536,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Middle",
+    "height": 161,
     "outfit": "Default"
   },
   "Misaki": {
@@ -1440,6 +1550,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 163,
     "outfit": "Default"
   },
   "Miyako": {
@@ -1453,6 +1564,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Front",
+    "height": 156,
     "outfit": "Default"
   },
   "Miyako_(Swimsuit)": {
@@ -1466,6 +1578,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Front",
+    "height": 156,
     "outfit": "Swimsuit"
   },
   "Miyu": {
@@ -1479,6 +1592,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 149,
     "outfit": "Default"
   },
   "Miyu_(Swimsuit)": {
@@ -1492,6 +1606,7 @@
     "combatClass": "Special",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 149,
     "outfit": "Swimsuit"
   },
   "Moe": {
@@ -1505,6 +1620,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 163,
     "outfit": "Default"
   },
   "Momiji": {
@@ -1518,6 +1634,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 135,
     "outfit": "Default"
   },
   "Momoi": {
@@ -1531,6 +1648,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Middle",
+    "height": 143,
     "outfit": "Default"
   },
   "Mutsuki": {
@@ -1544,6 +1662,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 144,
     "outfit": "Default"
   },
   "Mutsuki_(New_Year)": {
@@ -1557,6 +1676,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Back",
+    "height": 144,
     "outfit": "New Year"
   },
   "Nagisa": {
@@ -1570,6 +1690,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 160,
     "outfit": "Default"
   },
   "Natsu": {
@@ -1583,6 +1704,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Front",
+    "height": 152,
     "outfit": "Default"
   },
   "Neru": {
@@ -1596,6 +1718,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Front",
+    "height": 146,
     "outfit": "Default"
   },
   "Neru_(Bunny_Girl)": {
@@ -1609,6 +1732,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Front",
+    "height": 146,
     "outfit": "Bunny Girl"
   },
   "Noa": {
@@ -1622,6 +1746,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Middle",
+    "height": 161,
     "outfit": "Default"
   },
   "Nodoka": {
@@ -1635,6 +1760,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 147,
     "outfit": "Default"
   },
   "Nodoka_(Hot_Spring)": {
@@ -1648,6 +1774,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 147,
     "outfit": "Hot Spring"
   },
   "Nonomi": {
@@ -1661,6 +1788,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 160,
     "outfit": "Default"
   },
   "Nonomi_(Swimsuit)": {
@@ -1674,6 +1802,7 @@
     "combatClass": "Striker",
     "exSkillCost": 6,
     "positioning": "Back",
+    "height": 160,
     "outfit": "Swimsuit"
   },
   "Pina": {
@@ -1687,6 +1816,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 165,
     "outfit": "Default"
   },
   "Reisa": {
@@ -1700,6 +1830,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Front",
+    "height": 153,
     "outfit": "Default"
   },
   "Renge": {
@@ -1713,6 +1844,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 157,
     "outfit": "Default"
   },
   "Rumi": {
@@ -1726,6 +1858,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Front",
+    "height": 168,
     "outfit": "Default"
   },
   "Saki": {
@@ -1739,6 +1872,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 161,
     "outfit": "Default"
   },
   "Saki_(Swimsuit)": {
@@ -1752,6 +1886,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 161,
     "outfit": "Swimsuit"
   },
   "Sakurako": {
@@ -1765,6 +1900,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Middle",
+    "height": 160,
     "outfit": "Default"
   },
   "Saori": {
@@ -1778,6 +1914,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Middle",
+    "height": 167,
     "outfit": "Default"
   },
   "Saten_Ruiko": {
@@ -1791,6 +1928,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 160,
     "outfit": "Default"
   },
   "Saya": {
@@ -1804,6 +1942,7 @@
     "combatClass": "Special",
     "exSkillCost": 6,
     "positioning": "Back",
+    "height": 149,
     "outfit": "Default"
   },
   "Saya_(Casual)": {
@@ -1817,6 +1956,7 @@
     "combatClass": "Special",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 149,
     "outfit": "Casual"
   },
   "Sena": {
@@ -1830,6 +1970,7 @@
     "combatClass": "Special",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 155,
     "outfit": "Default"
   },
   "Serika": {
@@ -1843,6 +1984,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Middle",
+    "height": 153,
     "outfit": "Default"
   },
   "Serika_(New_Year)": {
@@ -1856,6 +1998,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 153,
     "outfit": "New Year"
   },
   "Serina": {
@@ -1869,6 +2012,7 @@
     "combatClass": "Special",
     "exSkillCost": 2,
     "positioning": "Back",
+    "height": 156,
     "outfit": "Default"
   },
   "Serina_(Christmas)": {
@@ -1882,6 +2026,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Middle",
+    "height": 156,
     "outfit": "Christmas"
   },
   "Shigure": {
@@ -1895,6 +2040,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Middle",
+    "height": 156,
     "outfit": "Default"
   },
   "Shigure_(Hot_Spring)": {
@@ -1908,6 +2054,7 @@
     "combatClass": "Special",
     "exSkillCost": 6,
     "positioning": "Back",
+    "height": 156,
     "outfit": "Hot Spring"
   },
   "Shimiko": {
@@ -1921,6 +2068,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 157,
     "outfit": "Default"
   },
   "Shiroko": {
@@ -1934,11 +2082,12 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Middle",
+    "height": 156,
     "outfit": "Default"
   },
-  "Shiroko_(Cycling)": {
-    "id": "Shiroko_(Cycling)",
-    "fullName": "Suna\u014dkami Shiroko (Cycling)",
+  "Shiroko_(Riding)": {
+    "id": "Shiroko_(Riding)",
+    "fullName": "Suna\u014dkami Shiroko (Riding)",
     "nativeName": "\u7802\u72fc \u30b7\u30ed\u30b3",
     "school": "Abydos",
     "damageType": "Mystic",
@@ -1947,7 +2096,8 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Middle",
-    "outfit": "Cycling"
+    "height": 156,
+    "outfit": "Riding"
   },
   "Shiroko_(Swimsuit)": {
     "id": "Shiroko_(Swimsuit)",
@@ -1960,6 +2110,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 156,
     "outfit": "Swimsuit"
   },
   "Shizuko": {
@@ -1973,6 +2124,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 153,
     "outfit": "Default"
   },
   "Shizuko_(Swimsuit)": {
@@ -1986,6 +2138,7 @@
     "combatClass": "Special",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 153,
     "outfit": "Swimsuit"
   },
   "Shokuhou_Misaki": {
@@ -1999,6 +2152,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Middle",
+    "height": null,
     "outfit": "Default"
   },
   "Shun": {
@@ -2012,11 +2166,12 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 174,
     "outfit": "Default"
   },
-  "Shun_(Small)": {
-    "id": "Shun_(Small)",
-    "fullName": "Sunohara Shun (Small)",
+  "Shun_(Kid)": {
+    "id": "Shun_(Kid)",
+    "fullName": "Sunohara Shun (Kid)",
     "nativeName": "\u6625\u539f \u30b7\u30e5\u30f3",
     "school": "Shanhaijing",
     "damageType": "Explosive",
@@ -2025,7 +2180,8 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Back",
-    "outfit": "Small"
+    "height": null,
+    "outfit": "Kid"
   },
   "Sumire": {
     "id": "Sumire",
@@ -2038,6 +2194,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Front",
+    "height": 167,
     "outfit": "Default"
   },
   "Suzumi": {
@@ -2051,6 +2208,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Middle",
+    "height": 162,
     "outfit": "Default"
   },
   "Toki": {
@@ -2064,6 +2222,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Middle",
+    "height": 165,
     "outfit": "Default"
   },
   "Toki_(Bunny_Girl)": {
@@ -2077,6 +2236,7 @@
     "combatClass": "Striker",
     "exSkillCost": 2,
     "positioning": "Middle",
+    "height": 165,
     "outfit": "Bunny Girl"
   },
   "Tomoe": {
@@ -2090,6 +2250,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Back",
+    "height": 165,
     "outfit": "Default"
   },
   "Tsubaki": {
@@ -2103,6 +2264,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Front",
+    "height": 162,
     "outfit": "Default"
   },
   "Tsubaki_(Guide)": {
@@ -2116,6 +2278,7 @@
     "combatClass": "Special",
     "exSkillCost": 6,
     "positioning": "Back",
+    "height": 162,
     "outfit": "Guide"
   },
   "Tsukuyo": {
@@ -2129,6 +2292,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Front",
+    "height": 180,
     "outfit": "Default"
   },
   "Tsurugi": {
@@ -2142,6 +2306,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Front",
+    "height": 162,
     "outfit": "Default"
   },
   "Tsurugi_(Swimsuit)": {
@@ -2155,6 +2320,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Front",
+    "height": 162,
     "outfit": "Swimsuit"
   },
   "Ui": {
@@ -2168,6 +2334,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 165,
     "outfit": "Default"
   },
   "Ui_(Swimsuit)": {
@@ -2181,6 +2348,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 165,
     "outfit": "Swimsuit"
   },
   "Umika": {
@@ -2194,6 +2362,7 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Middle",
+    "height": 165,
     "outfit": "Default"
   },
   "Utaha": {
@@ -2207,6 +2376,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 162,
     "outfit": "Default"
   },
   "Utaha_(Cheerleader)": {
@@ -2220,6 +2390,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Front",
+    "height": 162,
     "outfit": "Cheerleader"
   },
   "Wakamo": {
@@ -2233,6 +2404,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 161,
     "outfit": "Default"
   },
   "Wakamo_(Swimsuit)": {
@@ -2246,6 +2418,7 @@
     "combatClass": "Striker",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 161,
     "outfit": "Swimsuit"
   },
   "Yoshimi": {
@@ -2259,6 +2432,7 @@
     "combatClass": "Special",
     "exSkillCost": 4,
     "positioning": "Back",
+    "height": 146,
     "outfit": "Default"
   },
   "Yoshimi_(Band)": {
@@ -2272,6 +2446,7 @@
     "combatClass": "Striker",
     "exSkillCost": 10,
     "positioning": "Middle",
+    "height": 146,
     "outfit": "Band"
   },
   "Yukari": {
@@ -2285,6 +2460,7 @@
     "combatClass": "Striker",
     "exSkillCost": 7,
     "positioning": "Back",
+    "height": 155,
     "outfit": "Default"
   },
   "Yuuka": {
@@ -2298,11 +2474,12 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Front",
+    "height": 156,
     "outfit": "Default"
   },
-  "Yuuka_(Track)": {
-    "id": "Yuuka_(Track)",
-    "fullName": "Hayase Yuuka (Track)",
+  "Yuuka_(Sportswear)": {
+    "id": "Yuuka_(Sportswear)",
+    "fullName": "Hayase Yuuka (Sportswear)",
     "nativeName": "\u65e9\u702c \u30e6\u30a6\u30ab",
     "school": "Millennium",
     "damageType": "Mystic",
@@ -2311,7 +2488,8 @@
     "combatClass": "Striker",
     "exSkillCost": 3,
     "positioning": "Front",
-    "outfit": "Track"
+    "height": 156,
+    "outfit": "Sportswear"
   },
   "Yuzu": {
     "id": "Yuzu",
@@ -2324,6 +2502,7 @@
     "combatClass": "Striker",
     "exSkillCost": 4,
     "positioning": "Middle",
+    "height": 150,
     "outfit": "Default"
   },
   "Yuzu_(Maid)": {
@@ -2337,6 +2516,7 @@
     "combatClass": "Special",
     "exSkillCost": 5,
     "positioning": "Back",
+    "height": 150,
     "outfit": "Maid"
   }
 }

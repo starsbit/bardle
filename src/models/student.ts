@@ -9,5 +9,6 @@ export interface Student {
   combatClass: string;
   exSkillCost: number;
   positioning: string;
+  height: number;
   outfit: string;
 }

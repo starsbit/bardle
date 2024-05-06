@@ -14,8 +14,14 @@ for character in characters.values():
         character_copy.pop(field, None)
     characters_without_ids.append(character_copy)
 
+found_equal_characters = False
+
 # Check if any two characters have equal values for the remaining fields
 for i in range(len(characters_without_ids)):
     for j in range(i + 1, len(characters_without_ids)):
         if characters_without_ids[i] == characters_without_ids[j]:
             print(f"Characters {list(characters.keys())[i]} and {list(characters.keys())[j]} are equal (excluding 'id', 'fullName', and 'nativeName').")
+            found_equal_characters = True
+
+if not found_equal_characters:
+    print("No two characters have equal values (excluding 'id', 'fullName', and 'nativeName').")
