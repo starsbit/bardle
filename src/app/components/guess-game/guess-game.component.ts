@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Student } from '../../../models/student';
 import { RULES } from '../../constants/rules';
 import { StudentService } from '../../services/student.service';
@@ -9,7 +10,12 @@ import { YesterdaysStudentComponent } from '../yesterdays-student/yesterdays-stu
 @Component({
   selector: 'ba-guess-game',
   standalone: true,
-  imports: [GridComponent, GuessInputComponent, YesterdaysStudentComponent],
+  imports: [
+    GridComponent,
+    GuessInputComponent,
+    YesterdaysStudentComponent,
+    RouterLink,
+  ],
   templateUrl: './guess-game.component.html',
   styleUrl: './guess-game.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
