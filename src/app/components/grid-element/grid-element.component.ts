@@ -38,6 +38,20 @@ export class GridElementComponent {
         return `${this.guessAttribute}`;
       }
     }
+    if (
+      this.isDateString(this.guessAttribute) &&
+      this.isDateString(this.targetAttribute)
+    ) {
+      const guessDate = new Date(this.guessAttribute);
+      const targetDate = new Date(this.targetAttribute);
+      if (guessDate < targetDate) {
+        return `🔼${this.guessAttribute}`;
+      } else if (guessDate > targetDate) {
+        return `🔽${this.guessAttribute}`;
+      } else {
+        return `${this.guessAttribute}`;
+      }
+    }
     return this.guessAttribute;
   }
 
@@ -46,5 +60,9 @@ export class GridElementComponent {
       return 'assets/images/characters/' + this.guessAttribute + '.png';
     }
     return '';
+  }
+
+  isDateString(s: string) {
+    return !isNaN(Date.parse(s));
   }
 }

@@ -47,6 +47,8 @@ def generate_info_from_url(url):
         role_positioning = table.find('th', text='Role').find_next('td').find_next('td').text.strip()
         combat_class = table.find('th', text='Combat Class').find_next('td').text.strip()
         name = soup.find('th', class_='character-name').text.strip().replace(" ", "_")
+        releaseDate = soup.find('th', text='Release Date').find_next('td').text.strip()
+        weaponType = soup.find('div', class_='weapon-text').text.strip()
 
         split_string = full_name.split('(')
 
@@ -79,6 +81,8 @@ def generate_info_from_url(url):
             "positioning": positioning,
             "height": height,
             "outfit": outfit,
+            "releaseDate": releaseDate,
+            "weaponType": weaponType,
         }
 
         file_name = name + ".json"
@@ -128,7 +132,7 @@ if __name__ == "__main__":
     merged_json = merge_json_files(folder_path)
 
     # Dump merged data into character_info.json
-    with open('character_info.json', 'w') as outfile:
+    with open(folder_path + 'character_info.json', 'w') as outfile:
         json.dump(merged_json, outfile)
 
     print("Merged data dumped into character_info.json")

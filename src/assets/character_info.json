@@ -11,7 +11,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 160,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SMG"
   },
   "Airi_(Band)": {
     "id": "Airi_(Band)",
@@ -25,7 +27,9 @@
     "exSkillCost": 2,
     "positioning": "Front",
     "height": 160,
-    "outfit": "Band"
+    "outfit": "Band",
+    "releaseDate": "2024/04/24",
+    "weaponType": "SMG"
   },
   "Akane": {
     "id": "Akane",
@@ -39,7 +43,9 @@
     "exSkillCost": 2,
     "positioning": "Middle",
     "height": 164,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "HG"
   },
   "Akane_(Bunny_Girl)": {
     "id": "Akane_(Bunny_Girl)",
@@ -53,7 +59,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 164,
-    "outfit": "Bunny Girl"
+    "outfit": "Bunny Girl",
+    "releaseDate": "2022/10/12",
+    "weaponType": "HG"
   },
   "Akari": {
     "id": "Akari",
@@ -67,7 +75,9 @@
     "exSkillCost": 4,
     "positioning": "Middle",
     "height": 167,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "AR"
   },
   "Akari_(New_Year)": {
     "id": "Akari_(New_Year)",
@@ -81,7 +91,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 167,
-    "outfit": "New Year"
+    "outfit": "New Year",
+    "releaseDate": "2024/03/06",
+    "weaponType": "AR"
   },
   "Ako": {
     "id": "Ako",
@@ -95,7 +107,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 165,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/11/17",
+    "weaponType": "HG"
   },
   "Ako_(Dress)": {
     "id": "Ako_(Dress)",
@@ -109,7 +123,9 @@
     "exSkillCost": 5,
     "positioning": "Middle",
     "height": 165,
-    "outfit": "Dress"
+    "outfit": "Dress",
+    "releaseDate": "2024/01/24",
+    "weaponType": "HG"
   },
   "Arisu": {
     "id": "Arisu",
@@ -123,7 +139,9 @@
     "exSkillCost": 6,
     "positioning": "Back",
     "height": 152,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/03/25",
+    "weaponType": "RG"
   },
   "Arisu_(Maid)": {
     "id": "Arisu_(Maid)",
@@ -137,7 +155,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 152,
-    "outfit": "Maid"
+    "outfit": "Maid",
+    "releaseDate": "2023/04/26",
+    "weaponType": "RG"
   },
   "Aru": {
     "id": "Aru",
@@ -151,7 +171,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 160,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SR"
   },
   "Aru_(Dress)": {
     "id": "Aru_(Dress)",
@@ -165,7 +187,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 160,
-    "outfit": "Dress"
+    "outfit": "Dress",
+    "releaseDate": "2024/02/21",
+    "weaponType": "SR"
   },
   "Aru_(New_Year)": {
     "id": "Aru_(New_Year)",
@@ -179,7 +203,9 @@
     "exSkillCost": 6,
     "positioning": "Back",
     "height": 160,
-    "outfit": "New Year"
+    "outfit": "New Year",
+    "releaseDate": "2021/12/29",
+    "weaponType": "SR"
   },
   "Asuna": {
     "id": "Asuna",
@@ -193,7 +219,9 @@
     "exSkillCost": 2,
     "positioning": "Middle",
     "height": 167,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "AR"
   },
   "Asuna_(Bunny_Girl)": {
     "id": "Asuna_(Bunny_Girl)",
@@ -207,7 +235,9 @@
     "exSkillCost": 5,
     "positioning": "Middle",
     "height": 167,
-    "outfit": "Bunny Girl"
+    "outfit": "Bunny Girl",
+    "releaseDate": "2021/10/12",
+    "weaponType": "AR"
   },
   "Atsuko": {
     "id": "Atsuko",
@@ -221,7 +251,9 @@
     "exSkillCost": 4,
     "positioning": "Front",
     "height": 158,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/06/08",
+    "weaponType": "SMG"
   },
   "Ayane": {
     "id": "Ayane",
@@ -235,7 +267,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 153,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "HG"
   },
   "Ayane_(Swimsuit)": {
     "id": "Ayane_(Swimsuit)",
@@ -249,7 +283,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 153,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2022/06/22",
+    "weaponType": "HG"
   },
   "Azusa": {
     "id": "Azusa",
@@ -263,7 +299,9 @@
     "exSkillCost": 5,
     "positioning": "Middle",
     "height": 149,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/05/27",
+    "weaponType": "AR"
   },
   "Azusa_(Swimsuit)": {
     "id": "Azusa_(Swimsuit)",
@@ -277,7 +315,9 @@
     "exSkillCost": 5,
     "positioning": "Middle",
     "height": 149,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2021/06/30",
+    "weaponType": "AR"
   },
   "Cherino": {
     "id": "Cherino",
@@ -291,7 +331,9 @@
     "exSkillCost": 7,
     "positioning": "Middle",
     "height": 128,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/04/29",
+    "weaponType": "HG"
   },
   "Cherino_(Hot_Spring)": {
     "id": "Cherino_(Hot_Spring)",
@@ -305,7 +347,9 @@
     "exSkillCost": 6,
     "positioning": "Back",
     "height": 128,
-    "outfit": "Hot Spring"
+    "outfit": "Hot Spring",
+    "releaseDate": "2021/11/30",
+    "weaponType": "HG"
   },
   "Chihiro": {
     "id": "Chihiro",
@@ -319,7 +363,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 160,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/01/30",
+    "weaponType": "AR"
   },
   "Chinatsu": {
     "id": "Chinatsu",
@@ -333,7 +379,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 159,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "HG"
   },
   "Chinatsu_(Hot_Spring)": {
     "id": "Chinatsu_(Hot_Spring)",
@@ -347,7 +395,9 @@
     "exSkillCost": 2,
     "positioning": "Middle",
     "height": 159,
-    "outfit": "Hot Spring"
+    "outfit": "Hot Spring",
+    "releaseDate": "2021/11/30",
+    "weaponType": "HG"
   },
   "Chise": {
     "id": "Chise",
@@ -361,7 +411,9 @@
     "exSkillCost": 4,
     "positioning": "Middle",
     "height": 159,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "GL"
   },
   "Chise_(Swimsuit)": {
     "id": "Chise_(Swimsuit)",
@@ -375,7 +427,9 @@
     "exSkillCost": 6,
     "positioning": "Middle",
     "height": 159,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2022/07/25",
+    "weaponType": "GL"
   },
   "Eimi": {
     "id": "Eimi",
@@ -389,7 +443,9 @@
     "exSkillCost": 4,
     "positioning": "Front",
     "height": 167,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SG"
   },
   "Eimi_(Swimsuit)": {
     "id": "Eimi_(Swimsuit)",
@@ -403,7 +459,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 167,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2023/12/06",
+    "weaponType": "SG"
   },
   "Fubuki": {
     "id": "Fubuki",
@@ -417,7 +475,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 148,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/01/26",
+    "weaponType": "SR"
   },
   "Fuuka": {
     "id": "Fuuka",
@@ -431,7 +491,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 159,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SMG"
   },
   "Fuuka_(New_Year)": {
     "id": "Fuuka_(New_Year)",
@@ -445,7 +507,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 159,
-    "outfit": "New Year"
+    "outfit": "New Year",
+    "releaseDate": "2022/12/28",
+    "weaponType": "SMG"
   },
   "Hanae": {
     "id": "Hanae",
@@ -459,7 +523,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 150,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "AR"
   },
   "Hanae_(Christmas)": {
     "id": "Hanae_(Christmas)",
@@ -473,7 +539,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 150,
-    "outfit": "Christmas"
+    "outfit": "Christmas",
+    "releaseDate": "2022/12/14",
+    "weaponType": "AR"
   },
   "Hanako": {
     "id": "Hanako",
@@ -487,7 +555,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 161,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/05/27",
+    "weaponType": "AR"
   },
   "Hanako_(Swimsuit)": {
     "id": "Hanako_(Swimsuit)",
@@ -501,7 +571,9 @@
     "exSkillCost": 2,
     "positioning": "Middle",
     "height": 161,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2023/08/02",
+    "weaponType": "AR"
   },
   "Hare": {
     "id": "Hare",
@@ -515,7 +587,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 153,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "AR"
   },
   "Hare_(Camping)": {
     "id": "Hare_(Camping)",
@@ -529,7 +603,9 @@
     "exSkillCost": 2,
     "positioning": "Middle",
     "height": 153,
-    "outfit": "Camping"
+    "outfit": "Camping",
+    "releaseDate": "2023/12/27",
+    "weaponType": "AR"
   },
   "Haruka": {
     "id": "Haruka",
@@ -543,7 +619,9 @@
     "exSkillCost": 4,
     "positioning": "Front",
     "height": 157,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SG"
   },
   "Haruka_(New_Year)": {
     "id": "Haruka_(New_Year)",
@@ -557,7 +635,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 157,
-    "outfit": "New Year"
+    "outfit": "New Year",
+    "releaseDate": "2023/03/22",
+    "weaponType": "SG"
   },
   "Haruna": {
     "id": "Haruna",
@@ -571,7 +651,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 163,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SR"
   },
   "Haruna_(New_Year)": {
     "id": "Haruna_(New_Year)",
@@ -585,7 +667,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 163,
-    "outfit": "New Year"
+    "outfit": "New Year",
+    "releaseDate": "2022/12/28",
+    "weaponType": "SR"
   },
   "Haruna_(Sportswear)": {
     "id": "Haruna_(Sportswear)",
@@ -599,7 +683,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 163,
-    "outfit": "Sportswear"
+    "outfit": "Sportswear",
+    "releaseDate": "2023/09/15",
+    "weaponType": "SR"
   },
   "Hasumi": {
     "id": "Hasumi",
@@ -613,7 +699,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 179,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SR"
   },
   "Hasumi_(Sportswear)": {
     "id": "Hasumi_(Sportswear)",
@@ -627,7 +715,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 179,
-    "outfit": "Sportswear"
+    "outfit": "Sportswear",
+    "releaseDate": "2022/10/26",
+    "weaponType": "SR"
   },
   "Hatsune_Miku": {
     "id": "Hatsune_Miku",
@@ -641,7 +731,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 158,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/11/03",
+    "weaponType": "GL"
   },
   "Hibiki": {
     "id": "Hibiki",
@@ -655,7 +747,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 154,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "MT"
   },
   "Hibiki_(Cheerleader)": {
     "id": "Hibiki_(Cheerleader)",
@@ -669,7 +763,9 @@
     "exSkillCost": 7,
     "positioning": "Back",
     "height": 154,
-    "outfit": "Cheerleader"
+    "outfit": "Cheerleader",
+    "releaseDate": "2022/09/28",
+    "weaponType": "MT"
   },
   "Hifumi": {
     "id": "Hifumi",
@@ -683,7 +779,9 @@
     "exSkillCost": 5,
     "positioning": "Middle",
     "height": 158,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "AR"
   },
   "Hifumi_(Swimsuit)": {
     "id": "Hifumi_(Swimsuit)",
@@ -697,7 +795,9 @@
     "exSkillCost": 10,
     "positioning": "Back",
     "height": 158,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2021/07/15",
+    "weaponType": "AR"
   },
   "Himari": {
     "id": "Himari",
@@ -711,7 +811,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 162,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/11/16",
+    "weaponType": "HG"
   },
   "Hina": {
     "id": "Hina",
@@ -725,7 +827,9 @@
     "exSkillCost": 7,
     "positioning": "Back",
     "height": 142,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "MG"
   },
   "Hinata": {
     "id": "Hinata",
@@ -739,7 +843,9 @@
     "exSkillCost": 6,
     "positioning": "Middle",
     "height": 166,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/02/23",
+    "weaponType": "HG"
   },
   "Hinata_(Swimsuit)": {
     "id": "Hinata_(Swimsuit)",
@@ -753,7 +859,9 @@
     "exSkillCost": 6,
     "positioning": "Back",
     "height": 166,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2023/07/24",
+    "weaponType": "HG"
   },
   "Hina_(Dress)": {
     "id": "Hina_(Dress)",
@@ -767,7 +875,9 @@
     "exSkillCost": 6,
     "positioning": "Back",
     "height": 142,
-    "outfit": "Dress"
+    "outfit": "Dress",
+    "releaseDate": "2024/01/31",
+    "weaponType": "MG"
   },
   "Hina_(Swimsuit)": {
     "id": "Hina_(Swimsuit)",
@@ -781,7 +891,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 142,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2021/07/29",
+    "weaponType": "MG"
   },
   "Hiyori": {
     "id": "Hiyori",
@@ -795,7 +907,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 155,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/05/24",
+    "weaponType": "SR"
   },
   "Hoshino": {
     "id": "Hoshino",
@@ -809,7 +923,9 @@
     "exSkillCost": 4,
     "positioning": "Front",
     "height": 145,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SG"
   },
   "Hoshino_(Swimsuit)": {
     "id": "Hoshino_(Swimsuit)",
@@ -823,7 +939,9 @@
     "exSkillCost": 6,
     "positioning": "Front",
     "height": 145,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2022/07/20",
+    "weaponType": "SG"
   },
   "Ibuki": {
     "id": "Ibuki",
@@ -837,7 +955,9 @@
     "exSkillCost": 3,
     "positioning": "Middle",
     "height": 128,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2024/01/24",
+    "weaponType": "AR"
   },
   "Ichika": {
     "id": "Ichika",
@@ -851,7 +971,9 @@
     "exSkillCost": 6,
     "positioning": "Middle",
     "height": 163,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/09/27",
+    "weaponType": "AR"
   },
   "Iori": {
     "id": "Iori",
@@ -865,7 +987,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 157,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SR"
   },
   "Iori_(Swimsuit)": {
     "id": "Iori_(Swimsuit)",
@@ -879,7 +1003,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 157,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2021/07/29",
+    "weaponType": "SR"
   },
   "Iroha": {
     "id": "Iroha",
@@ -893,7 +1019,9 @@
     "exSkillCost": 8,
     "positioning": "Back",
     "height": 151,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/04/27",
+    "weaponType": "HG"
   },
   "Izumi": {
     "id": "Izumi",
@@ -907,7 +1035,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 161,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "MG"
   },
   "Izumi_(Swimsuit)": {
     "id": "Izumi_(Swimsuit)",
@@ -921,7 +1051,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 161,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2021/07/29",
+    "weaponType": "MG"
   },
   "Izuna": {
     "id": "Izuna",
@@ -935,7 +1067,9 @@
     "exSkillCost": 3,
     "positioning": "Front",
     "height": 155,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/25",
+    "weaponType": "SMG"
   },
   "Izuna_(Swimsuit)": {
     "id": "Izuna_(Swimsuit)",
@@ -949,7 +1083,9 @@
     "exSkillCost": 2,
     "positioning": "Front",
     "height": 155,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2022/07/25",
+    "weaponType": "SMG"
   },
   "Junko": {
     "id": "Junko",
@@ -963,7 +1099,9 @@
     "exSkillCost": 5,
     "positioning": "Middle",
     "height": 149,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "AR"
   },
   "Junko_(New_Year)": {
     "id": "Junko_(New_Year)",
@@ -977,7 +1115,9 @@
     "exSkillCost": 2,
     "positioning": "Middle",
     "height": 149,
-    "outfit": "New Year"
+    "outfit": "New Year",
+    "releaseDate": "2022/12/28",
+    "weaponType": "AR"
   },
   "Juri": {
     "id": "Juri",
@@ -991,7 +1131,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 170,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SG"
   },
   "Kaede": {
     "id": "Kaede",
@@ -1005,7 +1147,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 142,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/04/27",
+    "weaponType": "HG"
   },
   "Kaho": {
     "id": "Kaho",
@@ -1019,7 +1163,9 @@
     "exSkillCost": 5,
     "positioning": "Middle",
     "height": 173,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/04/12",
+    "weaponType": "AR"
   },
   "Kanna": {
     "id": "Kanna",
@@ -1033,7 +1179,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 166,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/01/31",
+    "weaponType": "HG"
   },
   "Karin": {
     "id": "Karin",
@@ -1047,7 +1195,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 170,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SR"
   },
   "Karin_(Bunny_Girl)": {
     "id": "Karin_(Bunny_Girl)",
@@ -1061,7 +1211,9 @@
     "exSkillCost": 7,
     "positioning": "Back",
     "height": 170,
-    "outfit": "Bunny Girl"
+    "outfit": "Bunny Girl",
+    "releaseDate": "2021/09/29",
+    "weaponType": "SR"
   },
   "Kasumi": {
     "id": "Kasumi",
@@ -1075,7 +1227,9 @@
     "exSkillCost": 4,
     "positioning": "Middle",
     "height": 148,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/09/27",
+    "weaponType": "HG"
   },
   "Kayoko": {
     "id": "Kayoko",
@@ -1089,7 +1243,9 @@
     "exSkillCost": 6,
     "positioning": "Middle",
     "height": 157,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "HG"
   },
   "Kayoko_(Dress)": {
     "id": "Kayoko_(Dress)",
@@ -1103,7 +1259,9 @@
     "exSkillCost": 5,
     "positioning": "Middle",
     "height": 157,
-    "outfit": "Dress"
+    "outfit": "Dress",
+    "releaseDate": "2024/02/21",
+    "weaponType": "HG"
   },
   "Kayoko_(New_Year)": {
     "id": "Kayoko_(New_Year)",
@@ -1117,7 +1275,9 @@
     "exSkillCost": 2,
     "positioning": "Middle",
     "height": 157,
-    "outfit": "New Year"
+    "outfit": "New Year",
+    "releaseDate": "2023/03/22",
+    "weaponType": "HG"
   },
   "Kazusa": {
     "id": "Kazusa",
@@ -1131,7 +1291,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 155,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/08/24",
+    "weaponType": "MG"
   },
   "Kazusa_(Band)": {
     "id": "Kazusa_(Band)",
@@ -1145,7 +1307,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 155,
-    "outfit": "Band"
+    "outfit": "Band",
+    "releaseDate": "2024/04/24",
+    "weaponType": "MG"
   },
   "Kikyou": {
     "id": "Kikyou",
@@ -1159,7 +1323,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 160,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/11/22",
+    "weaponType": "SR"
   },
   "Kirino": {
     "id": "Kirino",
@@ -1173,7 +1339,9 @@
     "exSkillCost": 3,
     "positioning": "Middle",
     "height": 161,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/08/26",
+    "weaponType": "HG"
   },
   "Koharu": {
     "id": "Koharu",
@@ -1187,7 +1355,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 148,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/06/10",
+    "weaponType": "SR"
   },
   "Koharu_(Swimsuit)": {
     "id": "Koharu_(Swimsuit)",
@@ -1201,7 +1371,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 148,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2023/07/24",
+    "weaponType": "SR"
   },
   "Kokona": {
     "id": "Kokona",
@@ -1215,7 +1387,9 @@
     "exSkillCost": 2,
     "positioning": "Middle",
     "height": 139,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/09/21",
+    "weaponType": "AR"
   },
   "Kotama": {
     "id": "Kotama",
@@ -1229,7 +1403,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 158,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "HG"
   },
   "Kotama_(Camping)": {
     "id": "Kotama_(Camping)",
@@ -1243,7 +1419,9 @@
     "exSkillCost": 6,
     "positioning": "Middle",
     "height": 158,
-    "outfit": "Camping"
+    "outfit": "Camping",
+    "releaseDate": "2023/12/27",
+    "weaponType": "HG"
   },
   "Kotori": {
     "id": "Kotori",
@@ -1257,7 +1435,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 151,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "MG"
   },
   "Kotori_(Cheerleader)": {
     "id": "Kotori_(Cheerleader)",
@@ -1271,7 +1451,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 151,
-    "outfit": "Cheerleader"
+    "outfit": "Cheerleader",
+    "releaseDate": "2023/09/06",
+    "weaponType": "MG"
   },
   "Koyuki": {
     "id": "Koyuki",
@@ -1285,7 +1467,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 149,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/03/08",
+    "weaponType": "MG"
   },
   "Maki": {
     "id": "Maki",
@@ -1299,7 +1483,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 149,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "MG"
   },
   "Makoto": {
     "id": "Makoto",
@@ -1313,7 +1499,9 @@
     "exSkillCost": 6,
     "positioning": "Back",
     "height": 169,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2024/01/24",
+    "weaponType": "SR"
   },
   "Mari": {
     "id": "Mari",
@@ -1327,7 +1515,9 @@
     "exSkillCost": 2,
     "positioning": "Back",
     "height": 151,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/10/27",
+    "weaponType": "HG"
   },
   "Marina": {
     "id": "Marina",
@@ -1341,7 +1531,9 @@
     "exSkillCost": 3,
     "positioning": "Front",
     "height": 166,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/03/08",
+    "weaponType": "SMG"
   },
   "Mari_(Sportswear)": {
     "id": "Mari_(Sportswear)",
@@ -1355,7 +1547,9 @@
     "exSkillCost": 3,
     "positioning": "Middle",
     "height": 151,
-    "outfit": "Sportswear"
+    "outfit": "Sportswear",
+    "releaseDate": "2022/10/26",
+    "weaponType": "HG"
   },
   "Mashiro": {
     "id": "Mashiro",
@@ -1369,7 +1563,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 155,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/11",
+    "weaponType": "SR"
   },
   "Mashiro_(Swimsuit)": {
     "id": "Mashiro_(Swimsuit)",
@@ -1383,7 +1579,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 155,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2021/06/30",
+    "weaponType": "SR"
   },
   "Megu": {
     "id": "Megu",
@@ -1397,7 +1595,9 @@
     "exSkillCost": 5,
     "positioning": "Front",
     "height": 164,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/01/31",
+    "weaponType": "FT"
   },
   "Meru": {
     "id": "Meru",
@@ -1411,7 +1611,9 @@
     "exSkillCost": 5,
     "positioning": "Middle",
     "height": 137,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/08/23",
+    "weaponType": "HG"
   },
   "Michiru": {
     "id": "Michiru",
@@ -1425,7 +1627,9 @@
     "exSkillCost": 5,
     "positioning": "Front",
     "height": 153,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/04/27",
+    "weaponType": "SG"
   },
   "Midori": {
     "id": "Midori",
@@ -1439,7 +1643,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 143,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/04/08",
+    "weaponType": "SR"
   },
   "Mika": {
     "id": "Mika",
@@ -1453,7 +1659,9 @@
     "exSkillCost": 6,
     "positioning": "Front",
     "height": 157,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/01/24",
+    "weaponType": "SMG"
   },
   "Mimori": {
     "id": "Mimori",
@@ -1467,7 +1675,9 @@
     "exSkillCost": 3,
     "positioning": "Middle",
     "height": 156,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/02/09",
+    "weaponType": "HG"
   },
   "Mimori_(Swimsuit)": {
     "id": "Mimori_(Swimsuit)",
@@ -1481,7 +1691,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 156,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2023/08/16",
+    "weaponType": "HG"
   },
   "Mina": {
     "id": "Mina",
@@ -1495,7 +1707,9 @@
     "exSkillCost": 3,
     "positioning": "Middle",
     "height": 166,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/05/24",
+    "weaponType": "HG"
   },
   "Mine": {
     "id": "Mine",
@@ -1509,7 +1723,9 @@
     "exSkillCost": 4,
     "positioning": "Front",
     "height": 168,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/01/11",
+    "weaponType": "SG"
   },
   "Minori": {
     "id": "Minori",
@@ -1523,7 +1739,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 158,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/06/07",
+    "weaponType": "AR"
   },
   "Misaka_Mikoto": {
     "id": "Misaka_Mikoto",
@@ -1537,7 +1755,9 @@
     "exSkillCost": 3,
     "positioning": "Middle",
     "height": 161,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/10/24",
+    "weaponType": "AR"
   },
   "Misaki": {
     "id": "Misaki",
@@ -1551,7 +1771,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 163,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/05/24",
+    "weaponType": "RL"
   },
   "Miyako": {
     "id": "Miyako",
@@ -1565,7 +1787,9 @@
     "exSkillCost": 3,
     "positioning": "Front",
     "height": 156,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/03/23",
+    "weaponType": "SMG"
   },
   "Miyako_(Swimsuit)": {
     "id": "Miyako_(Swimsuit)",
@@ -1579,7 +1803,9 @@
     "exSkillCost": 2,
     "positioning": "Front",
     "height": 156,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2023/06/21",
+    "weaponType": "SMG"
   },
   "Miyu": {
     "id": "Miyu",
@@ -1593,7 +1819,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 149,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/04/06",
+    "weaponType": "SR"
   },
   "Miyu_(Swimsuit)": {
     "id": "Miyu_(Swimsuit)",
@@ -1607,7 +1835,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 149,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2023/06/21",
+    "weaponType": "SR"
   },
   "Moe": {
     "id": "Moe",
@@ -1621,7 +1851,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 163,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/08/24",
+    "weaponType": "HG"
   },
   "Momiji": {
     "id": "Momiji",
@@ -1635,7 +1867,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 135,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/08/23",
+    "weaponType": "RL"
   },
   "Momoi": {
     "id": "Momoi",
@@ -1649,7 +1883,9 @@
     "exSkillCost": 3,
     "positioning": "Middle",
     "height": 143,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/04/08",
+    "weaponType": "AR"
   },
   "Mutsuki": {
     "id": "Mutsuki",
@@ -1663,7 +1899,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 144,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "MG"
   },
   "Mutsuki_(New_Year)": {
     "id": "Mutsuki_(New_Year)",
@@ -1677,7 +1915,9 @@
     "exSkillCost": 2,
     "positioning": "Back",
     "height": 144,
-    "outfit": "New Year"
+    "outfit": "New Year",
+    "releaseDate": "2021/12/29",
+    "weaponType": "MG"
   },
   "Nagisa": {
     "id": "Nagisa",
@@ -1691,7 +1931,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 160,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/02/22",
+    "weaponType": "HG"
   },
   "Natsu": {
     "id": "Natsu",
@@ -1705,7 +1947,9 @@
     "exSkillCost": 3,
     "positioning": "Front",
     "height": 152,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/10/27",
+    "weaponType": "SMG"
   },
   "Neru": {
     "id": "Neru",
@@ -1719,7 +1963,9 @@
     "exSkillCost": 2,
     "positioning": "Front",
     "height": 146,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SMG"
   },
   "Neru_(Bunny_Girl)": {
     "id": "Neru_(Bunny_Girl)",
@@ -1733,7 +1979,9 @@
     "exSkillCost": 4,
     "positioning": "Front",
     "height": 146,
-    "outfit": "Bunny Girl"
+    "outfit": "Bunny Girl",
+    "releaseDate": "2021/09/29",
+    "weaponType": "SMG"
   },
   "Noa": {
     "id": "Noa",
@@ -1747,7 +1995,9 @@
     "exSkillCost": 3,
     "positioning": "Middle",
     "height": 161,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/09/28",
+    "weaponType": "HG"
   },
   "Nodoka": {
     "id": "Nodoka",
@@ -1761,7 +2011,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 147,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/04/29",
+    "weaponType": "SMG"
   },
   "Nodoka_(Hot_Spring)": {
     "id": "Nodoka_(Hot_Spring)",
@@ -1775,7 +2027,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 147,
-    "outfit": "Hot Spring"
+    "outfit": "Hot Spring",
+    "releaseDate": "2021/12/15",
+    "weaponType": "SMG"
   },
   "Nonomi": {
     "id": "Nonomi",
@@ -1789,7 +2043,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 160,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "MG"
   },
   "Nonomi_(Swimsuit)": {
     "id": "Nonomi_(Swimsuit)",
@@ -1803,7 +2059,9 @@
     "exSkillCost": 6,
     "positioning": "Back",
     "height": 160,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2022/06/22",
+    "weaponType": "MG"
   },
   "Pina": {
     "id": "Pina",
@@ -1817,7 +2075,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 165,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "MG"
   },
   "Reisa": {
     "id": "Reisa",
@@ -1831,7 +2091,9 @@
     "exSkillCost": 3,
     "positioning": "Front",
     "height": 153,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/05/10",
+    "weaponType": "SG"
   },
   "Renge": {
     "id": "Renge",
@@ -1845,7 +2107,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 157,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/11/22",
+    "weaponType": "SR"
   },
   "Rumi": {
     "id": "Rumi",
@@ -1859,7 +2123,9 @@
     "exSkillCost": 4,
     "positioning": "Front",
     "height": 168,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/05/24",
+    "weaponType": "SMG"
   },
   "Saki": {
     "id": "Saki",
@@ -1873,7 +2139,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 161,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/03/23",
+    "weaponType": "MG"
   },
   "Saki_(Swimsuit)": {
     "id": "Saki_(Swimsuit)",
@@ -1887,7 +2155,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 161,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2023/06/21",
+    "weaponType": "MG"
   },
   "Sakurako": {
     "id": "Sakurako",
@@ -1901,7 +2171,9 @@
     "exSkillCost": 4,
     "positioning": "Middle",
     "height": 160,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/02/10",
+    "weaponType": "AR"
   },
   "Saori": {
     "id": "Saori",
@@ -1915,7 +2187,9 @@
     "exSkillCost": 4,
     "positioning": "Middle",
     "height": 167,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/08/09",
+    "weaponType": "AR"
   },
   "Saten_Ruiko": {
     "id": "Saten_Ruiko",
@@ -1929,7 +2203,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 160,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/10/24",
+    "weaponType": "SMG"
   },
   "Saya": {
     "id": "Saya",
@@ -1943,7 +2219,9 @@
     "exSkillCost": 6,
     "positioning": "Back",
     "height": 149,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "HG"
   },
   "Saya_(Casual)": {
     "id": "Saya_(Casual)",
@@ -1957,7 +2235,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 149,
-    "outfit": "Casual"
+    "outfit": "Casual",
+    "releaseDate": "2021/09/09",
+    "weaponType": "HG"
   },
   "Sena": {
     "id": "Sena",
@@ -1971,7 +2251,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 155,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/01/30",
+    "weaponType": "GL"
   },
   "Serika": {
     "id": "Serika",
@@ -1985,7 +2267,9 @@
     "exSkillCost": 2,
     "positioning": "Middle",
     "height": 153,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "AR"
   },
   "Serika_(New_Year)": {
     "id": "Serika_(New_Year)",
@@ -1999,7 +2283,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 153,
-    "outfit": "New Year"
+    "outfit": "New Year",
+    "releaseDate": "2022/01/12",
+    "weaponType": "AR"
   },
   "Serina": {
     "id": "Serina",
@@ -2013,7 +2299,9 @@
     "exSkillCost": 2,
     "positioning": "Back",
     "height": 156,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "AR"
   },
   "Serina_(Christmas)": {
     "id": "Serina_(Christmas)",
@@ -2027,7 +2315,9 @@
     "exSkillCost": 4,
     "positioning": "Middle",
     "height": 156,
-    "outfit": "Christmas"
+    "outfit": "Christmas",
+    "releaseDate": "2022/12/14",
+    "weaponType": "AR"
   },
   "Shigure": {
     "id": "Shigure",
@@ -2041,7 +2331,9 @@
     "exSkillCost": 5,
     "positioning": "Middle",
     "height": 156,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/11/30",
+    "weaponType": "GL"
   },
   "Shigure_(Hot_Spring)": {
     "id": "Shigure_(Hot_Spring)",
@@ -2055,7 +2347,9 @@
     "exSkillCost": 6,
     "positioning": "Back",
     "height": 156,
-    "outfit": "Hot Spring"
+    "outfit": "Hot Spring",
+    "releaseDate": "2023/10/11",
+    "weaponType": "GL"
   },
   "Shimiko": {
     "id": "Shimiko",
@@ -2069,7 +2363,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 157,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "AR"
   },
   "Shiroko": {
     "id": "Shiroko",
@@ -2083,7 +2379,9 @@
     "exSkillCost": 2,
     "positioning": "Middle",
     "height": 156,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "AR"
   },
   "Shiroko_(Riding)": {
     "id": "Shiroko_(Riding)",
@@ -2097,7 +2395,9 @@
     "exSkillCost": 4,
     "positioning": "Middle",
     "height": 156,
-    "outfit": "Riding"
+    "outfit": "Riding",
+    "releaseDate": "2021/08/12",
+    "weaponType": "AR"
   },
   "Shiroko_(Swimsuit)": {
     "id": "Shiroko_(Swimsuit)",
@@ -2111,7 +2411,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 156,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2023/07/17",
+    "weaponType": "AR"
   },
   "Shizuko": {
     "id": "Shizuko",
@@ -2125,7 +2427,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 153,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/25",
+    "weaponType": "SG"
   },
   "Shizuko_(Swimsuit)": {
     "id": "Shizuko_(Swimsuit)",
@@ -2139,7 +2443,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 153,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2022/07/20",
+    "weaponType": "SG"
   },
   "Shokuhou_Misaki": {
     "id": "Shokuhou_Misaki",
@@ -2153,7 +2459,9 @@
     "exSkillCost": 5,
     "positioning": "Middle",
     "height": null,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/10/24",
+    "weaponType": "HG"
   },
   "Shun": {
     "id": "Shun",
@@ -2167,7 +2475,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 174,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SR"
   },
   "Shun_(Kid)": {
     "id": "Shun_(Kid)",
@@ -2181,7 +2491,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": null,
-    "outfit": "Kid"
+    "outfit": "Kid",
+    "releaseDate": "2021/08/26",
+    "weaponType": "SR"
   },
   "Sumire": {
     "id": "Sumire",
@@ -2195,7 +2507,9 @@
     "exSkillCost": 3,
     "positioning": "Front",
     "height": 167,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SG"
   },
   "Suzumi": {
     "id": "Suzumi",
@@ -2209,7 +2523,9 @@
     "exSkillCost": 4,
     "positioning": "Middle",
     "height": 162,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "AR"
   },
   "Toki": {
     "id": "Toki",
@@ -2223,7 +2539,9 @@
     "exSkillCost": 2,
     "positioning": "Middle",
     "height": 165,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/02/22",
+    "weaponType": "AR"
   },
   "Toki_(Bunny_Girl)": {
     "id": "Toki_(Bunny_Girl)",
@@ -2237,7 +2555,9 @@
     "exSkillCost": 2,
     "positioning": "Middle",
     "height": 165,
-    "outfit": "Bunny Girl"
+    "outfit": "Bunny Girl",
+    "releaseDate": "2023/04/26",
+    "weaponType": "AR"
   },
   "Tomoe": {
     "id": "Tomoe",
@@ -2251,7 +2571,9 @@
     "exSkillCost": 3,
     "positioning": "Back",
     "height": 165,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/11/30",
+    "weaponType": "SR"
   },
   "Tsubaki": {
     "id": "Tsubaki",
@@ -2265,7 +2587,9 @@
     "exSkillCost": 4,
     "positioning": "Front",
     "height": 162,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SMG"
   },
   "Tsubaki_(Guide)": {
     "id": "Tsubaki_(Guide)",
@@ -2279,7 +2603,9 @@
     "exSkillCost": 6,
     "positioning": "Back",
     "height": 162,
-    "outfit": "Guide"
+    "outfit": "Guide",
+    "releaseDate": "2024/03/27",
+    "weaponType": "SMG"
   },
   "Tsukuyo": {
     "id": "Tsukuyo",
@@ -2293,7 +2619,9 @@
     "exSkillCost": 3,
     "positioning": "Front",
     "height": 180,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/05/11",
+    "weaponType": "SMG"
   },
   "Tsurugi": {
     "id": "Tsurugi",
@@ -2307,7 +2635,9 @@
     "exSkillCost": 3,
     "positioning": "Front",
     "height": 162,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SG"
   },
   "Tsurugi_(Swimsuit)": {
     "id": "Tsurugi_(Swimsuit)",
@@ -2321,7 +2651,9 @@
     "exSkillCost": 3,
     "positioning": "Front",
     "height": 162,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2021/06/30",
+    "weaponType": "SG"
   },
   "Ui": {
     "id": "Ui",
@@ -2335,7 +2667,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 165,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/02/23",
+    "weaponType": "SR"
   },
   "Ui_(Swimsuit)": {
     "id": "Ui_(Swimsuit)",
@@ -2349,7 +2683,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 165,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2023/07/24",
+    "weaponType": "SR"
   },
   "Umika": {
     "id": "Umika",
@@ -2363,7 +2699,9 @@
     "exSkillCost": 3,
     "positioning": "Middle",
     "height": 165,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2024/03/27",
+    "weaponType": "AR"
   },
   "Utaha": {
     "id": "Utaha",
@@ -2377,7 +2715,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 162,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SMG"
   },
   "Utaha_(Cheerleader)": {
     "id": "Utaha_(Cheerleader)",
@@ -2391,7 +2731,9 @@
     "exSkillCost": 5,
     "positioning": "Front",
     "height": 162,
-    "outfit": "Cheerleader"
+    "outfit": "Cheerleader",
+    "releaseDate": "2022/09/28",
+    "weaponType": "SMG"
   },
   "Wakamo": {
     "id": "Wakamo",
@@ -2405,7 +2747,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 161,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2022/01/26",
+    "weaponType": "SR"
   },
   "Wakamo_(Swimsuit)": {
     "id": "Wakamo_(Swimsuit)",
@@ -2419,7 +2763,9 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 161,
-    "outfit": "Swimsuit"
+    "outfit": "Swimsuit",
+    "releaseDate": "2022/06/22",
+    "weaponType": "SR"
   },
   "Yoshimi": {
     "id": "Yoshimi",
@@ -2433,7 +2779,9 @@
     "exSkillCost": 4,
     "positioning": "Back",
     "height": 146,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "AR"
   },
   "Yoshimi_(Band)": {
     "id": "Yoshimi_(Band)",
@@ -2447,7 +2795,9 @@
     "exSkillCost": 10,
     "positioning": "Middle",
     "height": 146,
-    "outfit": "Band"
+    "outfit": "Band",
+    "releaseDate": "2024/04/24",
+    "weaponType": "AR"
   },
   "Yukari": {
     "id": "Yukari",
@@ -2461,7 +2811,9 @@
     "exSkillCost": 7,
     "positioning": "Back",
     "height": 155,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2023/11/08",
+    "weaponType": "SR"
   },
   "Yuuka": {
     "id": "Yuuka",
@@ -2475,7 +2827,9 @@
     "exSkillCost": 3,
     "positioning": "Front",
     "height": 156,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/02/04",
+    "weaponType": "SMG"
   },
   "Yuuka_(Sportswear)": {
     "id": "Yuuka_(Sportswear)",
@@ -2489,7 +2843,9 @@
     "exSkillCost": 3,
     "positioning": "Front",
     "height": 156,
-    "outfit": "Sportswear"
+    "outfit": "Sportswear",
+    "releaseDate": "2022/10/26",
+    "weaponType": "SMG"
   },
   "Yuzu": {
     "id": "Yuzu",
@@ -2503,7 +2859,9 @@
     "exSkillCost": 4,
     "positioning": "Middle",
     "height": 150,
-    "outfit": "Default"
+    "outfit": "Default",
+    "releaseDate": "2021/05/13",
+    "weaponType": "GL"
   },
   "Yuzu_(Maid)": {
     "id": "Yuzu_(Maid)",
@@ -2517,6 +2875,8 @@
     "exSkillCost": 5,
     "positioning": "Back",
     "height": 150,
-    "outfit": "Maid"
+    "outfit": "Maid",
+    "releaseDate": "2023/04/26",
+    "weaponType": "GL"
   }
 }
