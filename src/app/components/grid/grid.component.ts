@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Student } from '../../../models/student';
+import { RULES } from '../../constants/rules';
 import { GridEmptyRowComponent } from '../grid-empty-row/grid-empty-row.component';
 import { GridHeaderComponent } from '../grid-header/grid-header.component';
 import { GridRowComponent } from '../grid-row/grid-row.component';
@@ -16,7 +17,7 @@ export class GridComponent {
 
   @Input() target: Student;
 
-  private readonly numberOfGuesses = 6;
+  private readonly numberOfGuesses = RULES.MAX_GUESSES;
 
   get numberOfEmptyRows(): number[] {
     return new Array(this.numberOfGuesses - this.guesses.length).fill(0);

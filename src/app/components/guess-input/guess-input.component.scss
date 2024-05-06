@@ -1,17 +1,62 @@
 .guess-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-    margin-right: 16px;
+  min-width: 25%;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.guess-full-width {
-    width: 100%;
+mat-form-field {
+  width: 25%;
 }
 
-.guess-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 16px;
+.outline-white {
+  --mdc-outlined-text-field-outline-color: whitesmoke;
+  --mdc-outlined-text-field-label-text-color: whitesmoke;
+  --mdc-outlined-text-field-input-text-color: whitesmoke;
+  --mat-full-pseudo-checkbox-unselected-icon-color: whitesmoke;
+
+  --mdc-outlined-text-field-hover-outline-color: whitesmoke;
+  --mdc-outlined-text-field-hover-label-text-color: whitesmoke;
+  --mdc-outlined-text-field-hover-input-text-color: whitesmoke;
+
+  --mdc-outlined-text-field-caret-color: whitesmoke;
+  --mat-minimal-pseudo-checkbox-selected-checkmark-color: whitesmoke;
+  --mat-full-pseudo-checkbox-selected-icon-color: whitesmoke;
+  --mdc-outlined-text-field-focus-label-text-color: whitesmoke;
+  --mat-option-selected-state-label-text-color: whitesmoke;
+  --mdc-outlined-text-field-focus-outline-color: whitesmoke;
+
+  --mdc-outlined-text-field-disabled-label-text-color: rgba(
+    255,
+    255,
+    255,
+    0.38
+  );
+  --mdc-outlined-text-field-disabled-input-text-color: rgba(
+    255,
+    255,
+    255,
+    0.38
+  );
+  --mdc-outlined-text-field-disabled-outline-color: rgba(255, 255, 255, 0.38);
+  --mdc-outlined-text-field-disabled-hover-outline-color: rgba(
+    255,
+    255,
+    255,
+    0.38
+  );
+  --mdc-outlined-text-field-disabled-hover-label-text-color: rgba(
+    255,
+    255,
+    255,
+    0.38
+  );
+  --mdc-outlined-text-field-disabled-hover-input-text-color: rgba(
+    255,
+    255,
+    255,
+    0.38
+  );
 }
