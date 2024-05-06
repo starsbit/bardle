@@ -1,4 +1,40 @@
-@if (isStudentElement && !useIconInsteadOfName) {
+@if(isRoleElement && isCorrect) {
+<div class="correct box" [style.animation-delay.ms]="animationDelayInMs">
+  <img
+    [src]="assetService.getRoleImage(guessAttribute)"
+    [alt]="guessAttribute"
+    class="icon img-appear"
+    [style.animation-delay.ms]="animationDelayInMs"
+  />
+</div>
+} @else if (isRoleElement && !isCorrect) {
+<div class="incorrect box" [style.animation-delay.ms]="animationDelayInMs">
+  <img
+    [src]="assetService.getRoleImage(guessAttribute)"
+    [alt]="guessAttribute"
+    class="icon img-appear"
+    [style.animation-delay.ms]="animationDelayInMs"
+  />
+</div>
+} @else if (isSchoolElement && isCorrect) {
+<div class="correct box" [style.animation-delay.ms]="animationDelayInMs">
+  <img
+    [src]="assetService.getSchoolImage(guessAttribute)"
+    [alt]="guessAttribute"
+    class="icon img-appear"
+    [style.animation-delay.ms]="animationDelayInMs"
+  />
+</div>
+} @else if (isSchoolElement && !isCorrect) {
+<div class="incorrect box" [style.animation-delay.ms]="animationDelayInMs">
+  <img
+    [src]="assetService.getSchoolImage(guessAttribute)"
+    [alt]="guessAttribute"
+    class="icon img-appear"
+    [style.animation-delay.ms]="animationDelayInMs"
+  />
+</div>
+} @else if (isStudentElement && !useIconInsteadOfName) {
 <div class="student box" [style.animation-delay.ms]="animationDelayInMs">
   {{ label }}
 </div>

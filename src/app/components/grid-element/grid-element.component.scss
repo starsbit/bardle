@@ -22,6 +22,14 @@
   border-radius: 5px;
 }
 
+.icon {
+  width: 75%;
+  height: 75%;
+  display: block;
+  opacity: 0;
+  border-radius: 5px;
+}
+
 .img-appear {
   animation: fadeInSlideUp 500ms ease-out forwards;
 }
@@ -57,14 +65,14 @@
 
 @keyframes bgCorrect {
   100% {
-    background-color: green;
+    background-color: #50c878;
     color: whitesmoke;
   }
 }
 
 @keyframes bgIncorrect {
   100% {
-    background-color: grey;
+    background-color: lightgray;
     color: whitesmoke;
   }
 }

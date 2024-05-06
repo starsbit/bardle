@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AssetService } from '../../services/asset.service';
 
 @Component({
   selector: 'ba-grid-element',
@@ -11,9 +12,13 @@ export class GridElementComponent {
   @Input() guessAttribute: any;
   @Input() targetAttribute: any;
   @Input() isStudentElement = false;
+  @Input() isSchoolElement = false;
+  @Input() isRoleElement = false;
   @Input() useIconInsteadOfName = false;
   @Input() animationDelayInMs = 0;
   @Input() alternativeLabel = '';
+
+  constructor(readonly assetService: AssetService) {}
 
   get isCorrect(): boolean {
     return this.guessAttribute === this.targetAttribute;
