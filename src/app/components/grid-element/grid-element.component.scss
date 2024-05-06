@@ -37,6 +37,14 @@
   animation: flip 500ms ease forwards, bgCorrect 500ms ease forwards;
 }
 
+.win {
+  animation-name: flip-win;
+  animation-duration: 2500ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
 .incorrect {
   animation: flip 500ms ease forwards, bgIncorrect 500ms ease forwards;
 }
@@ -49,6 +57,29 @@
 
   50% {
     transform: scaleY(0);
+  }
+}
+
+@keyframes flip-win {
+  0% {
+    transform: translateY(0);
+    background-color: #50c878;
+    color: whitesmoke;
+  }
+  75% {
+    transform: translateY(0);
+    background-color: #50c878;
+    color: whitesmoke;
+  }
+  88% {
+    transform: translateY(-10px);
+    background-color: #50c878;
+    color: whitesmoke;
+  }
+  100% {
+    transform: translateY(0);
+    background-color: #50c878;
+    color: whitesmoke;
   }
 }
 
@@ -73,5 +104,23 @@
   100% {
     background-color: rgb(160, 160, 160);
     color: whitesmoke;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(0);
+  }
+
+  88% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }

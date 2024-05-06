@@ -38,6 +38,16 @@ export class StudentService {
     return this.background;
   }
 
+  getYesterdaysStudent(): Student | null {
+    if (!this.students) {
+      return null;
+    }
+    const yesterday = moment().utc().subtract(1, 'days').format('DD.MM.YYYY');
+    const index = this.hashCode(yesterday) % Object.keys(this.students).length;
+    const keys: string[] = Object.keys(this.students);
+    return this.students[keys[index]];
+  }
+
   private pickCharacterOfTheDay() {
     const today = moment().utc().format('DD.MM.YYYY'); // Get the current date as a string
     const index = this.hashCode(today) % Object.keys(this.students).length; // Map the date string to an index

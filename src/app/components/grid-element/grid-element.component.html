@@ -1,4 +1,13 @@
-@if(isRoleElement && isCorrect) {
+@if (isRoleElement && winningElement) {
+<div class="win box" [style.animation-delay.ms]="animationDelayInMs">
+  <img
+    [src]="assetService.getRoleImage(guessAttribute)"
+    [alt]="guessAttribute"
+    class="icon img-appear"
+    [style.animation-delay.ms]="animationDelayInMs"
+  />
+</div>
+} @else if(isRoleElement && isCorrect) {
 <div class="correct box" [style.animation-delay.ms]="animationDelayInMs">
   <img
     [src]="assetService.getRoleImage(guessAttribute)"
@@ -7,10 +16,19 @@
     [style.animation-delay.ms]="animationDelayInMs"
   />
 </div>
-} @else if (isRoleElement && !isCorrect) {
+} @else if (isRoleElement) {
 <div class="incorrect box" [style.animation-delay.ms]="animationDelayInMs">
   <img
     [src]="assetService.getRoleImage(guessAttribute)"
+    [alt]="guessAttribute"
+    class="icon img-appear"
+    [style.animation-delay.ms]="animationDelayInMs"
+  />
+</div>
+} @else if (isSchoolElement && winningElement) {
+<div class="box win" [style.animation-delay.ms]="animationDelayInMs">
+  <img
+    [src]="assetService.getSchoolImage(guessAttribute)"
     [alt]="guessAttribute"
     class="icon img-appear"
     [style.animation-delay.ms]="animationDelayInMs"
@@ -25,7 +43,7 @@
     [style.animation-delay.ms]="animationDelayInMs"
   />
 </div>
-} @else if (isSchoolElement && !isCorrect) {
+} @else if (isSchoolElement) {
 <div class="incorrect box" [style.animation-delay.ms]="animationDelayInMs">
   <img
     [src]="assetService.getSchoolImage(guessAttribute)"
@@ -34,8 +52,16 @@
     [style.animation-delay.ms]="animationDelayInMs"
   />
 </div>
+} @else if (isStudentElement && winningElement && !useIconInsteadOfName) {
+<div class="win student box" [style.animation-delay.ms]="animationDelayInMs">
+  {{ label }}
+</div>
 } @else if (isStudentElement && !useIconInsteadOfName) {
 <div class="student box" [style.animation-delay.ms]="animationDelayInMs">
+  {{ label }}
+</div>
+} @else if (winningElement && !useIconInsteadOfName) {
+<div class="win box" [style.animation-delay.ms]="animationDelayInMs">
   {{ label }}
 </div>
 } @else if (isCorrect && !useIconInsteadOfName) {
@@ -46,12 +72,21 @@
 <div class="incorrect box" [style.animation-delay.ms]="animationDelayInMs">
   {{ label }}
 </div>
-} @else if (useIconInsteadOfName) {
-<div class="student box">
+} @else if (winningElement && useIconInsteadOfName) {
+<div class="student box win">
   <img
     [src]="image"
     [alt]="alternativeLabel"
-    class="portrait img-appear"
+    class="portrait"
+    [style.animation-delay.ms]="animationDelayInMs"
+  />
+</div>
+} @else if (useIconInsteadOfName) {
+<div class="student box correct">
+  <img
+    [src]="image"
+    [alt]="alternativeLabel"
+    class="portrait"
     [style.animation-delay.ms]="animationDelayInMs"
   />
 </div>

@@ -4,11 +4,12 @@ import { RULES } from '../../constants/rules';
 import { StudentService } from '../../services/student.service';
 import { GridComponent } from '../grid/grid.component';
 import { GuessInputComponent } from '../guess-input/guess-input.component';
+import { YesterdaysStudentComponent } from '../yesterdays-student/yesterdays-student.component';
 
 @Component({
   selector: 'ba-guess-game',
   standalone: true,
-  imports: [GridComponent, GuessInputComponent],
+  imports: [GridComponent, GuessInputComponent, YesterdaysStudentComponent],
   templateUrl: './guess-game.component.html',
   styleUrl: './guess-game.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -29,7 +30,6 @@ export class GuessGameComponent {
 
   onGuess(guesses: Student[]): void {
     this.guesses = guesses;
-
     if (
       this.latestGuess &&
       this.latestGuess === this.studentService.getTarget()

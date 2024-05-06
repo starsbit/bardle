@@ -4,52 +4,62 @@
     [guessAttribute]="guess.id"
     [useIconInsteadOfName]="true"
     [alternativeLabel]="target.fullName"
+    [winningElement]="target.id === guess.id"
   ></ba-grid-element>
   <ba-grid-element
     [targetAttribute]="target.school"
     [guessAttribute]="guess.school"
     [animationDelayInMs]="200"
     [isSchoolElement]="true"
+    [winningElement]="target.id === guess.id"
   ></ba-grid-element>
   <ba-grid-element
     [targetAttribute]="target.damageType"
     [guessAttribute]="guess.damageType"
     [animationDelayInMs]="400"
+    [winningElement]="target.id === guess.id"
   ></ba-grid-element>
   <ba-grid-element
     [targetAttribute]="target.armorType"
     [guessAttribute]="guess.armorType"
     [animationDelayInMs]="600"
+    [winningElement]="target.id === guess.id"
   ></ba-grid-element>
   <ba-grid-element
     [targetAttribute]="target.role"
     [guessAttribute]="guess.role"
     [animationDelayInMs]="800"
     [isRoleElement]="true"
+    [winningElement]="target.id === guess.id"
   ></ba-grid-element>
   <ba-grid-element
     [targetAttribute]="target.combatClass"
     [guessAttribute]="guess.combatClass"
     [animationDelayInMs]="1000"
+    [winningElement]="target.id === guess.id"
   ></ba-grid-element>
   <ba-grid-element
     [targetAttribute]="target.exSkillCost"
     [guessAttribute]="guess.exSkillCost"
     [animationDelayInMs]="1200"
+    [winningElement]="target.id === guess.id"
   ></ba-grid-element>
   <ba-grid-element
     [targetAttribute]="target.positioning"
     [guessAttribute]="guess.positioning"
     [animationDelayInMs]="1400"
+    [winningElement]="target.id === guess.id"
   ></ba-grid-element>
   <ba-grid-element
     [targetAttribute]="target.height"
     [guessAttribute]="guess.height"
     [animationDelayInMs]="1600"
+    [winningElement]="target.id === guess.id"
   ></ba-grid-element>
   <ba-grid-element
     [targetAttribute]="target.releaseDate"
     [guessAttribute]="guess.releaseDate"
     [animationDelayInMs]="1800"
+    [winningElement]="target.id === guess.id"
   ></ba-grid-element>
 </div>

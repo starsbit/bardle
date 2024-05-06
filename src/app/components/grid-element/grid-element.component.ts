@@ -18,6 +18,7 @@ export class GridElementComponent {
   @Input() useIconInsteadOfName = false;
   @Input() animationDelayInMs = 0;
   @Input() alternativeLabel = '';
+  @Input() winningElement = false;
 
   constructor(readonly assetService: AssetService) {}
 
@@ -67,7 +68,7 @@ export class GridElementComponent {
     return '';
   }
 
-  isDateString(s: string) {
+  private isDateString(s: string) {
     return !isNaN(Date.parse(s));
   }
 }
