@@ -11,6 +11,26 @@ mat-form-field {
   width: 25%;
 }
 
+::ng-deep .mat-mdc-option {
+  color: whitesmoke;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+::ng-deep .mdc-list-item__primary-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > img {
+    margin-right: 8px;
+  }
+}
+
+.portrait {
+  width: 48px;
+  height: 48px;
+}
+
 .outline-white {
   --mdc-outlined-text-field-outline-color: whitesmoke;
   --mdc-outlined-text-field-label-text-color: whitesmoke;
@@ -28,35 +48,25 @@ mat-form-field {
   --mat-option-selected-state-label-text-color: whitesmoke;
   --mdc-outlined-text-field-focus-outline-color: whitesmoke;
 
-  --mdc-outlined-text-field-disabled-label-text-color: rgba(
-    255,
-    255,
-    255,
-    0.38
-  );
-  --mdc-outlined-text-field-disabled-input-text-color: rgba(
-    255,
-    255,
-    255,
-    0.38
-  );
-  --mdc-outlined-text-field-disabled-outline-color: rgba(255, 255, 255, 0.38);
+  --mdc-outlined-text-field-disabled-label-text-color: rgba(255, 255, 255, 0.3);
+  --mdc-outlined-text-field-disabled-input-text-color: rgba(255, 255, 255, 0.3);
+  --mdc-outlined-text-field-disabled-outline-color: rgba(255, 255, 255, 0.3);
   --mdc-outlined-text-field-disabled-hover-outline-color: rgba(
     255,
     255,
     255,
-    0.38
+    0.3
   );
   --mdc-outlined-text-field-disabled-hover-label-text-color: rgba(
     255,
     255,
     255,
-    0.38
+    0.3
   );
   --mdc-outlined-text-field-disabled-hover-input-text-color: rgba(
     255,
     255,
     255,
-    0.38
+    0.3
   );
 }

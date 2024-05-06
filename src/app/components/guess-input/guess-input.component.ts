@@ -1,6 +1,7 @@
 import { AsyncPipe } from '@angular/common';
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   Input,
@@ -17,7 +18,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { BehaviorSubject } from 'rxjs';
 import { Student } from '../../../models/student';
-import { RULES } from '../../constants/rules';
 import { StudentService } from '../../services/student.service';
 
 @Component({
@@ -48,14 +48,18 @@ export class GuessInputComponent implements OnChanges {
   >([]);
 
   @Input() won = false;
+  @Input() lost = false;
 
-  constructor(private readonly studentService: StudentService) {
+  constructor(
+    private readonly studentService: StudentService,
+    private readonly cdr: ChangeDetectorRef
+  ) {
     this.options = this.studentService.getStudents();
     this.filteredOptions = this.options.slice();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.won || this.guesses.getValue().length >= RULES.MAX_GUESSES) {
+    if (this.won || this.lost) {
       this.myControl.disable();
     }
   }
@@ -68,12 +72,13 @@ export class GuessInputComponent implements OnChanges {
   }
 
   onSelection(selection: Student): void {
-    if (this.won || this.guesses.getValue().length >= RULES.MAX_GUESSES) {
+    if (this.won || this.lost) {
       this.myControl.disable();
     }
     this.guesses.next([...this.guesses.getValue(), selection]);
     this.options = this.options.filter((o) => o !== selection);
     this.myControl.reset();
     this.filteredOptions = this.options.slice();
+    this.cdr.detectChanges();
   }
 }

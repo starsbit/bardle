@@ -1,4 +1,9 @@
 <div class="game-wrapper">
-  <ba-guess-input [won]="won" (guesses)="onGuess($event)" class="input"></ba-guess-input>
+  <ba-guess-input
+    [won]="won"
+    [lost]="lost"
+    (guesses)="onGuess($event)"
+    class="input"
+  ></ba-guess-input>
   <ba-grid [guesses]="guesses"></ba-grid>
 </div>

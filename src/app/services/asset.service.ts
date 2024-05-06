@@ -24,7 +24,6 @@ export class AssetService {
   }
 
   getSchoolImage(school: string): string {
-    console.log(school);
     switch (school) {
       case 'Abydos':
         return 'assets/images/schools/50px-Abydos.webp';

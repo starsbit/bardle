@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { AssetService } from '../../services/asset.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { AssetService } from '../../services/asset.service';
   imports: [],
   templateUrl: './grid-element.component.html',
   styleUrl: './grid-element.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridElementComponent {
   @Input() guessAttribute: any;

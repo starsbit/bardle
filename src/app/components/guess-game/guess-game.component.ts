@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Student } from '../../../models/student';
+import { RULES } from '../../constants/rules';
 import { StudentService } from '../../services/student.service';
 import { GridComponent } from '../grid/grid.component';
 import { GuessInputComponent } from '../guess-input/guess-input.component';
@@ -10,6 +11,7 @@ import { GuessInputComponent } from '../guess-input/guess-input.component';
   imports: [GridComponent, GuessInputComponent],
   templateUrl: './guess-game.component.html',
   styleUrl: './guess-game.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GuessGameComponent {
   // The list of guesses made by the player
@@ -17,6 +19,7 @@ export class GuessGameComponent {
   guesses: Student[] = [];
 
   won = false;
+  lost = false;
 
   constructor(private readonly studentService: StudentService) {}
 
@@ -32,6 +35,9 @@ export class GuessGameComponent {
       this.latestGuess === this.studentService.getTarget()
     ) {
       this.won = true;
+    }
+    if (this.guesses.length >= RULES.MAX_GUESSES && !this.won) {
+      this.lost = true;
     }
   }
 }

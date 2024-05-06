@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'ba-grid-header',
   standalone: true,
   imports: [],
   templateUrl: './grid-header.component.html',
-  styleUrl: './grid-header.component.scss'
+  styleUrl: './grid-header.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GridHeaderComponent {
-
-}
+export class GridHeaderComponent {}

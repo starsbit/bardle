@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Student } from '../../../models/student';
 import { RULES } from '../../constants/rules';
 import { GridEmptyRowComponent } from '../grid-empty-row/grid-empty-row.component';
@@ -11,6 +11,7 @@ import { GridRowComponent } from '../grid-row/grid-row.component';
   imports: [GridRowComponent, GridHeaderComponent, GridEmptyRowComponent],
   templateUrl: './grid.component.html',
   styleUrl: './grid.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridComponent {
   @Input() guesses: Student[] = [];
