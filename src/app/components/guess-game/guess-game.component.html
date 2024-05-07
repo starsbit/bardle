@@ -8,7 +8,13 @@
     (guesses)="onGuess($event)"
     class="input"
   ></ba-guess-input>
+
+  @if (won || lost) {
+  <ba-solution></ba-solution>
+  }
+
   <ba-grid [guesses]="guesses"></ba-grid>
+
   <ba-yesterdays-student></ba-yesterdays-student>
 </div>
 <footer>
