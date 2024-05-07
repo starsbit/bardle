@@ -21,6 +21,7 @@ export class GridElementComponent implements OnInit {
   @Input() isStudentElement = false;
   @Input() isSchoolElement = false;
   @Input() isRoleElement = false;
+  @Input() isCombatClass = false;
   @Input() useIconInsteadOfName = false;
   @Input() animationDelayInMs = 0;
   @Input() alternativeLabel = '';
@@ -32,8 +33,9 @@ export class GridElementComponent implements OnInit {
   constructor(readonly assetService: AssetService) {}
 
   ngOnInit(): void {
-    console.log('GridElementComponent created');
-    console.log('this.guessAttribute', this.guessAttribute);
+    if (this.isCombatClass) {
+      return;
+    }
     switch (this.guessAttribute) {
       case 'Normal':
         this.fontColor = '#4b5884';
