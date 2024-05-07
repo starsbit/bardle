@@ -9,8 +9,9 @@
   width: 76px;
   height: 76px;
   margin: 5px;
-  color: transparent;
   border-radius: 8px;
+  opacity: 0;
+  color: whitesmoke;
 }
 
 .portrait {
@@ -93,8 +94,8 @@
 
   100% {
     background-color: #50c878;
-    color: whitesmoke;
     transform: scaleY(1);
+    opacity: 1;
   }
 }
 
@@ -109,8 +110,8 @@
 
   100% {
     background-color: rgb(160, 160, 160);
-    color: whitesmoke;
     transform: scaleY(1);
+    opacity: 1;
   }
 }
 

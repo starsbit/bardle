@@ -1,5 +1,10 @@
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { AssetService } from '../../services/asset.service';
 
 @Component({
@@ -10,7 +15,7 @@ import { AssetService } from '../../services/asset.service';
   styleUrl: './grid-element.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GridElementComponent {
+export class GridElementComponent implements OnInit {
   @Input() guessAttribute: any;
   @Input() targetAttribute: any;
   @Input() isStudentElement = false;
@@ -21,7 +26,40 @@ export class GridElementComponent {
   @Input() alternativeLabel = '';
   @Input() winningElement = false;
 
+  fontColor = 'whitesmoke';
+  textBorder = 'none';
+
   constructor(readonly assetService: AssetService) {}
+
+  ngOnInit(): void {
+    console.log('GridElementComponent created');
+    console.log('this.guessAttribute', this.guessAttribute);
+    switch (this.guessAttribute) {
+      case 'Normal':
+        this.fontColor = '#4b5884';
+        break;
+      case 'Explosive':
+      case 'Light':
+        this.fontColor = '#920008';
+        break;
+      case 'Piercing':
+      case 'Heavy':
+        this.fontColor = '#bd8802';
+        break;
+      case 'Mystic':
+      case 'Special':
+        this.fontColor = '#226f9b';
+        break;
+      case 'Sonic':
+      case 'Elastic':
+        this.fontColor = '#9a49a9';
+        break;
+    }
+    if (this.fontColor !== 'whitesmoke') {
+      this.textBorder =
+        '-1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke';
+    }
+  }
 
   get isCorrect(): boolean {
     return this.guessAttribute === this.targetAttribute;

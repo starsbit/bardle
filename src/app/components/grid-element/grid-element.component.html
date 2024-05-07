@@ -65,23 +65,48 @@
   />
 </div>
 } @else if (isStudentElement && winningElement && !useIconInsteadOfName) {
-<div class="win student box" [style.animation-delay.ms]="animationDelayInMs">
+<div
+  [style.color]="fontColor"
+  class="win student box"
+  [style.animation-delay.ms]="animationDelayInMs"
+  [style.text-shadow]="textBorder"
+>
   {{ label }}
 </div>
 } @else if (isStudentElement && !useIconInsteadOfName) {
-<div class="student box" [style.animation-delay.ms]="animationDelayInMs">
+<div
+  [style.color]="fontColor"
+  class="student box"
+  [style.animation-delay.ms]="animationDelayInMs"
+  [style.text-shadow]="textBorder"
+>
   {{ label }}
 </div>
 } @else if (winningElement && !useIconInsteadOfName) {
-<div class="win box" [style.animation-delay.ms]="animationDelayInMs">
+<div
+  [style.color]="fontColor"
+  class="win box"
+  [style.animation-delay.ms]="animationDelayInMs"
+  [style.text-shadow]="textBorder"
+>
   {{ label }}
 </div>
 } @else if (isCorrect && !useIconInsteadOfName) {
-<div class="correct box" [style.animation-delay.ms]="animationDelayInMs">
+<div
+  [style.color]="fontColor"
+  class="correct box"
+  [style.animation-delay.ms]="animationDelayInMs"
+  [style.text-shadow]="textBorder"
+>
   {{ label }}
 </div>
 } @else if (!isCorrect && !useIconInsteadOfName){
-<div class="incorrect box" [style.animation-delay.ms]="animationDelayInMs">
+<div
+  [style.color]="fontColor"
+  class="incorrect box"
+  [style.animation-delay.ms]="animationDelayInMs"
+  [style.text-shadow]="textBorder"
+>
   {{ label }}
 </div>
 } @else if (winningElement && useIconInsteadOfName) {
