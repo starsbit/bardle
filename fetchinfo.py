@@ -5,6 +5,9 @@ import re
 import os
 import glob
 
+
+global merged_data
+
 def extract_integer(s):
     match = re.search(r'\d+', s)
     if match:
@@ -12,7 +15,7 @@ def extract_integer(s):
     else:
         return None
 
-def generate_info_from_url(url):
+def generate_info_from_url(url, image_name):
 
     # Fetch the HTML content of the webpage
     response = requests.get(url)
@@ -83,68 +86,50 @@ def generate_info_from_url(url):
             "outfit": outfit,
             "releaseDate": releaseDate,
             "weaponType": weaponType,
+            "image": image_name
         }
 
-        file_name = name + ".json"
-        # Store the dictionary in a JSON file inside the 
-
-        file_path = os.path.join(folder_path, file_name)
-        with open(file_path , 'w') as json_file:
-            json.dump(character_info, json_file, indent=4)
+        merged_json[name] = character_info
 
         print("Character Information:", character_info)
         
-def generate_url_from_string(image_name):
-    # Remove .png from the image name
-    string = image_name.replace(".png", "")
+def generate_url_from_string(article_name):
     # Generate the URL from the string
-    url = "https://bluearchive.wiki/wiki/" + string
+    url = "https://bluearchive.wiki/wiki/" + article_name
     return url
 
-def get_all_pngs_from_folder(folder_path):
-    import os
-    png_files = [f for f in os.listdir(folder_path) if f.endswith('.png')]
-    return png_files
+def get_all_articles_from_file(folder_path):
+    files = None
+    with open(folder_path, 'r') as json_file:
+        data = json.load(json_file)
+        files = data['wikiArticles']
 
-def merge_json_files(folder_path):
-    merged_data = {}
-    for filename in os.listdir(folder_path):
-        if filename.endswith('.json'):
-            with open(os.path.join(folder_path, filename)) as f:
-                file_data = json.load(f)
-                file_name = os.path.splitext(filename)[0]
-                merged_data[file_name] = file_data
-    return merged_data
+    return [file.replace(".png", "") for file in files]
 
 if __name__ == "__main__":
+
+    merged_json = {}
+
     # Get all the PNG files from the folder
     folder_path = "src/assets/"
 
-    png_files = get_all_pngs_from_folder(folder_path + "images/characters/")
-    for image_name in png_files:
-        # Generate the URL from the image name
-        url = generate_url_from_string(image_name)
-        print("URL for", image_name, ":", url)
-        # Generate the character information from the URL
-        generate_info_from_url(url)
-        print("\n")
+    all_articles = get_all_articles_from_file(folder_path + 'wikiArticles.json')
 
-    merged_json = merge_json_files(folder_path)
+    print("All articles:", all_articles)
+
+    for article_name in all_articles:
+        # Generate the URL from the image name
+        url = generate_url_from_string(article_name)
+        print("URL for", article_name, ":", url)
+
+        # Generate the character information from the URL
+        image_name = article_name.replace("_", "").replace("(", "").replace(")", "") + ".png"
+        generate_info_from_url(url, image_name)
+        print("\n")
 
     # Dump merged data into character_info.json
     with open(folder_path + 'character_info.json', 'w') as outfile:
         json.dump(merged_json, outfile)
 
     print("Merged data dumped into character_info.json")
-
-    # Get a list of all JSON files in the directory
-    json_files = glob.glob(os.path.join(folder_path, '*.json'))
-
-    # Filter out character_info.json
-    json_files = [file for file in json_files if os.path.basename(file) != 'character_info.json']
-
-    # Delete the remaining JSON files
-    for file in json_files:
-        os.remove(file)
-
-    print("All JSON files except character_info.json have been deleted.")
+    

@@ -13,7 +13,8 @@
     "height": 160,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Airi.png"
   },
   "Airi_(Band)": {
     "id": "Airi_(Band)",
@@ -29,7 +30,8 @@
     "height": 160,
     "outfit": "Band",
     "releaseDate": "2024/04/24",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "AiriBand.png"
   },
   "Akane": {
     "id": "Akane",
@@ -45,7 +47,8 @@
     "height": 164,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Akane.png"
   },
   "Akane_(Bunny_Girl)": {
     "id": "Akane_(Bunny_Girl)",
@@ -61,7 +64,8 @@
     "height": 164,
     "outfit": "Bunny Girl",
     "releaseDate": "2022/10/12",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "AkaneBunnyGirl.png"
   },
   "Akari": {
     "id": "Akari",
@@ -77,7 +81,8 @@
     "height": 167,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Akari.png"
   },
   "Akari_(New_Year)": {
     "id": "Akari_(New_Year)",
@@ -93,7 +98,8 @@
     "height": 167,
     "outfit": "New Year",
     "releaseDate": "2024/03/06",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "AkariNewYear.png"
   },
   "Ako": {
     "id": "Ako",
@@ -109,7 +115,8 @@
     "height": 165,
     "outfit": "Default",
     "releaseDate": "2021/11/17",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Ako.png"
   },
   "Ako_(Dress)": {
     "id": "Ako_(Dress)",
@@ -125,7 +132,8 @@
     "height": 165,
     "outfit": "Dress",
     "releaseDate": "2024/01/24",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "AkoDress.png"
   },
   "Arisu": {
     "id": "Arisu",
@@ -141,7 +149,8 @@
     "height": 152,
     "outfit": "Default",
     "releaseDate": "2021/03/25",
-    "weaponType": "RG"
+    "weaponType": "RG",
+    "image": "Arisu.png"
   },
   "Arisu_(Maid)": {
     "id": "Arisu_(Maid)",
@@ -157,7 +166,8 @@
     "height": 152,
     "outfit": "Maid",
     "releaseDate": "2023/04/26",
-    "weaponType": "RG"
+    "weaponType": "RG",
+    "image": "ArisuMaid.png"
   },
   "Aru": {
     "id": "Aru",
@@ -173,7 +183,8 @@
     "height": 160,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Aru.png"
   },
   "Aru_(Dress)": {
     "id": "Aru_(Dress)",
@@ -189,7 +200,8 @@
     "height": 160,
     "outfit": "Dress",
     "releaseDate": "2024/02/21",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "AruDress.png"
   },
   "Aru_(New_Year)": {
     "id": "Aru_(New_Year)",
@@ -205,7 +217,8 @@
     "height": 160,
     "outfit": "New Year",
     "releaseDate": "2021/12/29",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "AruNewYear.png"
   },
   "Asuna": {
     "id": "Asuna",
@@ -221,7 +234,8 @@
     "height": 167,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Asuna.png"
   },
   "Asuna_(Bunny_Girl)": {
     "id": "Asuna_(Bunny_Girl)",
@@ -237,7 +251,8 @@
     "height": 167,
     "outfit": "Bunny Girl",
     "releaseDate": "2021/10/12",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "AsunaBunnyGirl.png"
   },
   "Atsuko": {
     "id": "Atsuko",
@@ -253,7 +268,8 @@
     "height": 158,
     "outfit": "Default",
     "releaseDate": "2022/06/08",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Atsuko.png"
   },
   "Ayane": {
     "id": "Ayane",
@@ -269,7 +285,8 @@
     "height": 153,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Ayane.png"
   },
   "Ayane_(Swimsuit)": {
     "id": "Ayane_(Swimsuit)",
@@ -285,7 +302,8 @@
     "height": 153,
     "outfit": "Swimsuit",
     "releaseDate": "2022/06/22",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "AyaneSwimsuit.png"
   },
   "Azusa": {
     "id": "Azusa",
@@ -301,7 +319,8 @@
     "height": 149,
     "outfit": "Default",
     "releaseDate": "2021/05/27",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Azusa.png"
   },
   "Azusa_(Swimsuit)": {
     "id": "Azusa_(Swimsuit)",
@@ -317,7 +336,8 @@
     "height": 149,
     "outfit": "Swimsuit",
     "releaseDate": "2021/06/30",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "AzusaSwimsuit.png"
   },
   "Cherino": {
     "id": "Cherino",
@@ -333,7 +353,8 @@
     "height": 128,
     "outfit": "Default",
     "releaseDate": "2021/04/29",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Cherino.png"
   },
   "Cherino_(Hot_Spring)": {
     "id": "Cherino_(Hot_Spring)",
@@ -349,7 +370,8 @@
     "height": 128,
     "outfit": "Hot Spring",
     "releaseDate": "2021/11/30",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "CherinoHotSpring.png"
   },
   "Chihiro": {
     "id": "Chihiro",
@@ -365,7 +387,8 @@
     "height": 160,
     "outfit": "Default",
     "releaseDate": "2022/01/30",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Chihiro.png"
   },
   "Chinatsu": {
     "id": "Chinatsu",
@@ -381,7 +404,8 @@
     "height": 159,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Chinatsu.png"
   },
   "Chinatsu_(Hot_Spring)": {
     "id": "Chinatsu_(Hot_Spring)",
@@ -397,7 +421,8 @@
     "height": 159,
     "outfit": "Hot Spring",
     "releaseDate": "2021/11/30",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "ChinatsuHotSpring.png"
   },
   "Chise": {
     "id": "Chise",
@@ -413,7 +438,8 @@
     "height": 159,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "GL"
+    "weaponType": "GL",
+    "image": "Chise.png"
   },
   "Chise_(Swimsuit)": {
     "id": "Chise_(Swimsuit)",
@@ -429,7 +455,8 @@
     "height": 159,
     "outfit": "Swimsuit",
     "releaseDate": "2022/07/25",
-    "weaponType": "GL"
+    "weaponType": "GL",
+    "image": "ChiseSwimsuit.png"
   },
   "Eimi": {
     "id": "Eimi",
@@ -445,7 +472,8 @@
     "height": 167,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "Eimi.png"
   },
   "Eimi_(Swimsuit)": {
     "id": "Eimi_(Swimsuit)",
@@ -461,7 +489,8 @@
     "height": 167,
     "outfit": "Swimsuit",
     "releaseDate": "2023/12/06",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "EimiSwimsuit.png"
   },
   "Fubuki": {
     "id": "Fubuki",
@@ -477,7 +506,8 @@
     "height": 148,
     "outfit": "Default",
     "releaseDate": "2022/01/26",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Fubuki.png"
   },
   "Fuuka": {
     "id": "Fuuka",
@@ -493,7 +523,8 @@
     "height": 159,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Fuuka.png"
   },
   "Fuuka_(New_Year)": {
     "id": "Fuuka_(New_Year)",
@@ -509,7 +540,8 @@
     "height": 159,
     "outfit": "New Year",
     "releaseDate": "2022/12/28",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "FuukaNewYear.png"
   },
   "Hanae": {
     "id": "Hanae",
@@ -525,7 +557,8 @@
     "height": 150,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Hanae.png"
   },
   "Hanae_(Christmas)": {
     "id": "Hanae_(Christmas)",
@@ -541,7 +574,8 @@
     "height": 150,
     "outfit": "Christmas",
     "releaseDate": "2022/12/14",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "HanaeChristmas.png"
   },
   "Hanako": {
     "id": "Hanako",
@@ -557,7 +591,8 @@
     "height": 161,
     "outfit": "Default",
     "releaseDate": "2021/05/27",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Hanako.png"
   },
   "Hanako_(Swimsuit)": {
     "id": "Hanako_(Swimsuit)",
@@ -573,7 +608,8 @@
     "height": 161,
     "outfit": "Swimsuit",
     "releaseDate": "2023/08/02",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "HanakoSwimsuit.png"
   },
   "Hare": {
     "id": "Hare",
@@ -589,7 +625,8 @@
     "height": 153,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Hare.png"
   },
   "Hare_(Camping)": {
     "id": "Hare_(Camping)",
@@ -605,7 +642,8 @@
     "height": 153,
     "outfit": "Camping",
     "releaseDate": "2023/12/27",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "HareCamping.png"
   },
   "Haruka": {
     "id": "Haruka",
@@ -621,7 +659,8 @@
     "height": 157,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "Haruka.png"
   },
   "Haruka_(New_Year)": {
     "id": "Haruka_(New_Year)",
@@ -637,7 +676,8 @@
     "height": 157,
     "outfit": "New Year",
     "releaseDate": "2023/03/22",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "HarukaNewYear.png"
   },
   "Haruna": {
     "id": "Haruna",
@@ -653,7 +693,8 @@
     "height": 163,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Haruna.png"
   },
   "Haruna_(New_Year)": {
     "id": "Haruna_(New_Year)",
@@ -669,7 +710,8 @@
     "height": 163,
     "outfit": "New Year",
     "releaseDate": "2022/12/28",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "HarunaNewYear.png"
   },
   "Haruna_(Sportswear)": {
     "id": "Haruna_(Sportswear)",
@@ -685,7 +727,8 @@
     "height": 163,
     "outfit": "Sportswear",
     "releaseDate": "2023/09/15",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "HarunaSportswear.png"
   },
   "Hasumi": {
     "id": "Hasumi",
@@ -701,7 +744,8 @@
     "height": 179,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Hasumi.png"
   },
   "Hasumi_(Sportswear)": {
     "id": "Hasumi_(Sportswear)",
@@ -717,7 +761,8 @@
     "height": 179,
     "outfit": "Sportswear",
     "releaseDate": "2022/10/26",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "HasumiSportswear.png"
   },
   "Hatsune_Miku": {
     "id": "Hatsune_Miku",
@@ -733,7 +778,8 @@
     "height": 158,
     "outfit": "Default",
     "releaseDate": "2021/11/03",
-    "weaponType": "GL"
+    "weaponType": "GL",
+    "image": "HatsuneMiku.png"
   },
   "Hibiki": {
     "id": "Hibiki",
@@ -749,7 +795,8 @@
     "height": 154,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "MT"
+    "weaponType": "MT",
+    "image": "Hibiki.png"
   },
   "Hibiki_(Cheerleader)": {
     "id": "Hibiki_(Cheerleader)",
@@ -765,7 +812,8 @@
     "height": 154,
     "outfit": "Cheerleader",
     "releaseDate": "2022/09/28",
-    "weaponType": "MT"
+    "weaponType": "MT",
+    "image": "HibikiCheerleader.png"
   },
   "Hifumi": {
     "id": "Hifumi",
@@ -781,7 +829,8 @@
     "height": 158,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Hifumi.png"
   },
   "Hifumi_(Swimsuit)": {
     "id": "Hifumi_(Swimsuit)",
@@ -797,7 +846,8 @@
     "height": 158,
     "outfit": "Swimsuit",
     "releaseDate": "2021/07/15",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "HifumiSwimsuit.png"
   },
   "Himari": {
     "id": "Himari",
@@ -813,7 +863,8 @@
     "height": 162,
     "outfit": "Default",
     "releaseDate": "2022/11/16",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Himari.png"
   },
   "Hina": {
     "id": "Hina",
@@ -829,7 +880,8 @@
     "height": 142,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "Hina.png"
   },
   "Hinata": {
     "id": "Hinata",
@@ -845,7 +897,8 @@
     "height": 166,
     "outfit": "Default",
     "releaseDate": "2022/02/23",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Hinata.png"
   },
   "Hinata_(Swimsuit)": {
     "id": "Hinata_(Swimsuit)",
@@ -861,7 +914,8 @@
     "height": 166,
     "outfit": "Swimsuit",
     "releaseDate": "2023/07/24",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "HinataSwimsuit.png"
   },
   "Hina_(Dress)": {
     "id": "Hina_(Dress)",
@@ -877,7 +931,8 @@
     "height": 142,
     "outfit": "Dress",
     "releaseDate": "2024/01/31",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "HinaDress.png"
   },
   "Hina_(Swimsuit)": {
     "id": "Hina_(Swimsuit)",
@@ -893,7 +948,8 @@
     "height": 142,
     "outfit": "Swimsuit",
     "releaseDate": "2021/07/29",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "HinaSwimsuit.png"
   },
   "Hiyori": {
     "id": "Hiyori",
@@ -909,7 +965,8 @@
     "height": 155,
     "outfit": "Default",
     "releaseDate": "2022/05/24",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Hiyori.png"
   },
   "Hoshino": {
     "id": "Hoshino",
@@ -925,7 +982,8 @@
     "height": 145,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "Hoshino.png"
   },
   "Hoshino_(Swimsuit)": {
     "id": "Hoshino_(Swimsuit)",
@@ -941,7 +999,8 @@
     "height": 145,
     "outfit": "Swimsuit",
     "releaseDate": "2022/07/20",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "HoshinoSwimsuit.png"
   },
   "Ibuki": {
     "id": "Ibuki",
@@ -957,7 +1016,8 @@
     "height": 128,
     "outfit": "Default",
     "releaseDate": "2024/01/24",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Ibuki.png"
   },
   "Ichika": {
     "id": "Ichika",
@@ -973,7 +1033,8 @@
     "height": 163,
     "outfit": "Default",
     "releaseDate": "2023/09/27",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Ichika.png"
   },
   "Iori": {
     "id": "Iori",
@@ -989,7 +1050,8 @@
     "height": 157,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Iori.png"
   },
   "Iori_(Swimsuit)": {
     "id": "Iori_(Swimsuit)",
@@ -1005,7 +1067,8 @@
     "height": 157,
     "outfit": "Swimsuit",
     "releaseDate": "2021/07/29",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "IoriSwimsuit.png"
   },
   "Iroha": {
     "id": "Iroha",
@@ -1021,7 +1084,8 @@
     "height": 151,
     "outfit": "Default",
     "releaseDate": "2022/04/27",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Iroha.png"
   },
   "Izumi": {
     "id": "Izumi",
@@ -1037,7 +1101,8 @@
     "height": 161,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "Izumi.png"
   },
   "Izumi_(Swimsuit)": {
     "id": "Izumi_(Swimsuit)",
@@ -1053,7 +1118,8 @@
     "height": 161,
     "outfit": "Swimsuit",
     "releaseDate": "2021/07/29",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "IzumiSwimsuit.png"
   },
   "Izuna": {
     "id": "Izuna",
@@ -1069,7 +1135,8 @@
     "height": 155,
     "outfit": "Default",
     "releaseDate": "2021/02/25",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Izuna.png"
   },
   "Izuna_(Swimsuit)": {
     "id": "Izuna_(Swimsuit)",
@@ -1085,7 +1152,8 @@
     "height": 155,
     "outfit": "Swimsuit",
     "releaseDate": "2022/07/25",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "IzunaSwimsuit.png"
   },
   "Junko": {
     "id": "Junko",
@@ -1101,7 +1169,8 @@
     "height": 149,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Junko.png"
   },
   "Junko_(New_Year)": {
     "id": "Junko_(New_Year)",
@@ -1117,7 +1186,8 @@
     "height": 149,
     "outfit": "New Year",
     "releaseDate": "2022/12/28",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "JunkoNewYear.png"
   },
   "Juri": {
     "id": "Juri",
@@ -1133,7 +1203,8 @@
     "height": 170,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "Juri.png"
   },
   "Kaede": {
     "id": "Kaede",
@@ -1149,7 +1220,8 @@
     "height": 142,
     "outfit": "Default",
     "releaseDate": "2022/04/27",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Kaede.png"
   },
   "Kaho": {
     "id": "Kaho",
@@ -1165,7 +1237,8 @@
     "height": 173,
     "outfit": "Default",
     "releaseDate": "2023/04/12",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Kaho.png"
   },
   "Kanna": {
     "id": "Kanna",
@@ -1181,7 +1254,8 @@
     "height": 166,
     "outfit": "Default",
     "releaseDate": "2023/01/31",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Kanna.png"
   },
   "Karin": {
     "id": "Karin",
@@ -1197,7 +1271,8 @@
     "height": 170,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Karin.png"
   },
   "Karin_(Bunny_Girl)": {
     "id": "Karin_(Bunny_Girl)",
@@ -1213,7 +1288,8 @@
     "height": 170,
     "outfit": "Bunny Girl",
     "releaseDate": "2021/09/29",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "KarinBunnyGirl.png"
   },
   "Kasumi": {
     "id": "Kasumi",
@@ -1229,7 +1305,8 @@
     "height": 148,
     "outfit": "Default",
     "releaseDate": "2023/09/27",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Kasumi.png"
   },
   "Kayoko": {
     "id": "Kayoko",
@@ -1245,7 +1322,8 @@
     "height": 157,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Kayoko.png"
   },
   "Kayoko_(Dress)": {
     "id": "Kayoko_(Dress)",
@@ -1261,7 +1339,8 @@
     "height": 157,
     "outfit": "Dress",
     "releaseDate": "2024/02/21",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "KayokoDress.png"
   },
   "Kayoko_(New_Year)": {
     "id": "Kayoko_(New_Year)",
@@ -1277,7 +1356,8 @@
     "height": 157,
     "outfit": "New Year",
     "releaseDate": "2023/03/22",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "KayokoNewYear.png"
   },
   "Kazusa": {
     "id": "Kazusa",
@@ -1293,7 +1373,8 @@
     "height": 155,
     "outfit": "Default",
     "releaseDate": "2022/08/24",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "Kazusa.png"
   },
   "Kazusa_(Band)": {
     "id": "Kazusa_(Band)",
@@ -1309,7 +1390,8 @@
     "height": 155,
     "outfit": "Band",
     "releaseDate": "2024/04/24",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "KazusaBand.png"
   },
   "Kikyou": {
     "id": "Kikyou",
@@ -1325,7 +1407,8 @@
     "height": 160,
     "outfit": "Default",
     "releaseDate": "2023/11/22",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Kikyou.png"
   },
   "Kirino": {
     "id": "Kirino",
@@ -1341,7 +1424,8 @@
     "height": 161,
     "outfit": "Default",
     "releaseDate": "2021/08/26",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Kirino.png"
   },
   "Koharu": {
     "id": "Koharu",
@@ -1357,7 +1441,8 @@
     "height": 148,
     "outfit": "Default",
     "releaseDate": "2021/06/10",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Koharu.png"
   },
   "Koharu_(Swimsuit)": {
     "id": "Koharu_(Swimsuit)",
@@ -1373,7 +1458,8 @@
     "height": 148,
     "outfit": "Swimsuit",
     "releaseDate": "2023/07/24",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "KoharuSwimsuit.png"
   },
   "Kokona": {
     "id": "Kokona",
@@ -1389,7 +1475,8 @@
     "height": 139,
     "outfit": "Default",
     "releaseDate": "2022/09/21",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Kokona.png"
   },
   "Kotama": {
     "id": "Kotama",
@@ -1405,7 +1492,8 @@
     "height": 158,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Kotama.png"
   },
   "Kotama_(Camping)": {
     "id": "Kotama_(Camping)",
@@ -1421,7 +1509,8 @@
     "height": 158,
     "outfit": "Camping",
     "releaseDate": "2023/12/27",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "KotamaCamping.png"
   },
   "Kotori": {
     "id": "Kotori",
@@ -1437,7 +1526,8 @@
     "height": 151,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "Kotori.png"
   },
   "Kotori_(Cheerleader)": {
     "id": "Kotori_(Cheerleader)",
@@ -1453,7 +1543,8 @@
     "height": 151,
     "outfit": "Cheerleader",
     "releaseDate": "2023/09/06",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "KotoriCheerleader.png"
   },
   "Koyuki": {
     "id": "Koyuki",
@@ -1469,7 +1560,8 @@
     "height": 149,
     "outfit": "Default",
     "releaseDate": "2023/03/08",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "Koyuki.png"
   },
   "Maki": {
     "id": "Maki",
@@ -1485,7 +1577,8 @@
     "height": 149,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "Maki.png"
   },
   "Makoto": {
     "id": "Makoto",
@@ -1501,7 +1594,8 @@
     "height": 169,
     "outfit": "Default",
     "releaseDate": "2024/01/24",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Makoto.png"
   },
   "Mari": {
     "id": "Mari",
@@ -1517,7 +1611,8 @@
     "height": 151,
     "outfit": "Default",
     "releaseDate": "2021/10/27",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Mari.png"
   },
   "Marina": {
     "id": "Marina",
@@ -1533,7 +1628,8 @@
     "height": 166,
     "outfit": "Default",
     "releaseDate": "2022/03/08",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Marina.png"
   },
   "Mari_(Sportswear)": {
     "id": "Mari_(Sportswear)",
@@ -1549,7 +1645,8 @@
     "height": 151,
     "outfit": "Sportswear",
     "releaseDate": "2022/10/26",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "MariSportswear.png"
   },
   "Mashiro": {
     "id": "Mashiro",
@@ -1565,7 +1662,8 @@
     "height": 155,
     "outfit": "Default",
     "releaseDate": "2021/02/11",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Mashiro.png"
   },
   "Mashiro_(Swimsuit)": {
     "id": "Mashiro_(Swimsuit)",
@@ -1581,7 +1679,8 @@
     "height": 155,
     "outfit": "Swimsuit",
     "releaseDate": "2021/06/30",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "MashiroSwimsuit.png"
   },
   "Megu": {
     "id": "Megu",
@@ -1597,7 +1696,8 @@
     "height": 164,
     "outfit": "Default",
     "releaseDate": "2023/01/31",
-    "weaponType": "FT"
+    "weaponType": "FT",
+    "image": "Megu.png"
   },
   "Meru": {
     "id": "Meru",
@@ -1613,7 +1713,8 @@
     "height": 137,
     "outfit": "Default",
     "releaseDate": "2023/08/23",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Meru.png"
   },
   "Michiru": {
     "id": "Michiru",
@@ -1629,7 +1730,8 @@
     "height": 153,
     "outfit": "Default",
     "releaseDate": "2022/04/27",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "Michiru.png"
   },
   "Midori": {
     "id": "Midori",
@@ -1645,7 +1747,8 @@
     "height": 143,
     "outfit": "Default",
     "releaseDate": "2021/04/08",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Midori.png"
   },
   "Mika": {
     "id": "Mika",
@@ -1661,7 +1764,8 @@
     "height": 157,
     "outfit": "Default",
     "releaseDate": "2023/01/24",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Mika.png"
   },
   "Mimori": {
     "id": "Mimori",
@@ -1677,7 +1781,8 @@
     "height": 156,
     "outfit": "Default",
     "releaseDate": "2022/02/09",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Mimori.png"
   },
   "Mimori_(Swimsuit)": {
     "id": "Mimori_(Swimsuit)",
@@ -1693,7 +1798,8 @@
     "height": 156,
     "outfit": "Swimsuit",
     "releaseDate": "2023/08/16",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "MimoriSwimsuit.png"
   },
   "Mina": {
     "id": "Mina",
@@ -1709,7 +1815,8 @@
     "height": 166,
     "outfit": "Default",
     "releaseDate": "2023/05/24",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Mina.png"
   },
   "Mine": {
     "id": "Mine",
@@ -1725,7 +1832,8 @@
     "height": 168,
     "outfit": "Default",
     "releaseDate": "2023/01/11",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "Mine.png"
   },
   "Minori": {
     "id": "Minori",
@@ -1741,7 +1849,8 @@
     "height": 158,
     "outfit": "Default",
     "releaseDate": "2023/06/07",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Minori.png"
   },
   "Misaka_Mikoto": {
     "id": "Misaka_Mikoto",
@@ -1757,7 +1866,8 @@
     "height": 161,
     "outfit": "Default",
     "releaseDate": "2023/10/24",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "MisakaMikoto.png"
   },
   "Misaki": {
     "id": "Misaki",
@@ -1773,7 +1883,8 @@
     "height": 163,
     "outfit": "Default",
     "releaseDate": "2022/05/24",
-    "weaponType": "RL"
+    "weaponType": "RL",
+    "image": "Misaki.png"
   },
   "Miyako": {
     "id": "Miyako",
@@ -1789,7 +1900,8 @@
     "height": 156,
     "outfit": "Default",
     "releaseDate": "2022/03/23",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Miyako.png"
   },
   "Miyako_(Swimsuit)": {
     "id": "Miyako_(Swimsuit)",
@@ -1805,7 +1917,8 @@
     "height": 156,
     "outfit": "Swimsuit",
     "releaseDate": "2023/06/21",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "MiyakoSwimsuit.png"
   },
   "Miyu": {
     "id": "Miyu",
@@ -1821,7 +1934,8 @@
     "height": 149,
     "outfit": "Default",
     "releaseDate": "2022/04/06",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Miyu.png"
   },
   "Miyu_(Swimsuit)": {
     "id": "Miyu_(Swimsuit)",
@@ -1837,7 +1951,8 @@
     "height": 149,
     "outfit": "Swimsuit",
     "releaseDate": "2023/06/21",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "MiyuSwimsuit.png"
   },
   "Moe": {
     "id": "Moe",
@@ -1853,7 +1968,8 @@
     "height": 163,
     "outfit": "Default",
     "releaseDate": "2022/08/24",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Moe.png"
   },
   "Momiji": {
     "id": "Momiji",
@@ -1869,7 +1985,8 @@
     "height": 135,
     "outfit": "Default",
     "releaseDate": "2023/08/23",
-    "weaponType": "RL"
+    "weaponType": "RL",
+    "image": "Momiji.png"
   },
   "Momoi": {
     "id": "Momoi",
@@ -1885,7 +2002,8 @@
     "height": 143,
     "outfit": "Default",
     "releaseDate": "2021/04/08",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Momoi.png"
   },
   "Mutsuki": {
     "id": "Mutsuki",
@@ -1901,7 +2019,8 @@
     "height": 144,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "Mutsuki.png"
   },
   "Mutsuki_(New_Year)": {
     "id": "Mutsuki_(New_Year)",
@@ -1917,7 +2036,8 @@
     "height": 144,
     "outfit": "New Year",
     "releaseDate": "2021/12/29",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "MutsukiNewYear.png"
   },
   "Nagisa": {
     "id": "Nagisa",
@@ -1933,7 +2053,8 @@
     "height": 160,
     "outfit": "Default",
     "releaseDate": "2023/02/22",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Nagisa.png"
   },
   "Natsu": {
     "id": "Natsu",
@@ -1949,7 +2070,8 @@
     "height": 152,
     "outfit": "Default",
     "releaseDate": "2021/10/27",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Natsu.png"
   },
   "Neru": {
     "id": "Neru",
@@ -1965,7 +2087,8 @@
     "height": 146,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Neru.png"
   },
   "Neru_(Bunny_Girl)": {
     "id": "Neru_(Bunny_Girl)",
@@ -1981,7 +2104,8 @@
     "height": 146,
     "outfit": "Bunny Girl",
     "releaseDate": "2021/09/29",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "NeruBunnyGirl.png"
   },
   "Noa": {
     "id": "Noa",
@@ -1997,7 +2121,8 @@
     "height": 161,
     "outfit": "Default",
     "releaseDate": "2022/09/28",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Noa.png"
   },
   "Nodoka": {
     "id": "Nodoka",
@@ -2013,7 +2138,8 @@
     "height": 147,
     "outfit": "Default",
     "releaseDate": "2021/04/29",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Nodoka.png"
   },
   "Nodoka_(Hot_Spring)": {
     "id": "Nodoka_(Hot_Spring)",
@@ -2029,7 +2155,8 @@
     "height": 147,
     "outfit": "Hot Spring",
     "releaseDate": "2021/12/15",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "NodokaHotSpring.png"
   },
   "Nonomi": {
     "id": "Nonomi",
@@ -2045,7 +2172,8 @@
     "height": 160,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "Nonomi.png"
   },
   "Nonomi_(Swimsuit)": {
     "id": "Nonomi_(Swimsuit)",
@@ -2061,7 +2189,8 @@
     "height": 160,
     "outfit": "Swimsuit",
     "releaseDate": "2022/06/22",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "NonomiSwimsuit.png"
   },
   "Pina": {
     "id": "Pina",
@@ -2077,7 +2206,8 @@
     "height": 165,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "Pina.png"
   },
   "Reisa": {
     "id": "Reisa",
@@ -2093,7 +2223,8 @@
     "height": 153,
     "outfit": "Default",
     "releaseDate": "2023/05/10",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "Reisa.png"
   },
   "Renge": {
     "id": "Renge",
@@ -2109,7 +2240,8 @@
     "height": 157,
     "outfit": "Default",
     "releaseDate": "2023/11/22",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Renge.png"
   },
   "Rumi": {
     "id": "Rumi",
@@ -2125,7 +2257,8 @@
     "height": 168,
     "outfit": "Default",
     "releaseDate": "2023/05/24",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Rumi.png"
   },
   "Saki": {
     "id": "Saki",
@@ -2141,7 +2274,8 @@
     "height": 161,
     "outfit": "Default",
     "releaseDate": "2022/03/23",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "Saki.png"
   },
   "Saki_(Swimsuit)": {
     "id": "Saki_(Swimsuit)",
@@ -2157,7 +2291,8 @@
     "height": 161,
     "outfit": "Swimsuit",
     "releaseDate": "2023/06/21",
-    "weaponType": "MG"
+    "weaponType": "MG",
+    "image": "SakiSwimsuit.png"
   },
   "Sakurako": {
     "id": "Sakurako",
@@ -2173,7 +2308,8 @@
     "height": 160,
     "outfit": "Default",
     "releaseDate": "2023/02/10",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Sakurako.png"
   },
   "Saori": {
     "id": "Saori",
@@ -2189,7 +2325,8 @@
     "height": 167,
     "outfit": "Default",
     "releaseDate": "2022/08/09",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Saori.png"
   },
   "Saten_Ruiko": {
     "id": "Saten_Ruiko",
@@ -2205,7 +2342,8 @@
     "height": 160,
     "outfit": "Default",
     "releaseDate": "2023/10/24",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "SatenRuiko.png"
   },
   "Saya": {
     "id": "Saya",
@@ -2221,7 +2359,8 @@
     "height": 149,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "Saya.png"
   },
   "Saya_(Casual)": {
     "id": "Saya_(Casual)",
@@ -2237,7 +2376,8 @@
     "height": 149,
     "outfit": "Casual",
     "releaseDate": "2021/09/09",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "SayaCasual.png"
   },
   "Sena": {
     "id": "Sena",
@@ -2253,7 +2393,8 @@
     "height": 155,
     "outfit": "Default",
     "releaseDate": "2022/01/30",
-    "weaponType": "GL"
+    "weaponType": "GL",
+    "image": "Sena.png"
   },
   "Serika": {
     "id": "Serika",
@@ -2269,7 +2410,8 @@
     "height": 153,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Serika.png"
   },
   "Serika_(New_Year)": {
     "id": "Serika_(New_Year)",
@@ -2285,7 +2427,8 @@
     "height": 153,
     "outfit": "New Year",
     "releaseDate": "2022/01/12",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "SerikaNewYear.png"
   },
   "Serina": {
     "id": "Serina",
@@ -2301,7 +2444,8 @@
     "height": 156,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Serina.png"
   },
   "Serina_(Christmas)": {
     "id": "Serina_(Christmas)",
@@ -2317,7 +2461,8 @@
     "height": 156,
     "outfit": "Christmas",
     "releaseDate": "2022/12/14",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "SerinaChristmas.png"
   },
   "Shigure": {
     "id": "Shigure",
@@ -2333,7 +2478,8 @@
     "height": 156,
     "outfit": "Default",
     "releaseDate": "2022/11/30",
-    "weaponType": "GL"
+    "weaponType": "GL",
+    "image": "Shigure.png"
   },
   "Shigure_(Hot_Spring)": {
     "id": "Shigure_(Hot_Spring)",
@@ -2349,7 +2495,8 @@
     "height": 156,
     "outfit": "Hot Spring",
     "releaseDate": "2023/10/11",
-    "weaponType": "GL"
+    "weaponType": "GL",
+    "image": "ShigureHotSpring.png"
   },
   "Shimiko": {
     "id": "Shimiko",
@@ -2365,7 +2512,8 @@
     "height": 157,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Shimiko.png"
   },
   "Shiroko": {
     "id": "Shiroko",
@@ -2381,7 +2529,8 @@
     "height": 156,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Shiroko.png"
   },
   "Shiroko_(Riding)": {
     "id": "Shiroko_(Riding)",
@@ -2397,7 +2546,8 @@
     "height": 156,
     "outfit": "Riding",
     "releaseDate": "2021/08/12",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "ShirokoRiding.png"
   },
   "Shiroko_(Swimsuit)": {
     "id": "Shiroko_(Swimsuit)",
@@ -2413,7 +2563,8 @@
     "height": 156,
     "outfit": "Swimsuit",
     "releaseDate": "2023/07/17",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "ShirokoSwimsuit.png"
   },
   "Shizuko": {
     "id": "Shizuko",
@@ -2429,7 +2580,8 @@
     "height": 153,
     "outfit": "Default",
     "releaseDate": "2021/02/25",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "Shizuko.png"
   },
   "Shizuko_(Swimsuit)": {
     "id": "Shizuko_(Swimsuit)",
@@ -2445,7 +2597,8 @@
     "height": 153,
     "outfit": "Swimsuit",
     "releaseDate": "2022/07/20",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "ShizukoSwimsuit.png"
   },
   "Shokuhou_Misaki": {
     "id": "Shokuhou_Misaki",
@@ -2461,7 +2614,8 @@
     "height": null,
     "outfit": "Default",
     "releaseDate": "2023/10/24",
-    "weaponType": "HG"
+    "weaponType": "HG",
+    "image": "ShokuhouMisaki.png"
   },
   "Shun": {
     "id": "Shun",
@@ -2477,7 +2631,8 @@
     "height": 174,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Shun.png"
   },
   "Shun_(Kid)": {
     "id": "Shun_(Kid)",
@@ -2493,7 +2648,8 @@
     "height": null,
     "outfit": "Kid",
     "releaseDate": "2021/08/26",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "ShunKid.png"
   },
   "Sumire": {
     "id": "Sumire",
@@ -2509,7 +2665,8 @@
     "height": 167,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "Sumire.png"
   },
   "Suzumi": {
     "id": "Suzumi",
@@ -2525,7 +2682,8 @@
     "height": 162,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Suzumi.png"
   },
   "Toki": {
     "id": "Toki",
@@ -2541,7 +2699,8 @@
     "height": 165,
     "outfit": "Default",
     "releaseDate": "2023/02/22",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Toki.png"
   },
   "Toki_(Bunny_Girl)": {
     "id": "Toki_(Bunny_Girl)",
@@ -2557,7 +2716,8 @@
     "height": 165,
     "outfit": "Bunny Girl",
     "releaseDate": "2023/04/26",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "TokiBunnyGirl.png"
   },
   "Tomoe": {
     "id": "Tomoe",
@@ -2573,7 +2733,8 @@
     "height": 165,
     "outfit": "Default",
     "releaseDate": "2021/11/30",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Tomoe.png"
   },
   "Tsubaki": {
     "id": "Tsubaki",
@@ -2589,7 +2750,8 @@
     "height": 162,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Tsubaki.png"
   },
   "Tsubaki_(Guide)": {
     "id": "Tsubaki_(Guide)",
@@ -2605,7 +2767,8 @@
     "height": 162,
     "outfit": "Guide",
     "releaseDate": "2024/03/27",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "TsubakiGuide.png"
   },
   "Tsukuyo": {
     "id": "Tsukuyo",
@@ -2621,7 +2784,8 @@
     "height": 180,
     "outfit": "Default",
     "releaseDate": "2022/05/11",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Tsukuyo.png"
   },
   "Tsurugi": {
     "id": "Tsurugi",
@@ -2637,7 +2801,8 @@
     "height": 162,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "Tsurugi.png"
   },
   "Tsurugi_(Swimsuit)": {
     "id": "Tsurugi_(Swimsuit)",
@@ -2653,7 +2818,8 @@
     "height": 162,
     "outfit": "Swimsuit",
     "releaseDate": "2021/06/30",
-    "weaponType": "SG"
+    "weaponType": "SG",
+    "image": "TsurugiSwimsuit.png"
   },
   "Ui": {
     "id": "Ui",
@@ -2669,7 +2835,8 @@
     "height": 165,
     "outfit": "Default",
     "releaseDate": "2022/02/23",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Ui.png"
   },
   "Ui_(Swimsuit)": {
     "id": "Ui_(Swimsuit)",
@@ -2685,7 +2852,8 @@
     "height": 165,
     "outfit": "Swimsuit",
     "releaseDate": "2023/07/24",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "UiSwimsuit.png"
   },
   "Umika": {
     "id": "Umika",
@@ -2701,7 +2869,8 @@
     "height": 165,
     "outfit": "Default",
     "releaseDate": "2024/03/27",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Umika.png"
   },
   "Utaha": {
     "id": "Utaha",
@@ -2717,7 +2886,8 @@
     "height": 162,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Utaha.png"
   },
   "Utaha_(Cheerleader)": {
     "id": "Utaha_(Cheerleader)",
@@ -2733,7 +2903,8 @@
     "height": 162,
     "outfit": "Cheerleader",
     "releaseDate": "2022/09/28",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "UtahaCheerleader.png"
   },
   "Wakamo": {
     "id": "Wakamo",
@@ -2749,7 +2920,8 @@
     "height": 161,
     "outfit": "Default",
     "releaseDate": "2022/01/26",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Wakamo.png"
   },
   "Wakamo_(Swimsuit)": {
     "id": "Wakamo_(Swimsuit)",
@@ -2765,7 +2937,8 @@
     "height": 161,
     "outfit": "Swimsuit",
     "releaseDate": "2022/06/22",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "WakamoSwimsuit.png"
   },
   "Yoshimi": {
     "id": "Yoshimi",
@@ -2781,7 +2954,8 @@
     "height": 146,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "Yoshimi.png"
   },
   "Yoshimi_(Band)": {
     "id": "Yoshimi_(Band)",
@@ -2797,7 +2971,8 @@
     "height": 146,
     "outfit": "Band",
     "releaseDate": "2024/04/24",
-    "weaponType": "AR"
+    "weaponType": "AR",
+    "image": "YoshimiBand.png"
   },
   "Yukari": {
     "id": "Yukari",
@@ -2813,7 +2988,8 @@
     "height": 155,
     "outfit": "Default",
     "releaseDate": "2023/11/08",
-    "weaponType": "SR"
+    "weaponType": "SR",
+    "image": "Yukari.png"
   },
   "Yuuka": {
     "id": "Yuuka",
@@ -2829,7 +3005,8 @@
     "height": 156,
     "outfit": "Default",
     "releaseDate": "2021/02/04",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "Yuuka.png"
   },
   "Yuuka_(Sportswear)": {
     "id": "Yuuka_(Sportswear)",
@@ -2845,7 +3022,8 @@
     "height": 156,
     "outfit": "Sportswear",
     "releaseDate": "2022/10/26",
-    "weaponType": "SMG"
+    "weaponType": "SMG",
+    "image": "YuukaSportswear.png"
   },
   "Yuzu": {
     "id": "Yuzu",
@@ -2861,7 +3039,8 @@
     "height": 150,
     "outfit": "Default",
     "releaseDate": "2021/05/13",
-    "weaponType": "GL"
+    "weaponType": "GL",
+    "image": "Yuzu.png"
   },
   "Yuzu_(Maid)": {
     "id": "Yuzu_(Maid)",
@@ -2877,6 +3056,7 @@
     "height": 150,
     "outfit": "Maid",
     "releaseDate": "2023/04/26",
-    "weaponType": "GL"
+    "weaponType": "GL",
+    "image": "YuzuMaid.png"
   }
 }

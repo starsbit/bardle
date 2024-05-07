@@ -13,4 +13,5 @@ export interface Student {
   outfit: string;
   releaseDate: string;
   weaponType: string;
+  image: string;
 }

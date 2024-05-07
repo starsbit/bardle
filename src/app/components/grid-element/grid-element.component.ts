@@ -64,7 +64,7 @@ export class GridElementComponent {
 
   get image(): string {
     if (this.useIconInsteadOfName) {
-      return 'assets/images/characters/' + this.guessAttribute + '.png';
+      return 'assets/images/characters/' + this.guessAttribute;
     }
     return '';
   }
