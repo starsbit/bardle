@@ -39,37 +39,33 @@
 }
 
 .win {
-  animation-name: flip-win;
-  animation-duration: 2500ms;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
+  animation: flipWin 2500ms ease 0ms infinite forwards;
 }
 
 .incorrect {
   animation: bgIncorrect 500ms ease forwards;
 }
 
-@keyframes flip-win {
+@keyframes flipWin {
   0% {
     transform: translateY(0);
     background-color: #50c878;
-    color: whitesmoke;
+    opacity: 1;
   }
   75% {
     transform: translateY(0);
     background-color: #50c878;
-    color: whitesmoke;
+    opacity: 1;
   }
   88% {
     transform: translateY(-10px);
     background-color: #50c878;
-    color: whitesmoke;
+    opacity: 1;
   }
   100% {
     transform: translateY(0);
     background-color: #50c878;
-    color: whitesmoke;
+    opacity: 1;
   }
 }
 
