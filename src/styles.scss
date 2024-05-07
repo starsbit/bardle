@@ -1,19 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-html,
-body {
-  height: 100vh;
-  width: 100vw;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-}
-
 ba-root {
   flex-grow: 1;
   overflow: auto;
@@ -40,9 +26,21 @@ footer {
 
 html,
 body {
+  width: 100vw;
   height: 100%;
 }
+
+@media only screen and (max-width: 600px) {
+  html,
+  body {
+    width: 100%;
+    height: auto;
+  }
+}
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
