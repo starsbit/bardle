@@ -6,10 +6,23 @@
   width: 100vw;
   flex-direction: column;
   background-color: black;
+  padding-top: 50px;
 }
 
 .text-container {
   color: white;
   width: 50%;
   min-width: 200px;
+}
+
+.back-icon {
+  color: white;
+  margin: 10px;
+  position: fixed;
+  top: 10px;
+  left: 0px;
+  > i {
+    font-size: 3rem;
+  }
+  cursor: pointer;
 }

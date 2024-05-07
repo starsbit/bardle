@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Student } from '../../../models/student';
@@ -15,6 +16,7 @@ import { YesterdaysStudentComponent } from '../yesterdays-student/yesterdays-stu
     GuessInputComponent,
     YesterdaysStudentComponent,
     RouterLink,
+    NgOptimizedImage,
   ],
   templateUrl: './guess-game.component.html',
   styleUrl: './guess-game.component.scss',
