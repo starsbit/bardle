@@ -26,7 +26,13 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets", "src/_routes.json"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/_routes.json",
+              "src/robots.txt",
+              "src/sitemap.xml"
+            ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
