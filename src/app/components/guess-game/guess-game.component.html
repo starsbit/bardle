@@ -1,4 +1,7 @@
 <div class="game-wrapper">
+  @if (won || lost) {
+  <ba-countdown></ba-countdown>
+  }
   <ba-guess-input
     [won]="won"
     [lost]="lost"
@@ -25,5 +28,5 @@
       <img ngSrc="assets/images/kofi.png" width="50" height="50" />
     </a>
   </div>
-  <p>© 2024 - starsbit</p>
+  <p style="color: whitesmoke">© 2024 - starsbit</p>
 </footer>

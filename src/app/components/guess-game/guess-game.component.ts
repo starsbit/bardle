@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { Student } from '../../../models/student';
 import { RULES } from '../../constants/rules';
 import { StudentService } from '../../services/student.service';
+import { CountdownComponent } from '../countdown/countdown.component';
 import { GridComponent } from '../grid/grid.component';
 import { GuessInputComponent } from '../guess-input/guess-input.component';
 import { YesterdaysStudentComponent } from '../yesterdays-student/yesterdays-student.component';
@@ -17,6 +18,7 @@ import { YesterdaysStudentComponent } from '../yesterdays-student/yesterdays-stu
     YesterdaysStudentComponent,
     RouterLink,
     NgOptimizedImage,
+    CountdownComponent,
   ],
   templateUrl: './guess-game.component.html',
   styleUrl: './guess-game.component.scss',
