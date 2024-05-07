@@ -19,7 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { BehaviorSubject } from 'rxjs';
 import { Student } from '../../../models/student';
-import { CookieService } from '../../services/cookie.service';
+import { LocalStorage } from '../../services/local-storage.service';
 import { StudentService } from '../../services/student.service';
 
 @Component({
@@ -56,14 +56,14 @@ export class GuessInputComponent implements OnChanges, OnInit {
   constructor(
     private readonly studentService: StudentService,
     private readonly cdr: ChangeDetectorRef,
-    private readonly cookieService: CookieService
+    private readonly cookieService: LocalStorage
   ) {
     this.options = this.studentService.getStudents();
     this.filteredOptions = this.options.slice();
   }
 
   ngOnInit(): void {
-    const initialGuesses = this.cookieService.getGuessCookie();
+    const initialGuesses = this.cookieService.getGuess();
     initialGuesses.students.forEach((g) => {
       const student = this.studentService.getStudentById(g);
       if (student) {

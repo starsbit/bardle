@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
 import moment from 'moment';
 import { Student } from '../../../models/student';
 import { RULES } from '../../constants/rules';
-import { CookieService } from '../../services/cookie.service';
+import { LocalStorage } from '../../services/local-storage.service';
 import { StudentService } from '../../services/student.service';
 import { CountdownComponent } from '../countdown/countdown.component';
 import { GridComponent } from '../grid/grid.component';
@@ -42,7 +42,7 @@ export class GuessGameComponent {
 
   constructor(
     private readonly studentService: StudentService,
-    private readonly cookieService: CookieService,
+    private readonly cookieService: LocalStorage,
     private readonly cdr: ChangeDetectorRef
   ) {}
 
@@ -55,7 +55,7 @@ export class GuessGameComponent {
       return;
     }
     this.guesses = guesses;
-    this.cookieService.setGuessCookie({
+    this.cookieService.setGuess({
       students: this.guesses.map((g) => g.id),
       doy: this.doy,
     });
