@@ -34,7 +34,7 @@
 }
 
 .correct {
-  animation: flip 500ms ease forwards, bgCorrect 500ms ease forwards;
+  animation: bgCorrect 500ms ease forwards;
 }
 
 .win {
@@ -46,18 +46,7 @@
 }
 
 .incorrect {
-  animation: flip 500ms ease forwards, bgIncorrect 500ms ease forwards;
-}
-
-@keyframes flip {
-  0%,
-  100% {
-    transform: scaleY(1);
-  }
-
-  50% {
-    transform: scaleY(0);
-  }
+  animation: bgIncorrect 500ms ease forwards;
 }
 
 @keyframes flip-win {
@@ -94,16 +83,34 @@
 }
 
 @keyframes bgCorrect {
+  0% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0);
+  }
+
   100% {
     background-color: #50c878;
     color: whitesmoke;
+    transform: scaleY(1);
   }
 }
 
 @keyframes bgIncorrect {
+  0% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0);
+  }
+
   100% {
     background-color: rgb(160, 160, 160);
     color: whitesmoke;
+    transform: scaleY(1);
   }
 }
 
