@@ -1,8 +1,14 @@
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
+import moment from 'moment';
 import { Student } from '../../../models/student';
 import { RULES } from '../../constants/rules';
+import { CookieService } from '../../services/cookie.service';
 import { StudentService } from '../../services/student.service';
 import { CountdownComponent } from '../countdown/countdown.component';
 import { GridComponent } from '../grid/grid.component';
@@ -29,17 +35,30 @@ export class GuessGameComponent {
   // Its the ids of the students guessed
   guesses: Student[] = [];
 
+  doy = moment().dayOfYear();
+
   won = false;
   lost = false;
 
-  constructor(private readonly studentService: StudentService) {}
+  constructor(
+    private readonly studentService: StudentService,
+    private readonly cookieService: CookieService,
+    private readonly cdr: ChangeDetectorRef
+  ) {}
 
   get latestGuess(): Student {
     return this.guesses[this.guesses.length - 1];
   }
 
   onGuess(guesses: Student[]): void {
+    if (guesses.length === 0) {
+      return;
+    }
     this.guesses = guesses;
+    this.cookieService.setGuessCookie({
+      students: this.guesses.map((g) => g.id),
+      doy: this.doy,
+    });
     if (
       this.latestGuess &&
       this.latestGuess === this.studentService.getTarget()
@@ -49,5 +68,6 @@ export class GuessGameComponent {
     if (this.guesses.length >= RULES.MAX_GUESSES && !this.won) {
       this.lost = true;
     }
+    this.cdr.detectChanges();
   }
 }

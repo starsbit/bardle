@@ -12,11 +12,15 @@ export class StudentService {
   private background: string;
 
   constructor(private readonly studentClientService: StudentClientService) {
-    this.studentClientService.getStudents().subscribe((students) => {
-      this.students = students;
-      this.pickCharacterOfTheDay();
-      this.pickBackgroundOfTheDay();
-    });
+    this.hydrate();
+  }
+
+  getStudentById(id: string): Student | null {
+    if (!this.students) {
+      this.hydrate();
+      return null;
+    }
+    return this.students[id];
   }
 
   getStudents(): Student[] {
@@ -75,5 +79,13 @@ export class StudentService {
       hash |= 0; // Convert to 32bit integer
     }
     return Math.abs(hash);
+  }
+
+  private hydrate() {
+    return this.studentClientService.getStudents().subscribe((students) => {
+      this.students = students;
+      this.pickCharacterOfTheDay();
+      this.pickBackgroundOfTheDay();
+    });
   }
 }

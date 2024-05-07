@@ -6,6 +6,7 @@ import {
   ElementRef,
   Input,
   OnChanges,
+  OnInit,
   Output,
   SimpleChanges,
   ViewChild,
@@ -18,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { BehaviorSubject } from 'rxjs';
 import { Student } from '../../../models/student';
+import { CookieService } from '../../services/cookie.service';
 import { StudentService } from '../../services/student.service';
 
 @Component({
@@ -38,25 +40,36 @@ import { StudentService } from '../../services/student.service';
   styleUrl: './guess-input.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GuessInputComponent implements OnChanges {
+export class GuessInputComponent implements OnChanges, OnInit {
   @ViewChild('input') input: ElementRef<HTMLInputElement>;
   myControl = new FormControl('');
   options: Student[];
   filteredOptions: Student[];
 
+  @Input() won = false;
+  @Input() lost = false;
+
   @Output() guesses: BehaviorSubject<Student[]> = new BehaviorSubject<
     Student[]
   >([]);
 
-  @Input() won = false;
-  @Input() lost = false;
-
   constructor(
     private readonly studentService: StudentService,
-    private readonly cdr: ChangeDetectorRef
+    private readonly cdr: ChangeDetectorRef,
+    private readonly cookieService: CookieService
   ) {
     this.options = this.studentService.getStudents();
     this.filteredOptions = this.options.slice();
+  }
+
+  ngOnInit(): void {
+    const initialGuesses = this.cookieService.getGuessCookie();
+    initialGuesses.students.forEach((g) => {
+      const student = this.studentService.getStudentById(g);
+      if (student) {
+        this.onSelection(student);
+      }
+    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
