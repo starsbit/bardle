@@ -5,25 +5,6 @@ ba-root {
   overflow: auto;
 }
 
-footer {
-  flex-shrink: 0;
-  background-color: black;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  > * {
-    margin: 16px;
-  }
-
-  p {
-    // forbid line breaks
-    white-space: nowrap;
-    padding-right: 16px;
-  }
-}
-
 html,
 body {
   width: 100vw;
@@ -34,7 +15,8 @@ body {
   html,
   body {
     width: 100%;
-    height: auto;
+    height: 100vh;
+    min-height: 100% !important;
   }
 }
 

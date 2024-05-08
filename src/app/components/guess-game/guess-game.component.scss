@@ -16,11 +16,24 @@
   color: whitesmoke;
   text-decoration: none;
   font-size: 1rem;
-  margin: 10px;
+  padding: 6px;
 }
 
 .result-text {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+footer {
+  flex-shrink: 0;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  > * {
+    margin: 0 10px;
+    padding: 4px;
+  }
 }

@@ -16,6 +16,7 @@ import { CountdownComponent } from '../countdown/countdown.component';
 import { GridComponent } from '../grid/grid.component';
 import { GuessInputComponent } from '../guess-input/guess-input.component';
 import { SolutionComponent } from '../solution/solution.component';
+import { TutorialComponent } from '../tutorial/tutorial.component';
 import { YesterdaysStudentComponent } from '../yesterdays-student/yesterdays-student.component';
 
 @Component({
@@ -30,6 +31,7 @@ import { YesterdaysStudentComponent } from '../yesterdays-student/yesterdays-stu
     CountdownComponent,
     SolutionComponent,
     CopyButtonComponent,
+    TutorialComponent,
   ],
   templateUrl: './guess-game.component.html',
   styleUrl: './guess-game.component.scss',

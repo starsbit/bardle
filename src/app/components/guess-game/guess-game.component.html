@@ -14,10 +14,11 @@
     <ba-solution></ba-solution>
     <ba-copy-button [guesses]="guessesCopy"></ba-copy-button>
   </div>
-  }
-
+  } @if (guesses.length <= 0) {
+  <ba-tutorial></ba-tutorial>
+  } @else {
   <ba-grid [guesses]="guesses"></ba-grid>
-
+  }
   <ba-yesterdays-student></ba-yesterdays-student>
 </div>
 <footer>
@@ -34,13 +35,13 @@
     <a class="footer-link" href="https://x.com/starsbit1" target="_blank">
       <img
         ngSrc="assets/images/x.png"
-        width="50"
-        height="50"
+        width="35"
+        height="35"
         alt="X or Twitter"
       />
     </a>
     <a class="footer-link" href="https://ko-fi.com/starsbit" target="_blank">
-      <img ngSrc="assets/images/kofi.png" width="50" height="50" alt="Ko-Fi" />
+      <img ngSrc="assets/images/kofi.png" width="35" height="35" alt="Ko-Fi" />
     </a>
   </div>
   <p style="color: whitesmoke">© 2024 - starsbit</p>
