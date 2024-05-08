@@ -10,7 +10,10 @@
   ></ba-guess-input>
 
   @if (won || lost) {
-  <ba-solution></ba-solution>
+  <div class="result-text">
+    <ba-solution></ba-solution>
+    <ba-copy-button [guesses]="guessesCopy"></ba-copy-button>
+  </div>
   }
 
   <ba-grid [guesses]="guesses"></ba-grid>
