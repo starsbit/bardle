@@ -84,51 +84,15 @@ export class GuessGameComponent {
     const target = this.studentService.getTarget();
     for (let guess of this.guesses) {
       const subResult = [];
-      if (guess.school === target.school) {
-        subResult.push(true);
-      } else {
-        subResult.push(false);
-      }
-      if (guess.damageType === target.damageType) {
-        subResult.push(true);
-      } else {
-        subResult.push(false);
-      }
-      if (guess.armorType === target.armorType) {
-        subResult.push(true);
-      } else {
-        subResult.push(false);
-      }
-      if (guess.role === target.role) {
-        subResult.push(true);
-      } else {
-        subResult.push(false);
-      }
-      if (guess.combatClass === target.combatClass) {
-        subResult.push(true);
-      } else {
-        subResult.push(false);
-      }
-      if (guess.exSkillCost === target.exSkillCost) {
-        subResult.push(true);
-      } else {
-        subResult.push(false);
-      }
-      if (guess.positioning === target.positioning) {
-        subResult.push(true);
-      } else {
-        subResult.push(false);
-      }
-      if (guess.height === target.height) {
-        subResult.push(true);
-      } else {
-        subResult.push(false);
-      }
-      if (guess.releaseDate === target.releaseDate) {
-        subResult.push(true);
-      } else {
-        subResult.push(false);
-      }
+      subResult.push(guess.school === target.school);
+      subResult.push(guess.damageType === target.damageType);
+      subResult.push(guess.armorType === target.armorType);
+      subResult.push(guess.role === target.role);
+      subResult.push(guess.combatClass === target.combatClass);
+      subResult.push(guess.exSkillCost === target.exSkillCost);
+      subResult.push(guess.positioning === target.positioning);
+      subResult.push(guess.height === target.height);
+      subResult.push(guess.releaseDate === target.releaseDate);
       result.push({ isCorrect: subResult });
     }
     return result;
