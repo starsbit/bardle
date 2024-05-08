@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import moment from 'moment';
 import { BehaviorSubject } from 'rxjs';
 import { Student } from '../../../models/student';
 import { LocalStorage } from '../../services/local-storage.service';
@@ -64,6 +65,14 @@ export class GuessInputComponent implements OnChanges, OnInit {
 
   ngOnInit(): void {
     const initialGuesses = this.cookieService.getGuess();
+    if (!initialGuesses) {
+      return;
+    }
+
+    if (initialGuesses.doy !== moment().dayOfYear()) {
+      this.cookieService.setGuess({ doy: moment().dayOfYear(), students: [] });
+      return;
+    }
     initialGuesses.students.forEach((g) => {
       const student = this.studentService.getStudentById(g);
       if (student) {
