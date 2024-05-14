@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { GuessCookie } from '../../models/guess-cookie';
 
 @Injectable({
@@ -8,9 +8,9 @@ import { GuessCookie } from '../../models/guess-cookie';
 export class LocalStorage {
   localStorage: Storage;
 
-  constructor(@Inject(DOCUMENT) private readonly document: Document) {
-    if (!document.defaultView) {
-      throw new Error('No window object found');
+  constructor(@Inject(PLATFORM_ID) private platformId: string) {
+    if (!isPlatformBrowser(this.platformId) || !document.defaultView) {
+      return;
     }
     this.localStorage = document.defaultView.localStorage;
   }
@@ -19,6 +19,9 @@ export class LocalStorage {
   }
 
   setLocalStorage(name: string, value: string) {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
     this.localStorage.setItem(name, value);
   }
 
@@ -31,6 +34,9 @@ export class LocalStorage {
   }
 
   getLocalStorage(name: string) {
+    if (!isPlatformBrowser(this.platformId)) {
+      return '';
+    }
     return this.localStorage.getItem(name);
   }
 }
