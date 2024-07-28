@@ -43,7 +43,7 @@ export class GuessGameComponent {
   guesses: Student[] = [];
   guessesCopy: GuessResult[] = [];
 
-  doy = moment().dayOfYear();
+  doy = moment().utc().dayOfYear();
 
   won = false;
   lost = false;

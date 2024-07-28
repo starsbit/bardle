@@ -69,8 +69,11 @@ export class GuessInputComponent implements OnChanges, OnInit {
       return;
     }
 
-    if (initialGuesses.doy !== moment().dayOfYear()) {
-      this.cookieService.setGuess({ doy: moment().dayOfYear(), students: [] });
+    if (initialGuesses.doy !== moment().utc().dayOfYear()) {
+      this.cookieService.setGuess({
+        doy: moment().utc().dayOfYear(),
+        students: [],
+      });
       return;
     }
     initialGuesses.students.forEach((g) => {
