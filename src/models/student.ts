@@ -1,6 +1,7 @@
 export interface Student {
   id: string;
   fullName: string;
+  shortName: string;
   nativeName: string;
   school: string;
   damageType: string;

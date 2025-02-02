@@ -1,4 +1,4 @@
-import { AsyncPipe, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -34,7 +34,6 @@ import { StudentService } from '../../services/student.service';
     MatButtonModule,
     MatIconModule,
     ReactiveFormsModule,
-    AsyncPipe,
     NgOptimizedImage,
   ],
   templateUrl: './guess-input.component.html',
