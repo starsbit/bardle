@@ -13,17 +13,17 @@
     <mat-autocomplete requireSelection #auto="matAutocomplete">
       @for (option of filteredOptions; track option) {
       <mat-option
-        [value]="option.fullName"
+        [value]="option.shortName"
         (onSelectionChange)="onSelection(option)"
       >
         <img
           [ngSrc]="'assets/images/characters/' + option.image"
           width="48"
           height="48"
-          [alt]="option.fullName"
+          [alt]="option.shortName"
           class="portrait"
         />
-        {{ option.fullName }}
+        {{ option.shortName }}
       </mat-option>
       }
     </mat-autocomplete>

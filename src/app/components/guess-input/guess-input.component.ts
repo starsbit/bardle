@@ -59,6 +59,7 @@ export class GuessInputComponent implements OnChanges, OnInit {
     private readonly cookieService: LocalStorage
   ) {
     this.options = this.studentService.getStudents();
+    this.options.sort((a, b) => a.shortName.localeCompare(b.shortName));
     this.filteredOptions = this.options.slice();
   }
 
