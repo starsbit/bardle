@@ -61,7 +61,7 @@ export class StudentService {
 
   private pickBackgroundOfTheDay() {
     const today = moment().utc().format('DD.MM.YYYY');
-    const index = this.hashCode(today) % 26;
+    const index = this.hashCode(today) % 48;
     if (index < 10) {
       this.background = `assets/images/backgrounds/0${index}.png`;
     } else {
