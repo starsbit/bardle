@@ -60,7 +60,7 @@ def generate_info_from_url(url, image_name):
         role_positioning = table.find('th', text='Role').find_next('td').find_next('td').text.strip()
         combat_class = table.find('th', text='Combat Class').find_next('td').text.strip()
         name = soup.find('th', class_='character-name').text.strip().replace(" ", "_")
-        releaseDate = soup.find('th', text='Release Date JP').find_next('td').text.strip()
+        releaseDateJP = soup.find('th', text='Release Date JP').find_next('td').text.strip()
         weaponType = soup.find('div', class_='weapon-text').text.strip()
 
         full_name, native_name = separate_names(full_name)
@@ -92,7 +92,7 @@ def generate_info_from_url(url, image_name):
             "positioning": positioning,
             "height": height,
             "outfit": outfit,
-            "releaseDate": releaseDate,
+            "releaseDate": releaseDateJP,
             "weaponType": weaponType,
             "image": image_name
         }
