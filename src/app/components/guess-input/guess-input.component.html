@@ -1,30 +1,18 @@
-<form class="guess-form">
-  <mat-form-field class="guess-full-width outline-white" appearance="outline">
-    <mat-label>Type student name</mat-label>
+<form class="flex justify-center items-center h-full">
+  <mat-form-field class="md:w-142 w-103 ba-input-outline" appearance="outline">
+    <mat-label>Student name</mat-label>
     <input
-      #input
       type="text"
+      placeholder="Name"
+      aria-label="Student name"
       matInput
-      [formControl]="myControl"
+      [formControl]="guessInputControl"
       [matAutocomplete]="auto"
-      (input)="filter()"
-      (focus)="filter()"
     />
-    <mat-autocomplete requireSelection #auto="matAutocomplete">
-      @for (option of filteredOptions; track option) {
-      <mat-option
-        [value]="option.shortName"
-        (onSelectionChange)="onSelection(option)"
-      >
-        <img
-          [ngSrc]="'assets/images/characters/' + option.image"
-          width="48"
-          height="48"
-          [alt]="option.shortName"
-          class="portrait"
-        />
-        {{ option.shortName }}
-      </mat-option>
+    <mat-icon matSuffix>keyboard</mat-icon>
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      @for (option of filteredOptions | async; track option) {
+      <mat-option [value]="option">{{ option }}</mat-option>
       }
     </mat-autocomplete>
   </mat-form-field>

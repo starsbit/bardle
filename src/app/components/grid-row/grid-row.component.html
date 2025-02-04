@@ -1,66 +1,16 @@
-<div class="row-wrapper">
-  <ba-grid-element
-    [targetAttribute]="target.image"
-    [guessAttribute]="guess.image"
-    [useIconInsteadOfName]="true"
-    [alternativeLabel]="guess.fullName"
-    [winningElement]="target.id === guess.id"
-  ></ba-grid-element>
-  <ba-grid-element
-    [targetAttribute]="target.school"
-    [guessAttribute]="guess.school"
-    [animationDelayInMs]="200"
-    [isSchoolElement]="true"
-    [winningElement]="target.id === guess.id"
-  ></ba-grid-element>
-  <ba-grid-element
-    [targetAttribute]="target.damageType"
-    [guessAttribute]="guess.damageType"
-    [animationDelayInMs]="400"
-    [winningElement]="target.id === guess.id"
-  ></ba-grid-element>
-  <ba-grid-element
-    [targetAttribute]="target.armorType"
-    [guessAttribute]="guess.armorType"
-    [animationDelayInMs]="600"
-    [winningElement]="target.id === guess.id"
-  ></ba-grid-element>
-  <ba-grid-element
-    [targetAttribute]="target.role"
-    [guessAttribute]="guess.role"
-    [animationDelayInMs]="800"
-    [isRoleElement]="true"
-    [winningElement]="target.id === guess.id"
-  ></ba-grid-element>
-  <ba-grid-element
-    [targetAttribute]="target.combatClass"
-    [guessAttribute]="guess.combatClass"
-    [animationDelayInMs]="1000"
-    [winningElement]="target.id === guess.id"
-    [isCombatClass]="true"
-  ></ba-grid-element>
-  <ba-grid-element
-    [targetAttribute]="target.exSkillCost"
-    [guessAttribute]="guess.exSkillCost"
-    [animationDelayInMs]="1200"
-    [winningElement]="target.id === guess.id"
-  ></ba-grid-element>
-  <ba-grid-element
-    [targetAttribute]="target.positioning"
-    [guessAttribute]="guess.positioning"
-    [animationDelayInMs]="1400"
-    [winningElement]="target.id === guess.id"
-  ></ba-grid-element>
-  <ba-grid-element
-    [targetAttribute]="target.height"
-    [guessAttribute]="guess.height"
-    [animationDelayInMs]="1600"
-    [winningElement]="target.id === guess.id"
-  ></ba-grid-element>
-  <ba-grid-element
-    [targetAttribute]="target.releaseDate"
-    [guessAttribute]="guess.releaseDate"
-    [animationDelayInMs]="1800"
-    [winningElement]="target.id === guess.id"
-  ></ba-grid-element>
+<div class="flex justify-center">
+  <ba-grid-character [guess]="guess" [answer]="answer"></ba-grid-character>
+  <ba-grid-school [guess]="guess" [answer]="answer"></ba-grid-school>
+  <ba-grid-role [guess]="guess" [answer]="answer"></ba-grid-role>
+  <ba-grid-damage-type [guess]="guess" [answer]="answer"></ba-grid-damage-type>
+  <ba-grid-armor-type [guess]="guess" [answer]="answer"></ba-grid-armor-type>
+  <ba-grid-ex-skill-cost
+    [guess]="guess"
+    [answer]="answer"
+  ></ba-grid-ex-skill-cost>
+  <ba-grid-birthday [guess]="guess" [answer]="answer"></ba-grid-birthday>
+  <ba-grid-release-date
+    [guess]="guess"
+    [answer]="answer"
+  ></ba-grid-release-date>
 </div>

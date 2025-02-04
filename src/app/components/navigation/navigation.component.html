@@ -1,0 +1,46 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <img
+      src="assets/images/logos/starsbit-black.png"
+      alt="Bardle Icon"
+      class="h-16 w-48"
+    />
+    <span class="spacer"></span>
+    <div class="hidden md:flex">
+      <a routerLink="/" class="px-4 text-black hover:text-gray-500">Home</a>
+      <a routerLink="/about" class="px-4 text-black hover:text-gray-500"
+        >About</a
+      >
+      <a routerLink="/contact" class="px-4 text-black hover:text-gray-500"
+        >Contact</a
+      >
+    </div>
+    <button
+      mat-icon-button
+      class="md:invisible text-black"
+      (click)="toggleMenu()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+@if (menuOpen) {
+<nav class="bg-white text-black md:invisible">
+  <mat-nav-list>
+    <mat-list-item>
+      <a routerLink="/" matLine class="text-black hover:text-gray-500">Home</a>
+    </mat-list-item>
+    <mat-list-item>
+      <a routerLink="/about" matLine class="text-black hover:text-gray-500"
+        >About</a
+      >
+    </mat-list-item>
+    <mat-list-item>
+      <a routerLink="/contact" matLine class="text-black hover:text-gray-500"
+        >Contact</a
+      >
+    </mat-list-item>
+  </mat-nav-list>
+</nav>
+}

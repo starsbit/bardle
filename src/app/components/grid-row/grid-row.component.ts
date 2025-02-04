@@ -1,22 +1,30 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Student } from '../../../models/student';
-import { StudentService } from '../../services/student.service';
-import { GridElementComponent } from '../grid-element/grid-element.component';
+import { Component, Input } from '@angular/core';
+import { Student } from '../../models/student';
+import { GridArmorTypeComponent } from '../grid-element/grid-armor-type/grid-armor-type.component';
+import { GridBirthdayComponent } from '../grid-element/grid-birthday/grid-birthday.component';
+import { GridCharacterComponent } from '../grid-element/grid-character/grid-character.component';
+import { GridDamageTypeComponent } from '../grid-element/grid-damage-type/grid-damage-type.component';
+import { GridExSkillCostComponent } from '../grid-element/grid-ex-skill-cost/grid-ex-skill-cost.component';
+import { GridReleaseDateComponent } from '../grid-element/grid-release-date/grid-release-date.component';
+import { GridRoleComponent } from '../grid-element/grid-role/grid-role.component';
+import { GridSchoolComponent } from '../grid-element/grid-school/grid-school.component';
 
 @Component({
   selector: 'ba-grid-row',
-  standalone: true,
-  imports: [GridElementComponent],
+  imports: [
+    GridCharacterComponent,
+    GridSchoolComponent,
+    GridRoleComponent,
+    GridDamageTypeComponent,
+    GridArmorTypeComponent,
+    GridBirthdayComponent,
+    GridReleaseDateComponent,
+    GridExSkillCostComponent,
+  ],
   templateUrl: './grid-row.component.html',
   styleUrl: './grid-row.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridRowComponent {
-  @Input() guess: Student;
-
-  target: Student;
-
-  constructor(private readonly studentService: StudentService) {
-    this.target = this.studentService.getTarget();
-  }
+  @Input() guess: Student | null = null;
+  @Input() answer: Student | null = null;
 }

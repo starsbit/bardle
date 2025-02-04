@@ -1,8 +1,8 @@
-<div class="grid-wrapper">
-  <ba-grid-header></ba-grid-header>
-  @for (guess of guesses; track $index) {
-  <ba-grid-row [guess]="guess"></ba-grid-row>
-  } @for (emptyRow of numberOfEmptyRows; track $index) {
-  <ba-grid-empty-row></ba-grid-empty-row>
-  }
+<div class="overflow-x-auto">
+  <div class="min-w-max">
+    <ba-grid-header></ba-grid-header>
+    @for (rowIndex of rows; track $index) {
+    <ba-grid-row></ba-grid-row>
+    }
+  </div>
 </div>

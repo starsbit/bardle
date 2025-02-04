@@ -1,27 +1,36 @@
-<div class="container">
-  <div class="back-icon" routerLink="/">
-    <i class="material-icons">arrow_back</i>
-  </div>
+<ba-navigation></ba-navigation>
+<div
+  class="container flex flex-col justify-center items-center min-h-screen p-8"
+>
+  <div class="p-16 text-left">
+    <h1 class="mb-4 font-bold text-2xl">About</h1>
 
-  <div class="text-container">
-    <h1>About</h1>
-
-    <h2>Non Profit</h2>
-    <p>
+    <h2 class="mb-4 text-xl">Non Profit</h2>
+    <p class="mb-8 text-lg">
       This website operates as a non-profit organization and relies on the
       support of generous donors to continue providing its services. If you
       believe that any content on this website infringes upon your copyright,
-      please contact us, and we will promptly address your concerns.
+      please contact me, and I will promptly address your concerns.
+    </p>
+
+    <h2 class="mb-4 text-xl">Cookies and Local Storage</h2>
+    <p class="mb-8 text-lg">
+      This website uses cookies and local storage to enhance user experience.
+      Cookies are used to store user preferences and session information, while
+      local storage is used to store data that needs to persist between
+      sessions. You can control the use of cookies and local storage through
+      your browser settings.
     </p>
   </div>
 
-  <footer>
+  <footer class="text-center mt-8">
     <img
-      ngSrc="assets/images/starsbit_silver.png"
+      src="assets/images/logos/starsbit-black.png"
       alt="starsbit logo"
       width="300"
       height="100"
+      class="mb-4"
     />
-    <p style="color: whitesmoke">© 2024 - starsbit</p>
+    <p>© {{ copyrightYear }} - starsbit</p>
   </footer>
 </div>

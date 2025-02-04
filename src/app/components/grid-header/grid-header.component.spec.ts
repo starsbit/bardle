@@ -11,7 +11,7 @@ describe('GridHeaderComponent', () => {
       imports: [GridHeaderComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(GridHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

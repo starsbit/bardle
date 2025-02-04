@@ -11,7 +11,7 @@ describe('GuessInputComponent', () => {
       imports: [GuessInputComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(GuessInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

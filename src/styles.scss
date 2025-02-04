@@ -1,28 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@use "app/themes/ba-input" as *;
 
-ba-root {
-  flex-grow: 1;
-  overflow: auto;
-}
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
 
 html,
 body {
-  width: 100vw;
   height: 100%;
 }
-
-@media only screen and (max-width: 600px) {
-  html,
-  body {
-    width: 100%;
-    height: 100vh;
-    min-height: 100% !important;
-  }
-}
-
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  display: flex;
-  flex-direction: column;
+}
+
+// fixes tailwindcss issue with preflight and mat inputs
+.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field
+  .mdc-notched-outline__notch {
+  border-right-style: hidden;
 }

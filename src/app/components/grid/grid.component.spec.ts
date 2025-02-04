@@ -11,7 +11,7 @@ describe('GridComponent', () => {
       imports: [GridComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(GridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

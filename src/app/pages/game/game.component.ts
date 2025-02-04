@@ -1,19 +1,20 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { GuessGameComponent } from '../../components/guess-game/guess-game.component';
-import { StudentService } from '../../services/student.service';
+import { Component } from '@angular/core';
+import { BackgroundComponent } from '../../components/background/background.component';
+import { GridComponent } from '../../components/grid/grid.component';
+import { GuessInputComponent } from '../../components/guess-input/guess-input.component';
+import { NavigationComponent } from '../../components/navigation/navigation.component';
+import { StudentListSelectionComponent } from '../../components/student-list-selection/student-list-selection.component';
 
 @Component({
   selector: 'ba-game',
-  standalone: true,
-  imports: [GuessGameComponent],
+  imports: [
+    NavigationComponent,
+    BackgroundComponent,
+    GridComponent,
+    StudentListSelectionComponent,
+    GuessInputComponent,
+  ],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GameComponent {
-  constructor(private readonly studentService: StudentService) {}
-
-  get backgroundImage(): string {
-    return this.studentService.getBackground();
-  }
-}
+export class GameComponent {}

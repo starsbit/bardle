@@ -4,6 +4,8 @@ import json
 import re
 from schaledb_utils import generate_wiki_article_list_from_schaledb
 from generate_icons import generate_icons, generate_icon_name
+from folder_management import get_asset_folder
+import datetime
 
 def extract_integer(s):
     match = re.search(r'\d+', s)
@@ -22,6 +24,13 @@ def separate_names(name_string):
         japanese_name = name_string[split_index:].strip()
         return latin_name, japanese_name
     return name_string, ""
+
+def format_birthday(bday_str):
+    try:
+        date_obj = datetime.datetime.strptime(bday_str, "%B %d")
+        return date_obj.strftime("%d.%m.")
+    except ValueError:
+        return bday_str  # Return the original string if parsing fails
 
 def generate_info_from_url(url, image_name):
 
@@ -62,6 +71,9 @@ def generate_info_from_url(url, image_name):
         name = soup.find('th', class_='character-name').text.strip().replace(" ", "_")
         releaseDateJP = soup.find('th', text='Release Date JP').find_next('td').text.strip()
         weaponType = soup.find('div', class_='weapon-text').text.strip()
+        bday = soup.find('th', text='Birthday').find_next('td').text.strip()
+
+        bday = format_birthday(bday)
 
         full_name, native_name = separate_names(full_name)
 
@@ -94,7 +106,9 @@ def generate_info_from_url(url, image_name):
             "outfit": outfit,
             "releaseDate": releaseDateJP,
             "weaponType": weaponType,
-            "image": image_name
+            "image": image_name,
+            "birthday": bday,
+            "disabled": False
         }
 
         print("Character Information:", character_info)
@@ -119,7 +133,7 @@ def fetch_info():
     merged_json = {}
 
     # Get all the PNG files from the folder
-    folder_path = "src/assets/"
+    folder_path = get_asset_folder()
 
     # Generate the icons
     print("Generating icons...")
@@ -145,4 +159,6 @@ def fetch_info():
         json.dump(merged_json, outfile)
 
     print("Merged data dumped into character_info.json")
+
+    return merged_json
     

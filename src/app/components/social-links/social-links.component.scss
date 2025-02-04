@@ -1,0 +1,47 @@
+.filter-white {
+  filter: invert(0) brightness(100);
+}
+
+.social-link-dark {
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-link-dark:hover {
+  background-color: white;
+}
+
+.social-link-dark img.filter-white {
+  transition: filter 0.3s ease;
+}
+
+.social-link-dark:hover img.filter-white {
+  filter: brightness(0);
+}
+
+.filter-black {
+  filter: invert(1) brightness(100);
+}
+
+.social-link {
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: black;
+}
+
+.social-link img.filter-black {
+  transition: filter 0.3s ease;
+}
+
+.social-link:hover img.filter-black {
+  filter: brightness(100);
+}

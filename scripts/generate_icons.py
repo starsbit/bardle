@@ -1,14 +1,16 @@
 import os
 import json
 from schaledb_utils import get_schale_db, translate_schale_to_wiki, fetch_icon
+from folder_management import get_character_image_folder
 
 def generate_icon_name(name: str):
     return name.replace("_", "").replace("(", "").replace(")", "").replace(" ", "") + ".webp"
 
 def generate_icons():
-    folder_path = "./src/assets/"
+    image_folder = get_character_image_folder()
 
-    image_folder = folder_path + "images/characters/"
+    # Create the folder if it does not exist
+    os.makedirs(image_folder, exist_ok=True)
 
     schale_db = get_schale_db()
 
