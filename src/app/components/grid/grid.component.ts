@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { RULES } from '../../constants/rules';
 import { Student } from '../../models/student';
+import { StudentList } from '../../models/student-list';
 import { GameService } from '../../services/game.service';
 import { GridHeaderComponent } from '../grid-header/grid-header.component';
 import { GridRowComponent } from '../grid-row/grid-row.component';
@@ -15,6 +16,7 @@ import { GridRowComponent } from '../grid-row/grid-row.component';
 export class GridComponent implements OnInit, OnDestroy {
   answer: Student | null = null;
   guesses: (Student | null)[] = [];
+  list: StudentList | undefined = undefined;
   private subscriptions = new Subscription();
 
   constructor(
@@ -27,6 +29,7 @@ export class GridComponent implements OnInit, OnDestroy {
       this.gameService.$gameStateChange().subscribe(() => {
         this.updateAnswer();
         this.updateGuesses();
+        this.updateList();
         this.cdr.markForCheck();
       })
     );
@@ -59,5 +62,9 @@ export class GridComponent implements OnInit, OnDestroy {
       Array(RULES.MAX_GUESSES - currentGuesses.length).fill(null)
     );
     this.guesses = currentGuesses;
+  }
+
+  private updateList() {
+    this.list = this.gameService.getCurrentList();
   }
 }

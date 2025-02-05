@@ -1,38 +1,49 @@
 <div class="flex justify-center">
-  <ba-grid-character [guess]="guess" [answer]="answer"></ba-grid-character>
+  <ba-grid-character
+    [guess]="guess"
+    [answer]="answer"
+    [list]="list"
+  ></ba-grid-character>
   <ba-grid-school
     [guess]="guess"
     [answer]="answer"
+    [list]="list"
     [animationDelayMs]="100"
   ></ba-grid-school>
   <ba-grid-role
     [guess]="guess"
     [answer]="answer"
+    [list]="list"
     [animationDelayMs]="200"
   ></ba-grid-role>
   <ba-grid-damage-type
     [guess]="guess"
     [answer]="answer"
+    [list]="list"
     [animationDelayMs]="300"
   ></ba-grid-damage-type>
   <ba-grid-armor-type
     [guess]="guess"
     [answer]="answer"
+    [list]="list"
     [animationDelayMs]="400"
   ></ba-grid-armor-type>
   <ba-grid-ex-skill-cost
     [guess]="guess"
     [answer]="answer"
+    [list]="list"
     [animationDelayMs]="500"
   ></ba-grid-ex-skill-cost>
   <ba-grid-birthday
     [guess]="guess"
     [answer]="answer"
+    [list]="list"
     [animationDelayMs]="600"
   ></ba-grid-birthday>
   <ba-grid-release-date
     [guess]="guess"
     [answer]="answer"
+    [list]="list"
     [animationDelayMs]="700"
   ></ba-grid-release-date>
 </div>

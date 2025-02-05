@@ -1,5 +1,5 @@
 <ba-grid-element-container
-  [isFlipped]="!!guess"
+  [isFlipped]="getFlipString()"
   [animationDelayMs]="animationDelayMs"
   [won]="guess === answer"
 >

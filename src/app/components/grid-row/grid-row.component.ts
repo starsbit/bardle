@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Student } from '../../models/student';
+import { StudentList } from '../../models/student-list';
 import { GridArmorTypeComponent } from '../grid-element/grid-armor-type/grid-armor-type.component';
 import { GridBirthdayComponent } from '../grid-element/grid-birthday/grid-birthday.component';
 import { GridDamageTypeComponent } from '../grid-element/grid-damage-type/grid-damage-type.component';
@@ -28,4 +29,5 @@ import { GridStudentComponent } from '../grid-element/grid-student/grid-student.
 export class GridRowComponent {
   @Input() guess: Student | null = null;
   @Input() answer: Student | null = null;
+  @Input() list: StudentList | undefined = undefined;
 }

@@ -5,6 +5,7 @@ import {
   Component,
   Input,
   OnChanges,
+  SimpleChanges,
 } from '@angular/core';
 
 @Component({
@@ -15,7 +16,9 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridElementContainerComponent implements OnChanges {
-  @Input() isFlipped = false;
+  // it has to be a string else the change detection won't work
+  // because it does not pick up changes when going from true -> true for example
+  @Input() isFlipped: string = '';
   @Input() animationDelayMs = 0;
   @Input() won = false;
   childrenHidden = true;
@@ -23,12 +26,15 @@ export class GridElementContainerComponent implements OnChanges {
 
   constructor(private readonly cdr: ChangeDetectorRef) {}
 
-  ngOnChanges() {
-    if (this.isFlipped) {
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['isFlipped'] && changes['isFlipped'].currentValue) {
+      this.isFlipped = ''; // Temporarily set to false
+      this.cdr.detectChanges(); // Trigger change detection
       setTimeout(() => {
+        this.isFlipped = changes['isFlipped'].currentValue; // Set back to true
         this.childrenHidden = false;
         this.cdr.markForCheck();
-      }, this.animationDelayMs + 400);
+      }, 0);
     }
     if (!this.won) {
       this.startWinAnimation = false;
