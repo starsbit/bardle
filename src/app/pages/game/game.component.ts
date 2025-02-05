@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BackgroundComponent } from '../../components/background/background.component';
 import { GridComponent } from '../../components/grid/grid.component';
 import { GuessInputComponent } from '../../components/guess-input/guess-input.component';
@@ -16,5 +16,6 @@ import { StudentListSelectionComponent } from '../../components/student-list-sel
   ],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GameComponent {}

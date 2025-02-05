@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Student } from '../../models/student';
 
 @Component({
@@ -6,6 +6,7 @@ import { Student } from '../../models/student';
   imports: [],
   templateUrl: './grid-element.component.html',
   styleUrl: './grid-element.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridElementComponent {
   @Input() guess: Student | null = null;

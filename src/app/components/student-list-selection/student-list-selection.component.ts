@@ -1,16 +1,67 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { TitleCasePipe } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { Subscription } from 'rxjs';
+import { StudentList } from '../../models/student-list';
+import { StudentListService } from '../../services/student-list.service';
 
 @Component({
   selector: 'ba-student-list-selection',
-  imports: [FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    TitleCasePipe,
+  ],
   templateUrl: './student-list-selection.component.html',
-  styleUrl: './student-list-selection.component.scss',
+  styleUrls: ['./student-list-selection.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StudentListSelectionComponent {
-  selectedStudentList!: string;
-  studentLists: string[] = ['Global', 'Japan'];
+export class StudentListSelectionComponent implements OnInit, OnDestroy {
+  studentLists = Object.values(StudentList);
+  selectedStudentList = new FormControl<StudentList | null>(null);
+
+  private readonly $destroy = new Subscription();
+
+  constructor(
+    private readonly studentListService: StudentListService,
+    private readonly cdr: ChangeDetectorRef
+  ) {}
+
+  ngOnInit() {
+    this.$destroy.add(
+      this.studentListService.$studentListChange().subscribe((studentList) => {
+        if (studentList === this.selectedStudentList.value) {
+          return;
+        }
+        this.selectedStudentList.setValue(studentList, { emitEvent: false });
+        this.cdr.markForCheck();
+      })
+    );
+
+    this.selectedStudentList.valueChanges.subscribe((value) => {
+      if (value) {
+        this.onStudentListChange(value);
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.$destroy.unsubscribe();
+  }
+
+  onStudentListChange(studentList: StudentList) {
+    this.studentListService.setStudentListByName(studentList);
+  }
 }

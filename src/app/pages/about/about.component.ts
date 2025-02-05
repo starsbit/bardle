@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NavigationComponent } from '../../components/navigation/navigation.component';
 
 @Component({
@@ -6,6 +6,7 @@ import { NavigationComponent } from '../../components/navigation/navigation.comp
   imports: [NavigationComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutComponent {
   copyrightYear = new Date().getFullYear();

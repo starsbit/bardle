@@ -1,0 +1,20 @@
+::ng-deep .mat-mdc-option {
+  color: whitesmoke;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+::ng-deep .mdc-list-item__primary-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > img {
+    margin-right: 8px;
+  }
+  color: black;
+}
+
+.portrait {
+  width: 48px;
+  height: 48px;
+}

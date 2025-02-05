@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { GridElementComponent } from '../grid-element.component';
 import { GridElementContainerComponent } from '../grid-wrapper/grid-element-container.component';
 
@@ -7,5 +7,6 @@ import { GridElementContainerComponent } from '../grid-wrapper/grid-element-cont
   imports: [GridElementContainerComponent],
   templateUrl: './grid-armor-type.component.html',
   styleUrl: './grid-armor-type.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridArmorTypeComponent extends GridElementComponent {}

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Student } from '../../models/student';
 import { GridArmorTypeComponent } from '../grid-element/grid-armor-type/grid-armor-type.component';
 import { GridBirthdayComponent } from '../grid-element/grid-birthday/grid-birthday.component';
@@ -23,6 +23,7 @@ import { GridSchoolComponent } from '../grid-element/grid-school/grid-school.com
   ],
   templateUrl: './grid-row.component.html',
   styleUrl: './grid-row.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridRowComponent {
   @Input() guess: Student | null = null;

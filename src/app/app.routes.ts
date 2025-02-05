@@ -22,12 +22,12 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    redirectTo: 'game/jp',
+    redirectTo: 'game/japan',
     pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: 'game/jp',
+    redirectTo: 'game/japan',
     pathMatch: 'full',
   },
 ];

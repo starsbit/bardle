@@ -18,3 +18,7 @@ export interface Student {
   birthday: string;
   disabled: boolean;
 }
+
+export interface StudentData {
+  [id: string]: Student;
+}

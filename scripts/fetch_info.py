@@ -17,7 +17,7 @@ def extract_integer(s):
 
 def separate_names(name_string):
     # Regular expression to match the Latin name and Japanese name
-    match = re.search(r"[^\x00-\x7F]", name_string)
+    match = re.search(r"[^\x00-\x7F]+(?:\s[^\x00-\x7F]+)*$", name_string)
     if match:
         split_index = match.start()
         latin_name = name_string[:split_index].strip()

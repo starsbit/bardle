@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { GridHeaderElementComponent } from './grid-header-element/grid-header-element.component';
 
 @Component({
@@ -6,5 +6,6 @@ import { GridHeaderElementComponent } from './grid-header-element/grid-header-el
   imports: [GridHeaderElementComponent],
   templateUrl: './grid-header.component.html',
   styleUrl: './grid-header.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridHeaderComponent {}
