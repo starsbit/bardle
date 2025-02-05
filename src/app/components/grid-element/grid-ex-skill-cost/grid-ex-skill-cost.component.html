@@ -5,17 +5,14 @@
 >
   @if (guess && answer) {
   <div
-    [ngClass]="[correctGuess() ? 'correct' : 'incorrect']"
+    [ngClass]="[
+      correctGuess() ? 'correct' : 'incorrect',
+      answer.exSkillCost > guess.exSkillCost ? 'arrow-up' : '',
+      answer.exSkillCost < guess.exSkillCost ? 'arrow-down' : ''
+    ]"
     class="flex items-center justify-center text-center p-2 overflow-hidden h-full"
   >
-    <span class="block text-sm truncate text-white">{{
-      guess.exSkillCost
-    }}</span>
-    @if (answer.exSkillCost > guess.exSkillCost) {
-    <span class="ml-2 text-white">↑</span>
-    } @if (answer.exSkillCost < guess.exSkillCost) {
-    <span class="ml-2 text-white">↓</span>
-    }
+    <span class="block text-white">{{ guess.exSkillCost }}</span>
   </div>
   }
 </ba-grid-element-container>

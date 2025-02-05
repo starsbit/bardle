@@ -1,29 +1,29 @@
-.normal {
-  color: #4b5884;
+.base-damage-type {
   text-shadow: whitesmoke -1px 0px, whitesmoke 0px 1px, whitesmoke 1px 0px,
     whitesmoke 0px -1px;
+}
+
+.normal {
+  @extend .base-damage-type;
+  color: #4b5884;
 }
 
 .explosive {
+  @extend .base-damage-type;
   color: #920008;
-  text-shadow: whitesmoke -1px 0px, whitesmoke 0px 1px, whitesmoke 1px 0px,
-    whitesmoke 0px -1px;
 }
 
 .piercing {
+  @extend .base-damage-type;
   color: #bd8802;
-  text-shadow: whitesmoke -1px 0px, whitesmoke 0px 1px, whitesmoke 1px 0px,
-    whitesmoke 0px -1px;
 }
 
 .mystic {
+  @extend .base-damage-type;
   color: #226f9b;
-  text-shadow: whitesmoke -1px 0px, whitesmoke 0px 1px, whitesmoke 1px 0px,
-    whitesmoke 0px -1px;
 }
 
 .sonic {
+  @extend .base-damage-type;
   color: #9a49a9;
-  text-shadow: whitesmoke -1px 0px, whitesmoke 0px 1px, whitesmoke 1px 0px,
-    whitesmoke 0px -1px;
 }

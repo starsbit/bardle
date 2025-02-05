@@ -11,12 +11,16 @@ export class AssetService {
 
   constructor(private readonly http: HttpClient) {}
 
-  getIcon(student: Student) {
-    return this.http.get(this.getIconLocation(student));
+  getStudentIcon(student: Student) {
+    return this.http.get(this.getStudentIconLocation(student));
   }
 
-  getIconLocation(student: Student) {
+  getStudentIconLocation(student: Student) {
     return `${AssetService.ASSET_IMAGES_PATH}/characters/${student.image}`;
+  }
+
+  getIconLocation(icon: string) {
+    return `${AssetService.ASSET_IMAGES_PATH}/icons/${icon}`;
   }
 
   getBackground(index: number) {

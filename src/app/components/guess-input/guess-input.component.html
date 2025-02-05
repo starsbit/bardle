@@ -1,5 +1,8 @@
 <form class="flex justify-center items-center h-full">
-  <mat-form-field class="md:w-142 w-103 ba-input-outline" appearance="outline">
+  <mat-form-field
+    class="md:w-158 w-80 p-1 ba-input-outline"
+    appearance="outline"
+  >
     <mat-label>Student name</mat-label>
     <input
       type="text"
@@ -16,7 +19,7 @@
         (onSelectionChange)="onSelectionChange(option)"
       >
         <img
-          [ngSrc]="this.assetService.getIconLocation(option)"
+          [ngSrc]="this.assetService.getStudentIconLocation(option)"
           width="48"
           height="48"
           [alt]="option.fullName"
