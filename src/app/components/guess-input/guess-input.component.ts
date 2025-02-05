@@ -14,6 +14,7 @@ import { Observable, Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { Student } from '../../models/student';
 import { GameService } from '../../services/game.service';
+import { StudentListService } from '../../services/student-list.service';
 import { StudentService } from '../../services/student.service';
 import { AssetService } from '../../services/web/asset.service';
 
@@ -44,6 +45,7 @@ export class GuessInputComponent implements OnInit, OnDestroy {
   constructor(
     private readonly studentService: StudentService,
     private readonly gameService: GameService,
+    private readonly studentListService: StudentListService,
     public readonly assetService: AssetService
   ) {
     this.subscriptions.add(
@@ -51,8 +53,30 @@ export class GuessInputComponent implements OnInit, OnDestroy {
         this.students = students;
         this.answer = this.gameService.getAnswer();
         this.inputReset();
+        if (
+          this.studentListService.getLatestList() &&
+          this.gameService.getCurrentResult()[
+            this.studentListService.getLatestList()!
+          ]
+        ) {
+          this.guessInputControl.disable();
+          return;
+        }
+        this.guessInputControl.enable();
       })
     );
+
+    this.subscriptions.add(
+      this.gameService.$resultUpdates().subscribe((result) => {
+        if (!this.studentListService.getLatestList()) {
+          return;
+        }
+        if (result[this.studentListService.getLatestList()!]) {
+          this.guessInputControl.disable();
+        }
+      })
+    );
+
     if (!this.gameService.getAnswer()) {
       this.guessInputControl.disable();
     }
@@ -86,7 +110,6 @@ export class GuessInputComponent implements OnInit, OnDestroy {
 
   private inputReset() {
     this.guessInputControl.reset();
-    this.guessInputControl.enable();
     this.filteredOptions = this.guessInputControl.valueChanges.pipe(
       startWith(''),
       map((value) => this._filter(value || ''))

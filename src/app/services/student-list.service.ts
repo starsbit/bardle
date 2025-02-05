@@ -54,6 +54,10 @@ export class StudentListService implements OnDestroy {
     this.router.navigate(['/game', studentList.toLowerCase()]);
   }
 
+  getLatestList() {
+    return this.latestList;
+  }
+
   ngOnDestroy() {
     this.subscriptions.next();
     this.subscriptions.complete();
