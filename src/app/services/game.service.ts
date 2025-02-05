@@ -1,140 +1,239 @@
-import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject, ReplaySubject, Subscription } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { ReplaySubject } from 'rxjs';
 import { RULES } from '../constants/rules';
-import { Student } from '../models/student';
-import { StudentList } from '../models/student-list';
-import { LocalStorage } from './local-storage.service';
-import { StudentListService } from './student-list.service';
+import { GameAnswer, GameResult, GameState } from '../models/game';
+import { GuessCookie } from '../models/guess-cookie';
+import { StudentListData } from '../models/student';
+import { DEFAULT_STUDENT_LIST, StudentList } from '../models/student-list';
+import { getDayOfYear } from '../utils/date';
+import { LocalStorageService } from './local-storage.service';
 import { StudentService } from './student.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class GameService implements OnDestroy {
-  private readonly subscriptions = new Subscription();
-  private readonly guessesChanged = new ReplaySubject<string[]>(1);
-  private readonly answerChanged = new ReplaySubject<void>(1);
-  private guesses: { [key in StudentList]: string[] } =
-    this.initializeGuesses();
-  private currentList: StudentList = StudentList.JAPAN;
-  private answer: Student | null = null;
-  private readonly resultUpdates = new BehaviorSubject<GameResult>({});
-  private result: GameResult = {};
-
-  private readonly doy = Math.floor(
-    (new Date().getTime() -
-      new Date(new Date().getFullYear(), 0, 0).getTime()) /
-      86400000
-  );
+export class GameService {
+  private gameState: GameState | null = null;
+  private isInitialized = false;
+  private readonly doy = getDayOfYear(new Date());
+  private readonly gameStateChange = new ReplaySubject<GameState>(1);
 
   constructor(
-    private readonly studentListService: StudentListService,
+    private readonly localStorage: LocalStorageService,
     private readonly studentService: StudentService,
-    private readonly localStorage: LocalStorage
+    private readonly router: Router
   ) {
-    this.subscriptions.add(
-      this.studentListService.$studentListChange().subscribe((studentList) => {
-        this.currentList = studentList;
-        this.guessesChanged.next(this.guesses[this.currentList]);
-      })
-    );
-    this.subscriptions.add(
-      this.studentService.$studentListChange().subscribe(() => {
-        this.answer = this.studentService.getTodaysStudent();
-        console.log('GameService: answer changed', this.answer);
-        this.answerChanged.next();
-      })
-    );
-    this.handleInitialCookieGuesses();
+    this.initializeGameState();
+    this.$gameStateChange().subscribe((state) => {
+      console.log('Game state change:', state);
+    });
   }
 
-  addGuess(student: Student) {
-    if (this.guesses[this.currentList].length >= RULES.MAX_GUESSES) {
+  getGameState() {
+    return this.gameState;
+  }
+
+  $gameStateChange() {
+    return this.gameStateChange.asObservable();
+  }
+
+  setGuess(guesses: GuessCookie) {
+    if (this.gameState === null || !this.isInitialized) {
       return;
     }
-    this.guesses[this.currentList].push(student.id);
-    if (student === this.answer) {
-      this.result[this.currentList] = { won: true };
-      this.resultUpdates.next(this.result);
-    }
-    this.guessesChanged.next(this.guesses[this.currentList]);
-    if (this.guesses[this.currentList].length >= RULES.MAX_GUESSES) {
-      this.result[this.currentList] = { lost: true };
-      this.resultUpdates.next(this.result);
-    }
-    this.localStorage.setGuess({
-      doy: this.doy,
-      guesses: this.guesses,
-    });
-  }
-
-  getGuesses(): string[] {
-    return this.guesses[this.currentList];
-  }
-
-  getGuessCount(): number {
-    return this.guesses[this.currentList].length;
-  }
-
-  getAnswer(): Student | null {
-    return this.answer;
-  }
-
-  getCurrentResult(): GameResult {
-    return this.result;
-  }
-
-  getCurrentListResult(): { won?: boolean; lost?: boolean } {
-    return this.result[this.currentList] || {};
-  }
-
-  $guessesChanged() {
-    return this.guessesChanged.asObservable();
-  }
-
-  $answerChanged() {
-    return this.answerChanged.asObservable();
-  }
-
-  $resultUpdates() {
-    return this.resultUpdates.asObservable();
-  }
-
-  ngOnDestroy() {
-    this.subscriptions.unsubscribe();
-  }
-
-  private initializeGuesses(): { [key in StudentList]: string[] } {
-    const guesses: { [key in StudentList]: string[] } = {} as {
-      [key in StudentList]: string[];
+    this.localStorage.setGuess(guesses);
+    this.gameState = {
+      ...this.gameState,
+      guesses: guesses,
+      result: this.createInitialGameResult(guesses, this.gameState.answer),
     };
-    Object.values(StudentList).forEach((list) => {
-      guesses[list] = [];
-    });
-    return guesses;
+    this.gameStateChange.next(this.gameState);
   }
 
-  private handleInitialCookieGuesses() {
-    const guessCookie = this.localStorage.getGuess();
+  setActiveList(list: StudentList) {
+    if (this.gameState === null || !this.isInitialized) {
+      return;
+    }
+    const guess = this.localStorage.getGuess();
+    guess.lastList = list;
+    this.localStorage.setGuess(guess);
+    this.gameState = {
+      ...this.gameState,
+      activeList: list,
+    };
+    this.router.navigate(['/game', list.toLowerCase()]);
+    this.gameStateChange.next(this.gameState);
+  }
 
-    if (guessCookie.doy !== this.doy) {
-      this.localStorage.setGuess({
-        doy: this.doy,
+  setResult(result: GameResult) {
+    if (this.gameState === null || !this.isInitialized) {
+      return;
+    }
+    this.gameState = {
+      ...this.gameState,
+      result,
+    };
+    this.gameStateChange.next(this.gameState);
+  }
+
+  addGuess(guess: string) {
+    if (this.gameState === null || !this.isInitialized) {
+      return;
+    }
+    if (
+      this.gameState.result[this.gameState.activeList].won ||
+      this.gameState.result[this.gameState.activeList].lost
+    ) {
+      return;
+    }
+    const guesses = { ...this.gameState.guesses };
+    guesses.guesses[this.gameState.activeList].push(guess);
+    this.setGuess(guesses);
+    if (
+      guesses.guesses[this.gameState.activeList].length >= RULES.MAX_GUESSES
+    ) {
+      this.setResult({
+        ...this.gameState.result,
+        [this.gameState.activeList]: { lost: true },
+      });
+    }
+    if (guess === this.gameState.answer[this.gameState.activeList]) {
+      this.setResult({
+        ...this.gameState.result,
+        [this.gameState.activeList]: { won: true },
+      });
+    }
+  }
+
+  getCurrentGuesses() {
+    if (this.gameState === null) {
+      return;
+    }
+    return this.gameState.guesses.guesses[this.gameState.activeList];
+  }
+
+  getCurrentList() {
+    if (this.gameState === null) {
+      return;
+    }
+    return this.gameState.activeList;
+  }
+
+  getCurrentStudentData() {
+    if (this.gameState === null) {
+      return;
+    }
+    return this.gameState.students[this.gameState.activeList];
+  }
+
+  getCurrentResult() {
+    if (this.gameState === null) {
+      return;
+    }
+    return this.gameState.result[this.gameState.activeList];
+  }
+
+  getCurrentAnswer() {
+    if (this.gameState === null) {
+      return;
+    }
+    return this.gameState.answer[this.gameState.activeList];
+  }
+
+  private async initializeGameState() {
+    const guesses = this.createInitialGuess();
+    const activeList = this.createInitialListSelection();
+    this.createStudentData().subscribe((students) => {
+      const answer = this.createInitialGameAnswer(students);
+      const yesterdayAnswer = this.createInitialYesterdayAnswer(students);
+      const result = this.createInitialGameResult(guesses, answer);
+      this.gameState = {
+        guesses,
+        answer,
+        result,
+        yesterdayAnswer,
+        students,
+        activeList,
+      };
+      this.gameStateChange.next(this.gameState);
+      this.isInitialized = true;
+    });
+  }
+
+  private createInitialGuess() {
+    let guess = this.localStorage.getGuess();
+    if (guess.doy !== this.doy) {
+      guess = {
         guesses: {
           japan: [],
           global: [],
         },
-      });
-    } else {
-      this.guesses = guessCookie.guesses;
-      this.guessesChanged.next(this.guesses[this.currentList]);
+        doy: this.doy,
+        lastList: guess.lastList || this.createInitialListSelection(),
+      };
+      this.localStorage.setGuess(guess);
     }
+    return guess;
   }
-}
 
-export interface GameResult {
-  [id: string]: {
-    won?: boolean;
-    lost?: boolean;
-  };
+  private createInitialGameResult(guess: GuessCookie, gameAnswer: GameAnswer) {
+    const gameResult: GameResult = {};
+    for (const list in Object.keys(gameAnswer)) {
+      const listEnum = list as StudentList;
+      if (gameAnswer.hasOwnProperty(listEnum)) {
+        const guesses: string[] = guess.guesses[listEnum];
+        const lost = guesses.length >= RULES.MAX_GUESSES;
+        gameResult[listEnum] = {
+          won: guesses.includes(gameAnswer[listEnum]),
+          lost: lost,
+        };
+      }
+    }
+    let guesses: string[] = guess.guesses[StudentList.JAPAN];
+    let lost = guesses.length >= RULES.MAX_GUESSES;
+    gameResult[StudentList.JAPAN] = {
+      won: guesses.includes(gameAnswer[StudentList.JAPAN]),
+      lost: lost,
+    };
+    guesses = guess.guesses[StudentList.GLOBAL];
+    lost = guesses.length >= RULES.MAX_GUESSES;
+    gameResult[StudentList.GLOBAL] = {
+      won: guesses.includes(gameAnswer[StudentList.GLOBAL]),
+      lost: lost,
+    };
+    return gameResult;
+  }
+
+  private createInitialGameAnswer(studentData: StudentListData) {
+    const todaysStudents: GameAnswer = {};
+    todaysStudents[StudentList.JAPAN] = this.studentService.getTodaysStudent(
+      studentData[StudentList.JAPAN]
+    ).id;
+    todaysStudents[StudentList.GLOBAL] = this.studentService.getTodaysStudent(
+      studentData[StudentList.GLOBAL]
+    ).id;
+    return todaysStudents;
+  }
+
+  private createInitialYesterdayAnswer(studentData: StudentListData) {
+    const yesterdaysStudents: GameAnswer = {};
+    yesterdaysStudents[StudentList.JAPAN] =
+      this.studentService.getYesterdaysStudent(
+        studentData[StudentList.JAPAN]
+      ).id;
+    yesterdaysStudents[StudentList.GLOBAL] =
+      this.studentService.getYesterdaysStudent(
+        studentData[StudentList.GLOBAL]
+      ).id;
+    return yesterdaysStudents;
+  }
+
+  private createInitialListSelection() {
+    return this.localStorage.getGuess().lastList ?? DEFAULT_STUDENT_LIST;
+  }
+
+  private createStudentData() {
+    return this.studentService.getStudentData();
+  }
 }

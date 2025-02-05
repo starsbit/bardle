@@ -1,61 +1,34 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
-import { filter, first, Subscription, switchMap } from 'rxjs';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { RULES } from '../../constants/rules';
 import { Student } from '../../models/student';
 import { GameService } from '../../services/game.service';
-import { StudentService } from '../../services/student.service';
 import { GridHeaderComponent } from '../grid-header/grid-header.component';
 import { GridRowComponent } from '../grid-row/grid-row.component';
 
 @Component({
   selector: 'ba-grid',
-  imports: [GridRowComponent, GridHeaderComponent],
   templateUrl: './grid.component.html',
-  styleUrl: './grid.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrls: ['./grid.component.scss'],
+  imports: [GridHeaderComponent, GridRowComponent],
 })
-export class GridComponent implements OnDestroy, OnInit {
-  private readonly subscriptions = new Subscription();
-  guesses = Array(RULES.MAX_GUESSES).fill(null);
+export class GridComponent implements OnInit, OnDestroy {
   answer: Student | null = null;
+  guesses: (Student | null)[] = [];
+  private subscriptions = new Subscription();
 
   constructor(
     private readonly gameService: GameService,
-    private readonly studentService: StudentService,
     private readonly cdr: ChangeDetectorRef
-  ) {
-    this.subscriptions.add(
-      this.gameService.$answerChanged().subscribe(() => {
-        this.answer = this.gameService.getAnswer();
-      })
-    );
-  }
+  ) {}
 
   ngOnInit() {
     this.subscriptions.add(
-      this.gameService.$answerChanged().subscribe(() => {
-        this.answer = this.gameService.getAnswer();
+      this.gameService.$gameStateChange().subscribe(() => {
+        this.updateAnswer();
+        this.updateGuesses();
+        this.cdr.markForCheck();
       })
-    );
-
-    this.subscriptions.add(
-      this.waitForStudentData()
-        .pipe(switchMap(() => this.gameService.$guessesChanged()))
-        .subscribe((guesses) => {
-          const currentStudents = this.studentService.getStudentData();
-          const currentGuesses = guesses.map((id) => currentStudents[id]);
-
-          this.guesses = currentGuesses.concat(
-            Array(RULES.MAX_GUESSES - currentGuesses.length).fill(null)
-          );
-          this.cdr.markForCheck();
-        })
     );
   }
 
@@ -63,10 +36,28 @@ export class GridComponent implements OnDestroy, OnInit {
     this.subscriptions.unsubscribe();
   }
 
-  private waitForStudentData() {
-    return this.studentService.$studentListChange().pipe(
-      filter((data) => data && Object.keys(data).length > 0),
-      first()
+  private updateAnswer() {
+    const currentAnswer = this.gameService.getCurrentAnswer();
+    if (!currentAnswer) {
+      return;
+    }
+    const currentStudents = this.gameService.getCurrentStudentData();
+    if (!currentStudents) {
+      return;
+    }
+    this.answer = currentStudents[currentAnswer];
+  }
+
+  private updateGuesses() {
+    const currentStudents = this.gameService.getCurrentStudentData();
+    const currentGuessesId = this.gameService.getCurrentGuesses();
+    if (!currentGuessesId || !currentStudents) {
+      return;
+    }
+    let currentGuesses = currentGuessesId.map((id) => currentStudents[id]);
+    currentGuesses = currentGuesses.concat(
+      Array(RULES.MAX_GUESSES - currentGuesses.length).fill(null)
     );
+    this.guesses = currentGuesses;
   }
 }

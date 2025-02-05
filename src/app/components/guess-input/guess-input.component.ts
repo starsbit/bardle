@@ -13,9 +13,8 @@ import { MatInputModule } from '@angular/material/input';
 import { Observable, Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { Student } from '../../models/student';
+import { DEFAULT_STUDENT_LIST, StudentList } from '../../models/student-list';
 import { GameService } from '../../services/game.service';
-import { StudentListService } from '../../services/student-list.service';
-import { StudentService } from '../../services/student.service';
 import { AssetService } from '../../services/web/asset.service';
 
 @Component({
@@ -39,47 +38,26 @@ export class GuessInputComponent implements OnInit, OnDestroy {
   students: Student[] = [];
   filteredOptions!: Observable<Student[]>;
   answer: Student | null = null;
+  previousSelection: StudentList = DEFAULT_STUDENT_LIST;
 
   private readonly subscriptions = new Subscription();
 
   constructor(
-    private readonly studentService: StudentService,
     private readonly gameService: GameService,
-    private readonly studentListService: StudentListService,
     public readonly assetService: AssetService
   ) {
     this.subscriptions.add(
-      studentService.$studentListChange().subscribe((students) => {
-        this.students = students;
-        this.answer = this.gameService.getAnswer();
-        this.inputReset();
-        if (
-          this.studentListService.getLatestList() &&
-          this.gameService.getCurrentResult()[
-            this.studentListService.getLatestList()!
-          ]
-        ) {
-          this.guessInputControl.disable();
-          return;
-        }
-        this.guessInputControl.enable();
-      })
-    );
-
-    this.subscriptions.add(
-      this.gameService.$resultUpdates().subscribe((result) => {
-        if (!this.studentListService.getLatestList()) {
-          return;
-        }
-        if (result[this.studentListService.getLatestList()!]) {
-          this.guessInputControl.disable();
+      this.gameService.$gameStateChange().subscribe(() => {
+        this.checkGameResult();
+        this.checkSelectionChange();
+        const data = this.gameService.getCurrentStudentData();
+        if (data) {
+          this.students = Object.values(data);
+        } else {
+          this.students = [];
         }
       })
     );
-
-    if (!this.gameService.getAnswer()) {
-      this.guessInputControl.disable();
-    }
   }
 
   ngOnInit() {
@@ -94,13 +72,16 @@ export class GuessInputComponent implements OnInit, OnDestroy {
   }
 
   onSelectionChange(selection: Student) {
-    this.gameService.addGuess(selection);
+    this.gameService.addGuess(selection.id);
     this.inputReset();
   }
 
   private _filter(value: string): Student[] {
     const filterValue = value.toLowerCase();
-    const currentGuesses = this.gameService.getGuesses();
+    const currentGuesses = this.gameService.getCurrentGuesses();
+    if (!currentGuesses) {
+      return [];
+    }
     return this.students.filter(
       (student) =>
         student.fullName.toLowerCase().includes(filterValue) &&
@@ -114,5 +95,22 @@ export class GuessInputComponent implements OnInit, OnDestroy {
       startWith(''),
       map((value) => this._filter(value || ''))
     );
+  }
+
+  private checkGameResult() {
+    const latestList = this.gameService.getCurrentList();
+    const result = this.gameService.getCurrentResult();
+    if (latestList && result && (result.won || result.lost)) {
+      this.guessInputControl.disable();
+    } else {
+      this.guessInputControl.enable();
+    }
+  }
+
+  private checkSelectionChange() {
+    if (this.previousSelection !== this.gameService.getCurrentList()) {
+      this.inputReset();
+      this.previousSelection = this.gameService.getCurrentList()!;
+    }
   }
 }

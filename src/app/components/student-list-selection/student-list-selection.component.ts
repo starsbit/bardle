@@ -12,7 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { Subscription } from 'rxjs';
 import { StudentList } from '../../models/student-list';
-import { StudentListService } from '../../services/student-list.service';
+import { GameService } from '../../services/game.service';
 
 @Component({
   selector: 'ba-student-list-selection',
@@ -35,13 +35,17 @@ export class StudentListSelectionComponent implements OnInit, OnDestroy {
   private readonly subscriptions = new Subscription();
 
   constructor(
-    private readonly studentListService: StudentListService,
+    private readonly gameService: GameService,
     private readonly cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
     this.subscriptions.add(
-      this.studentListService.$studentListChange().subscribe((studentList) => {
+      this.gameService.$gameStateChange().subscribe((state) => {
+        const studentList = this.gameService.getCurrentList();
+        if (!studentList) {
+          return;
+        }
         if (studentList === this.selectedStudentList.value) {
           return;
         }
@@ -62,6 +66,6 @@ export class StudentListSelectionComponent implements OnInit, OnDestroy {
   }
 
   onStudentListChange(studentList: StudentList) {
-    this.studentListService.setStudentListByName(studentList);
+    this.gameService.setActiveList(studentList);
   }
 }

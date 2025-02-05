@@ -22,3 +22,7 @@ export interface Student {
 export interface StudentData {
   [id: string]: Student;
 }
+
+export interface StudentListData {
+  [list: string]: StudentData;
+}

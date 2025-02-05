@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { map, ReplaySubject, tap } from 'rxjs';
-import { Student, StudentData } from '../models/student';
+import { forkJoin, map, of, tap } from 'rxjs';
+import { Student, StudentData, StudentListData } from '../models/student';
 import { StudentList } from '../models/student-list';
 import { hashCode } from '../utils/hash';
 import { StudentClientService } from './web/student-client.service';
@@ -9,43 +9,11 @@ import { StudentClientService } from './web/student-client.service';
   providedIn: 'root',
 })
 export class StudentService {
-  private readonly studentListChange = new ReplaySubject<Student[]>();
-  private students: StudentData = {};
+  private students: StudentListData | null = null;
 
   constructor(private readonly studentClientService: StudentClientService) {}
 
-  $studentListChange() {
-    return this.studentListChange.asObservable();
-  }
-
-  /**
-   * Gets called when the student list changes in the student list service.
-   * @param studentList
-   * @returns observable of student list
-   */
-  setStudentList(studentList: StudentList) {
-    let observable;
-    if (studentList === StudentList.JAPAN) {
-      observable = this.studentClientService.getStudentsJp();
-    } else {
-      observable = this.studentClientService.getStudentsGl();
-    }
-    observable
-      .pipe(
-        tap((studentData: StudentData) => (this.students = studentData)),
-        map((studentData: StudentData) => {
-          const students: Student[] = Object.values(studentData);
-          return students;
-        }),
-        tap((students: Student[]) => this.studentListChange.next(students))
-      )
-      .subscribe();
-  }
-
-  getYesterdaysStudent(): Student | null {
-    if (!this.students) {
-      return null;
-    }
+  getYesterdaysStudent(students: StudentData): Student {
     const yesterday = new Date();
     yesterday.setUTCDate(yesterday.getUTCDate() - 1);
     const formattedDate = `${String(yesterday.getUTCDate()).padStart(
@@ -55,15 +23,12 @@ export class StudentService {
       2,
       '0'
     )}.${yesterday.getUTCFullYear()}`;
-    const index = hashCode(formattedDate) % Object.keys(this.students).length;
-    const keys: string[] = Object.keys(this.students);
-    return this.students[keys[index]];
+    const index = hashCode(formattedDate) % Object.keys(students).length;
+    const keys: string[] = Object.keys(students);
+    return students[keys[index]];
   }
 
-  getTodaysStudent(): Student | null {
-    if (!this.students) {
-      return null;
-    }
+  getTodaysStudent(students: StudentData): Student {
     const today = new Date();
     const formattedDate = `${String(today.getUTCDate()).padStart(
       2,
@@ -72,12 +37,26 @@ export class StudentService {
       2,
       '0'
     )}.${today.getUTCFullYear()}`;
-    const index = hashCode(formattedDate) % Object.keys(this.students).length;
-    const keys: string[] = Object.keys(this.students);
-    return this.students[keys[index]];
+    const index = hashCode(formattedDate) % Object.keys(students).length;
+    const keys: string[] = Object.keys(students);
+    return students[keys[index]];
   }
 
-  getStudentData(): StudentData {
-    return this.students;
+  getStudentData() {
+    if (this.students) {
+      return of(this.students);
+    }
+    const globalData = this.studentClientService.getStudentsGl();
+    const japanData = this.studentClientService.getStudentsJp();
+
+    return forkJoin([globalData, japanData]).pipe(
+      map((data) => {
+        return {
+          [StudentList.GLOBAL]: data[0],
+          [StudentList.JAPAN]: data[1],
+        };
+      }),
+      tap((studentData: StudentListData) => (this.students = studentData))
+    );
   }
 }

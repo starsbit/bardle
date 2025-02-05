@@ -1,11 +1,12 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { GuessCookie } from '../models/guess-cookie';
+import { DEFAULT_STUDENT_LIST } from '../models/student-list';
 
 @Injectable({
   providedIn: 'root',
 })
-export class LocalStorage {
+export class LocalStorageService {
   localStorage!: Storage;
 
   constructor(@Inject(PLATFORM_ID) private platformId: string) {
@@ -36,6 +37,7 @@ export class LocalStorage {
         global: [],
       },
       doy: -1,
+      lastList: DEFAULT_STUDENT_LIST,
     };
   }
 

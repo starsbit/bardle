@@ -30,6 +30,9 @@ export class GridElementContainerComponent implements OnChanges {
         this.cdr.markForCheck();
       }, this.animationDelayMs + 400);
     }
+    if (!this.won) {
+      this.startWinAnimation = false;
+    }
   }
 
   onAnimationEnd(event: AnimationEvent) {
