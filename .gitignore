@@ -42,3 +42,4 @@ testem.log
 Thumbs.db
 
 /scripts/__pycache__
+.vscode
