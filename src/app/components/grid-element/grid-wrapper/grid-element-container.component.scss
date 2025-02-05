@@ -1,0 +1,25 @@
+@keyframes flip {
+  0% {
+    transform: scaleY(0);
+    visibility: visible;
+  }
+
+  20% {
+    transform: scaleY(1);
+    visibility: visible;
+  }
+
+  50% {
+    transform: scaleY(0);
+    visibility: hidden;
+  }
+
+  100% {
+    transform: scaleY(1);
+    visibility: visible;
+  }
+}
+
+.flip {
+  animation: flip 800ms ease-out forwards;
+}

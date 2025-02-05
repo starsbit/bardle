@@ -7,6 +7,10 @@
   }
 }
 
+.correct-no-text {
+  background-color: whitesmoke;
+}
+
 .incorrect {
   background-color: rgb(160, 160, 160);
   color: whitesmoke;
@@ -14,4 +18,8 @@
   span {
     color: whitesmoke;
   }
+}
+
+.incorrect-no-text {
+  background-color: rgb(160, 160, 160);
 }

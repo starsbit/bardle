@@ -1,9 +1,12 @@
-<ba-grid-element-container>
+<ba-grid-element-container
+  [isFlipped]="!!guess"
+  [animationDelayMs]="animationDelayMs"
+>
   @if (guess) {
   <div
     [ngClass]="[
       guess.armorType | dashCase,
-      correctGuess() ? 'correct' : 'incorrect'
+      correctGuess() ? 'correct-no-text' : 'incorrect-no-text'
     ]"
     class="flex items-center justify-center text-center p-2 overflow-hidden h-full"
   >

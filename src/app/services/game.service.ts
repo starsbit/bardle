@@ -71,6 +71,10 @@ export class GameService implements OnDestroy {
     return this.result;
   }
 
+  getCurrentListResult(): { won?: boolean; lost?: boolean } {
+    return this.result[this.currentList] || {};
+  }
+
   $guessesChanged() {
     return this.guessesChanged.asObservable();
   }

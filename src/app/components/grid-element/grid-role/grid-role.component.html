@@ -1,4 +1,7 @@
-<ba-grid-element-container>
+<ba-grid-element-container
+  [isFlipped]="!!guess"
+  [animationDelayMs]="animationDelayMs"
+>
   @if(guess !== null) {
   <div [ngClass]="[correctGuess() ? 'correct' : 'incorrect']">
     <img

@@ -28,4 +28,5 @@ import { GridStudentComponent } from '../grid-element/grid-student/grid-student.
 export class GridRowComponent {
   @Input() guess: Student | null = null;
   @Input() answer: Student | null = null;
+  @Input() animationDelayMs = 0;
 }

@@ -10,6 +10,7 @@ import { Student } from '../../models/student';
 export class GridElementComponent {
   @Input() guess: Student | null = null;
   @Input() answer: Student | null = null;
+  @Input() animationDelayMs = 0;
 
   correctGuess(): boolean {
     return this.guess === this.answer;
