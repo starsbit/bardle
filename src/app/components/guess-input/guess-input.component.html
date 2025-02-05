@@ -9,7 +9,6 @@
       [formControl]="guessInputControl"
       [matAutocomplete]="auto"
     />
-    <mat-icon matSuffix>keyboard</mat-icon>
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
       @for (option of filteredOptions | async; track option) {
       <mat-option

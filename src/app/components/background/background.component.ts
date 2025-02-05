@@ -13,6 +13,7 @@ export class BackgroundComponent {
   backgroundImageUrl: string = '';
 
   constructor(private readonly assetService: AssetService) {
-    this.backgroundImageUrl = this.assetService.getBackgroundLocation(12);
+    this.backgroundImageUrl =
+      this.assetService.pickBackgroundOfTheDayLocation();
   }
 }

@@ -4,6 +4,7 @@ import { RULES } from '../constants/rules';
 import { Student } from '../models/student';
 import { StudentList } from '../models/student-list';
 import { StudentListService } from './student-list.service';
+import { StudentService } from './student.service';
 
 @Injectable({
   providedIn: 'root',
@@ -14,8 +15,12 @@ export class GameService implements OnDestroy {
   private guesses: { [key in StudentList]: Student[] } =
     this.initializeGuesses();
   private currentList: StudentList = StudentList.JAPAN;
+  private answer: Student | null = null;
 
-  constructor(private readonly studentListService: StudentListService) {
+  constructor(
+    private readonly studentListService: StudentListService,
+    private readonly studentService: StudentService
+  ) {
     this.subscriptions.add(
       this.studentListService.$studentListChange().subscribe((studentList) => {
         this.currentList = studentList;
@@ -41,6 +46,13 @@ export class GameService implements OnDestroy {
 
   getGuessCount(): number {
     return this.guesses[this.currentList].length;
+  }
+
+  getAnswer(): Student | null {
+    if (!this.answer) {
+      this.answer = this.studentService.getTodaysStudent();
+    }
+    return this.answer;
   }
 
   $guessesChanged() {

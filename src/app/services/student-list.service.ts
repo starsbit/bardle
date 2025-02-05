@@ -9,7 +9,7 @@ import { StudentService } from './student.service';
   providedIn: 'root',
 })
 export class StudentListService implements OnDestroy {
-  private latestList: StudentList = StudentList.JAPAN;
+  private latestList: StudentList | null = null;
   private readonly studentListChange = new ReplaySubject<StudentList>();
   private readonly subscriptions = new Subject<void>();
 

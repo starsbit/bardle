@@ -37,6 +37,7 @@ export class GuessInputComponent implements OnInit, OnDestroy {
   guessInputControl = new FormControl('');
   students: Student[] = [];
   filteredOptions!: Observable<Student[]>;
+  answer: Student | null = null;
 
   private readonly subscriptions = new Subscription();
 
@@ -48,9 +49,13 @@ export class GuessInputComponent implements OnInit, OnDestroy {
     this.subscriptions.add(
       studentService.$studentListChange().subscribe((students) => {
         this.students = students;
+        this.answer = this.gameService.getAnswer();
         this.inputReset();
       })
     );
+    if (!this.gameService.getAnswer()) {
+      this.guessInputControl.disable();
+    }
   }
 
   ngOnInit() {
@@ -81,6 +86,7 @@ export class GuessInputComponent implements OnInit, OnDestroy {
 
   private inputReset() {
     this.guessInputControl.reset();
+    this.guessInputControl.enable();
     this.filteredOptions = this.guessInputControl.valueChanges.pipe(
       startWith(''),
       map((value) => this._filter(value || ''))

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Student } from '../../models/student';
+import { hashCode } from '../../utils/hash';
 
 @Injectable({
   providedIn: 'root',
@@ -23,9 +24,10 @@ export class AssetService {
   }
 
   getBackgroundLocation(index: number) {
-    if (index > 47 || index < 1) {
+    if (index < 1) {
       index = 1;
     }
+    index = index % 48;
     if (index < 10) {
       return `${AssetService.ASSET_IMAGES_PATH}/backgrounds/0${index}.png`;
     }
@@ -44,5 +46,17 @@ export class AssetService {
       ' ',
       ''
     )}.png`;
+  }
+
+  pickBackgroundOfTheDayLocation() {
+    const today = new Date();
+    const formattedDate = `${String(today.getUTCDate()).padStart(
+      2,
+      '0'
+    )}.${String(today.getUTCMonth() + 1).padStart(
+      2,
+      '0'
+    )}.${today.getUTCFullYear()}`;
+    return this.getBackgroundLocation(hashCode(formattedDate));
   }
 }
