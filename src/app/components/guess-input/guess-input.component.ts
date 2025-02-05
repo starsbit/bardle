@@ -10,10 +10,12 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { map, Observable, startWith, Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 import { Student } from '../../models/student';
 import { GameService } from '../../services/game.service';
 import { StudentService } from '../../services/student.service';
+import { AssetService } from '../../services/web/asset.service';
 
 @Component({
   selector: 'ba-guess-input',
@@ -28,7 +30,7 @@ import { StudentService } from '../../services/student.service';
     NgOptimizedImage,
   ],
   templateUrl: './guess-input.component.html',
-  styleUrl: './guess-input.component.scss',
+  styleUrls: ['./guess-input.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GuessInputComponent implements OnInit, OnDestroy {
@@ -40,12 +42,13 @@ export class GuessInputComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly studentService: StudentService,
-    private readonly gameService: GameService
+    private readonly gameService: GameService,
+    public readonly assetService: AssetService
   ) {
     this.subscriptions.add(
       studentService.$studentListChange().subscribe((students) => {
         this.students = students;
-        this.guessInputControl.reset();
+        this.inputReset();
       })
     );
   }
@@ -63,7 +66,7 @@ export class GuessInputComponent implements OnInit, OnDestroy {
 
   onSelectionChange(selection: Student) {
     this.gameService.addGuess(selection);
-    this.guessInputControl.reset();
+    this.inputReset();
   }
 
   private _filter(value: string): Student[] {
@@ -73,6 +76,14 @@ export class GuessInputComponent implements OnInit, OnDestroy {
       (student) =>
         student.fullName.toLowerCase().includes(filterValue) &&
         !currentGuesses.some((guess) => guess.id === student.id)
+    );
+  }
+
+  private inputReset() {
+    this.guessInputControl.reset();
+    this.filteredOptions = this.guessInputControl.valueChanges.pipe(
+      startWith(''),
+      map((value) => this._filter(value || ''))
     );
   }
 }

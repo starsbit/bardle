@@ -1,8 +1,8 @@
 <div class="overflow-x-auto">
   <div class="min-w-max">
     <ba-grid-header></ba-grid-header>
-    @for (rowIndex of rows; track $index) {
-    <ba-grid-row></ba-grid-row>
+    @for (guess of guesses; track $index) {
+    <ba-grid-row [guess]="guess"></ba-grid-row>
     }
   </div>
 </div>

@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GridCharacterComponent } from './grid-character.component';
+import { GridStudentComponent } from './grid-student.component';
 
 describe('GridCharacterComponent', () => {
-  let component: GridCharacterComponent;
-  let fixture: ComponentFixture<GridCharacterComponent>;
+  let component: GridStudentComponent;
+  let fixture: ComponentFixture<GridStudentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GridCharacterComponent]
-    })
-    .compileComponents();
+      imports: [GridStudentComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(GridCharacterComponent);
+    fixture = TestBed.createComponent(GridStudentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

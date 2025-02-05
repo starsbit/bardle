@@ -2,17 +2,17 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Student } from '../../models/student';
 import { GridArmorTypeComponent } from '../grid-element/grid-armor-type/grid-armor-type.component';
 import { GridBirthdayComponent } from '../grid-element/grid-birthday/grid-birthday.component';
-import { GridCharacterComponent } from '../grid-element/grid-character/grid-character.component';
 import { GridDamageTypeComponent } from '../grid-element/grid-damage-type/grid-damage-type.component';
 import { GridExSkillCostComponent } from '../grid-element/grid-ex-skill-cost/grid-ex-skill-cost.component';
 import { GridReleaseDateComponent } from '../grid-element/grid-release-date/grid-release-date.component';
 import { GridRoleComponent } from '../grid-element/grid-role/grid-role.component';
 import { GridSchoolComponent } from '../grid-element/grid-school/grid-school.component';
+import { GridStudentComponent } from '../grid-element/grid-student/grid-student.component';
 
 @Component({
   selector: 'ba-grid-row',
   imports: [
-    GridCharacterComponent,
+    GridStudentComponent,
     GridSchoolComponent,
     GridRoleComponent,
     GridDamageTypeComponent,

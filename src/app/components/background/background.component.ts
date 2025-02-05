@@ -1,5 +1,6 @@
 import { NgStyle } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AssetService } from '../../services/web/asset.service';
 
 @Component({
   selector: 'ba-background',
@@ -9,5 +10,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BackgroundComponent {
-  backgroundImageUrl: string = '/assets/images/backgrounds/40.png';
+  backgroundImageUrl: string = '';
+
+  constructor(private readonly assetService: AssetService) {
+    this.backgroundImageUrl = this.assetService.getBackgroundLocation(12);
+  }
 }

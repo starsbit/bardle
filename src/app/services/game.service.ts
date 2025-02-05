@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { ReplaySubject, Subscription } from 'rxjs';
 import { RULES } from '../constants/rules';
 import { Student } from '../models/student';
 import { StudentList } from '../models/student-list';
@@ -10,6 +10,7 @@ import { StudentListService } from './student-list.service';
 })
 export class GameService implements OnDestroy {
   private readonly subscriptions = new Subscription();
+  private readonly guessesChanged = new ReplaySubject<Student[]>(1);
   private guesses: { [key in StudentList]: Student[] } =
     this.initializeGuesses();
   private currentList: StudentList = StudentList.JAPAN;
@@ -18,6 +19,7 @@ export class GameService implements OnDestroy {
     this.subscriptions.add(
       this.studentListService.$studentListChange().subscribe((studentList) => {
         this.currentList = studentList;
+        this.guessesChanged.next(this.guesses[this.currentList]);
       })
     );
   }
@@ -25,6 +27,7 @@ export class GameService implements OnDestroy {
   addGuess(student: Student) {
     if (this.guesses[this.currentList].length < RULES.MAX_GUESSES) {
       this.guesses[this.currentList].push(student);
+      this.guessesChanged.next(this.guesses[this.currentList]);
     } else {
       console.warn(
         `Maximum number of guesses (${RULES.MAX_GUESSES}) reached for ${this.currentList}`
@@ -38,6 +41,10 @@ export class GameService implements OnDestroy {
 
   getGuessCount(): number {
     return this.guesses[this.currentList].length;
+  }
+
+  $guessesChanged() {
+    return this.guessesChanged.asObservable();
   }
 
   ngOnDestroy() {
