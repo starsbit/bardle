@@ -104,7 +104,7 @@ export class GuessInputComponent implements OnInit, OnDestroy {
     return this.students.filter(
       (student) =>
         student.fullName.toLowerCase().includes(filterValue) &&
-        !currentGuesses.some((guess) => guess.id === student.id)
+        !currentGuesses.some((guess) => guess === student.id)
     );
   }
 

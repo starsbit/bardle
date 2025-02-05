@@ -5,10 +5,11 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { filter, first, Subscription, switchMap } from 'rxjs';
 import { RULES } from '../../constants/rules';
 import { Student } from '../../models/student';
 import { GameService } from '../../services/game.service';
+import { StudentService } from '../../services/student.service';
 import { GridHeaderComponent } from '../grid-header/grid-header.component';
 import { GridRowComponent } from '../grid-row/grid-row.component';
 
@@ -26,6 +27,7 @@ export class GridComponent implements OnDestroy, OnInit {
 
   constructor(
     private readonly gameService: GameService,
+    private readonly studentService: StudentService,
     private readonly cdr: ChangeDetectorRef
   ) {
     this.subscriptions.add(
@@ -37,16 +39,34 @@ export class GridComponent implements OnDestroy, OnInit {
 
   ngOnInit() {
     this.subscriptions.add(
-      this.gameService.$guessesChanged().subscribe((guesses) => {
-        this.guesses = guesses.concat(
-          Array(RULES.MAX_GUESSES - guesses.length).fill(null)
-        );
-        this.cdr.markForCheck();
+      this.gameService.$answerChanged().subscribe(() => {
+        this.answer = this.gameService.getAnswer();
       })
+    );
+
+    this.subscriptions.add(
+      this.waitForStudentData()
+        .pipe(switchMap(() => this.gameService.$guessesChanged()))
+        .subscribe((guesses) => {
+          const currentStudents = this.studentService.getStudentData();
+          const currentGuesses = guesses.map((id) => currentStudents[id]);
+
+          this.guesses = currentGuesses.concat(
+            Array(RULES.MAX_GUESSES - currentGuesses.length).fill(null)
+          );
+          this.cdr.markForCheck();
+        })
     );
   }
 
   ngOnDestroy() {
     this.subscriptions.unsubscribe();
+  }
+
+  private waitForStudentData() {
+    return this.studentService.$studentListChange().pipe(
+      filter((data) => data && Object.keys(data).length > 0),
+      first()
+    );
   }
 }

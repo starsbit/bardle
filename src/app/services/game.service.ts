@@ -3,6 +3,7 @@ import { BehaviorSubject, ReplaySubject, Subscription } from 'rxjs';
 import { RULES } from '../constants/rules';
 import { Student } from '../models/student';
 import { StudentList } from '../models/student-list';
+import { LocalStorage } from './local-storage.service';
 import { StudentListService } from './student-list.service';
 import { StudentService } from './student.service';
 
@@ -11,18 +12,25 @@ import { StudentService } from './student.service';
 })
 export class GameService implements OnDestroy {
   private readonly subscriptions = new Subscription();
-  private readonly guessesChanged = new ReplaySubject<Student[]>(1);
+  private readonly guessesChanged = new ReplaySubject<string[]>(1);
   private readonly answerChanged = new ReplaySubject<void>(1);
-  private guesses: { [key in StudentList]: Student[] } =
+  private guesses: { [key in StudentList]: string[] } =
     this.initializeGuesses();
   private currentList: StudentList = StudentList.JAPAN;
   private answer: Student | null = null;
   private readonly resultUpdates = new BehaviorSubject<GameResult>({});
   private result: GameResult = {};
 
+  private readonly doy = Math.floor(
+    (new Date().getTime() -
+      new Date(new Date().getFullYear(), 0, 0).getTime()) /
+      86400000
+  );
+
   constructor(
     private readonly studentListService: StudentListService,
-    private readonly studentService: StudentService
+    private readonly studentService: StudentService,
+    private readonly localStorage: LocalStorage
   ) {
     this.subscriptions.add(
       this.studentListService.$studentListChange().subscribe((studentList) => {
@@ -37,13 +45,14 @@ export class GameService implements OnDestroy {
         this.answerChanged.next();
       })
     );
+    this.handleInitialCookieGuesses();
   }
 
   addGuess(student: Student) {
     if (this.guesses[this.currentList].length >= RULES.MAX_GUESSES) {
       return;
     }
-    this.guesses[this.currentList].push(student);
+    this.guesses[this.currentList].push(student.id);
     if (student === this.answer) {
       this.result[this.currentList] = { won: true };
       this.resultUpdates.next(this.result);
@@ -53,9 +62,13 @@ export class GameService implements OnDestroy {
       this.result[this.currentList] = { lost: true };
       this.resultUpdates.next(this.result);
     }
+    this.localStorage.setGuess({
+      doy: this.doy,
+      guesses: this.guesses,
+    });
   }
 
-  getGuesses(): Student[] {
+  getGuesses(): string[] {
     return this.guesses[this.currentList];
   }
 
@@ -91,14 +104,31 @@ export class GameService implements OnDestroy {
     this.subscriptions.unsubscribe();
   }
 
-  private initializeGuesses(): { [key in StudentList]: Student[] } {
-    const guesses: { [key in StudentList]: Student[] } = {} as {
-      [key in StudentList]: Student[];
+  private initializeGuesses(): { [key in StudentList]: string[] } {
+    const guesses: { [key in StudentList]: string[] } = {} as {
+      [key in StudentList]: string[];
     };
     Object.values(StudentList).forEach((list) => {
       guesses[list] = [];
     });
     return guesses;
+  }
+
+  private handleInitialCookieGuesses() {
+    const guessCookie = this.localStorage.getGuess();
+
+    if (guessCookie.doy !== this.doy) {
+      this.localStorage.setGuess({
+        doy: this.doy,
+        guesses: {
+          japan: [],
+          global: [],
+        },
+      });
+    } else {
+      this.guesses = guessCookie.guesses;
+      this.guessesChanged.next(this.guesses[this.currentList]);
+    }
   }
 }
 

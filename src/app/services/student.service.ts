@@ -76,4 +76,8 @@ export class StudentService {
     const keys: string[] = Object.keys(this.students);
     return this.students[keys[index]];
   }
+
+  getStudentData(): StudentData {
+    return this.students;
+  }
 }
