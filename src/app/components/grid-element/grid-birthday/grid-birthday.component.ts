@@ -1,10 +1,11 @@
+import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { GridElementComponent } from '../grid-element.component';
 import { GridElementContainerComponent } from '../grid-wrapper/grid-element-container.component';
 
 @Component({
   selector: 'ba-grid-birthday',
-  imports: [GridElementContainerComponent],
+  imports: [GridElementContainerComponent, NgClass],
   templateUrl: './grid-birthday.component.html',
   styleUrls: ['./grid-birthday.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -33,5 +34,9 @@ export class GridBirthdayComponent extends GridElementComponent {
     const guessDate = this.parseBirthday(this.guess.birthday);
     const answerDate = this.parseBirthday(this.answer.birthday);
     return guessDate < answerDate;
+  }
+
+  override correctGuess(): boolean {
+    return this.guess?.birthday === this.answer?.birthday;
   }
 }

@@ -1,7 +1,10 @@
 <ba-grid-element-container>
   @if (guess) {
   <div
-    [ngClass]="guess.armorType | dashCase"
+    [ngClass]="[
+      guess.armorType | dashCase,
+      correctGuess() ? 'correct' : 'incorrect'
+    ]"
     class="flex items-center justify-center text-center p-2 overflow-hidden h-full"
   >
     <span class="block text-sm truncate">{{ guess.armorType }}</span>

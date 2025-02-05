@@ -1,3 +1,4 @@
+import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { DisplayDateFormatPipe } from '../../../pipes/display-date-format.pipe';
 import { GridElementComponent } from '../grid-element.component';
@@ -5,7 +6,7 @@ import { GridElementContainerComponent } from '../grid-wrapper/grid-element-cont
 
 @Component({
   selector: 'ba-grid-release-date',
-  imports: [GridElementContainerComponent, DisplayDateFormatPipe],
+  imports: [GridElementContainerComponent, DisplayDateFormatPipe, NgClass],
   templateUrl: './grid-release-date.component.html',
   styleUrl: './grid-release-date.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -27,5 +28,9 @@ export class GridReleaseDateComponent extends GridElementComponent {
     const guessDate = new Date(this.guess.releaseDate);
     const answerDate = new Date(this.answer.releaseDate);
     return guessDate < answerDate;
+  }
+
+  override correctGuess(): boolean {
+    return this.guess?.releaseDate === this.answer?.releaseDate;
   }
 }

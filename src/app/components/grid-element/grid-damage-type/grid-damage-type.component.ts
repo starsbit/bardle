@@ -11,4 +11,8 @@ import { GridElementContainerComponent } from '../grid-wrapper/grid-element-cont
   styleUrl: './grid-damage-type.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GridDamageTypeComponent extends GridElementComponent {}
+export class GridDamageTypeComponent extends GridElementComponent {
+  override correctGuess() {
+    return this.answer?.damageType === this.guess?.damageType;
+  }
+}

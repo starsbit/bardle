@@ -1,6 +1,7 @@
 <ba-grid-element-container>
   @if (guess && answer) {
   <div
+    [ngClass]="[correctGuess() ? 'correct' : 'incorrect']"
     class="flex items-center justify-center text-center p-2 overflow-hidden h-full"
   >
     <span class="block text-sm truncate text-white">{{

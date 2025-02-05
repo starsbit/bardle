@@ -1,6 +1,7 @@
 @use "app/themes/ba-input" as ba-input;
 @use "app/themes/ba-armor-type" as ba-armor-type;
 @use "app/themes/ba-damage-type" as ba-damage-type;
+@use "app/themes/ba-guess" as ba-guess;
 
 @layer theme, base, components, utilities;
 @import "tailwindcss/theme.css" layer(theme);

@@ -11,4 +11,8 @@ import { GridElementContainerComponent } from '../grid-wrapper/grid-element-cont
   styleUrl: './grid-armor-type.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GridArmorTypeComponent extends GridElementComponent {}
+export class GridArmorTypeComponent extends GridElementComponent {
+  override correctGuess() {
+    return this.answer?.armorType === this.guess?.armorType;
+  }
+}

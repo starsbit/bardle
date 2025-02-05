@@ -1,6 +1,6 @@
 <ba-grid-element-container>
   @if(guess) {
-  <div>
+  <div [ngClass]="[correctGuess() ? 'correct' : 'incorrect']">
     <img
       [ngSrc]="this.assetService.getSchoolIconLocation(guess)"
       width="76"
