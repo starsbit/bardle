@@ -1,11 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  Input,
-  OnChanges,
-  SimpleChanges,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Student } from '../../models/student';
 
 @Component({
@@ -14,15 +7,7 @@ import { Student } from '../../models/student';
   styleUrls: ['./grid-element.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GridElementComponent implements OnChanges {
+export class GridElementComponent {
   @Input() guess: Student | null = null;
   @Input() answer: Student | null = null;
-
-  constructor(private readonly cdr: ChangeDetectorRef) {}
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['guess'] || changes['answer']) {
-      this.cdr.markForCheck();
-    }
-  }
 }

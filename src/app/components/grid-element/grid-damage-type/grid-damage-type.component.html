@@ -1,1 +1,10 @@
-<ba-grid-element-container></ba-grid-element-container>
+<ba-grid-element-container>
+  @if (guess) {
+  <div
+    [ngClass]="guess.damageType | dashCase"
+    class="flex items-center justify-center text-center p-2 overflow-hidden h-full"
+  >
+    <span class="block text-sm truncate">{{ guess.damageType }}</span>
+  </div>
+  }
+</ba-grid-element-container>

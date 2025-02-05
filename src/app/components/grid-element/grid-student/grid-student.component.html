@@ -1,5 +1,5 @@
 <ba-grid-element-container>
-  @if(guess !== null) {
+  @if(guess) {
   <div>
     <img
       [ngSrc]="this.assetService.getIconLocation(guess)"

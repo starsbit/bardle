@@ -6,6 +6,8 @@ import { Student } from '../../models/student';
   providedIn: 'root',
 })
 export class AssetService {
+  private static readonly ASSET_IMAGES_PATH = '/assets/images';
+
   constructor(private readonly http: HttpClient) {}
 
   getIcon(student: Student) {
@@ -13,7 +15,7 @@ export class AssetService {
   }
 
   getIconLocation(student: Student) {
-    return `/assets/images/characters/${student.image}`;
+    return `${AssetService.ASSET_IMAGES_PATH}/characters/${student.image}`;
   }
 
   getBackground(index: number) {
@@ -25,8 +27,22 @@ export class AssetService {
       index = 1;
     }
     if (index < 10) {
-      return `/assets/images/backgrounds/0${index}.png`;
+      return `${AssetService.ASSET_IMAGES_PATH}/backgrounds/0${index}.png`;
     }
-    return `/assets/images/backgrounds/${index}.png`;
+    return `${AssetService.ASSET_IMAGES_PATH}/backgrounds/${index}.png`;
+  }
+
+  getSchoolIconLocation(student: Student) {
+    return `${AssetService.ASSET_IMAGES_PATH}/schools/${student.school.replace(
+      ' ',
+      ''
+    )}.png`;
+  }
+
+  getRoleIconLocation(student: Student) {
+    return `${AssetService.ASSET_IMAGES_PATH}/roles/${student.role.replace(
+      ' ',
+      ''
+    )}.png`;
   }
 }
