@@ -40,14 +40,16 @@ export class GameService implements OnDestroy {
   }
 
   addGuess(student: Student) {
-    if (this.guesses[this.currentList].length < RULES.MAX_GUESSES) {
-      this.guesses[this.currentList].push(student);
-      if (student === this.answer) {
-        this.result[this.currentList] = { won: true };
-        this.resultUpdates.next(this.result);
-      }
-      this.guessesChanged.next(this.guesses[this.currentList]);
-    } else {
+    if (this.guesses[this.currentList].length >= RULES.MAX_GUESSES) {
+      return;
+    }
+    this.guesses[this.currentList].push(student);
+    if (student === this.answer) {
+      this.result[this.currentList] = { won: true };
+      this.resultUpdates.next(this.result);
+    }
+    this.guessesChanged.next(this.guesses[this.currentList]);
+    if (this.guesses[this.currentList].length >= RULES.MAX_GUESSES) {
       this.result[this.currentList] = { lost: true };
       this.resultUpdates.next(this.result);
     }
