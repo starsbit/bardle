@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { map, Observable, startWith, Subscription } from 'rxjs';
 import { Student } from '../../models/student';
+import { GameService } from '../../services/game.service';
 import { StudentService } from '../../services/student.service';
 
 @Component({
@@ -37,7 +38,10 @@ export class GuessInputComponent implements OnInit, OnDestroy {
 
   private readonly subscriptions = new Subscription();
 
-  constructor(private readonly studentService: StudentService) {
+  constructor(
+    private readonly studentService: StudentService,
+    private readonly gameService: GameService
+  ) {
     this.subscriptions.add(
       studentService.$studentListChange().subscribe((students) => {
         this.students = students;
@@ -58,13 +62,17 @@ export class GuessInputComponent implements OnInit, OnDestroy {
   }
 
   onSelectionChange(selection: Student) {
+    this.gameService.addGuess(selection);
     this.guessInputControl.reset();
   }
 
   private _filter(value: string): Student[] {
     const filterValue = value.toLowerCase();
-    return this.students.filter((student) =>
-      student.fullName.toLowerCase().includes(filterValue)
+    const currentGuesses = this.gameService.getGuesses();
+    return this.students.filter(
+      (student) =>
+        student.fullName.toLowerCase().includes(filterValue) &&
+        !currentGuesses.some((guess) => guess.id === student.id)
     );
   }
 }

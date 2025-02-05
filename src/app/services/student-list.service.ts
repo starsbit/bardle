@@ -11,7 +11,7 @@ import { StudentService } from './student.service';
 export class StudentListService implements OnDestroy {
   private latestList: StudentList = StudentList.JAPAN;
   private readonly studentListChange = new ReplaySubject<StudentList>();
-  private readonly destroy$ = new Subject<void>();
+  private readonly subscriptions = new Subject<void>();
 
   constructor(
     private readonly studentService: StudentService,
@@ -20,7 +20,7 @@ export class StudentListService implements OnDestroy {
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
-        takeUntil(this.destroy$)
+        takeUntil(this.subscriptions)
       )
       .subscribe(() => {
         const url = this.router.url;
@@ -55,7 +55,7 @@ export class StudentListService implements OnDestroy {
   }
 
   ngOnDestroy() {
-    this.destroy$.next();
-    this.destroy$.complete();
+    this.subscriptions.next();
+    this.subscriptions.complete();
   }
 }

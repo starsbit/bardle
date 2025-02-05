@@ -32,7 +32,7 @@ export class StudentListSelectionComponent implements OnInit, OnDestroy {
   studentLists = Object.values(StudentList);
   selectedStudentList = new FormControl<StudentList | null>(null);
 
-  private readonly $destroy = new Subscription();
+  private readonly subscriptions = new Subscription();
 
   constructor(
     private readonly studentListService: StudentListService,
@@ -40,7 +40,7 @@ export class StudentListSelectionComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.$destroy.add(
+    this.subscriptions.add(
       this.studentListService.$studentListChange().subscribe((studentList) => {
         if (studentList === this.selectedStudentList.value) {
           return;
@@ -58,7 +58,7 @@ export class StudentListSelectionComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.$destroy.unsubscribe();
+    this.subscriptions.unsubscribe();
   }
 
   onStudentListChange(studentList: StudentList) {
