@@ -1,11 +1,16 @@
 <ba-grid-element-container>
-  @if(guess) {
+  @if (guess && answer) {
   <div
     class="flex items-center justify-center text-center p-2 overflow-hidden h-full"
   >
     <span class="block text-sm truncate text-white">{{
       guess.releaseDate | displayDateFormat
     }}</span>
+    @if (isGuessDateSmaller()) {
+    <span class="ml-2 text-white">↑</span>
+    } @if (isGuessDateBigger()) {
+    <span class="ml-2 text-white">↓</span>
+    }
   </div>
   }
 </ba-grid-element-container>

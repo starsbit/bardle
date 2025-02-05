@@ -10,4 +10,22 @@ import { GridElementContainerComponent } from '../grid-wrapper/grid-element-cont
   styleUrl: './grid-release-date.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GridReleaseDateComponent extends GridElementComponent {}
+export class GridReleaseDateComponent extends GridElementComponent {
+  isGuessDateBigger(): boolean {
+    if (!this.guess || !this.answer) {
+      return false;
+    }
+    const guessDate = new Date(this.guess.releaseDate);
+    const answerDate = new Date(this.answer.releaseDate);
+    return guessDate > answerDate;
+  }
+
+  isGuessDateSmaller(): boolean {
+    if (!this.guess || !this.answer) {
+      return false;
+    }
+    const guessDate = new Date(this.guess.releaseDate);
+    const answerDate = new Date(this.answer.releaseDate);
+    return guessDate < answerDate;
+  }
+}
