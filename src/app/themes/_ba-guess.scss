@@ -1,7 +1,17 @@
 .correct {
-  background-color: #50c878;
+  background-color: whitesmoke;
+  color: black;
+
+  span {
+    color: black;
+  }
 }
 
 .incorrect {
   background-color: rgb(160, 160, 160);
+  color: whitesmoke;
+
+  span {
+    color: whitesmoke;
+  }
 }
