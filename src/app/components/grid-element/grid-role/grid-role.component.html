@@ -1,6 +1,7 @@
 <ba-grid-element-container
   [isFlipped]="!!guess"
   [animationDelayMs]="animationDelayMs"
+  [won]="guess === answer"
 >
   @if(guess !== null) {
   <div [ngClass]="[correctGuess() ? 'correct' : 'incorrect']">

@@ -20,6 +20,29 @@
   }
 }
 
+@keyframes flipWin {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  88% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .flip {
   animation: flip 800ms ease-out forwards;
+}
+
+.win {
+  animation: flipWin 2500ms ease 0ms infinite forwards;
 }

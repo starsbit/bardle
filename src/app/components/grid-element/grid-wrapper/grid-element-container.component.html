@@ -1,7 +1,8 @@
 <div
   class="w-12 h-12 md:w-16 md:h-16 border-2 border-white bg-transparent m-0.5 md:m-1"
-  [ngClass]="{ flip: isFlipped }"
+  [ngClass]="{ flip: isFlipped, win: startWinAnimation }"
   [ngStyle]="{ 'animation-delay': animationDelayMs + 'ms' }"
+  (animationend)="onAnimationEnd($event)"
 >
   <div [ngClass]="{ hidden: childrenHidden }" class="w-full h-full">
     <ng-content></ng-content>
