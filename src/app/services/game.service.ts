@@ -12,6 +12,7 @@ import { StudentService } from './student.service';
 export class GameService implements OnDestroy {
   private readonly subscriptions = new Subscription();
   private readonly guessesChanged = new ReplaySubject<Student[]>(1);
+  private readonly answerChanged = new ReplaySubject<void>(1);
   private guesses: { [key in StudentList]: Student[] } =
     this.initializeGuesses();
   private currentList: StudentList = StudentList.JAPAN;
@@ -25,6 +26,13 @@ export class GameService implements OnDestroy {
       this.studentListService.$studentListChange().subscribe((studentList) => {
         this.currentList = studentList;
         this.guessesChanged.next(this.guesses[this.currentList]);
+      })
+    );
+    this.subscriptions.add(
+      this.studentService.$studentListChange().subscribe(() => {
+        this.answer = this.studentService.getTodaysStudent();
+        console.log('GameService: answer changed', this.answer);
+        this.answerChanged.next();
       })
     );
   }
@@ -49,14 +57,15 @@ export class GameService implements OnDestroy {
   }
 
   getAnswer(): Student | null {
-    if (!this.answer) {
-      this.answer = this.studentService.getTodaysStudent();
-    }
     return this.answer;
   }
 
   $guessesChanged() {
     return this.guessesChanged.asObservable();
+  }
+
+  $answerChanged() {
+    return this.answerChanged.asObservable();
   }
 
   ngOnDestroy() {

@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { RULES } from '../../constants/rules';
+import { Student } from '../../models/student';
 import { GameService } from '../../services/game.service';
 import { GridHeaderComponent } from '../grid-header/grid-header.component';
 import { GridRowComponent } from '../grid-row/grid-row.component';
@@ -21,11 +22,18 @@ import { GridRowComponent } from '../grid-row/grid-row.component';
 export class GridComponent implements OnDestroy, OnInit {
   private readonly subscriptions = new Subscription();
   guesses = Array(RULES.MAX_GUESSES).fill(null);
+  answer: Student | null = null;
 
   constructor(
     private readonly gameService: GameService,
     private readonly cdr: ChangeDetectorRef
-  ) {}
+  ) {
+    this.subscriptions.add(
+      this.gameService.$answerChanged().subscribe(() => {
+        this.answer = this.gameService.getAnswer();
+      })
+    );
+  }
 
   ngOnInit() {
     this.subscriptions.add(
