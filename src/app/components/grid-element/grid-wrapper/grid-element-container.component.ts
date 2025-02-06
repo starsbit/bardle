@@ -32,9 +32,12 @@ export class GridElementContainerComponent implements OnChanges {
       this.cdr.detectChanges(); // Trigger change detection
       setTimeout(() => {
         this.isFlipped = changes['isFlipped'].currentValue; // Set back to true
-        this.childrenHidden = false;
         this.cdr.markForCheck();
       }, 0);
+      setTimeout(() => {
+        this.childrenHidden = false;
+        this.cdr.markForCheck();
+      }, this.animationDelayMs + 400);
     }
     if (!this.won) {
       this.startWinAnimation = false;
