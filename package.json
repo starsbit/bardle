@@ -7,7 +7,6 @@
     "build": "ng build && npm run process",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:test": "node dist/test/server/server.mjs",
     "process": "node ./tools/copy-files.mjs",
     "deploy": "npm run build && wrangler pages deploy dist/cloudflare",
     "serve:ssr:Bardle": "node dist/bardle/server/server.mjs"
@@ -51,6 +50,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "schematics-scss-migrate": "^2.3.17",
     "typescript": "~5.7.2",
-    "wrangler": "^3.107.3"
+    "wrangler": "^3.107.3",
+    "xhr2": "^0.2.1"
   }
 }
