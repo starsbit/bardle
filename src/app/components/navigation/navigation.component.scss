@@ -1,3 +1,7 @@
 .spacer {
-    flex-grow: 1;
+  flex-grow: 1;
+}
+
+:host ::ng-deep .mdc-list-item__primary-text {
+  justify-content: start;
 }

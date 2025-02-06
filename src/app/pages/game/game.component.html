@@ -1,8 +1,18 @@
-<ba-background class="flex flex-col min-h-screen">
-  <ba-navigation></ba-navigation>
-  <div>
-    <ba-student-list-selection></ba-student-list-selection>
-    <ba-guess-input></ba-guess-input>
-    <ba-grid></ba-grid>
-  </div>
-</ba-background>
+<div>
+  <ba-student-list-selection></ba-student-list-selection>
+  <ba-guess-input></ba-guess-input>
+  <ba-result
+    [lost]="lost"
+    [won]="won"
+    [searchedStudent]="todaysStudent?.fullName || '...'"
+  ></ba-result>
+  @if (gameStarted) {
+  <ba-grid></ba-grid>
+  } @else {
+  <ba-tutorial></ba-tutorial>
+  }
+  <ba-yesterdays-student
+    [student]="yesterdayStudent"
+    [display]="!gameStarted || won || lost"
+  ></ba-yesterdays-student>
+</div>

@@ -2,6 +2,7 @@
 @use "app/themes/ba-armor-type" as ba-armor-type;
 @use "app/themes/ba-damage-type" as ba-damage-type;
 @use "app/themes/ba-guess" as ba-guess;
+@use "app/themes/ba-text-boxes" as ba-text-boxes;
 
 @layer theme, base, components, utilities;
 @import "tailwindcss/theme.css" layer(theme);

@@ -1,0 +1,23 @@
+@if (won || lost) {
+<section class="flex justify-center items-center">
+  <div class="md:w-158 w-80 p-1">
+    <div
+      class="w-full h-fit p-2 border ba-text-box-bg border-gray-300 rounded bg-black text-center space-y-4"
+    >
+      <p class="text-xl text-white">
+        Next student in
+        <countdown [config]="countdownConfig"></countdown>
+      </p>
+      @if (won || lost) {
+      <div class="flex items-center justify-center">
+        <p class="text-xl text-white">
+          The searched student was
+          <span class="text-xl incorrect-text">{{ searchedStudent }}</span>
+        </p>
+        <ba-copy-button></ba-copy-button>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+}

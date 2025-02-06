@@ -7,11 +7,13 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/game/game.component').then((m) => m.GameComponent),
     canActivate: [GameListIdGuard],
+    data: { animation: 'GamePage' },
   },
   {
     path: 'about',
     loadComponent: () =>
       import('./pages/about/about.component').then((m) => m.AboutComponent),
+    data: { animation: 'AboutPage' },
   },
   {
     path: 'contact',
@@ -19,11 +21,7 @@ export const routes: Routes = [
       import('./pages/contact/contact.component').then(
         (m) => m.ContactComponent
       ),
-  },
-  {
-    path: 'home',
-    redirectTo: 'game/japan',
-    pathMatch: 'full',
+    data: { animation: 'ContactPage' },
   },
   {
     path: '**',

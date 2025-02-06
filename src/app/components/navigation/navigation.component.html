@@ -6,9 +6,9 @@
       class="h-16 w-48"
     />
     <span class="spacer"></span>
-    <div class="hidden md:flex">
+    <div class="hidden md:flex !text-left">
       <a routerLink="/" class="text-lg px-4 text-black hover:text-gray-500"
-        >Home</a
+        >Game</a
       >
       <a routerLink="/about" class="text-lg px-4 text-black hover:text-gray-500"
         >About</a
@@ -32,18 +32,14 @@
 @if (menuOpen) {
 <nav class="bg-white text-black md:invisible">
   <mat-nav-list>
-    <mat-list-item>
-      <a routerLink="/" matLine class="text-black hover:text-gray-500">Home</a>
+    <mat-list-item routerLink="/">
+      <a matLine class="text-black hover:text-gray-500">Game</a>
     </mat-list-item>
-    <mat-list-item>
-      <a routerLink="/about" matLine class="text-black hover:text-gray-500"
-        >About</a
-      >
+    <mat-list-item routerLink="/about">
+      <a matLine class="text-black hover:text-gray-500">About</a>
     </mat-list-item>
-    <mat-list-item>
-      <a routerLink="/contact" matLine class="text-black hover:text-gray-500"
-        >Contact</a
-      >
+    <mat-list-item routerLink="/contact">
+      <a matLine class="text-black hover:text-gray-500">Contact</a>
     </mat-list-item>
   </mat-nav-list>
 </nav>

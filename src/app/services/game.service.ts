@@ -25,9 +25,6 @@ export class GameService {
     private readonly router: Router
   ) {
     this.initializeGameState();
-    this.$gameStateChange().subscribe((state) => {
-      console.log('Game state change:', state);
-    });
   }
 
   getGameState() {
@@ -135,6 +132,20 @@ export class GameService {
   }
 
   getCurrentAnswer() {
+    if (this.gameState === null) {
+      return;
+    }
+    return this.gameState.answer[this.gameState.activeList];
+  }
+
+  getYesterdaysStudent() {
+    if (this.gameState === null) {
+      return;
+    }
+    return this.gameState.yesterdayAnswer[this.gameState.activeList];
+  }
+
+  getTodaysStudent() {
     if (this.gameState === null) {
       return;
     }
