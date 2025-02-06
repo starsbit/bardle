@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && npm run process",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "process": "node ./tools/copy-files.mjs && node ./tools/alter-polyfills.mjs",
+    "deploy": "npm run build --omit=dev && wrangler pages deploy dist/bardle/browser --project-name bardle"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +43,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "schematics-scss-migrate": "^2.3.17",
-    "typescript": "~5.7.2"
+    "typescript": "~5.7.2",
+    "wrangler": "^3.107.3"
   }
 }
