@@ -9,7 +9,7 @@
     "test": "ng test",
     "serve:ssr:bardle": "node dist/bardle/server/server.mjs",
     "process": "node ./tools/copy-files.mjs",
-    "deploy": "npm run build && wrangler pages deploy dist/cloudflare"
+    "deploy": "npm run build && wrangler pages deploy dist/cloudflare --project-name bardle"
   },
   "private": true,
   "dependencies": {
