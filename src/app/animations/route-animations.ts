@@ -8,7 +8,7 @@ import {
 } from '@angular/animations';
 
 export const slideInAnimation = trigger('routeAnimations', [
-  transition('GamePage => ContactPage, ContactPage => GamePage', [
+  transition('GamePage => AboutPage, AboutPage => ContactPage', [
     style({ position: 'relative' }),
     query(':enter, :leave', [
       style({
@@ -25,7 +25,24 @@ export const slideInAnimation = trigger('routeAnimations', [
       query(':enter', [animate('500ms ease-in-out', style({ left: '0%' }))]),
     ]),
   ]),
-  transition('GamePage => AboutPage, AboutPage => GamePage', [
+  transition('GamePage => ContactPage', [
+    style({ position: 'relative' }),
+    query(':enter, :leave', [
+      style({
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+      }),
+    ]),
+    query(':enter', [style({ left: '100%' })]),
+    query(':leave', [style({ left: '0%' })]),
+    group([
+      query(':leave', [animate('500ms ease-in-out', style({ left: '-100%' }))]),
+      query(':enter', [animate('500ms ease-in-out', style({ left: '0%' }))]),
+    ]),
+  ]),
+  transition('ContactPage => AboutPage, AboutPage => GamePage', [
     style({ position: 'relative' }),
     query(':enter, :leave', [
       style({
@@ -42,7 +59,7 @@ export const slideInAnimation = trigger('routeAnimations', [
       query(':enter', [animate('500ms ease-in-out', style({ left: '0%' }))]),
     ]),
   ]),
-  transition('AboutPage => ContactPage, ContactPage => AboutPage', [
+  transition('ContactPage => GamePage', [
     style({ position: 'relative' }),
     query(':enter, :leave', [
       style({
@@ -52,10 +69,10 @@ export const slideInAnimation = trigger('routeAnimations', [
         width: '100%',
       }),
     ]),
-    query(':enter', [style({ left: '100%' })]),
+    query(':enter', [style({ left: '-100%' })]),
     query(':leave', [style({ left: '0%' })]),
     group([
-      query(':leave', [animate('500ms ease-in-out', style({ left: '-100%' }))]),
+      query(':leave', [animate('500ms ease-in-out', style({ left: '100%' }))]),
       query(':enter', [animate('500ms ease-in-out', style({ left: '0%' }))]),
     ]),
   ]),
