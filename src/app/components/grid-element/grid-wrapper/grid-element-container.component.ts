@@ -41,6 +41,7 @@ export class GridElementContainerComponent implements OnChanges {
     }
     if (!this.won) {
       this.startWinAnimation = false;
+      this.childrenHidden = true;
     }
   }
 
