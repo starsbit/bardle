@@ -1,12 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "cli": {
-    "packageManager": "npm"
-  },
   "newProjectRoot": "projects",
   "projects": {
-    "bardle": {
+    "Bardle": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,31 +17,22 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "externalDependencies": [""],
-            "outputPath": "dist",
+            "outputPath": "dist/bardle",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              "src/_routes.json"
+              }
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.scss"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts",
-              "experimentalPlatform": "neutral"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -74,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "bardle:build:production"
+              "buildTarget": "Bardle:build:production"
             },
             "development": {
-              "buildTarget": "bardle:build:development"
+              "buildTarget": "Bardle:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -90,7 +78,6 @@
           "options": {
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",

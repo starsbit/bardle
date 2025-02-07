@@ -1,17 +1,27 @@
-import { TestBed } from '@angular/core/testing';
-import { CanActivateFn } from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { GameListIdGuard } from './game-list-id.guard';
 
-import { gameListIdGuard } from './game-list-id.guard';
-
-describe('gameListIdGuard', () => {
-  const executeGuard: CanActivateFn = (...guardParameters) => 
-      TestBed.runInInjectionContext(() => gameListIdGuard(...guardParameters));
+describe('GameListIdGuard', () => {
+  let guard: GameListIdGuard;
+  let routerSpy: jasmine.SpyObj<Router>;
+  let route: ActivatedRouteSnapshot;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    routerSpy = jasmine.createSpyObj('Router', ['createUrlTree']);
+    guard = new GameListIdGuard(routerSpy);
+    route = jasmine.createSpyObj('ActivatedRouteSnapshot', [], {
+      paramMap: new Map(),
+    });
   });
 
-  it('should be created', () => {
-    expect(executeGuard).toBeTruthy();
+  it('should activate for valid listId', () => {
+    (route.paramMap as any) = new Map([['listId', 'japan']]);
+    expect(guard.canActivate(route)).toBeTrue();
+  });
+
+  it('should redirect for invalid listId', () => {
+    (route.paramMap as any) = new Map([['listId', 'invalid']]);
+    routerSpy.createUrlTree.and.returnValue('redirectUrl' as any);
+    expect(guard.canActivate(route)).toBe('redirectUrl' as any);
   });
 });
