@@ -41,6 +41,10 @@ jobs:
           echo "No changes detected. Exiting workflow."
           exit 0
 
+      - name: Define PR Branch Name
+        id: define_branch
+        run: echo "BRANCH_NAME=update-generated-files-$(date +%Y-%m-%d-%H%M%S)" >> $GITHUB_ENV
+
       - name: Create a Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
