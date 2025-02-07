@@ -1,12 +1,12 @@
-from fetch_info import fetch_info
 from check_equality import check_equality, find_minimal_identifier_fields
-from global_student_list import generate_global_student_list, disable_student
+from fetch_info import fetch_info
+from global_student_list import disable_student, generate_global_student_list
 
 INCLUDED_FIELDS = ['school', 'exSkillCost', 'armorType', 'role', 'releaseDate', 'damageType', 'birthday']
 
 if __name__ == "__main__":
     print("Fetching information...")
-    fetch_info()  
+    fetch_info()
     print("Fetching information done.")
     print("Generating global student list...")
     gl_list = generate_global_student_list()

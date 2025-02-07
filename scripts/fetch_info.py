@@ -1,11 +1,15 @@
+import datetime
+import json
+import os
+import re
+
 import requests
 from bs4 import BeautifulSoup
-import json
-import re
-from schaledb_utils import generate_wiki_article_list_from_schaledb
-from generate_icons import generate_icons, generate_icon_name
+from filter_existing_students import filter_existing_students
 from folder_management import get_asset_folder
-import datetime
+from generate_icons import generate_icon_name, generate_icons
+from schaledb_utils import generate_wiki_article_list_from_schaledb
+
 
 def extract_integer(s):
     match = re.search(r'\d+', s)
@@ -124,17 +128,7 @@ def generate_url_from_string(article_name):
     url = "https://bluearchive.wiki/wiki/" + article_name.replace(" ", "_")
     return url
 
-def get_all_articles_from_file(folder_path):
-    files = None
-    with open(folder_path, 'r') as json_file:
-        data = json.load(json_file)
-        files = data['wikiArticles']
-
-    return [file.replace(".png", "") for file in files]
-
 def fetch_info():
-
-    merged_json = {}
 
     # Get all the PNG files from the folder
     folder_path = get_asset_folder()
@@ -149,20 +143,30 @@ def fetch_info():
 
     print("All articles:", all_articles)
 
-    for article_name in all_articles:
+    filtered_articles = filter_existing_students(all_articles)
+    print("Filtered articles:", filtered_articles)
+
+    existing_info = {}
+    print("Loading existing character info if available...")
+    if os.path.exists(folder_path + 'character_info.json'):
+        with open(folder_path + 'character_info.json', 'r') as file:
+            existing_info = json.load(file)
+        
+
+    for article_name in filtered_articles:
         # Generate the URL
         url = generate_url_from_string(article_name)
         print("URL for", article_name, ":", url)
 
         # Generate the character information from the URL
-        merged_json[article_name.replace(" ", "_")] = generate_info_from_url(url, generate_icon_name(article_name))
+        existing_info[article_name.replace(" ", "_")] = generate_info_from_url(url, generate_icon_name(article_name))
         print("\n")
 
     # Dump merged data into character_info.json
     with open(folder_path + 'character_info.json', 'w') as outfile:
-        json.dump(merged_json, outfile)
+        json.dump(existing_info, outfile)
 
     print("Merged data dumped into character_info.json")
 
-    return merged_json
+    return existing_info
     

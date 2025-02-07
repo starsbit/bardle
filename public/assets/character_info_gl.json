@@ -1311,7 +1311,7 @@
         "combatClass": "Striker",
         "exSkillCost": 5,
         "positioning": "Back",
-        "height": null,
+        "height": 0,
         "outfit": "Kid",
         "releaseDate": "2022/02/26",
         "weaponType": "SR",
