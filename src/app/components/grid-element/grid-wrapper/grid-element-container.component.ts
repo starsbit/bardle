@@ -18,7 +18,7 @@ import {
 export class GridElementContainerComponent implements OnChanges {
   // it has to be a string else the change detection won't work
   // because it does not pick up changes when going from true -> true for example
-  @Input() isFlipped: string = '';
+  @Input() isFlipped = '';
   @Input() animationDelayMs = 0;
   @Input() won = false;
   childrenHidden = true;
@@ -45,7 +45,7 @@ export class GridElementContainerComponent implements OnChanges {
     }
   }
 
-  onAnimationEnd(event: AnimationEvent) {
+  onAnimationEnd() {
     if (this.won) {
       this.startWinAnimation = true;
       this.cdr.markForCheck();

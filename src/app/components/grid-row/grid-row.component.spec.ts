@@ -1,9 +1,6 @@
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Student } from '../../models/student';
-import { StudentList } from '../../models/student-list';
-import { getStudentListTestData } from '../../utils/test-data';
 import { GridArmorTypeComponent } from '../grid-element/grid-armor-type/grid-armor-type.component';
 import { GridBirthdayComponent } from '../grid-element/grid-birthday/grid-birthday.component';
 import { GridDamageTypeComponent } from '../grid-element/grid-damage-type/grid-damage-type.component';
@@ -17,9 +14,6 @@ import { GridRowComponent } from './grid-row.component';
 describe('GridRowComponent', () => {
   let component: GridRowComponent;
   let fixture: ComponentFixture<GridRowComponent>;
-
-  const mockStudent: Student =
-    getStudentListTestData()[StudentList.GLOBAL]['Aru'];
 
   beforeEach(() => {
     TestBed.configureTestingModule({

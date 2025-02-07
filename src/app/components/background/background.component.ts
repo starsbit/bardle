@@ -10,7 +10,7 @@ import { AssetService } from '../../services/web/asset.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BackgroundComponent {
-  backgroundImageUrl: string = '';
+  backgroundImageUrl = '';
 
   constructor(private readonly assetService: AssetService) {
     this.backgroundImageUrl =

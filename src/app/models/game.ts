@@ -2,18 +2,12 @@ import { GuessCookie } from './guess-cookie';
 import { StudentListData } from './student';
 import { StudentList } from './student-list';
 
-export interface GameResult {
-  // based on the list active
-  [id: string]: {
+export type GameResult = Record<string, {
     won?: boolean;
     lost?: boolean;
-  };
-}
+  }>;
 
-export interface GameAnswer {
-  // based on the list active
-  [id: string]: string;
-}
+export type GameAnswer = Record<string, string>;
 
 export interface GameState {
   guesses: GuessCookie;

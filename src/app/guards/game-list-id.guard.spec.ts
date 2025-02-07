@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, Router, UrlTree } from '@angular/router';
 import { StudentList } from '../models/student-list';
 import { GameListIdGuard } from './game-list-id.guard';
 
@@ -38,7 +38,7 @@ describe('GameListIdGuard', () => {
       .createSpy()
       .and.returnValue('invalid-list');
 
-    const expectedUrlTree = {} as any;
+    const expectedUrlTree = {} as unknown as UrlTree;
     routerSpy.createUrlTree.and.returnValue(expectedUrlTree);
 
     const result = guard.canActivate(mockRoute);
@@ -52,7 +52,7 @@ describe('GameListIdGuard', () => {
   it('should redirect to "/game/japan" if listId is missing', () => {
     mockRoute.paramMap.get = jasmine.createSpy().and.returnValue(null);
 
-    const expectedUrlTree = {} as any;
+    const expectedUrlTree = {} as unknown as UrlTree;
     routerSpy.createUrlTree.and.returnValue(expectedUrlTree);
 
     const result = guard.canActivate(mockRoute);

@@ -200,7 +200,7 @@ export class GameService {
     const gameResult: GameResult = {};
     for (const list in Object.keys(gameAnswer)) {
       const listEnum = list as StudentList;
-      if (gameAnswer.hasOwnProperty(listEnum)) {
+      if (Object.prototype.hasOwnProperty.call(gameAnswer, listEnum)) {
         const guesses: string[] = guess.guesses[listEnum];
         const lost = guesses.length >= RULES.MAX_GUESSES;
         gameResult[listEnum] = {

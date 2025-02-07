@@ -9,11 +9,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SocialLinksComponent {
-  get svgFilterCssClass() {
-    return 'filter-black';
-  }
+  readonly svgFilterCssClass = 'filter-black';
 
-  get socialLinkCssClass() {
-    return 'social-link';
-  }
+  readonly socialLinkCssClass = 'social-link';
 }

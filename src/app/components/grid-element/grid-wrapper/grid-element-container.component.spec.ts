@@ -107,7 +107,7 @@ describe('GridElementContainerComponent', () => {
     tick(400);
 
     const gridElement = fixture.debugElement.query(By.css('div.w-14'));
-    component.onAnimationEnd(new AnimationEvent('animationend'));
+    component.onAnimationEnd();
     fixture.detectChanges();
 
     expect(gridElement.nativeElement.classList).toContain('win');
@@ -120,7 +120,7 @@ describe('GridElementContainerComponent', () => {
     tick(400);
 
     const gridElement = fixture.debugElement.query(By.css('div.w-14'));
-    component.onAnimationEnd(new AnimationEvent('animationend'));
+    component.onAnimationEnd();
     fixture.detectChanges();
 
     expect(gridElement.nativeElement.classList).not.toContain('win');

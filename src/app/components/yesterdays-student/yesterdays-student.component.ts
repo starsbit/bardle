@@ -10,6 +10,6 @@ import { timeActive } from '../../utils/date';
 })
 export class YesterdaysStudentComponent {
   @Input() student: Student | null = null;
-  @Input() display: boolean = false;
+  @Input() display = false;
   numberOfDaysActive = timeActive();
 }

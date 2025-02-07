@@ -19,10 +19,6 @@ export interface Student {
   disabled: boolean;
 }
 
-export interface StudentData {
-  [id: string]: Student;
-}
+export type StudentData = Record<string, Student>;
 
-export interface StudentListData {
-  [list: string]: StudentData;
-}
+export type StudentListData = Record<string, StudentData>;

@@ -6,7 +6,7 @@ import { GoogleAnalyticsTagComponent } from './components/google-analytics-tag/g
 import { NavigationComponent } from './components/navigation/navigation.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'ba-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   imports: [

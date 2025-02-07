@@ -8,5 +8,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridHeaderElementComponent {
-  @Input() title: string = '';
+  @Input() title = '';
 }

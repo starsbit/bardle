@@ -15,7 +15,6 @@ import { GridStudentComponent } from './grid-student.component';
 describe('GridStudentComponent', () => {
   let component: GridStudentComponent;
   let fixture: ComponentFixture<GridStudentComponent>;
-  let assetService: AssetService;
   let mockAssetServiceSpy: jasmine.SpyObj<AssetService>;
 
   const mockStudent: Student =
@@ -34,7 +33,6 @@ describe('GridStudentComponent', () => {
 
     fixture = TestBed.createComponent(GridStudentComponent);
     component = fixture.componentInstance;
-    assetService = TestBed.inject(AssetService);
   });
 
   it('should create the component', () => {

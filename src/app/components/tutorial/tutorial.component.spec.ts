@@ -29,8 +29,8 @@ describe('TutorialComponent', () => {
     );
     const texts = textElements.map((el) => el.nativeElement.textContent.trim());
 
-    expect(texts).toContain("Guess today's Blue Archive student!");
-    expect(texts).toContain("Type any student's name to begin.");
+    expect(texts).toContain('Guess today\'s Blue Archive student!');
+    expect(texts).toContain('Type any student\'s name to begin.');
     expect(texts).toContain('Press the content_copy to copy your score!');
   });
 
