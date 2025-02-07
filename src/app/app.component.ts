@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { inject } from '@vercel/analytics';
 import { slideInAnimation } from './animations/route-animations';
 import { BackgroundComponent } from './components/background/background.component';
 import { GoogleAnalyticsTagComponent } from './components/google-analytics-tag/google-analytics-tag.component';
@@ -17,4 +18,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
   ],
   animations: [slideInAnimation],
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  ngOnInit() {
+    inject();
+  }
+}
