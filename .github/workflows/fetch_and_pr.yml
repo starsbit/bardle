@@ -41,27 +41,6 @@ jobs:
           echo "No changes detected. Exiting workflow."
           exit 0
 
-      - name: Define Branch Name
-        id: define_branch
-        run: echo "BRANCH_NAME=update-generated-files-$(date +%Y-%m-%d-%H%M%S)" >> $GITHUB_ENV
-
-      - name: Check if Branch Already Exists
-        id: check_branch
-        run: |
-          if git ls-remote --heads origin "${{ env.BRANCH_NAME }}" | grep -q "${{ env.BRANCH_NAME }}"; then
-            echo "Branch already exists. Exiting workflow."
-            exit 0
-          fi
-
-      - name: Create and Push New Branch
-        run: |
-          git checkout -b "${{ env.BRANCH_NAME }}"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git add .
-          git commit -m "Automated update: Generated files"
-          git push origin "${{ env.BRANCH_NAME }}"
-
       - name: Create a Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
