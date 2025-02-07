@@ -40,26 +40,13 @@ jobs:
         env:
           CI: true
 
-      - name: Upload build artifacts (Node 22 only)
-        if: matrix.node-version == 22
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artifact
-          path: dist/bardle/browser
-
   create-release:
     needs: build-and-test
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: startsWith(github.ref, 'refs/tags/v') # Only run if a tag like v2.0.1 is pushed
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: build-artifact
-          path: dist/
 
       - name: Get version from tag
         id: get_version
@@ -76,7 +63,7 @@ jobs:
             echo "RELEASE_NOTES=No release notes provided." >> $GITHUB_ENV
           fi
 
-      - name: Create GitHub Release
+      - name: Create GitHub Release (Source Code Only)
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.VERSION }}
@@ -84,6 +71,5 @@ jobs:
           body: ${{ env.RELEASE_NOTES }}
           draft: false
           prerelease: false
-          files: dist/**/* # Attach build files to the release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
