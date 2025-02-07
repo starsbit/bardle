@@ -2,8 +2,8 @@ name: Fetch and Create MR
 
 on:
   schedule:
-    - cron: "0 6 * * 1" # Runs daily at 6 AM UTC (adjust as needed)
-  workflow_dispatch: # Allows manual execution from GitHub Actions
+    - cron: "0 6 * * 1" # Runs every Monday at 6 AM UTC
+  workflow_dispatch:
   push:
     tags:
       - "manual-update" # Runs when this tag is pushed
@@ -18,7 +18,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10" # Adjust as needed
+          python-version: "3.10"
 
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
@@ -29,24 +29,19 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          git status
           if [[ -n "$(git status --porcelain)" ]]; then
             echo "changes_detected=true" >> $GITHUB_ENV
           else
-            echo "No changes detected."
+            echo "changes_detected=false" >> $GITHUB_ENV
           fi
-
-      - name: Configure Git User
-        if: env.changes_detected == 'true'
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
 
       - name: Create a new branch (if changes exist)
         if: env.changes_detected == 'true'
         run: |
           BRANCH_NAME="update-generated-files-$(date +%Y-%m-%d-%H%M%S)"
           git checkout -b "$BRANCH_NAME"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
           git add .
           git commit -m "Automated update: Generated files"
           git push origin "$BRANCH_NAME"
@@ -54,6 +49,7 @@ jobs:
 
       - name: Create a Pull Request
         if: env.changes_detected == 'true'
+        id: create_pr
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -63,3 +59,8 @@ jobs:
           body: "This PR contains the latest automated updates from `scripts/__main__.py`."
           labels: "auto-update"
           draft: false
+
+      - name: Delete branch if no PR was created
+        if: env.changes_detected == 'true' && steps.create_pr.outputs.pull-request-number == ''
+        run: |
+          git push origin --delete "$BRANCH_NAME"
