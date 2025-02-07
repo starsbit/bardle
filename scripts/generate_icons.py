@@ -1,5 +1,4 @@
 import os
-import json
 from schaledb_utils import get_schale_db, translate_schale_to_wiki, fetch_icon
 from folder_management import get_character_image_folder
 
