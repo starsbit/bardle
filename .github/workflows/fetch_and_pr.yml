@@ -58,6 +58,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ env.BRANCH_NAME }}
+          base: master
           title: "Automated Update: Generated Files"
           body: "This PR contains the latest automated updates from `scripts/__main__.py`."
           labels: "auto-update"
