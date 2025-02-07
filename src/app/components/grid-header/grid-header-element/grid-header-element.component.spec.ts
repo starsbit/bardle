@@ -8,9 +8,8 @@ describe('GridHeaderElementComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GridHeaderElementComponent]
-    })
-    .compileComponents();
+      imports: [GridHeaderElementComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GridHeaderElementComponent);
     component = fixture.componentInstance;

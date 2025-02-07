@@ -73,6 +73,10 @@ def generate_info_from_url(url, image_name):
         weaponType = soup.find('div', class_='weapon-text').text.strip()
         bday = soup.find('th', text='Birthday').find_next('td').text.strip()
 
+        if height is None:
+            # Shun Small is the only character with no height listed
+            height = 0
+
         bday = format_birthday(bday)
 
         full_name, native_name = separate_names(full_name)

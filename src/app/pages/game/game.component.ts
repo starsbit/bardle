@@ -40,7 +40,7 @@ export class GameComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscriptions.add(
-      this.gameService.$gameStateChange().subscribe((state) => {
+      this.gameService.$gameStateChange().subscribe(() => {
         this.handleGuessChange();
         this.handleResultChange();
         this.handleYesterdayStudentChange();

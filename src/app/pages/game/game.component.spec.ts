@@ -1,23 +1,84 @@
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { of } from 'rxjs';
+import { GameState } from '../../models/game';
+import { StudentList } from '../../models/student-list';
+import { GameService } from '../../services/game.service';
+import { getStudentListTestData } from '../../utils/test-data';
 import { GameComponent } from './game.component';
 
 describe('GameComponent', () => {
   let component: GameComponent;
   let fixture: ComponentFixture<GameComponent>;
+  let gameServiceSpy: jasmine.SpyObj<GameService>;
+  const gameDate = getStudentListTestData();
+  const studentOfTheDay = gameDate[StudentList.GLOBAL]['Aru'];
+  const studentOfYesterday = gameDate[StudentList.GLOBAL]['Hina'];
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [GameComponent]
-    })
-    .compileComponents();
+  beforeEach(() => {
+    gameServiceSpy = jasmine.createSpyObj('GameService', [
+      '$gameStateChange',
+      'getCurrentGuesses',
+      'getCurrentResult',
+      'getYesterdaysStudent',
+      'getTodaysStudent',
+      'getCurrentStudentData',
+    ]);
+
+    gameServiceSpy.$gameStateChange.and.returnValue(
+      of({} as unknown as GameState)
+    );
+    gameServiceSpy.getCurrentGuesses.and.returnValue([]);
+    gameServiceSpy.getCurrentResult.and.returnValue({
+      lost: false,
+      won: false,
+    });
+    gameServiceSpy.getYesterdaysStudent.and.returnValue(studentOfYesterday.id);
+    gameServiceSpy.getTodaysStudent.and.returnValue(studentOfTheDay.id);
+    gameServiceSpy.getCurrentStudentData.and.returnValue(
+      gameDate[StudentList.GLOBAL]
+    );
+
+    TestBed.configureTestingModule({
+      providers: [
+        { provide: GameService, useValue: gameServiceSpy },
+        provideHttpClient(),
+        provideHttpClientTesting(),
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GameComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should handle a game state change', () => {
+    component.ngOnInit();
+    expect(gameServiceSpy.getCurrentGuesses).toHaveBeenCalled();
+    expect(gameServiceSpy.getCurrentResult).toHaveBeenCalled();
+    expect(gameServiceSpy.getYesterdaysStudent).toHaveBeenCalled();
+    expect(gameServiceSpy.getTodaysStudent).toHaveBeenCalled();
+    expect(gameServiceSpy.getCurrentStudentData).toHaveBeenCalled();
+  });
+
+  it('should handle a game state change that is empty', () => {
+    gameServiceSpy.$gameStateChange.and.returnValue(
+      of({} as unknown as GameState)
+    );
+    gameServiceSpy.getCurrentGuesses.and.returnValue(undefined);
+    gameServiceSpy.getCurrentResult.and.returnValue(undefined);
+    gameServiceSpy.getYesterdaysStudent.and.returnValue(undefined);
+    gameServiceSpy.getTodaysStudent.and.returnValue(undefined);
+    gameServiceSpy.getCurrentStudentData.and.returnValue(undefined);
+    component.ngOnInit();
+    expect(gameServiceSpy.getCurrentGuesses).toHaveBeenCalled();
+    expect(gameServiceSpy.getCurrentResult).toHaveBeenCalled();
+    expect(gameServiceSpy.getYesterdaysStudent).toHaveBeenCalled();
+    expect(gameServiceSpy.getTodaysStudent).toHaveBeenCalled();
+    expect(gameServiceSpy.getCurrentStudentData).toHaveBeenCalled();
   });
 });

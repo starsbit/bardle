@@ -6,6 +6,7 @@
   @if(guess) {
   <div [ngClass]="[correctGuess() ? 'correct' : 'incorrect']">
     <img
+      class="grid-icon"
       [ngSrc]="this.assetService.getStudentIconLocation(guess)"
       width="76"
       height="76"

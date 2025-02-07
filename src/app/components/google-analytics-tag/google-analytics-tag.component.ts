@@ -20,7 +20,7 @@ export class GoogleAnalyticsTagComponent {
   private readonly gtagApi = 'https://www.googletagmanager.com/gtag/js?id=';
 
   constructor(
-    @Inject(PLATFORM_ID) private readonly platformId: Object,
+    @Inject(PLATFORM_ID) readonly platformId: Object,
     private readonly renderer: Renderer2,
     private readonly el: ElementRef
   ) {

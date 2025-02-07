@@ -92,13 +92,19 @@ export class GameService {
     ) {
       this.setResult({
         ...this.gameState.result,
-        [this.gameState.activeList]: { lost: true },
+        [this.gameState.activeList]: {
+          lost: true,
+          ...this.gameState.result[this.gameState.activeList],
+        },
       });
     }
     if (guess === this.gameState.answer[this.gameState.activeList]) {
       this.setResult({
         ...this.gameState.result,
-        [this.gameState.activeList]: { won: true },
+        [this.gameState.activeList]: {
+          won: true,
+          ...this.gameState.result[this.gameState.activeList],
+        },
       });
     }
   }
@@ -152,9 +158,10 @@ export class GameService {
     return this.gameState.answer[this.gameState.activeList];
   }
 
-  private async initializeGameState() {
+  private initializeGameState() {
     const guesses = this.createInitialGuess();
     const activeList = this.createInitialListSelection();
+
     this.createStudentData().subscribe((students) => {
       const answer = this.createInitialGameAnswer(students);
       const yesterdayAnswer = this.createInitialYesterdayAnswer(students);
@@ -174,14 +181,15 @@ export class GameService {
 
   private createInitialGuess() {
     let guess = this.localStorage.getGuess();
-    if (guess.doy !== this.doy) {
+
+    if (!guess || guess.doy !== this.doy) {
       guess = {
         guesses: {
           japan: [],
           global: [],
         },
         doy: this.doy,
-        lastList: guess.lastList || this.createInitialListSelection(),
+        lastList: guess?.lastList ?? this.createInitialListSelection(),
       };
       this.localStorage.setGuess(guess);
     }
@@ -241,7 +249,8 @@ export class GameService {
   }
 
   private createInitialListSelection() {
-    return this.localStorage.getGuess().lastList ?? DEFAULT_STUDENT_LIST;
+    const guess = this.localStorage.getGuess() ?? { lastList: null };
+    return guess.lastList ?? DEFAULT_STUDENT_LIST;
   }
 
   private createStudentData() {

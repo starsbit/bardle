@@ -41,7 +41,7 @@ export class StudentListSelectionComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscriptions.add(
-      this.gameService.$gameStateChange().subscribe((state) => {
+      this.gameService.$gameStateChange().subscribe(() => {
         const studentList = this.gameService.getCurrentList();
         if (!studentList) {
           return;
