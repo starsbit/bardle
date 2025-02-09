@@ -4158,25 +4158,5 @@
     "image": "NeruSchoolUniform.webp",
     "birthday": "17.08.",
     "disabled": false
-  },
-  "Rio": {
-    "id": "Rio",
-    "fullName": "Tsukatsuki Rio",
-    "shortName": "Rio",
-    "nativeName": "\u8abf\u6708 \u30ea\u30aa",
-    "school": "Millennium",
-    "damageType": "Mystic",
-    "armorType": "Elastic",
-    "role": "Support",
-    "combatClass": "Special",
-    "exSkillCost": 2,
-    "positioning": "Back",
-    "height": 171,
-    "outfit": "Default",
-    "releaseDate": "2025/01/27",
-    "weaponType": "HG",
-    "image": "Rio.webp",
-    "birthday": "06.06.",
-    "disabled": false
   }
 }
