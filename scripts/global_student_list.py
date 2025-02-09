@@ -31,20 +31,24 @@ def disable_student(student_id):
     with open(get_asset_folder() + '/character_info.json') as f:
         characters = json.load(f)
 
-    # Disable the student
-    characters[student_id]["disabled"] = True
+    if student_id in characters:
+        # Disable the student
+        characters[student_id]["disabled"] = True
 
-    # Dump the data back into the file
-    dump_data(characters, get_asset_folder() + '/character_info.json')
+        # Dump the data back into the file
+        dump_data(characters, get_asset_folder() + '/character_info.json')
+        
+        print(f"Student {student_id} has been disabled in the JP character list.")
 
     # Load the JSON data from the file
     with open(get_asset_folder() + '/character_info_gl.json') as f:
         characters = json.load(f)
 
-    # Disable the student
-    characters[student_id]["disabled"] = True
+    if student_id in characters:
+        # Disable the student
+        characters[student_id]["disabled"] = True
 
-    # Dump the data back into the file
-    dump_data(characters, get_asset_folder() + '/character_info_gl.json')
+        # Dump the data back into the file
+        dump_data(characters, get_asset_folder() + '/character_info_gl.json')
 
-    print(f"Student {student_id} has been disabled in both the global list and the character list.")
+        print(f"Student {student_id} has been disabled in the GL character list.")

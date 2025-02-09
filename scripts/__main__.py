@@ -26,7 +26,7 @@ if __name__ == "__main__":
     gl_list = generate_global_student_list()
     print("Generating global student list done.")
     print("Checking equality...")
-    conflicts = check_equality(gl_list, INCLUDED_FIELDS)
+    conflicts = check_equality(jp_list, INCLUDED_FIELDS)
     if conflicts:
         print(f"Conflicts: {conflicts}")
         print("Students will be disabled in both the global list and the character list.")
