@@ -53,6 +53,7 @@ export class GuessInputComponent implements OnInit, OnDestroy {
         const data = this.gameService.getCurrentStudentData();
         if (data) {
           this.students = Object.values(data);
+          this.students.sort((a, b) => a.shortName.localeCompare(b.shortName));
         } else {
           this.students = [];
         }
