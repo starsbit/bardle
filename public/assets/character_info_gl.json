@@ -1017,7 +1017,7 @@
     "weaponType": "AR",
     "image": "Momoi.webp",
     "birthday": "08.12.",
-    "disabled": false
+    "disabled": true
   },
   "Cherino": {
     "id": "Cherino",

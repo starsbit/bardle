@@ -23,9 +23,10 @@ export class StudentService {
       2,
       '0'
     )}.${yesterday.getUTCFullYear()}`;
-    const index = hashCode(formattedDate) % Object.keys(students).length;
-    const keys: string[] = Object.keys(students);
-    return students[keys[index]];
+    return this.handleDisabledCharacters(
+      this.getStudent(students, formattedDate),
+      students
+    );
   }
 
   getTodaysStudent(students: StudentData): Student {
@@ -37,7 +38,14 @@ export class StudentService {
       2,
       '0'
     )}.${today.getUTCFullYear()}`;
-    const index = hashCode(formattedDate) % Object.keys(students).length;
+    return this.handleDisabledCharacters(
+      this.getStudent(students, formattedDate),
+      students
+    );
+  }
+
+  getStudent(students: StudentData, seed: string): Student {
+    const index = hashCode(seed) % Object.keys(students).length;
     const keys: string[] = Object.keys(students);
     return students[keys[index]];
   }
@@ -58,5 +66,15 @@ export class StudentService {
       }),
       tap((studentData: StudentListData) => (this.students = studentData))
     );
+  }
+
+  private handleDisabledCharacters(
+    student: Student,
+    students: StudentData
+  ): Student {
+    while (student.disabled) {
+      student = this.getStudent(students, student.fullName);
+    }
+    return student;
   }
 }
