@@ -9,6 +9,7 @@ from filter_existing_students import filter_existing_students
 from folder_management import get_asset_folder
 from generate_icons import generate_icon_name, generate_icons
 from schaledb_utils import generate_wiki_article_list_from_schaledb
+from json_utils import dump_data
 
 
 def extract_integer(s):
@@ -159,12 +160,13 @@ def fetch_info():
         print("URL for", article_name, ":", url)
 
         # Generate the character information from the URL
-        existing_info[article_name.replace(" ", "_")] = generate_info_from_url(url, generate_icon_name(article_name))
+        info = generate_info_from_url(url, generate_icon_name(article_name))
+        
+        existing_info[info["id"]] = info
         print("\n")
 
     # Dump merged data into character_info.json
-    with open(folder_path + 'character_info.json', 'w') as outfile:
-        json.dump(existing_info, outfile)
+    dump_data(existing_info, folder_path + 'character_info.json')
 
     print("Merged data dumped into character_info.json")
 
