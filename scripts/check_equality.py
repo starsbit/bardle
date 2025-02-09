@@ -1,5 +1,4 @@
 from itertools import combinations
-from folder_management import get_asset_folder
 
 
 # returns a list of characters that cause conflicts
@@ -20,7 +19,7 @@ def check_equality(characters, included_fields):
             if characters_with_included_fields[i] == characters_with_included_fields[j]:
                 print(f"Characters {list(characters.keys())[i]} and {list(characters.keys())[j]} are equal (including {included_fields}).")
                 same_characters.append(list(characters.keys())[i])
-
+                same_characters.append(list(characters.keys())[j])
 
     if len(same_characters) == 0:
         print(f"No two characters have equal values (including {included_fields}).")
