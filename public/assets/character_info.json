@@ -959,7 +959,7 @@
     "birthday": "07.07.",
     "disabled": false
   },
-  "Aris": {
+  "Arisu": {
     "id": "Arisu",
     "fullName": "Tendou Arisu",
     "shortName": "Arisu",
@@ -1299,7 +1299,7 @@
     "birthday": "16.05.",
     "disabled": false
   },
-  "Shun_(Small)": {
+  "Shun_(Kid)": {
     "id": "Shun_(Kid)",
     "fullName": "Sunohara Shun (Kid)",
     "shortName": "Shun (Kid)",
@@ -2299,7 +2299,7 @@
     "birthday": "01.04.",
     "disabled": false
   },
-  "Yuuka_(Track)": {
+  "Yuuka_(Sportswear)": {
     "id": "Yuuka_(Sportswear)",
     "fullName": "Hayase Yuuka (Sportswear)",
     "shortName": "Yuuka (Sportswear)",
@@ -2319,7 +2319,7 @@
     "birthday": "14.03.",
     "disabled": false
   },
-  "Mari_(Track)": {
+  "Mari_(Sportswear)": {
     "id": "Mari_(Sportswear)",
     "fullName": "Iochi Mari (Sportswear)",
     "shortName": "Mari (Sportswear)",
@@ -2339,7 +2339,7 @@
     "birthday": "12.09.",
     "disabled": false
   },
-  "Hasumi_(Track)": {
+  "Hasumi_(Sportswear)": {
     "id": "Hasumi_(Sportswear)",
     "fullName": "Hanekawa Hasumi (Sportswear)",
     "shortName": "Hasumi (Sportswear)",
@@ -3099,7 +3099,7 @@
     "birthday": "31.12.",
     "disabled": false
   },
-  "Haruna_(Track)": {
+  "Haruna_(Sportswear)": {
     "id": "Haruna_(Sportswear)",
     "fullName": "Kurodate Haruna (Sportswear)",
     "shortName": "Haruna (Sportswear)",
@@ -3759,7 +3759,7 @@
     "birthday": "13.09.",
     "disabled": false
   },
-  "Hoshino_(Armed)": {
+  "Hoshino_(Battle)": {
     "id": "Hoshino_(Battle)",
     "fullName": "Takanashi Hoshino (Battle)",
     "shortName": "Hoshino (Battle)",

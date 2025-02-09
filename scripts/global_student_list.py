@@ -2,6 +2,7 @@ import json
 import datetime
 from dateutil.relativedelta import relativedelta
 from folder_management import get_asset_folder
+from json_utils import dump_data
 
 def load_student_list():
     with open(get_asset_folder() + '/character_info.json') as f:
@@ -20,8 +21,7 @@ def generate_global_student_list():
             student["releaseDate"] = release_date.strftime('%Y/%m/%d')
             global_student_list[student["id"]] = student
     
-    with open(target_file, 'w') as f:
-        json.dump(global_student_list, f, indent=4)
+    dump_data(global_student_list, target_file)
     
     return global_student_list
 
@@ -35,8 +35,7 @@ def disable_student(student_id):
     characters[student_id]["disabled"] = True
 
     # Dump the data back into the file
-    with open(get_asset_folder() + '/character_info.json', 'w') as f:
-        json.dump(characters, f, indent=4)
+    dump_data(characters, get_asset_folder() + '/character_info.json')
 
     # Load the JSON data from the file
     with open(get_asset_folder() + '/character_info_gl.json') as f:
@@ -46,7 +45,6 @@ def disable_student(student_id):
     characters[student_id]["disabled"] = True
 
     # Dump the data back into the file
-    with open(get_asset_folder() + '/character_info_gl.json', 'w') as f:
-        json.dump(characters, f, indent=4)
+    dump_data(characters, get_asset_folder() + '/character_info_gl.json')
 
     print(f"Student {student_id} has been disabled in both the global list and the character list.")
