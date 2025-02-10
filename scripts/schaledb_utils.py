@@ -14,6 +14,7 @@ INCONSISTEN_STUDENT_LOOKUP = [
     ("Utaha (Cheerleader)", "Utaha (Cheer Squad)"),
     ("Hibiki (Cheerleader)", "Hibiki (Cheer Squad)"),
     ("Akane (Bunny Girl)", "Akane (Bunny)"),
+    ("Arisu", "Aris"),
     ("Arisu (Maid)", "Aris (Maid)"),
     ("Toki (Bunny Girl)", "Toki (Bunny)"),
     ("Kotori (Cheerleader)", "Kotori (Cheer Squad)"),
@@ -24,7 +25,13 @@ INCONSISTEN_STUDENT_LOOKUP = [
     ("Noa (Pajama)", "Noa (Pajamas)"),
     ("Asuna (School Uniform)", "Asuna (Uniform)"),
     ("Karin (School Uniform)", "Karin (Uniform)"),
-    ("Neru (School Uniform)", "Neru (Uniform)")
+    ("Neru (School Uniform)", "Neru (Uniform)"),
+    ("Shun (Kid)", "Shun (Small)"),
+    ("Yuuka (Sportswear)", "Yuuka (Track)"),
+    ("Mari (Sportswear)", "Mari (Track)"),
+    ("Hasumi (Sportswear)", "Hasumi (Track)"),
+    ("Haruna (Sportswear)", "Haruna (Track)"),
+    ("Hoshino (Battle)", "Hoshino (Armed)"),
 ]
 
 def translate_wiki_to_schale(wiki_name):

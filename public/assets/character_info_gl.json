@@ -975,7 +975,7 @@
     "outfit": "Default",
     "releaseDate": "2021/09/25",
     "weaponType": "RG",
-    "image": "Aris.webp",
+    "image": "Arisu.webp",
     "birthday": "25.03.",
     "disabled": false
   },
@@ -1315,7 +1315,7 @@
     "outfit": "Kid",
     "releaseDate": "2022/02/26",
     "weaponType": "SR",
-    "image": "ShunSmall.webp",
+    "image": "ShunKid.webp",
     "birthday": "05.02.",
     "disabled": false
   },
@@ -2315,7 +2315,7 @@
     "outfit": "Sportswear",
     "releaseDate": "2023/04/26",
     "weaponType": "SMG",
-    "image": "YuukaTrack.webp",
+    "image": "YuukaSportswear.webp",
     "birthday": "14.03.",
     "disabled": false
   },
@@ -2335,7 +2335,7 @@
     "outfit": "Sportswear",
     "releaseDate": "2023/04/26",
     "weaponType": "HG",
-    "image": "MariTrack.webp",
+    "image": "MariSportswear.webp",
     "birthday": "12.09.",
     "disabled": false
   },
@@ -2355,7 +2355,7 @@
     "outfit": "Sportswear",
     "releaseDate": "2023/04/26",
     "weaponType": "SR",
-    "image": "HasumiTrack.webp",
+    "image": "HasumiSportswear.webp",
     "birthday": "12.12.",
     "disabled": false
   },
@@ -3115,7 +3115,7 @@
     "outfit": "Sportswear",
     "releaseDate": "2024/03/15",
     "weaponType": "SR",
-    "image": "HarunaTrack.webp",
+    "image": "HarunaSportswear.webp",
     "birthday": "01.03.",
     "disabled": false
   },
@@ -3775,7 +3775,7 @@
     "outfit": "Battle",
     "releaseDate": "2025/01/22",
     "weaponType": "SG",
-    "image": "HoshinoArmed.webp",
+    "image": "HoshinoBattle.webp",
     "birthday": "02.01.",
     "disabled": false
   },

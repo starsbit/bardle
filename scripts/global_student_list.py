@@ -1,16 +1,14 @@
-import json
 import datetime
+import json
+
 from dateutil.relativedelta import relativedelta
 from folder_management import get_asset_folder
-from json_utils import dump_data
+from json_utils import dump_data, load_gl_data, load_jp_data
 
-def load_student_list():
-    with open(get_asset_folder() + '/character_info.json') as f:
-        return json.load(f)
-    
+
 def generate_global_student_list():
     target_file = get_asset_folder() + "/character_info_gl.json"
-    student_list = load_student_list()
+    student_list = load_jp_data()
     global_student_list = {}
     current_date = datetime.datetime.now()
     
@@ -28,8 +26,7 @@ def generate_global_student_list():
 
 def disable_student(student_id):
     # Load the JSON data from the file
-    with open(get_asset_folder() + '/character_info.json') as f:
-        characters = json.load(f)
+    characters = load_jp_data()
 
     if student_id in characters:
         # Disable the student
@@ -41,8 +38,7 @@ def disable_student(student_id):
         print(f"Student {student_id} has been disabled in the JP character list.")
 
     # Load the JSON data from the file
-    with open(get_asset_folder() + '/character_info_gl.json') as f:
-        characters = json.load(f)
+    characters = load_gl_data()
 
     if student_id in characters:
         # Disable the student

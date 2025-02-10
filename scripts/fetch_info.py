@@ -8,8 +8,8 @@ from bs4 import BeautifulSoup
 from filter_existing_students import filter_existing_students
 from folder_management import get_asset_folder
 from generate_icons import generate_icon_name, generate_icons
+from json_utils import dump_data, load_gl_data, load_jp_data
 from schaledb_utils import generate_wiki_article_list_from_schaledb
-from json_utils import dump_data
 
 
 def extract_integer(s):
@@ -150,8 +150,7 @@ def fetch_info():
     existing_info = {}
     print("Loading existing character info if available...")
     if os.path.exists(folder_path + 'character_info.json'):
-        with open(folder_path + 'character_info.json', 'r') as file:
-            existing_info = json.load(file)
+        existing_info = load_jp_data()
         
 
     for article_name in filtered_articles:
