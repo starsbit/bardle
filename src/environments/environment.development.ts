@@ -1,4 +1,4 @@
-import { Environment } from './environment';
+import { Environment } from './environemnt-model';
 
 export const environment: Environment = {
   googleAnalyticsTrackingCode: '',
