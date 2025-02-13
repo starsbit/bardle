@@ -10,19 +10,27 @@ import { hashCode } from '../../utils/hash';
 export class AssetService {
   private static readonly ASSET_IMAGES_PATH = '/assets/images';
   private static readonly ASSET_PREFIX_PATH = environment.assetLocationPrefix;
+  private static readonly BACKGROUND_COUNT = 48;
+  private fullImagePath: string;
 
-  constructor(private readonly http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {
+    if (environment.production) {
+      this.fullImagePath = `${AssetService.ASSET_PREFIX_PATH}/${AssetService.ASSET_IMAGES_PATH}`;
+    } else {
+      this.fullImagePath = AssetService.ASSET_IMAGES_PATH;
+    }
+  }
 
   getStudentIcon(student: Student) {
     return this.http.get(this.getStudentIconLocation(student));
   }
 
   getStudentIconLocation(student: Student) {
-    return `${AssetService.ASSET_PREFIX_PATH}/${AssetService.ASSET_IMAGES_PATH}/characters/${student.image}`;
+    return `${this.fullImagePath}/characters/${student.image}`;
   }
 
   getIconLocation(icon: string) {
-    return `${AssetService.ASSET_PREFIX_PATH}/${AssetService.ASSET_IMAGES_PATH}/icons/${icon}`;
+    return `${this.fullImagePath}/icons/${icon}`;
   }
 
   getBackground(index: number) {
@@ -33,23 +41,22 @@ export class AssetService {
     if (index < 1) {
       index = 1;
     }
-    index = index % 48;
+    index = index % AssetService.BACKGROUND_COUNT;
     if (index < 10) {
-      return `${AssetService.ASSET_PREFIX_PATH}/${AssetService.ASSET_IMAGES_PATH}/backgrounds/0${index}.png`;
+      return `${this.fullImagePath}/backgrounds/0${index}.png`;
     }
-    return `${AssetService.ASSET_PREFIX_PATH}/${AssetService.ASSET_IMAGES_PATH}/backgrounds/${index}.png`;
+    return `${this.fullImagePath}/backgrounds/${index}.png`;
   }
 
   getSchoolIconLocation(student: Student) {
-    return `${AssetService.ASSET_PREFIX_PATH}/${
-      AssetService.ASSET_IMAGES_PATH
-    }/schools/${student.school.replace(' ', '')}.png`;
+    return `${this.fullImagePath}/schools/${student.school.replace(
+      ' ',
+      ''
+    )}.png`;
   }
 
   getRoleIconLocation(student: Student) {
-    return `${AssetService.ASSET_PREFIX_PATH}/${
-      AssetService.ASSET_IMAGES_PATH
-    }/roles/${student.role.replace(' ', '')}.png`;
+    return `${this.fullImagePath}/roles/${student.role.replace(' ', '')}.png`;
   }
 
   pickBackgroundOfTheDayLocation() {

@@ -11,12 +11,18 @@ export class StudentClientService {
   constructor(private readonly http: HttpClient) {}
 
   getStudentsJp() {
+    if (!environment.production) {
+      return this.http.get<StudentData>('/assets/character_info.json');
+    }
     return this.http.get<StudentData>(
       `${StudentClientService.ASSET_PREFIX_PATH}/assets/character_info.json`
     );
   }
 
   getStudentsGl() {
+    if (!environment.production) {
+      return this.http.get<StudentData>('/assets/character_info_gl.json');
+    }
     return this.http.get<StudentData>(
       `${StudentClientService.ASSET_PREFIX_PATH}/assets/character_info_gl.json`
     );
