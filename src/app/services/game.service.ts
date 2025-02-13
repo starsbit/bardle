@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { ReplaySubject } from 'rxjs';
 import { RULES } from '../constants/rules';
 import { GameAnswer, GameResult, GameState } from '../models/game';
@@ -21,8 +20,7 @@ export class GameService {
 
   constructor(
     private readonly localStorage: LocalStorageService,
-    private readonly studentService: StudentService,
-    private readonly router: Router
+    private readonly studentService: StudentService
   ) {
     this.initializeGameState();
   }
@@ -59,7 +57,6 @@ export class GameService {
       ...this.gameState,
       activeList: list,
     };
-    this.router.navigate(['/game', list.toLowerCase()]);
     this.gameStateChange.next(this.gameState);
   }
 

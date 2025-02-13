@@ -103,6 +103,6 @@ describe('GridRoleComponent', () => {
 
     const imgElement = fixture.debugElement.query(By.css('img'));
     expect(imgElement.nativeElement.src).toContain('assets/roles/Attacker.png');
-    expect(imgElement.nativeElement.alt).toBe(mockStudent.fullName);
+    expect(imgElement.nativeElement.alt).toBe(mockStudent.role);
   }));
 });

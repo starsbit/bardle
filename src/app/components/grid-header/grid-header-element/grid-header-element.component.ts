@@ -9,4 +9,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class GridHeaderElementComponent {
   @Input() title = '';
+
+  get headerTitle() {
+    return this.title;
+  }
 }

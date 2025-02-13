@@ -16,7 +16,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SR",
     "image": "Aru.webp",
-    "birthday": "12.03.",
+    "birthday": "2000/03/12",
     "disabled": false
   },
   "Eimi": {
@@ -36,7 +36,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SG",
     "image": "Eimi.webp",
-    "birthday": "01.05.",
+    "birthday": "2000/05/01",
     "disabled": false
   },
   "Haruna": {
@@ -56,7 +56,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SR",
     "image": "Haruna.webp",
-    "birthday": "01.03.",
+    "birthday": "2000/03/01",
     "disabled": false
   },
   "Hifumi": {
@@ -76,7 +76,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "AR",
     "image": "Hifumi.webp",
-    "birthday": "27.11.",
+    "birthday": "2000/11/27",
     "disabled": false
   },
   "Hina": {
@@ -96,7 +96,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "MG",
     "image": "Hina.webp",
-    "birthday": "19.02.",
+    "birthday": "2000/02/19",
     "disabled": false
   },
   "Hoshino": {
@@ -116,7 +116,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SG",
     "image": "Hoshino.webp",
-    "birthday": "02.01.",
+    "birthday": "2000/01/02",
     "disabled": false
   },
   "Iori": {
@@ -136,7 +136,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SR",
     "image": "Iori.webp",
-    "birthday": "08.11.",
+    "birthday": "2000/11/08",
     "disabled": false
   },
   "Maki": {
@@ -156,7 +156,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "MG",
     "image": "Maki.webp",
-    "birthday": "01.08.",
+    "birthday": "2000/08/01",
     "disabled": false
   },
   "Neru": {
@@ -176,7 +176,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SMG",
     "image": "Neru.webp",
-    "birthday": "17.08.",
+    "birthday": "2000/08/17",
     "disabled": false
   },
   "Izumi": {
@@ -196,7 +196,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "MG",
     "image": "Izumi.webp",
-    "birthday": "11.05.",
+    "birthday": "2000/05/11",
     "disabled": false
   },
   "Shiroko": {
@@ -216,7 +216,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "AR",
     "image": "Shiroko.webp",
-    "birthday": "16.05.",
+    "birthday": "2000/05/16",
     "disabled": false
   },
   "Shun": {
@@ -236,7 +236,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SR",
     "image": "Shun.webp",
-    "birthday": "05.02.",
+    "birthday": "2000/02/05",
     "disabled": false
   },
   "Sumire": {
@@ -256,7 +256,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SG",
     "image": "Sumire.webp",
-    "birthday": "20.08.",
+    "birthday": "2000/08/20",
     "disabled": false
   },
   "Tsurugi": {
@@ -276,7 +276,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SG",
     "image": "Tsurugi.webp",
-    "birthday": "24.06.",
+    "birthday": "2000/06/24",
     "disabled": false
   },
   "Akane": {
@@ -296,7 +296,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "HG",
     "image": "Akane.webp",
-    "birthday": "01.04.",
+    "birthday": "2000/04/01",
     "disabled": false
   },
   "Chise": {
@@ -316,7 +316,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "GL",
     "image": "Chise.webp",
-    "birthday": "13.07.",
+    "birthday": "2000/07/13",
     "disabled": false
   },
   "Akari": {
@@ -336,7 +336,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "AR",
     "image": "Akari.webp",
-    "birthday": "09.12.",
+    "birthday": "2000/12/09",
     "disabled": false
   },
   "Hasumi": {
@@ -356,7 +356,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SR",
     "image": "Hasumi.webp",
-    "birthday": "12.12.",
+    "birthday": "2000/12/12",
     "disabled": false
   },
   "Nonomi": {
@@ -376,7 +376,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "MG",
     "image": "Nonomi.webp",
-    "birthday": "01.09.",
+    "birthday": "2000/09/01",
     "disabled": false
   },
   "Kayoko": {
@@ -396,7 +396,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "HG",
     "image": "Kayoko.webp",
-    "birthday": "17.03.",
+    "birthday": "2000/03/17",
     "disabled": false
   },
   "Mutsuki": {
@@ -416,7 +416,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "MG",
     "image": "Mutsuki.webp",
-    "birthday": "29.07.",
+    "birthday": "2000/07/29",
     "disabled": false
   },
   "Junko": {
@@ -436,7 +436,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "AR",
     "image": "Junko.webp",
-    "birthday": "27.12.",
+    "birthday": "2000/12/27",
     "disabled": false
   },
   "Serika": {
@@ -456,7 +456,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "AR",
     "image": "Serika.webp",
-    "birthday": "25.06.",
+    "birthday": "2000/06/25",
     "disabled": false
   },
   "Tsubaki": {
@@ -476,7 +476,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SMG",
     "image": "Tsubaki.webp",
-    "birthday": "03.02.",
+    "birthday": "2000/02/03",
     "disabled": false
   },
   "Yuuka": {
@@ -496,7 +496,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SMG",
     "image": "Yuuka.webp",
-    "birthday": "14.03.",
+    "birthday": "2000/03/14",
     "disabled": false
   },
   "Haruka": {
@@ -516,7 +516,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SG",
     "image": "Haruka.webp",
-    "birthday": "13.05.",
+    "birthday": "2000/05/13",
     "disabled": false
   },
   "Asuna": {
@@ -536,7 +536,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "AR",
     "image": "Asuna.webp",
-    "birthday": "24.03.",
+    "birthday": "2000/03/24",
     "disabled": false
   },
   "Kotori": {
@@ -556,7 +556,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "MG",
     "image": "Kotori.webp",
-    "birthday": "31.12.",
+    "birthday": "2000/12/31",
     "disabled": false
   },
   "Suzumi": {
@@ -576,7 +576,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "AR",
     "image": "Suzumi.webp",
-    "birthday": "31.08.",
+    "birthday": "2000/08/31",
     "disabled": false
   },
   "Pina": {
@@ -596,7 +596,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "MG",
     "image": "Pina.webp",
-    "birthday": "03.11.",
+    "birthday": "2000/11/03",
     "disabled": false
   },
   "Hibiki": {
@@ -616,7 +616,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "MT",
     "image": "Hibiki.webp",
-    "birthday": "02.04.",
+    "birthday": "2000/04/02",
     "disabled": false
   },
   "Karin": {
@@ -636,7 +636,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SR",
     "image": "Karin.webp",
-    "birthday": "02.02.",
+    "birthday": "2000/02/02",
     "disabled": false
   },
   "Saya": {
@@ -656,7 +656,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "HG",
     "image": "Saya.webp",
-    "birthday": "03.01.",
+    "birthday": "2000/01/03",
     "disabled": false
   },
   "Airi": {
@@ -676,7 +676,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SMG",
     "image": "Airi.webp",
-    "birthday": "30.01.",
+    "birthday": "2000/01/30",
     "disabled": false
   },
   "Fuuka": {
@@ -696,7 +696,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SMG",
     "image": "Fuuka.webp",
-    "birthday": "30.04.",
+    "birthday": "2000/04/30",
     "disabled": false
   },
   "Hanae": {
@@ -716,7 +716,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "AR",
     "image": "Hanae.webp",
-    "birthday": "12.05.",
+    "birthday": "2000/05/12",
     "disabled": false
   },
   "Hare": {
@@ -736,7 +736,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "AR",
     "image": "Hare.webp",
-    "birthday": "19.04.",
+    "birthday": "2000/04/19",
     "disabled": false
   },
   "Utaha": {
@@ -756,7 +756,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SMG",
     "image": "Utaha.webp",
-    "birthday": "13.11.",
+    "birthday": "2000/11/13",
     "disabled": false
   },
   "Ayane": {
@@ -776,7 +776,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "HG",
     "image": "Ayane.webp",
-    "birthday": "12.11.",
+    "birthday": "2000/11/12",
     "disabled": false
   },
   "Chinatsu": {
@@ -796,7 +796,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "HG",
     "image": "Chinatsu.webp",
-    "birthday": "22.08.",
+    "birthday": "2000/08/22",
     "disabled": false
   },
   "Kotama": {
@@ -816,7 +816,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "HG",
     "image": "Kotama.webp",
-    "birthday": "05.01.",
+    "birthday": "2000/01/05",
     "disabled": false
   },
   "Juri": {
@@ -836,7 +836,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "SG",
     "image": "Juri.webp",
-    "birthday": "20.10.",
+    "birthday": "2000/10/20",
     "disabled": false
   },
   "Serina": {
@@ -856,7 +856,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "AR",
     "image": "Serina.webp",
-    "birthday": "06.01.",
+    "birthday": "2000/01/06",
     "disabled": false
   },
   "Shimiko": {
@@ -876,7 +876,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "AR",
     "image": "Shimiko.webp",
-    "birthday": "30.11.",
+    "birthday": "2000/11/30",
     "disabled": false
   },
   "Yoshimi": {
@@ -896,7 +896,7 @@
     "releaseDate": "2021/02/04",
     "weaponType": "AR",
     "image": "Yoshimi.webp",
-    "birthday": "29.08.",
+    "birthday": "2000/08/29",
     "disabled": false
   },
   "Mashiro": {
@@ -916,7 +916,7 @@
     "releaseDate": "2021/02/11",
     "weaponType": "SR",
     "image": "Mashiro.webp",
-    "birthday": "05.06.",
+    "birthday": "2000/06/05",
     "disabled": false
   },
   "Izuna": {
@@ -936,7 +936,7 @@
     "releaseDate": "2021/02/25",
     "weaponType": "SMG",
     "image": "Izuna.webp",
-    "birthday": "16.12.",
+    "birthday": "2000/12/16",
     "disabled": false
   },
   "Shizuko": {
@@ -956,7 +956,7 @@
     "releaseDate": "2021/02/25",
     "weaponType": "SG",
     "image": "Shizuko.webp",
-    "birthday": "07.07.",
+    "birthday": "2000/07/07",
     "disabled": false
   },
   "Arisu": {
@@ -976,7 +976,7 @@
     "releaseDate": "2021/03/25",
     "weaponType": "RG",
     "image": "Arisu.webp",
-    "birthday": "25.03.",
+    "birthday": "2000/03/25",
     "disabled": false
   },
   "Midori": {
@@ -996,7 +996,7 @@
     "releaseDate": "2021/04/08",
     "weaponType": "SR",
     "image": "Midori.webp",
-    "birthday": "08.12.",
+    "birthday": "2000/12/08",
     "disabled": true
   },
   "Momoi": {
@@ -1016,7 +1016,7 @@
     "releaseDate": "2021/04/08",
     "weaponType": "AR",
     "image": "Momoi.webp",
-    "birthday": "08.12.",
+    "birthday": "2000/12/08",
     "disabled": true
   },
   "Cherino": {
@@ -1036,7 +1036,7 @@
     "releaseDate": "2021/04/29",
     "weaponType": "HG",
     "image": "Cherino.webp",
-    "birthday": "27.10.",
+    "birthday": "2000/10/27",
     "disabled": false
   },
   "Nodoka": {
@@ -1056,7 +1056,7 @@
     "releaseDate": "2021/04/29",
     "weaponType": "SMG",
     "image": "Nodoka.webp",
-    "birthday": "20.02.",
+    "birthday": "2000/02/20",
     "disabled": false
   },
   "Yuzu": {
@@ -1076,7 +1076,7 @@
     "releaseDate": "2021/05/13",
     "weaponType": "GL",
     "image": "Yuzu.webp",
-    "birthday": "12.08.",
+    "birthday": "2000/08/12",
     "disabled": false
   },
   "Azusa": {
@@ -1096,7 +1096,7 @@
     "releaseDate": "2021/05/27",
     "weaponType": "AR",
     "image": "Azusa.webp",
-    "birthday": "26.12.",
+    "birthday": "2000/12/26",
     "disabled": false
   },
   "Hanako": {
@@ -1116,7 +1116,7 @@
     "releaseDate": "2021/05/27",
     "weaponType": "AR",
     "image": "Hanako.webp",
-    "birthday": "03.01.",
+    "birthday": "2000/01/03",
     "disabled": false
   },
   "Koharu": {
@@ -1136,7 +1136,7 @@
     "releaseDate": "2021/06/10",
     "weaponType": "SR",
     "image": "Koharu.webp",
-    "birthday": "16.04.",
+    "birthday": "2000/04/16",
     "disabled": false
   },
   "Azusa_(Swimsuit)": {
@@ -1156,7 +1156,7 @@
     "releaseDate": "2021/06/30",
     "weaponType": "AR",
     "image": "AzusaSwimsuit.webp",
-    "birthday": "26.12.",
+    "birthday": "2000/12/26",
     "disabled": false
   },
   "Mashiro_(Swimsuit)": {
@@ -1176,7 +1176,7 @@
     "releaseDate": "2021/06/30",
     "weaponType": "SR",
     "image": "MashiroSwimsuit.webp",
-    "birthday": "05.06.",
+    "birthday": "2000/06/05",
     "disabled": false
   },
   "Tsurugi_(Swimsuit)": {
@@ -1196,7 +1196,7 @@
     "releaseDate": "2021/06/30",
     "weaponType": "SG",
     "image": "TsurugiSwimsuit.webp",
-    "birthday": "24.06.",
+    "birthday": "2000/06/24",
     "disabled": false
   },
   "Hifumi_(Swimsuit)": {
@@ -1216,7 +1216,7 @@
     "releaseDate": "2021/07/15",
     "weaponType": "AR",
     "image": "HifumiSwimsuit.webp",
-    "birthday": "27.11.",
+    "birthday": "2000/11/27",
     "disabled": false
   },
   "Hina_(Swimsuit)": {
@@ -1236,7 +1236,7 @@
     "releaseDate": "2021/07/29",
     "weaponType": "MG",
     "image": "HinaSwimsuit.webp",
-    "birthday": "19.02.",
+    "birthday": "2000/02/19",
     "disabled": false
   },
   "Iori_(Swimsuit)": {
@@ -1256,7 +1256,7 @@
     "releaseDate": "2021/07/29",
     "weaponType": "SR",
     "image": "IoriSwimsuit.webp",
-    "birthday": "08.11.",
+    "birthday": "2000/11/08",
     "disabled": false
   },
   "Izumi_(Swimsuit)": {
@@ -1276,7 +1276,7 @@
     "releaseDate": "2021/07/29",
     "weaponType": "MG",
     "image": "IzumiSwimsuit.webp",
-    "birthday": "11.05.",
+    "birthday": "2000/05/11",
     "disabled": false
   },
   "Shiroko_(Riding)": {
@@ -1296,7 +1296,7 @@
     "releaseDate": "2021/08/12",
     "weaponType": "AR",
     "image": "ShirokoRiding.webp",
-    "birthday": "16.05.",
+    "birthday": "2000/05/16",
     "disabled": false
   },
   "Shun_(Kid)": {
@@ -1316,7 +1316,7 @@
     "releaseDate": "2021/08/26",
     "weaponType": "SR",
     "image": "ShunKid.webp",
-    "birthday": "05.02.",
+    "birthday": "2000/02/05",
     "disabled": false
   },
   "Kirino": {
@@ -1336,7 +1336,7 @@
     "releaseDate": "2021/08/26",
     "weaponType": "HG",
     "image": "Kirino.webp",
-    "birthday": "22.10.",
+    "birthday": "2000/10/22",
     "disabled": false
   },
   "Saya_(Casual)": {
@@ -1356,7 +1356,7 @@
     "releaseDate": "2021/09/09",
     "weaponType": "HG",
     "image": "SayaCasual.webp",
-    "birthday": "03.01.",
+    "birthday": "2000/01/03",
     "disabled": false
   },
   "Neru_(Bunny_Girl)": {
@@ -1376,7 +1376,7 @@
     "releaseDate": "2021/09/29",
     "weaponType": "SMG",
     "image": "NeruBunnyGirl.webp",
-    "birthday": "17.08.",
+    "birthday": "2000/08/17",
     "disabled": false
   },
   "Karin_(Bunny_Girl)": {
@@ -1396,7 +1396,7 @@
     "releaseDate": "2021/09/29",
     "weaponType": "SR",
     "image": "KarinBunnyGirl.webp",
-    "birthday": "02.02.",
+    "birthday": "2000/02/02",
     "disabled": false
   },
   "Asuna_(Bunny_Girl)": {
@@ -1416,7 +1416,7 @@
     "releaseDate": "2021/10/12",
     "weaponType": "AR",
     "image": "AsunaBunnyGirl.webp",
-    "birthday": "24.03.",
+    "birthday": "2000/03/24",
     "disabled": false
   },
   "Natsu": {
@@ -1436,7 +1436,7 @@
     "releaseDate": "2021/10/27",
     "weaponType": "SMG",
     "image": "Natsu.webp",
-    "birthday": "04.12.",
+    "birthday": "2000/12/04",
     "disabled": false
   },
   "Mari": {
@@ -1456,7 +1456,7 @@
     "releaseDate": "2021/10/27",
     "weaponType": "HG",
     "image": "Mari.webp",
-    "birthday": "12.09.",
+    "birthday": "2000/09/12",
     "disabled": false
   },
   "Hatsune_Miku": {
@@ -1476,7 +1476,7 @@
     "releaseDate": "2021/11/03",
     "weaponType": "GL",
     "image": "HatsuneMiku.webp",
-    "birthday": "31.08.",
+    "birthday": "2000/08/31",
     "disabled": false
   },
   "Ako": {
@@ -1496,7 +1496,7 @@
     "releaseDate": "2021/11/17",
     "weaponType": "HG",
     "image": "Ako.webp",
-    "birthday": "22.12.",
+    "birthday": "2000/12/22",
     "disabled": false
   },
   "Cherino_(Hot_Spring)": {
@@ -1516,7 +1516,7 @@
     "releaseDate": "2021/11/30",
     "weaponType": "HG",
     "image": "CherinoHotSpring.webp",
-    "birthday": "27.10.",
+    "birthday": "2000/10/27",
     "disabled": false
   },
   "Chinatsu_(Hot_Spring)": {
@@ -1536,7 +1536,7 @@
     "releaseDate": "2021/11/30",
     "weaponType": "HG",
     "image": "ChinatsuHotSpring.webp",
-    "birthday": "22.08.",
+    "birthday": "2000/08/22",
     "disabled": false
   },
   "Tomoe": {
@@ -1556,7 +1556,7 @@
     "releaseDate": "2021/11/30",
     "weaponType": "SR",
     "image": "Tomoe.webp",
-    "birthday": "10.11.",
+    "birthday": "2000/11/10",
     "disabled": false
   },
   "Nodoka_(Hot_Spring)": {
@@ -1576,7 +1576,7 @@
     "releaseDate": "2021/12/15",
     "weaponType": "SMG",
     "image": "NodokaHotSpring.webp",
-    "birthday": "20.02.",
+    "birthday": "2000/02/20",
     "disabled": false
   },
   "Aru_(New_Year)": {
@@ -1596,7 +1596,7 @@
     "releaseDate": "2021/12/29",
     "weaponType": "SR",
     "image": "AruNewYear.webp",
-    "birthday": "12.03.",
+    "birthday": "2000/03/12",
     "disabled": false
   },
   "Mutsuki_(New_Year)": {
@@ -1616,7 +1616,7 @@
     "releaseDate": "2021/12/29",
     "weaponType": "MG",
     "image": "MutsukiNewYear.webp",
-    "birthday": "29.07.",
+    "birthday": "2000/07/29",
     "disabled": false
   },
   "Serika_(New_Year)": {
@@ -1636,7 +1636,7 @@
     "releaseDate": "2022/01/12",
     "weaponType": "AR",
     "image": "SerikaNewYear.webp",
-    "birthday": "25.06.",
+    "birthday": "2000/06/25",
     "disabled": false
   },
   "Wakamo": {
@@ -1656,7 +1656,7 @@
     "releaseDate": "2022/01/26",
     "weaponType": "SR",
     "image": "Wakamo.webp",
-    "birthday": "03.04.",
+    "birthday": "2000/04/03",
     "disabled": false
   },
   "Fubuki": {
@@ -1676,7 +1676,7 @@
     "releaseDate": "2022/01/26",
     "weaponType": "SR",
     "image": "Fubuki.webp",
-    "birthday": "21.10.",
+    "birthday": "2000/10/21",
     "disabled": false
   },
   "Sena": {
@@ -1696,7 +1696,7 @@
     "releaseDate": "2022/01/30",
     "weaponType": "GL",
     "image": "Sena.webp",
-    "birthday": "07.04.",
+    "birthday": "2000/04/07",
     "disabled": false
   },
   "Chihiro": {
@@ -1716,7 +1716,7 @@
     "releaseDate": "2022/01/30",
     "weaponType": "AR",
     "image": "Chihiro.webp",
-    "birthday": "26.04.",
+    "birthday": "2000/04/26",
     "disabled": false
   },
   "Mimori": {
@@ -1736,7 +1736,7 @@
     "releaseDate": "2022/02/09",
     "weaponType": "HG",
     "image": "Mimori.webp",
-    "birthday": "15.03.",
+    "birthday": "2000/03/15",
     "disabled": false
   },
   "Ui": {
@@ -1756,7 +1756,7 @@
     "releaseDate": "2022/02/23",
     "weaponType": "SR",
     "image": "Ui.webp",
-    "birthday": "23.04.",
+    "birthday": "2000/04/23",
     "disabled": false
   },
   "Hinata": {
@@ -1776,7 +1776,7 @@
     "releaseDate": "2022/02/23",
     "weaponType": "HG",
     "image": "Hinata.webp",
-    "birthday": "17.05.",
+    "birthday": "2000/05/17",
     "disabled": false
   },
   "Marina": {
@@ -1796,7 +1796,7 @@
     "releaseDate": "2022/03/08",
     "weaponType": "SMG",
     "image": "Marina.webp",
-    "birthday": "04.11.",
+    "birthday": "2000/11/04",
     "disabled": false
   },
   "Miyako": {
@@ -1816,7 +1816,7 @@
     "releaseDate": "2022/03/23",
     "weaponType": "SMG",
     "image": "Miyako.webp",
-    "birthday": "07.01.",
+    "birthday": "2000/01/07",
     "disabled": false
   },
   "Saki": {
@@ -1836,7 +1836,7 @@
     "releaseDate": "2022/03/23",
     "weaponType": "MG",
     "image": "Saki.webp",
-    "birthday": "09.04.",
+    "birthday": "2000/04/09",
     "disabled": false
   },
   "Miyu": {
@@ -1856,7 +1856,7 @@
     "releaseDate": "2022/04/06",
     "weaponType": "SR",
     "image": "Miyu.webp",
-    "birthday": "12.07.",
+    "birthday": "2000/07/12",
     "disabled": false
   },
   "Kaede": {
@@ -1876,7 +1876,7 @@
     "releaseDate": "2022/04/27",
     "weaponType": "HG",
     "image": "Kaede.webp",
-    "birthday": "09.07.",
+    "birthday": "2000/07/09",
     "disabled": false
   },
   "Iroha": {
@@ -1896,7 +1896,7 @@
     "releaseDate": "2022/04/27",
     "weaponType": "HG",
     "image": "Iroha.webp",
-    "birthday": "16.11.",
+    "birthday": "2000/11/16",
     "disabled": false
   },
   "Michiru": {
@@ -1916,7 +1916,7 @@
     "releaseDate": "2022/04/27",
     "weaponType": "SG",
     "image": "Michiru.webp",
-    "birthday": "22.02.",
+    "birthday": "2000/02/22",
     "disabled": false
   },
   "Tsukuyo": {
@@ -1936,7 +1936,7 @@
     "releaseDate": "2022/05/11",
     "weaponType": "SMG",
     "image": "Tsukuyo.webp",
-    "birthday": "05.04.",
+    "birthday": "2000/04/05",
     "disabled": false
   },
   "Misaki": {
@@ -1956,7 +1956,7 @@
     "releaseDate": "2022/05/24",
     "weaponType": "RL",
     "image": "Misaki.webp",
-    "birthday": "13.01.",
+    "birthday": "2000/01/13",
     "disabled": false
   },
   "Hiyori": {
@@ -1976,7 +1976,7 @@
     "releaseDate": "2022/05/24",
     "weaponType": "SR",
     "image": "Hiyori.webp",
-    "birthday": "08.01.",
+    "birthday": "2000/01/08",
     "disabled": false
   },
   "Atsuko": {
@@ -1996,7 +1996,7 @@
     "releaseDate": "2022/06/08",
     "weaponType": "SMG",
     "image": "Atsuko.webp",
-    "birthday": "20.01.",
+    "birthday": "2000/01/20",
     "disabled": false
   },
   "Wakamo_(Swimsuit)": {
@@ -2016,7 +2016,7 @@
     "releaseDate": "2022/06/22",
     "weaponType": "SR",
     "image": "WakamoSwimsuit.webp",
-    "birthday": "03.04.",
+    "birthday": "2000/04/03",
     "disabled": false
   },
   "Nonomi_(Swimsuit)": {
@@ -2036,7 +2036,7 @@
     "releaseDate": "2022/06/22",
     "weaponType": "MG",
     "image": "NonomiSwimsuit.webp",
-    "birthday": "01.09.",
+    "birthday": "2000/09/01",
     "disabled": false
   },
   "Ayane_(Swimsuit)": {
@@ -2056,7 +2056,7 @@
     "releaseDate": "2022/06/22",
     "weaponType": "HG",
     "image": "AyaneSwimsuit.webp",
-    "birthday": "12.11.",
+    "birthday": "2000/11/12",
     "disabled": false
   },
   "Hoshino_(Swimsuit)": {
@@ -2076,7 +2076,7 @@
     "releaseDate": "2022/07/20",
     "weaponType": "SG",
     "image": "HoshinoSwimsuit.webp",
-    "birthday": "02.01.",
+    "birthday": "2000/01/02",
     "disabled": false
   },
   "Shizuko_(Swimsuit)": {
@@ -2096,7 +2096,7 @@
     "releaseDate": "2022/07/20",
     "weaponType": "SG",
     "image": "ShizukoSwimsuit.webp",
-    "birthday": "07.07.",
+    "birthday": "2000/07/07",
     "disabled": false
   },
   "Izuna_(Swimsuit)": {
@@ -2116,7 +2116,7 @@
     "releaseDate": "2022/07/25",
     "weaponType": "SMG",
     "image": "IzunaSwimsuit.webp",
-    "birthday": "16.12.",
+    "birthday": "2000/12/16",
     "disabled": false
   },
   "Chise_(Swimsuit)": {
@@ -2136,7 +2136,7 @@
     "releaseDate": "2022/07/25",
     "weaponType": "GL",
     "image": "ChiseSwimsuit.webp",
-    "birthday": "13.07.",
+    "birthday": "2000/07/13",
     "disabled": false
   },
   "Saori": {
@@ -2156,7 +2156,7 @@
     "releaseDate": "2022/08/09",
     "weaponType": "AR",
     "image": "Saori.webp",
-    "birthday": "03.09.",
+    "birthday": "2000/09/03",
     "disabled": false
   },
   "Moe": {
@@ -2176,7 +2176,7 @@
     "releaseDate": "2022/08/24",
     "weaponType": "HG",
     "image": "Moe.webp",
-    "birthday": "13.09.",
+    "birthday": "2000/09/13",
     "disabled": false
   },
   "Kazusa": {
@@ -2196,7 +2196,7 @@
     "releaseDate": "2022/08/24",
     "weaponType": "MG",
     "image": "Kazusa.webp",
-    "birthday": "05.08.",
+    "birthday": "2000/08/05",
     "disabled": false
   },
   "Kokona": {
@@ -2216,7 +2216,7 @@
     "releaseDate": "2022/09/21",
     "weaponType": "AR",
     "image": "Kokona.webp",
-    "birthday": "01.06.",
+    "birthday": "2000/06/01",
     "disabled": false
   },
   "Utaha_(Cheerleader)": {
@@ -2236,7 +2236,7 @@
     "releaseDate": "2022/09/28",
     "weaponType": "SMG",
     "image": "UtahaCheerleader.webp",
-    "birthday": "13.11.",
+    "birthday": "2000/11/13",
     "disabled": false
   },
   "Noa": {
@@ -2256,7 +2256,7 @@
     "releaseDate": "2022/09/28",
     "weaponType": "HG",
     "image": "Noa.webp",
-    "birthday": "13.04.",
+    "birthday": "2000/04/13",
     "disabled": false
   },
   "Hibiki_(Cheerleader)": {
@@ -2276,7 +2276,7 @@
     "releaseDate": "2022/09/28",
     "weaponType": "MT",
     "image": "HibikiCheerleader.webp",
-    "birthday": "02.04.",
+    "birthday": "2000/04/02",
     "disabled": false
   },
   "Akane_(Bunny_Girl)": {
@@ -2296,7 +2296,7 @@
     "releaseDate": "2022/10/12",
     "weaponType": "HG",
     "image": "AkaneBunnyGirl.webp",
-    "birthday": "01.04.",
+    "birthday": "2000/04/01",
     "disabled": false
   },
   "Yuuka_(Sportswear)": {
@@ -2316,7 +2316,7 @@
     "releaseDate": "2022/10/26",
     "weaponType": "SMG",
     "image": "YuukaSportswear.webp",
-    "birthday": "14.03.",
+    "birthday": "2000/03/14",
     "disabled": false
   },
   "Mari_(Sportswear)": {
@@ -2336,7 +2336,7 @@
     "releaseDate": "2022/10/26",
     "weaponType": "HG",
     "image": "MariSportswear.webp",
-    "birthday": "12.09.",
+    "birthday": "2000/09/12",
     "disabled": false
   },
   "Hasumi_(Sportswear)": {
@@ -2356,7 +2356,7 @@
     "releaseDate": "2022/10/26",
     "weaponType": "SR",
     "image": "HasumiSportswear.webp",
-    "birthday": "12.12.",
+    "birthday": "2000/12/12",
     "disabled": false
   },
   "Himari": {
@@ -2376,7 +2376,7 @@
     "releaseDate": "2022/11/16",
     "weaponType": "HG",
     "image": "Himari.webp",
-    "birthday": "10.12.",
+    "birthday": "2000/12/10",
     "disabled": false
   },
   "Shigure": {
@@ -2396,7 +2396,7 @@
     "releaseDate": "2022/11/30",
     "weaponType": "GL",
     "image": "Shigure.webp",
-    "birthday": "22.01.",
+    "birthday": "2000/01/22",
     "disabled": false
   },
   "Serina_(Christmas)": {
@@ -2416,7 +2416,7 @@
     "releaseDate": "2022/12/14",
     "weaponType": "AR",
     "image": "SerinaChristmas.webp",
-    "birthday": "06.01.",
+    "birthday": "2000/01/06",
     "disabled": false
   },
   "Hanae_(Christmas)": {
@@ -2436,7 +2436,7 @@
     "releaseDate": "2022/12/14",
     "weaponType": "AR",
     "image": "HanaeChristmas.webp",
-    "birthday": "12.05.",
+    "birthday": "2000/05/12",
     "disabled": false
   },
   "Haruna_(New_Year)": {
@@ -2456,7 +2456,7 @@
     "releaseDate": "2022/12/28",
     "weaponType": "SR",
     "image": "HarunaNewYear.webp",
-    "birthday": "01.03.",
+    "birthday": "2000/03/01",
     "disabled": false
   },
   "Fuuka_(New_Year)": {
@@ -2476,7 +2476,7 @@
     "releaseDate": "2022/12/28",
     "weaponType": "SMG",
     "image": "FuukaNewYear.webp",
-    "birthday": "30.04.",
+    "birthday": "2000/04/30",
     "disabled": false
   },
   "Junko_(New_Year)": {
@@ -2496,7 +2496,7 @@
     "releaseDate": "2022/12/28",
     "weaponType": "AR",
     "image": "JunkoNewYear.webp",
-    "birthday": "27.12.",
+    "birthday": "2000/12/27",
     "disabled": false
   },
   "Mine": {
@@ -2516,7 +2516,7 @@
     "releaseDate": "2023/01/11",
     "weaponType": "SG",
     "image": "Mine.webp",
-    "birthday": "23.11.",
+    "birthday": "2000/11/23",
     "disabled": false
   },
   "Mika": {
@@ -2536,7 +2536,7 @@
     "releaseDate": "2023/01/24",
     "weaponType": "SMG",
     "image": "Mika.webp",
-    "birthday": "08.05.",
+    "birthday": "2000/05/08",
     "disabled": false
   },
   "Megu": {
@@ -2556,7 +2556,7 @@
     "releaseDate": "2023/01/31",
     "weaponType": "FT",
     "image": "Megu.webp",
-    "birthday": "25.04.",
+    "birthday": "2000/04/25",
     "disabled": false
   },
   "Kanna": {
@@ -2576,7 +2576,7 @@
     "releaseDate": "2023/01/31",
     "weaponType": "HG",
     "image": "Kanna.webp",
-    "birthday": "07.09.",
+    "birthday": "2000/09/07",
     "disabled": false
   },
   "Sakurako": {
@@ -2596,7 +2596,7 @@
     "releaseDate": "2023/02/10",
     "weaponType": "AR",
     "image": "Sakurako.webp",
-    "birthday": "04.10.",
+    "birthday": "2000/10/04",
     "disabled": false
   },
   "Toki": {
@@ -2616,7 +2616,7 @@
     "releaseDate": "2023/02/22",
     "weaponType": "AR",
     "image": "Toki.webp",
-    "birthday": "16.08.",
+    "birthday": "2000/08/16",
     "disabled": false
   },
   "Nagisa": {
@@ -2636,7 +2636,7 @@
     "releaseDate": "2023/02/22",
     "weaponType": "HG",
     "image": "Nagisa.webp",
-    "birthday": "04.07.",
+    "birthday": "2000/07/04",
     "disabled": false
   },
   "Koyuki": {
@@ -2656,7 +2656,7 @@
     "releaseDate": "2023/03/08",
     "weaponType": "MG",
     "image": "Koyuki.webp",
-    "birthday": "14.02.",
+    "birthday": "2000/02/14",
     "disabled": false
   },
   "Kayoko_(New_Year)": {
@@ -2676,7 +2676,7 @@
     "releaseDate": "2023/03/22",
     "weaponType": "HG",
     "image": "KayokoNewYear.webp",
-    "birthday": "17.03.",
+    "birthday": "2000/03/17",
     "disabled": false
   },
   "Haruka_(New_Year)": {
@@ -2696,7 +2696,7 @@
     "releaseDate": "2023/03/22",
     "weaponType": "SG",
     "image": "HarukaNewYear.webp",
-    "birthday": "13.05.",
+    "birthday": "2000/05/13",
     "disabled": false
   },
   "Kaho": {
@@ -2716,7 +2716,7 @@
     "releaseDate": "2023/04/12",
     "weaponType": "AR",
     "image": "Kaho.webp",
-    "birthday": "09.10.",
+    "birthday": "2000/10/09",
     "disabled": false
   },
   "Arisu_(Maid)": {
@@ -2736,7 +2736,7 @@
     "releaseDate": "2023/04/26",
     "weaponType": "RG",
     "image": "ArisuMaid.webp",
-    "birthday": "25.03.",
+    "birthday": "2000/03/25",
     "disabled": false
   },
   "Toki_(Bunny_Girl)": {
@@ -2756,7 +2756,7 @@
     "releaseDate": "2023/04/26",
     "weaponType": "AR",
     "image": "TokiBunnyGirl.webp",
-    "birthday": "16.08.",
+    "birthday": "2000/08/16",
     "disabled": false
   },
   "Yuzu_(Maid)": {
@@ -2776,7 +2776,7 @@
     "releaseDate": "2023/04/26",
     "weaponType": "GL",
     "image": "YuzuMaid.webp",
-    "birthday": "12.08.",
+    "birthday": "2000/08/12",
     "disabled": false
   },
   "Reisa": {
@@ -2796,7 +2796,7 @@
     "releaseDate": "2023/05/10",
     "weaponType": "SG",
     "image": "Reisa.webp",
-    "birthday": "31.05.",
+    "birthday": "2000/05/31",
     "disabled": false
   },
   "Rumi": {
@@ -2816,7 +2816,7 @@
     "releaseDate": "2023/05/24",
     "weaponType": "SMG",
     "image": "Rumi.webp",
-    "birthday": "05.03.",
+    "birthday": "2000/03/05",
     "disabled": false
   },
   "Mina": {
@@ -2836,7 +2836,7 @@
     "releaseDate": "2023/05/24",
     "weaponType": "HG",
     "image": "Mina.webp",
-    "birthday": "09.09.",
+    "birthday": "2000/09/09",
     "disabled": false
   },
   "Minori": {
@@ -2856,7 +2856,7 @@
     "releaseDate": "2023/06/07",
     "weaponType": "AR",
     "image": "Minori.webp",
-    "birthday": "14.07.",
+    "birthday": "2000/07/14",
     "disabled": false
   },
   "Miyako_(Swimsuit)": {
@@ -2876,7 +2876,7 @@
     "releaseDate": "2023/06/21",
     "weaponType": "SMG",
     "image": "MiyakoSwimsuit.webp",
-    "birthday": "07.01.",
+    "birthday": "2000/01/07",
     "disabled": false
   },
   "Saki_(Swimsuit)": {
@@ -2896,7 +2896,7 @@
     "releaseDate": "2023/06/21",
     "weaponType": "MG",
     "image": "SakiSwimsuit.webp",
-    "birthday": "09.04.",
+    "birthday": "2000/04/09",
     "disabled": false
   },
   "Miyu_(Swimsuit)": {
@@ -2916,7 +2916,7 @@
     "releaseDate": "2023/06/21",
     "weaponType": "SR",
     "image": "MiyuSwimsuit.webp",
-    "birthday": "12.07.",
+    "birthday": "2000/07/12",
     "disabled": false
   },
   "Shiroko_(Swimsuit)": {
@@ -2936,7 +2936,7 @@
     "releaseDate": "2023/07/17",
     "weaponType": "AR",
     "image": "ShirokoSwimsuit.webp",
-    "birthday": "16.05.",
+    "birthday": "2000/05/16",
     "disabled": false
   },
   "Ui_(Swimsuit)": {
@@ -2956,7 +2956,7 @@
     "releaseDate": "2023/07/24",
     "weaponType": "SR",
     "image": "UiSwimsuit.webp",
-    "birthday": "23.04.",
+    "birthday": "2000/04/23",
     "disabled": false
   },
   "Hinata_(Swimsuit)": {
@@ -2976,7 +2976,7 @@
     "releaseDate": "2023/07/24",
     "weaponType": "HG",
     "image": "HinataSwimsuit.webp",
-    "birthday": "17.05.",
+    "birthday": "2000/05/17",
     "disabled": false
   },
   "Koharu_(Swimsuit)": {
@@ -2996,7 +2996,7 @@
     "releaseDate": "2023/07/24",
     "weaponType": "SR",
     "image": "KoharuSwimsuit.webp",
-    "birthday": "16.04.",
+    "birthday": "2000/04/16",
     "disabled": false
   },
   "Hanako_(Swimsuit)": {
@@ -3016,7 +3016,7 @@
     "releaseDate": "2023/08/02",
     "weaponType": "AR",
     "image": "HanakoSwimsuit.webp",
-    "birthday": "03.01.",
+    "birthday": "2000/01/03",
     "disabled": false
   },
   "Mimori_(Swimsuit)": {
@@ -3036,7 +3036,7 @@
     "releaseDate": "2023/08/16",
     "weaponType": "HG",
     "image": "MimoriSwimsuit.webp",
-    "birthday": "15.03.",
+    "birthday": "2000/03/15",
     "disabled": false
   },
   "Meru": {
@@ -3056,7 +3056,7 @@
     "releaseDate": "2023/08/23",
     "weaponType": "HG",
     "image": "Meru.webp",
-    "birthday": "21.12.",
+    "birthday": "2000/12/21",
     "disabled": false
   },
   "Momiji": {
@@ -3076,7 +3076,7 @@
     "releaseDate": "2023/08/23",
     "weaponType": "RL",
     "image": "Momiji.webp",
-    "birthday": "07.08.",
+    "birthday": "2000/08/07",
     "disabled": false
   },
   "Kotori_(Cheerleader)": {
@@ -3096,7 +3096,7 @@
     "releaseDate": "2023/09/06",
     "weaponType": "MG",
     "image": "KotoriCheerleader.webp",
-    "birthday": "31.12.",
+    "birthday": "2000/12/31",
     "disabled": false
   },
   "Haruna_(Sportswear)": {
@@ -3116,7 +3116,7 @@
     "releaseDate": "2023/09/15",
     "weaponType": "SR",
     "image": "HarunaSportswear.webp",
-    "birthday": "01.03.",
+    "birthday": "2000/03/01",
     "disabled": false
   },
   "Ichika": {
@@ -3136,7 +3136,7 @@
     "releaseDate": "2023/09/27",
     "weaponType": "AR",
     "image": "Ichika.webp",
-    "birthday": "11.11.",
+    "birthday": "2000/11/11",
     "disabled": false
   },
   "Kasumi": {
@@ -3156,7 +3156,7 @@
     "releaseDate": "2023/09/27",
     "weaponType": "HG",
     "image": "Kasumi.webp",
-    "birthday": "24.05.",
+    "birthday": "2000/05/24",
     "disabled": false
   },
   "Shigure_(Hot_Spring)": {
@@ -3176,7 +3176,7 @@
     "releaseDate": "2023/10/11",
     "weaponType": "GL",
     "image": "ShigureHotSpring.webp",
-    "birthday": "22.01.",
+    "birthday": "2000/01/22",
     "disabled": false
   },
   "Misaka_Mikoto": {
@@ -3196,7 +3196,7 @@
     "releaseDate": "2023/10/24",
     "weaponType": "AR",
     "image": "MisakaMikoto.webp",
-    "birthday": "02.05.",
+    "birthday": "2000/05/02",
     "disabled": false
   },
   "Shokuhou_Misaki": {
@@ -3256,7 +3256,7 @@
     "releaseDate": "2023/11/08",
     "weaponType": "SR",
     "image": "Yukari.webp",
-    "birthday": "16.06.",
+    "birthday": "2000/06/16",
     "disabled": false
   },
   "Renge": {
@@ -3276,7 +3276,7 @@
     "releaseDate": "2023/11/22",
     "weaponType": "SR",
     "image": "Renge.webp",
-    "birthday": "23.07.",
+    "birthday": "2000/07/23",
     "disabled": false
   },
   "Kikyou": {
@@ -3296,7 +3296,7 @@
     "releaseDate": "2023/11/22",
     "weaponType": "SR",
     "image": "Kikyou.webp",
-    "birthday": "08.08.",
+    "birthday": "2000/08/08",
     "disabled": false
   },
   "Eimi_(Swimsuit)": {
@@ -3316,7 +3316,7 @@
     "releaseDate": "2023/12/06",
     "weaponType": "SG",
     "image": "EimiSwimsuit.webp",
-    "birthday": "01.05.",
+    "birthday": "2000/05/01",
     "disabled": false
   },
   "Kotama_(Camping)": {
@@ -3336,7 +3336,7 @@
     "releaseDate": "2023/12/27",
     "weaponType": "HG",
     "image": "KotamaCamping.webp",
-    "birthday": "05.01.",
+    "birthday": "2000/01/05",
     "disabled": false
   },
   "Hare_(Camping)": {
@@ -3356,7 +3356,7 @@
     "releaseDate": "2023/12/27",
     "weaponType": "AR",
     "image": "HareCamping.webp",
-    "birthday": "19.04.",
+    "birthday": "2000/04/19",
     "disabled": false
   },
   "Ako_(Dress)": {
@@ -3376,7 +3376,7 @@
     "releaseDate": "2024/01/24",
     "weaponType": "HG",
     "image": "AkoDress.webp",
-    "birthday": "22.12.",
+    "birthday": "2000/12/22",
     "disabled": false
   },
   "Ibuki": {
@@ -3396,7 +3396,7 @@
     "releaseDate": "2024/01/24",
     "weaponType": "AR",
     "image": "Ibuki.webp",
-    "birthday": "14.04.",
+    "birthday": "2000/04/14",
     "disabled": false
   },
   "Makoto": {
@@ -3416,7 +3416,7 @@
     "releaseDate": "2024/01/24",
     "weaponType": "SR",
     "image": "Makoto.webp",
-    "birthday": "19.03.",
+    "birthday": "2000/03/19",
     "disabled": false
   },
   "Hina_(Dress)": {
@@ -3436,7 +3436,7 @@
     "releaseDate": "2024/01/31",
     "weaponType": "MG",
     "image": "HinaDress.webp",
-    "birthday": "19.02.",
+    "birthday": "2000/02/19",
     "disabled": false
   },
   "Kayoko_(Dress)": {
@@ -3456,7 +3456,7 @@
     "releaseDate": "2024/02/21",
     "weaponType": "HG",
     "image": "KayokoDress.webp",
-    "birthday": "17.03.",
+    "birthday": "2000/03/17",
     "disabled": false
   },
   "Aru_(Dress)": {
@@ -3476,7 +3476,7 @@
     "releaseDate": "2024/02/21",
     "weaponType": "SR",
     "image": "AruDress.webp",
-    "birthday": "12.03.",
+    "birthday": "2000/03/12",
     "disabled": false
   },
   "Akari_(New_Year)": {
@@ -3496,7 +3496,7 @@
     "releaseDate": "2024/03/06",
     "weaponType": "AR",
     "image": "AkariNewYear.webp",
-    "birthday": "09.12.",
+    "birthday": "2000/12/09",
     "disabled": false
   },
   "Umika": {
@@ -3516,7 +3516,7 @@
     "releaseDate": "2024/03/27",
     "weaponType": "AR",
     "image": "Umika.webp",
-    "birthday": "01.07.",
+    "birthday": "2000/07/01",
     "disabled": false
   },
   "Tsubaki_(Guide)": {
@@ -3536,7 +3536,7 @@
     "releaseDate": "2024/03/27",
     "weaponType": "SMG",
     "image": "TsubakiGuide.webp",
-    "birthday": "03.02.",
+    "birthday": "2000/02/03",
     "disabled": false
   },
   "Kazusa_(Band)": {
@@ -3556,7 +3556,7 @@
     "releaseDate": "2024/04/24",
     "weaponType": "MG",
     "image": "KazusaBand.webp",
-    "birthday": "05.08.",
+    "birthday": "2000/08/05",
     "disabled": false
   },
   "Yoshimi_(Band)": {
@@ -3576,7 +3576,7 @@
     "releaseDate": "2024/04/24",
     "weaponType": "AR",
     "image": "YoshimiBand.webp",
-    "birthday": "29.08.",
+    "birthday": "2000/08/29",
     "disabled": false
   },
   "Airi_(Band)": {
@@ -3596,7 +3596,7 @@
     "releaseDate": "2024/04/24",
     "weaponType": "SMG",
     "image": "AiriBand.webp",
-    "birthday": "30.01.",
+    "birthday": "2000/01/30",
     "disabled": false
   },
   "Kirara": {
@@ -3616,7 +3616,7 @@
     "releaseDate": "2024/05/08",
     "weaponType": "AR",
     "image": "Kirara.webp",
-    "birthday": "24.02.",
+    "birthday": "2000/02/24",
     "disabled": false
   },
   "Momoi_(Maid)": {
@@ -3636,7 +3636,7 @@
     "releaseDate": "2024/05/22",
     "weaponType": "AR",
     "image": "MomoiMaid.webp",
-    "birthday": "08.12.",
+    "birthday": "2000/12/08",
     "disabled": false
   },
   "Midori_(Maid)": {
@@ -3656,7 +3656,7 @@
     "releaseDate": "2024/05/22",
     "weaponType": "SR",
     "image": "MidoriMaid.webp",
-    "birthday": "08.12.",
+    "birthday": "2000/12/08",
     "disabled": false
   },
   "Serika_(Swimsuit)": {
@@ -3676,7 +3676,7 @@
     "releaseDate": "2024/06/05",
     "weaponType": "AR",
     "image": "SerikaSwimsuit.webp",
-    "birthday": "25.06.",
+    "birthday": "2000/06/25",
     "disabled": false
   },
   "Kanna_(Swimsuit)": {
@@ -3696,7 +3696,7 @@
     "releaseDate": "2024/06/26",
     "weaponType": "HG",
     "image": "KannaSwimsuit.webp",
-    "birthday": "07.09.",
+    "birthday": "2000/09/07",
     "disabled": false
   },
   "Fubuki_(Swimsuit)": {
@@ -3716,7 +3716,7 @@
     "releaseDate": "2024/06/26",
     "weaponType": "SR",
     "image": "FubukiSwimsuit.webp",
-    "birthday": "21.10.",
+    "birthday": "2000/10/21",
     "disabled": false
   },
   "Kirino_(Swimsuit)": {
@@ -3736,7 +3736,7 @@
     "releaseDate": "2024/06/26",
     "weaponType": "HG",
     "image": "KirinoSwimsuit.webp",
-    "birthday": "22.10.",
+    "birthday": "2000/10/22",
     "disabled": false
   },
   "Moe_(Swimsuit)": {
@@ -3756,7 +3756,7 @@
     "releaseDate": "2024/07/10",
     "weaponType": "HG",
     "image": "MoeSwimsuit.webp",
-    "birthday": "13.09.",
+    "birthday": "2000/09/13",
     "disabled": false
   },
   "Hoshino_(Battle)": {
@@ -3776,7 +3776,7 @@
     "releaseDate": "2024/07/22",
     "weaponType": "SG",
     "image": "HoshinoBattle.webp",
-    "birthday": "02.01.",
+    "birthday": "2000/01/02",
     "disabled": false
   },
   "Shiroko\uff0aTerror": {
@@ -3796,7 +3796,7 @@
     "releaseDate": "2024/07/22",
     "weaponType": "AR",
     "image": "Shiroko\uff0aTerror.webp",
-    "birthday": "16.05.",
+    "birthday": "2000/05/16",
     "disabled": false
   },
   "Atsuko_(Swimsuit)": {
@@ -3816,7 +3816,7 @@
     "releaseDate": "2024/07/22",
     "weaponType": "SMG",
     "image": "AtsukoSwimsuit.webp",
-    "birthday": "20.01.",
+    "birthday": "2000/01/20",
     "disabled": false
   },
   "Saori_(Swimsuit)": {
@@ -3836,7 +3836,7 @@
     "releaseDate": "2024/07/29",
     "weaponType": "AR",
     "image": "SaoriSwimsuit.webp",
-    "birthday": "03.09.",
+    "birthday": "2000/09/03",
     "disabled": false
   },
   "Hiyori_(Swimsuit)": {
@@ -3856,7 +3856,7 @@
     "releaseDate": "2024/07/29",
     "weaponType": "SR",
     "image": "HiyoriSwimsuit.webp",
-    "birthday": "08.01.",
+    "birthday": "2000/01/08",
     "disabled": false
   },
   "Marina_(Qipao)": {
@@ -3876,7 +3876,7 @@
     "releaseDate": "2024/08/21",
     "weaponType": "SMG",
     "image": "MarinaQipao.webp",
-    "birthday": "04.11.",
+    "birthday": "2000/11/04",
     "disabled": false
   },
   "Tomoe_(Qipao)": {
@@ -3896,7 +3896,7 @@
     "releaseDate": "2024/08/21",
     "weaponType": "SR",
     "image": "TomoeQipao.webp",
-    "birthday": "10.11.",
+    "birthday": "2000/11/10",
     "disabled": false
   },
   "Reijo": {
@@ -3916,7 +3916,7 @@
     "releaseDate": "2024/09/25",
     "weaponType": "AR",
     "image": "Reijo.webp",
-    "birthday": "03.03.",
+    "birthday": "2000/03/03",
     "disabled": false
   },
   "Kisaki": {
@@ -3936,7 +3936,7 @@
     "releaseDate": "2024/09/25",
     "weaponType": "SMG",
     "image": "Kisaki.webp",
-    "birthday": "19.02.",
+    "birthday": "2000/02/19",
     "disabled": false
   },
   "Mari_(Idol)": {
@@ -3956,7 +3956,7 @@
     "releaseDate": "2024/10/23",
     "weaponType": "HG",
     "image": "MariIdol.webp",
-    "birthday": "12.09.",
+    "birthday": "2000/09/12",
     "disabled": false
   },
   "Sakurako_(Idol)": {
@@ -3976,7 +3976,7 @@
     "releaseDate": "2024/10/23",
     "weaponType": "AR",
     "image": "SakurakoIdol.webp",
-    "birthday": "04.10.",
+    "birthday": "2000/10/04",
     "disabled": false
   },
   "Mine_(Idol)": {
@@ -3996,7 +3996,7 @@
     "releaseDate": "2024/10/23",
     "weaponType": "SG",
     "image": "MineIdol.webp",
-    "birthday": "23.11.",
+    "birthday": "2000/11/23",
     "disabled": false
   },
   "Chiaki": {
@@ -4016,7 +4016,7 @@
     "releaseDate": "2024/11/20",
     "weaponType": "AR",
     "image": "Chiaki.webp",
-    "birthday": "22.09.",
+    "birthday": "2000/09/22",
     "disabled": false
   },
   "Satsuki": {
@@ -4036,7 +4036,7 @@
     "releaseDate": "2024/11/20",
     "weaponType": "HG",
     "image": "Satsuki.webp",
-    "birthday": "10.04.",
+    "birthday": "2000/04/10",
     "disabled": false
   },
   "Yuuka_(Pajama)": {
@@ -4056,7 +4056,7 @@
     "releaseDate": "2024/12/24",
     "weaponType": "SMG",
     "image": "YuukaPajama.webp",
-    "birthday": "14.03.",
+    "birthday": "2000/03/14",
     "disabled": false
   },
   "Noa_(Pajama)": {
@@ -4076,7 +4076,7 @@
     "releaseDate": "2024/12/24",
     "weaponType": "HG",
     "image": "NoaPajama.webp",
-    "birthday": "13.04.",
+    "birthday": "2000/04/13",
     "disabled": false
   },
   "Seia": {
@@ -4096,7 +4096,7 @@
     "releaseDate": "2025/01/20",
     "weaponType": "HG",
     "image": "Seia.webp",
-    "birthday": "29.09.",
+    "birthday": "2000/09/29",
     "disabled": false
   },
   "Asuna_(School_Uniform)": {
@@ -4116,7 +4116,7 @@
     "releaseDate": "2025/01/20",
     "weaponType": "AR",
     "image": "AsunaSchoolUniform.webp",
-    "birthday": "24.03.",
+    "birthday": "2000/03/24",
     "disabled": false
   },
   "Karin_(School_Uniform)": {
@@ -4136,7 +4136,7 @@
     "releaseDate": "2025/01/20",
     "weaponType": "SR",
     "image": "KarinSchoolUniform.webp",
-    "birthday": "02.02.",
+    "birthday": "2000/02/02",
     "disabled": false
   },
   "Neru_(School_Uniform)": {
@@ -4156,7 +4156,7 @@
     "releaseDate": "2025/01/27",
     "weaponType": "SMG",
     "image": "NeruSchoolUniform.webp",
-    "birthday": "17.08.",
+    "birthday": "2000/08/17",
     "disabled": false
   },
   "Rio": {
@@ -4176,7 +4176,7 @@
     "releaseDate": "2025/01/27",
     "weaponType": "HG",
     "image": "Rio.webp",
-    "birthday": "06.06.",
+    "birthday": "2000/06/06",
     "disabled": false
   }
 }

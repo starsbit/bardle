@@ -1,10 +1,15 @@
 <form class="flex justify-center items-center h-full">
   <mat-form-field
-    class="md:w-158 w-80 p-1 ba-input-outline"
+    class="md:w-158 w-80 p-1 ba-form-white-outline"
     appearance="outline"
   >
-    <mat-label>Student name</mat-label>
+    <mat-label
+      i18n="Student name|Label for student search@@StudentNameSearchLabel"
+      >Student name</mat-label
+    >
     <input
+      i18n-placeholder="
+        Name|Placeholder for student name@@StudentNamePlaceholder"
       type="text"
       placeholder="Name"
       aria-label="Student name"
@@ -22,10 +27,10 @@
           [ngSrc]="this.assetService.getStudentIconLocation(option)"
           width="48"
           height="48"
-          [alt]="option.fullName"
+          [alt]="getDisplayName(option)"
           class="portrait"
         />
-        {{ option.fullName }}
+        {{ getDisplayName(option) }}
       </mat-option>
       }
     </mat-autocomplete>

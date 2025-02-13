@@ -15,6 +15,7 @@ import { map, startWith } from 'rxjs/operators';
 import { Student } from '../../models/student';
 import { DEFAULT_STUDENT_LIST, StudentList } from '../../models/student-list';
 import { GameService } from '../../services/game.service';
+import { TranslateService } from '../../services/translate.service';
 import { AssetService } from '../../services/web/asset.service';
 
 @Component({
@@ -44,6 +45,7 @@ export class GuessInputComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly gameService: GameService,
+    private readonly translateService: TranslateService,
     public readonly assetService: AssetService
   ) {
     this.subscriptions.add(
@@ -75,6 +77,13 @@ export class GuessInputComponent implements OnInit, OnDestroy {
   onSelectionChange(selection: Student) {
     this.gameService.addGuess(selection.id);
     this.inputReset();
+  }
+
+  getDisplayName(student: Student): string {
+    if (this.translateService.getCurrentLang().code === 'ja') {
+      return student.nativeName;
+    }
+    return student.fullName;
   }
 
   private _filter(value: string): Student[] {

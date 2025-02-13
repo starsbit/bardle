@@ -4,7 +4,7 @@ describe('DisplayDateFormatPipe', () => {
   let pipe: DisplayDateFormatPipe;
 
   beforeEach(() => {
-    pipe = new DisplayDateFormatPipe();
+    pipe = new DisplayDateFormatPipe('en');
   });
 
   it('should be created', () => {

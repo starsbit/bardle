@@ -1,9 +1,3 @@
-@use "app/themes/ba-input" as ba-input;
-@use "app/themes/ba-armor-type" as ba-armor-type;
-@use "app/themes/ba-damage-type" as ba-damage-type;
-@use "app/themes/ba-guess" as ba-guess;
-@use "app/themes/ba-text-boxes" as ba-text-boxes;
-
 @layer theme, base, components, utilities;
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/preflight.css" layer(base);
@@ -23,6 +17,3 @@ body {
   .mdc-notched-outline__notch {
   border-right-style: hidden;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

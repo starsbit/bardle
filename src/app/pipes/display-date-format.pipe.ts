@@ -1,10 +1,17 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { formatDate, registerLocaleData } from '@angular/common';
+import localeJa from '@angular/common/locales/ja';
+import { Inject, LOCALE_ID, Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'displayDateFormat',
+  pure: true,
 })
 export class DisplayDateFormatPipe implements PipeTransform {
-  transform(value: string): string {
+  constructor(@Inject(LOCALE_ID) private locale: string) {
+    registerLocaleData(localeJa);
+  }
+
+  transform(value: string, customLocale?: string): string {
     if (!value || typeof value !== 'string') {
       throw new Error('Invalid date format: input must be a non-empty string');
     }
@@ -33,9 +40,7 @@ export class DisplayDateFormatPipe implements PipeTransform {
       throw new Error('Invalid date: unable to parse');
     }
 
-    return date.toLocaleDateString('en-US', {
-      month: 'short',
-      year: 'numeric',
-    });
+    const localeToUse = customLocale || this.locale;
+    return formatDate(date, 'MMM yyyy', localeToUse);
   }
 }

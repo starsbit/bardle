@@ -4,7 +4,12 @@
     <div
       class="w-full h-fit p-2 border ba-text-box-bg border-gray-300 rounded bg-black text-center"
     >
-      <div class="text-xl text-white">
+      <div
+        class="text-xl text-white"
+        i18n="
+          Yesterdays student was|Yesterdays student
+          label@@YesterdaysStudentLabel"
+      >
         Yesterdays student was
         <span class="text-xl incorrect-text">{{ student.fullName }}</span>
         <span class="text-xl text-white"> #{{ numberOfDaysActive }}</span>

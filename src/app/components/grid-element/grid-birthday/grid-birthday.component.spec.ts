@@ -7,6 +7,7 @@ import {
 import { By } from '@angular/platform-browser';
 import { Student } from '../../../models/student';
 import { StudentList } from '../../../models/student-list';
+import { DisplayBirthdayFormatPipe } from '../../../pipes/display-birthday-format.pipe';
 import { getStudentListTestData } from '../../../utils/test-data';
 import { GridElementContainerComponent } from '../grid-wrapper/grid-element-container.component';
 import { GridBirthdayComponent } from './grid-birthday.component';
@@ -17,12 +18,13 @@ describe('GridBirthdayComponent', () => {
 
   const mockStudentAru: Student = {
     ...getStudentListTestData()[StudentList.GLOBAL]['Aru'],
-    birthday: '12.03.', // March 12th
+    birthday: '2000/03/12', // March 12th
   };
   const mockStudentHina: Student = {
     ...getStudentListTestData()[StudentList.GLOBAL]['Hina'],
-    birthday: '05.07.', // July 5th
+    birthday: '2000/07/05', // July 5th
   };
+  const birthdayPipe = new DisplayBirthdayFormatPipe('en');
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({}).compileComponents();
@@ -108,7 +110,7 @@ describe('GridBirthdayComponent', () => {
 
     const spanElement = fixture.debugElement.query(By.css('span'));
     expect(spanElement.nativeElement.textContent.trim()).toBe(
-      mockStudentAru.birthday
+      birthdayPipe.transform(mockStudentAru.birthday)
     );
   }));
 

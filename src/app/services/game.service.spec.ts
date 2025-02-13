@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { RULES } from '../constants/rules';
 import { GuessCookie } from '../models/guess-cookie';
@@ -13,7 +12,6 @@ describe('GameService', () => {
   let service: GameService;
   let localStorageSpy: jasmine.SpyObj<LocalStorageService>;
   let studentServiceSpy: jasmine.SpyObj<StudentService>;
-  let routerSpy: jasmine.SpyObj<Router>;
 
   const studentOfTheDay = getStudentListTestData()[StudentList.GLOBAL]['Aru'];
   const studentOfYesterday =
@@ -29,7 +27,6 @@ describe('GameService', () => {
       'getTodaysStudent',
       'getYesterdaysStudent',
     ]);
-    routerSpy = jasmine.createSpyObj('Router', ['navigate']);
 
     localStorageSpy.getGuess.and.returnValue({
       guesses: {
@@ -53,7 +50,6 @@ describe('GameService', () => {
         GameService,
         { provide: LocalStorageService, useValue: localStorageSpy },
         { provide: StudentService, useValue: studentServiceSpy },
-        { provide: Router, useValue: routerSpy },
       ],
     });
 
@@ -104,11 +100,6 @@ describe('GameService', () => {
       };
       service.setGuess(guess);
       expect(localStorageSpy.setGuess).toHaveBeenCalledWith(guess);
-    });
-
-    it('should set active list and navigate', () => {
-      service.setActiveList(StudentList.GLOBAL);
-      expect(routerSpy.navigate).toHaveBeenCalledWith(['/game', 'global']);
     });
 
     it('should add a guess', () => {

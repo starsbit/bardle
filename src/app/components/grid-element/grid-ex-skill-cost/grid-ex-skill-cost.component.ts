@@ -14,4 +14,8 @@ export class GridExSkillCostComponent extends GridElementComponent {
   override correctGuess() {
     return this.answer?.exSkillCost === this.guess?.exSkillCost;
   }
+
+  get exSkillCost() {
+    return this.guess?.exSkillCost;
+  }
 }

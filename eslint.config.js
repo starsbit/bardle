@@ -14,7 +14,7 @@ module.exports = tseslint.config(
     ],
     processor: angular.processInlineTemplates,
     rules: {
-      "indent": ["error", 2],
+      "indent": ["error", 2, { "SwitchCase": 1 }],
       "quotes": ["error", "single"],
       "semi": ["error", "always"],
       "no-console": [

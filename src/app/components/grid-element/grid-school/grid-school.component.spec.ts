@@ -105,6 +105,6 @@ describe('GridSchoolComponent', () => {
     expect(imgElement.nativeElement.src).toContain(
       'assets/schools/Gehenna.png'
     );
-    expect(imgElement.nativeElement.alt).toBe(mockStudent.fullName);
+    expect(imgElement.nativeElement.alt).toBe(mockStudent.school);
   }));
 });

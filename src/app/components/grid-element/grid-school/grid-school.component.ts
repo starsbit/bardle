@@ -19,4 +19,8 @@ export class GridSchoolComponent extends GridElementComponent {
   override correctGuess() {
     return this.answer?.school === this.guess?.school;
   }
+
+  get school() {
+    return this.guess?.school;
+  }
 }

@@ -19,4 +19,8 @@ export class GridStudentComponent extends GridElementComponent {
   override correctGuess() {
     return this.answer?.fullName === this.guess?.fullName;
   }
+
+  get fullName() {
+    return this.guess?.fullName;
+  }
 }

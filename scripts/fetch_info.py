@@ -33,7 +33,7 @@ def separate_names(name_string):
 def format_birthday(bday_str):
     try:
         date_obj = datetime.datetime.strptime(bday_str, "%B %d")
-        return date_obj.strftime("%d.%m.")
+        return date_obj.strftime("2000/%m/%d")
     except ValueError:
         return bday_str  # Return the original string if parsing fails
 

@@ -123,7 +123,7 @@ describe('GridReleaseDateComponent', () => {
 
     const spanElement = fixture.debugElement.query(By.css('span'));
     expect(spanElement.nativeElement.textContent.trim()).toBe(
-      new DisplayDateFormatPipe().transform(mockStudentAru.releaseDate)
+      new DisplayDateFormatPipe('en').transform(mockStudentAru.releaseDate)
     );
   }));
 
