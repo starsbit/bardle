@@ -1,5 +1,4 @@
-import { formatDate, registerLocaleData } from '@angular/common';
-import localeJa from '@angular/common/locales/ja';
+import { formatDate } from '@angular/common';
 import { Inject, LOCALE_ID, Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -7,9 +6,7 @@ import { Inject, LOCALE_ID, Pipe, PipeTransform } from '@angular/core';
   pure: true,
 })
 export class DisplayBirthdayFormatPipe implements PipeTransform {
-  constructor(@Inject(LOCALE_ID) private locale: string) {
-    registerLocaleData(localeJa);
-  }
+  constructor(@Inject(LOCALE_ID) private locale: string) {}
 
   transform(value: string, customLocale?: string): string {
     if (!value || typeof value !== 'string') {
@@ -22,6 +19,7 @@ export class DisplayBirthdayFormatPipe implements PipeTransform {
     }
 
     const [year, month, day] = parts.map(Number);
+    console.log(year, month, day);
     if (
       isNaN(year) ||
       isNaN(month) ||
@@ -36,6 +34,7 @@ export class DisplayBirthdayFormatPipe implements PipeTransform {
     }
 
     const date = new Date(year, month - 1, day);
+    console.log(date);
     if (isNaN(date.getTime())) {
       throw new Error('Invalid date: unable to parse');
     }

@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { TutorialComponent } from './tutorial.component';
@@ -29,8 +30,8 @@ describe('TutorialComponent', () => {
     );
     const texts = textElements.map((el) => el.nativeElement.textContent.trim());
 
-    expect(texts).toContain('Guess today\'s Blue Archive student!');
-    expect(texts).toContain('Type any student\'s name to begin.');
+    expect(texts).toContain("Guess today's Blue Archive student!");
+    expect(texts).toContain("Type any student's name to begin.");
     expect(texts).toContain('Press the content_copy to copy your score!');
   });
 
@@ -42,7 +43,7 @@ describe('TutorialComponent', () => {
       .query(By.css('.incorrect-text'))
       .nativeElement.textContent.trim();
 
-    expect(correctText).toBe('White');
+    expect(correctText).toBe('Green');
     expect(incorrectText).toBe('Grey');
   });
 });

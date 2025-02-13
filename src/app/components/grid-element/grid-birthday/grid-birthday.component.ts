@@ -13,9 +13,7 @@ import { GridElementContainerComponent } from '../grid-wrapper/grid-element-cont
 })
 export class GridBirthdayComponent extends GridElementComponent {
   private parseBirthday(birthday: string): Date {
-    const [day, month] = birthday.split('.').map(Number);
-    // Use a default year for comparison
-    const year = 2000;
+    const [year, month, day] = birthday.split('/').map(Number);
     return new Date(year, month - 1, day);
   }
 
