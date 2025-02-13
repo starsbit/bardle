@@ -3,7 +3,8 @@
     { "source": "/en-US/(.*)", "destination": "/en-US/index.html" },
     { "source": "/zh/(.*)", "destination": "/zh/index.html" },
     { "source": "/ja/(.*)", "destination": "/ja/index.html" },
-    { "source": "/ko/(.*)", "destination": "/ko/index.html" }
+    { "source": "/ko/(.*)", "destination": "/ko/index.html" },
+    { "source": "(.*)", "destination": "/en-US/index.html" }
   ],
   "redirects": [
     {
