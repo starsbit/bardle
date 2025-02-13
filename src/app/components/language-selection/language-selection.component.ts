@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
+import { MatSelectChange, MatSelectModule } from '@angular/material/select';
+import { environment } from '../../../environments/environment';
 import { Language, TranslateService } from '../../services/translate.service';
 
 @Component({
@@ -22,6 +23,7 @@ import { Language, TranslateService } from '../../services/translate.service';
 export class LanguageSelectionComponent {
   selectedLanguage: FormControl<Language | null>;
   languages: Language[] = [];
+  baseUrl = environment.baseUrl;
 
   constructor(private translateService: TranslateService) {
     this.selectedLanguage = new FormControl<Language | null>(
@@ -30,7 +32,7 @@ export class LanguageSelectionComponent {
     this.languages = this.translateService.getAvailableLanguages();
   }
 
-  onLanguageChange(language: Language) {
-    this.translateService.use(language);
+  onLanguageChange(language: MatSelectChange) {
+    this.translateService.use(language.value);
   }
 }

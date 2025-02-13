@@ -7,7 +7,7 @@
     />
     <span class="spacer"></span>
     <div class="hidden md:flex !text-left !items-center">
-      <!-- <ba-language-selection></ba-language-selection> -->
+      <ba-language-selection></ba-language-selection>
       <a
         routerLink="/"
         class="text-lg px-4 text-black hover:text-gray-500"
@@ -40,9 +40,9 @@
 @if (menuOpen) {
 <nav class="bg-white text-black md:invisible">
   <mat-nav-list>
-    <!-- <mat-list-item class="!h-16">
+    <mat-list-item class="!h-16">
       <ba-language-selection matLine></ba-language-selection>
-    </mat-list-item> -->
+    </mat-list-item>
     <mat-list-item routerLink="/">
       <a
         matLine

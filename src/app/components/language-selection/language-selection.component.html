@@ -6,11 +6,17 @@
     <mat-label i18n="Language|Language list label@@LanguageListLabel"
       >Language</mat-label
     >
-    <mat-select [formControl]="selectedLanguage" class="ba-input-outline-black">
+    <mat-select
+      [formControl]="selectedLanguage"
+      class="ba-input-outline-black"
+      (selectionChange)="onLanguageChange($event)"
+    >
       @for (language of languages; track $index) {
-      <mat-option [value]="language">{{
-        language.name | titlecase
-      }}</mat-option>
+      <a [href]="baseUrl + language.code">
+        <mat-option [value]="language">
+          {{ language.name | titlecase }}
+        </mat-option>
+      </a>
       }
     </mat-select>
   </mat-form-field>

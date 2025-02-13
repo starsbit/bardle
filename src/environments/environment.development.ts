@@ -4,4 +4,5 @@ export const environment: Environment = {
   googleAnalyticsTrackingCode: '',
   production: false,
   assetLocationPrefix: '/',
+  baseUrl: 'http://localhost:4200/',
 };
