@@ -115,7 +115,8 @@
                   "with": "src/environments/environment.ko.ts"
                 }
               ]
-            }
+            },
+            "en-US": {}
           },
           "defaultConfiguration": "production"
         },

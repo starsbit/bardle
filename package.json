@@ -6,8 +6,8 @@
     "start": "ng serve",
     "test-ci": "ng test --watch=false --browsers=ChromeHeadless --watch=false --code-coverage",
     "test": "ng test",
-    "build": "ng build",
-    "build:i18n": "ng build --localize",
+    "build": "npm run build:i18n",
+    "build:i18n": "node ./scripts/javascript/build-i18n.js",
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint"
   },

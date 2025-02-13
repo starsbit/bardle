@@ -42,5 +42,6 @@ testem.log
 Thumbs.db
 
 /scripts/python/__pycache__
+/scripts/javascript/temp
 .vscode
 .vercel
