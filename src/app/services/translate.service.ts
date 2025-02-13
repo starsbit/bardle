@@ -34,7 +34,7 @@ export class TranslateService {
         this.selectedLocale = TranslateService.AVAILABLE_LANGUAGES[2];
         break;
       case 'ko':
-        this.selectedLocale = TranslateService.AVAILABLE_LANGUAGES[4];
+        this.selectedLocale = TranslateService.AVAILABLE_LANGUAGES[3];
         break;
       default:
         this.selectedLocale = TranslateService.AVAILABLE_LANGUAGES[0];
