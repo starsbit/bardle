@@ -36,40 +36,40 @@ describe('AssetService', () => {
       role: 'TestRole',
     } as Student;
     expect(service.getStudentIconLocation(student)).toBe(
-      '/assets/images/characters/test-student.png'
+      '/en-US//assets/images/characters/test-student.png'
     );
   });
 
   it('should return correct icon location', () => {
     expect(service.getIconLocation('test-icon.png')).toBe(
-      '/assets/images/icons/test-icon.png'
+      '/en-US//assets/images/icons/test-icon.png'
     );
   });
 
   it('should return correct background location for valid index', () => {
     expect(service.getBackgroundLocation(5)).toBe(
-      '/assets/images/backgrounds/05.png'
+      '/en-US//assets/images/backgrounds/05.png'
     );
     expect(service.getBackgroundLocation(15)).toBe(
-      '/assets/images/backgrounds/15.png'
+      '/en-US//assets/images/backgrounds/15.png'
     );
   });
 
   it('should return correct background location for index below 1', () => {
     expect(service.getBackgroundLocation(0)).toBe(
-      '/assets/images/backgrounds/01.png'
+      '/en-US//assets/images/backgrounds/01.png'
     );
     expect(service.getBackgroundLocation(-5)).toBe(
-      '/assets/images/backgrounds/01.png'
+      '/en-US//assets/images/backgrounds/01.png'
     );
   });
 
   it('should return correct background location for index wrapping (modulo 48)', () => {
     expect(service.getBackgroundLocation(49)).toBe(
-      '/assets/images/backgrounds/01.png'
+      '/en-US//assets/images/backgrounds/01.png'
     );
     expect(service.getBackgroundLocation(95)).toBe(
-      '/assets/images/backgrounds/47.png'
+      '/en-US//assets/images/backgrounds/47.png'
     );
   });
 
@@ -80,7 +80,7 @@ describe('AssetService', () => {
       role: 'TestRole',
     } as Student;
     expect(service.getSchoolIconLocation(student)).toBe(
-      '/assets/images/schools/TestSchool.png'
+      '/en-US//assets/images/schools/TestSchool.png'
     );
   });
 
@@ -91,7 +91,7 @@ describe('AssetService', () => {
       role: 'Test Role',
     } as Student;
     expect(service.getRoleIconLocation(student)).toBe(
-      '/assets/images/roles/TestRole.png'
+      '/en-US//assets/images/roles/TestRole.png'
     );
   });
 
@@ -107,8 +107,8 @@ describe('AssetService', () => {
     const expectedIndex = hashCode(formattedDate) % 48;
     const expectedBackground =
       expectedIndex < 10
-        ? `/assets/images/backgrounds/0${expectedIndex}.png`
-        : `/assets/images/backgrounds/${expectedIndex}.png`;
+        ? `/en-US//assets/images/backgrounds/0${expectedIndex}.png`
+        : `/en-US//assets/images/backgrounds/${expectedIndex}.png`;
 
     expect(service.pickBackgroundOfTheDayLocation()).toBe(expectedBackground);
   });
@@ -122,7 +122,7 @@ describe('AssetService', () => {
 
     service.getStudentIcon(student).subscribe();
 
-    const req = httpMock.expectOne('/assets/images/characters/test.png');
+    const req = httpMock.expectOne('/en-US//assets/images/characters/test.png');
     expect(req.request.method).toBe('GET');
     req.flush(null);
   });
@@ -130,7 +130,7 @@ describe('AssetService', () => {
   it('should fetch background using HTTP GET', () => {
     service.getBackground(3).subscribe();
 
-    const req = httpMock.expectOne('/assets/images/backgrounds/03.png');
+    const req = httpMock.expectOne('/en-US//assets/images/backgrounds/03.png');
     expect(req.request.method).toBe('GET');
     req.flush(null);
   });
