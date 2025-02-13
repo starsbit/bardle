@@ -236,7 +236,7 @@
       </trans-unit>
       <trans-unit id="TutorialTitle" datatype="html">
         <source> Blue Archive Wordle </source>
-        <target> Blue Archive Wordle </target>
+        <target> ブルーアーカイブ・ワードル </target>
         <note priority="1" from="description">Title of the game in the tutorial</note>
         <note priority="1" from="meaning">Blue Archive Wordle</note>
         <context-group purpose="location">

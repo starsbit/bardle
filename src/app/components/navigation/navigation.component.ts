@@ -4,7 +4,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
-import { LanguageSelectionComponent } from '../language-selection/language-selection.component';
 
 @Component({
   selector: 'ba-navigation',
@@ -17,7 +16,6 @@ import { LanguageSelectionComponent } from '../language-selection/language-selec
     MatIconModule,
     MatListModule,
     RouterLink,
-    LanguageSelectionComponent,
   ],
 })
 export class NavigationComponent {
