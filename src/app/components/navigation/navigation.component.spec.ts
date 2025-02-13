@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { By } from '@angular/platform-browser';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { routes } from '../../app.routes';
 import { NavigationComponent } from './navigation.component';
@@ -20,7 +21,7 @@ describe('NavigationComponent', () => {
         MatIconModule,
         MatListModule,
       ],
-      providers: [provideRouter(routes)],
+      providers: [provideRouter(routes), provideNoopAnimations()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NavigationComponent);

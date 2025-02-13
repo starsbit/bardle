@@ -33,6 +33,7 @@
           "options": {
             "outputPath": "dist/bardle",
             "index": "src/index.html",
+            "localize": true,
             "browser": "src/main.ts",
             "polyfills": ["zone.js", "@angular/localize/init"],
             "tsConfig": "tsconfig.app.json",
@@ -68,16 +69,52 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             },
             "ja": {
-              "localize": ["ja"]
+              "localize": ["ja"],
+              "index": {
+                "input": "src/locale/index/index.ja.html",
+                "output": "index.html"
+              },
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ja.ts"
+                }
+              ]
             },
             "zh": {
-              "localize": ["zh"]
+              "localize": ["zh"],
+              "index": {
+                "input": "src/locale/index/index.zh.html",
+                "output": "index.html"
+              },
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.zh.ts"
+                }
+              ]
             },
             "ko": {
-              "localize": ["ko"]
+              "localize": ["ko"],
+              "index": {
+                "input": "src/locale/index/index.ko.html",
+                "output": "index.html"
+              },
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ko.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"

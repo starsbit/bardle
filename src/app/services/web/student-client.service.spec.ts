@@ -37,7 +37,7 @@ describe('StudentClientService', () => {
       expect(data).toEqual(mockData);
     });
 
-    const req = httpMock.expectOne('/assets/character_info.json');
+    const req = httpMock.expectOne('/en-US/assets/character_info.json');
     expect(req.request.method).toBe('GET');
     req.flush(mockData); // Respond with mock data
   });
@@ -51,7 +51,7 @@ describe('StudentClientService', () => {
       expect(data).toEqual(mockData);
     });
 
-    const req = httpMock.expectOne('/assets/character_info_gl.json');
+    const req = httpMock.expectOne('/en-US/assets/character_info_gl.json');
     expect(req.request.method).toBe('GET');
     req.flush(mockData);
   });

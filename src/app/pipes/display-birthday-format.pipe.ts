@@ -26,7 +26,6 @@ export class DisplayBirthdayFormatPipe implements PipeTransform {
     }
 
     const [year, month, day] = parts.map(Number);
-    console.log(year, month, day);
     if (
       isNaN(year) ||
       isNaN(month) ||
@@ -41,7 +40,6 @@ export class DisplayBirthdayFormatPipe implements PipeTransform {
     }
 
     const date = new Date(year, month - 1, day);
-    console.log(date);
     if (isNaN(date.getTime())) {
       throw new Error('Invalid date: unable to parse');
     }
