@@ -71,13 +71,25 @@
               "sourceMap": true
             },
             "ja": {
-              "localize": ["ja"]
+              "localize": ["ja"],
+              "index": {
+                "input": "src/locale/index/index.ja.html",
+                "output": "index.html"
+              }
             },
             "zh": {
-              "localize": ["zh"]
+              "localize": ["zh"],
+              "index": {
+                "input": "src/locale/index/index.zh.html",
+                "output": "index.html"
+              }
             },
             "ko": {
-              "localize": ["ko"]
+              "localize": ["ko"],
+              "index": {
+                "input": "src/locale/index/index.ko.html",
+                "output": "index.html"
+              }
             }
           },
           "defaultConfiguration": "production"
