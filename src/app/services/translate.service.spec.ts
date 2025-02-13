@@ -29,7 +29,7 @@ describe('TranslateService', () => {
     expect(availableLanguages).toContain({ code: 'en', name: 'English' });
     expect(availableLanguages).toContain({ code: 'ja', name: 'Japanese' });
     expect(availableLanguages).toContain({
-      code: 'zh-Hans',
+      code: 'zh',
       name: 'Chinese (Simplified)',
     });
     expect(availableLanguages).toContain({ code: 'ko', name: 'Korean' });
@@ -60,7 +60,7 @@ describe('TranslateService', () => {
       ],
     });
     service = TestBed.inject(TranslateService);
-    expect(service.getCurrentLang().code).toBe('zh-Hans');
+    expect(service.getCurrentLang().code).toBe('zh');
 
     TestBed.resetTestingModule();
     TestBed.configureTestingModule({
