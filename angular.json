@@ -34,7 +34,6 @@
             "outputPath": "dist/bardle",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "localize": true,
             "polyfills": ["zone.js", "@angular/localize/init"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
