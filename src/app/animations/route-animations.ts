@@ -8,7 +8,7 @@ import {
 } from '@angular/animations';
 
 export const slideInAnimation = trigger('routeAnimations', [
-  transition('GamePage => AboutPage, AboutPage => ContactPage', [
+  transition('HomePage => AboutPage, AboutPage => ContactPage', [
     style({ position: 'relative' }),
     query(':enter, :leave', [
       style({
@@ -25,7 +25,7 @@ export const slideInAnimation = trigger('routeAnimations', [
       query(':enter', [animate('500ms ease-in-out', style({ left: '0%' }))]),
     ]),
   ]),
-  transition('GamePage => ContactPage', [
+  transition('HomePage => ContactPage', [
     style({ position: 'relative' }),
     query(':enter, :leave', [
       style({
@@ -42,7 +42,7 @@ export const slideInAnimation = trigger('routeAnimations', [
       query(':enter', [animate('500ms ease-in-out', style({ left: '0%' }))]),
     ]),
   ]),
-  transition('ContactPage => AboutPage, AboutPage => GamePage', [
+  transition('ContactPage => AboutPage, AboutPage => HomePage', [
     style({ position: 'relative' }),
     query(':enter, :leave', [
       style({
@@ -59,7 +59,7 @@ export const slideInAnimation = trigger('routeAnimations', [
       query(':enter', [animate('500ms ease-in-out', style({ left: '0%' }))]),
     ]),
   ]),
-  transition('ContactPage => GamePage', [
+  transition('ContactPage => HomePage', [
     style({ position: 'relative' }),
     query(':enter, :leave', [
       style({

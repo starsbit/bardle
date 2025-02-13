@@ -1,13 +1,11 @@
 import { Routes } from '@angular/router';
-import { GameListIdGuard } from './guards/game-list-id.guard';
 
 export const routes: Routes = [
   {
-    path: 'game/:listId',
+    path: '',
     loadComponent: () =>
       import('./pages/game/game.component').then((m) => m.GameComponent),
-    canActivate: [GameListIdGuard],
-    data: { animation: 'GamePage' },
+    data: { animation: 'HomePage' },
     title: $localize`:Bardle|Bardle Page Name@@BardlePageName:Bardle`,
   },
   {
@@ -28,7 +26,7 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'game/japan',
+    redirectTo: '',
     pathMatch: 'full',
   },
 ];
