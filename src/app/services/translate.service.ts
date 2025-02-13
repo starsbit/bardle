@@ -15,7 +15,7 @@ export class TranslateService {
       name: $localize`:Japanese|Label for Japanese language@@JapaneseLanguageLabel:Japanese`,
     },
     {
-      code: 'zh-Hans',
+      code: 'zh',
       name: $localize`:Chinese (Simplified)|Label for Chinese (Simplified) language@@ChineseSimplifiedLanguageLabel:Chinese (Simplified)`,
     },
     {
