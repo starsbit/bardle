@@ -6,7 +6,7 @@ import {
   PLATFORM_ID,
   Renderer2,
 } from '@angular/core';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'ba-google-analytics-tag',
