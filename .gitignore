@@ -43,3 +43,4 @@ Thumbs.db
 
 /scripts/python/__pycache__
 .vscode
+.vercel

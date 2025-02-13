@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/en-US/(.*)", "destination": "/en-US/index.html" },
+    { "source": "/zh/(.*)", "destination": "/zh/index.html" },
+    { "source": "/ja/(.*)", "destination": "/ja/index.html" },
+    { "source": "/ko/(.*)", "destination": "/ko/index.html" }
+  ],
+  "redirects": [{ "source": "/", "destination": "/en-US/", "statusCode": 301 }]
+}
