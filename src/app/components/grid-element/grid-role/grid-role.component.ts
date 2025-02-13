@@ -19,4 +19,8 @@ export class GridRoleComponent extends GridElementComponent {
   override correctGuess() {
     return this.answer?.role === this.guess?.role;
   }
+
+  get role() {
+    return this.guess?.role;
+  }
 }

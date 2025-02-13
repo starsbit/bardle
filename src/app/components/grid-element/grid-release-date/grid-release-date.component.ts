@@ -33,4 +33,8 @@ export class GridReleaseDateComponent extends GridElementComponent {
   override correctGuess(): boolean {
     return this.guess?.releaseDate === this.answer?.releaseDate;
   }
+
+  get releaseDate() {
+    return this.guess ? this.guess.releaseDate : '';
+  }
 }

@@ -1,0 +1,30 @@
+@use "@angular/material" as mat;
+
+@mixin ba-white-select($theme) {
+  @include mat.select-overrides(
+    (
+      panel-background-color: whitesmoke,
+      enabled-trigger-text-color: whitesmoke,
+      disabled-trigger-text-color: whitesmoke,
+      placeholder-text-color: whitesmoke,
+      enabled-arrow-color: whitesmoke,
+      disabled-arrow-color: whitesmoke,
+      focused-arrow-color: whitesmoke,
+      invalid-arrow-color: whitesmoke,
+    )
+  );
+}
+
+@mixin ba-black-select($theme) {
+  @include mat.select-overrides(
+    (
+      enabled-trigger-text-color: black,
+      disabled-trigger-text-color: black,
+      placeholder-text-color: black,
+      enabled-arrow-color: black,
+      disabled-arrow-color: black,
+      focused-arrow-color: black,
+      invalid-arrow-color: black,
+    )
+  );
+}

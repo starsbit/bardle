@@ -15,4 +15,8 @@ export class GridDamageTypeComponent extends GridElementComponent {
   override correctGuess() {
     return this.answer?.damageType === this.guess?.damageType;
   }
+
+  get damageType() {
+    return this.guess?.damageType;
+  }
 }

@@ -15,4 +15,8 @@ export class GridArmorTypeComponent extends GridElementComponent {
   override correctGuess() {
     return this.answer?.armorType === this.guess?.armorType;
   }
+
+  get armorType() {
+    return this.guess?.armorType;
+  }
 }

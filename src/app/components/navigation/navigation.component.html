@@ -6,16 +6,24 @@
       class="h-16 w-48"
     />
     <span class="spacer"></span>
-    <div class="hidden md:flex !text-left">
-      <a routerLink="/" class="text-lg px-4 text-black hover:text-gray-500"
-        >Game</a
+    <div class="hidden md:flex !text-left !items-center">
+      <ba-language-selection></ba-language-selection>
+      <a
+        routerLink="/"
+        class="text-lg px-4 text-black hover:text-gray-500"
+        i18n="Home|Home navigation element@@HomeNavigationElement"
+        >Home</a
       >
-      <a routerLink="/about" class="text-lg px-4 text-black hover:text-gray-500"
+      <a
+        routerLink="/about"
+        class="text-lg px-4 text-black hover:text-gray-500"
+        i18n="About|About navigation element@@AboutNavigationElement"
         >About</a
       >
       <a
         routerLink="/contact"
         class="text-lg px-4 text-black hover:text-gray-500"
+        i18n="Contact|Contact navigation element@@ContactNavigationElement"
         >Contact</a
       >
     </div>
@@ -32,14 +40,35 @@
 @if (menuOpen) {
 <nav class="bg-white text-black md:invisible">
   <mat-nav-list>
+    <mat-list-item class="!h-16">
+      <ba-language-selection matLine></ba-language-selection>
+    </mat-list-item>
     <mat-list-item routerLink="/">
-      <a matLine class="text-black hover:text-gray-500">Game</a>
+      <a
+        matLine
+        class="text-black hover:text-gray-500"
+        i18n="Home|Mobile Home navigation element@@MobileHomeNavigationElement"
+        >Home</a
+      >
     </mat-list-item>
     <mat-list-item routerLink="/about">
-      <a matLine class="text-black hover:text-gray-500">About</a>
+      <a
+        matLine
+        class="text-black hover:text-gray-500"
+        i18n="
+          About|Mobile About navigation element@@MobileAboutNavigationElement"
+        >About</a
+      >
     </mat-list-item>
     <mat-list-item routerLink="/contact">
-      <a matLine class="text-black hover:text-gray-500">Contact</a>
+      <a
+        matLine
+        class="text-black hover:text-gray-500"
+        i18n="
+          Contact|Mobile Contact navigation
+          element@@MobileContactNavigationElement"
+        >Contact</a
+      >
     </mat-list-item>
   </mat-nav-list>
 </nav>
