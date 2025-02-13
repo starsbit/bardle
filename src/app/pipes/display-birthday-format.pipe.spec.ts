@@ -52,4 +52,19 @@ describe('DisplayBirthdayFormatPipe', () => {
     const result = pipe.transform('2000/01/01', 'ja');
     expect(result).toBe('1. 1月');
   });
+
+  it('should format based on Japanese locale', () => {
+    const result = pipe.transform('2000/01/01', 'ja');
+    expect(result).toBe('1. 1月');
+  });
+
+  it('should format based on Chinese locale', () => {
+    const result = pipe.transform('2000/01/01', 'zh-Hans');
+    expect(result).toBe('1. 1月');
+  });
+
+  it('should format based on Korean locale', () => {
+    const result = pipe.transform('2000/01/01', 'ko');
+    expect(result).toBe('1. 1월');
+  });
 });
