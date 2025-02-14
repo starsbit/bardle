@@ -2,8 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Student } from '../../models/student';
 import { DEFAULT_STUDENT_LIST } from '../../models/student-list';
-import { timeActive } from '../../utils/date';
-import { getStudentListTestData } from '../../utils/test-data';
+import { timeActive } from '../../utils/date-utils';
+import { getStudentListTestData } from '../../utils/test-data-utils';
 import { YesterdaysStudentComponent } from './yesterdays-student.component';
 
 describe('YesterdaysStudentComponent', () => {

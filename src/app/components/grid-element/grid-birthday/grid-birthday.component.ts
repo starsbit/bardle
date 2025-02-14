@@ -1,6 +1,7 @@
 import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { DisplayBirthdayFormatPipe } from '../../../pipes/display-birthday-format.pipe';
+import { sanitizeBirthday } from '../../../utils/student-utils';
 import { GridElementComponent } from '../grid-element.component';
 import { GridElementContainerComponent } from '../grid-wrapper/grid-element-container.component';
 
@@ -36,7 +37,7 @@ export class GridBirthdayComponent extends GridElementComponent {
   }
 
   get birthday() {
-    return this.guess ? this.guess.birthday : '';
+    return sanitizeBirthday(this.guess ? this.guess.birthday : '');
   }
 
   override correctGuess(): boolean {

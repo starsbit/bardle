@@ -1,6 +1,7 @@
 import { NgClass, NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AssetService } from '../../../services/web/asset.service';
+import { sanitizeSchool } from '../../../utils/student-utils';
 import { GridElementComponent } from '../grid-element.component';
 import { GridElementContainerComponent } from '../grid-wrapper/grid-element-container.component';
 
@@ -21,6 +22,6 @@ export class GridSchoolComponent extends GridElementComponent {
   }
 
   get school() {
-    return this.guess?.school;
+    return sanitizeSchool(this.guess ? this.guess.school : '');
   }
 }

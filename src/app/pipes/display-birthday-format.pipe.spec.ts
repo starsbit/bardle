@@ -25,15 +25,11 @@ describe('DisplayBirthdayFormatPipe', () => {
   });
 
   it('should throw an error for an empty string', () => {
-    expect(() => pipe.transform('')).toThrowError(
-      'Invalid date format: input must be a non-empty string'
-    );
+    expect(pipe.transform('')).toEqual('?');
   });
 
   it('should throw an error for a non-string input', () => {
-    expect(() => pipe.transform(null as unknown as string)).toThrowError(
-      'Invalid date format: input must be a non-empty string'
-    );
+    expect(pipe.transform(null as unknown as string)).toEqual('?');
   });
 
   it('should throw an error for an invalid date format', () => {

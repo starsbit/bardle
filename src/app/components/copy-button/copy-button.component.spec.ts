@@ -13,7 +13,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { Student } from '../../models/student';
 import { StudentList } from '../../models/student-list';
 import { GameService } from '../../services/game.service';
-import { getStudentListTestData } from '../../utils/test-data';
+import { getStudentListTestData } from '../../utils/test-data-utils';
 import { CopyButtonComponent } from './copy-button.component';
 
 describe('CopyButtonComponent', () => {

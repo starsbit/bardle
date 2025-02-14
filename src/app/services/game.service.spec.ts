@@ -3,7 +3,7 @@ import { of } from 'rxjs';
 import { RULES } from '../constants/rules';
 import { GuessCookie } from '../models/guess-cookie';
 import { DEFAULT_STUDENT_LIST, StudentList } from '../models/student-list';
-import { getStudentListTestData } from '../utils/test-data';
+import { getStudentListTestData } from '../utils/test-data-utils';
 import { GameService } from './game.service';
 import { LocalStorageService } from './local-storage.service';
 import { StudentService } from './student.service';

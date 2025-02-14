@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { forkJoin, map, of, tap } from 'rxjs';
 import { Student, StudentData, StudentListData } from '../models/student';
 import { StudentList } from '../models/student-list';
-import { hashCode } from '../utils/hash';
+import { hashCode } from '../utils/hash-utils';
 import { StudentClientService } from './web/student-client.service';
 
 @Injectable({

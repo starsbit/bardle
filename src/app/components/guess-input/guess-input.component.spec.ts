@@ -13,7 +13,7 @@ import { DEFAULT_STUDENT_LIST } from '../../models/student-list';
 import { GameService } from '../../services/game.service';
 import { TranslateService } from '../../services/translate.service';
 import { AssetService } from '../../services/web/asset.service';
-import { getStudentListTestData } from '../../utils/test-data';
+import { getStudentListTestData } from '../../utils/test-data-utils';
 import { GuessInputComponent } from './guess-input.component';
 
 describe('GuessInputComponent', () => {

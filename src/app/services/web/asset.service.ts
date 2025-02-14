@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Student } from '../../models/student';
-import { hashCode } from '../../utils/hash';
+import { hashCode } from '../../utils/hash-utils';
+import { sanitizeSchool } from '../../utils/student-utils';
 
 @Injectable({
   providedIn: 'root',
@@ -49,10 +50,8 @@ export class AssetService {
   }
 
   getSchoolIconLocation(student: Student) {
-    return `${this.fullImagePath}/schools/${student.school.replace(
-      ' ',
-      ''
-    )}.png`;
+    const school = sanitizeSchool(student.school);
+    return `${this.fullImagePath}/schools/${school.replace(' ', '')}.png`;
   }
 
   getRoleIconLocation(student: Student) {

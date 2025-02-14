@@ -17,7 +17,7 @@ export class DisplayBirthdayFormatPipe implements PipeTransform {
 
   transform(value: string, customLocale?: string): string {
     if (!value || typeof value !== 'string') {
-      throw new Error('Invalid date format: input must be a non-empty string');
+      return '?';
     }
 
     const parts = value.split('/');

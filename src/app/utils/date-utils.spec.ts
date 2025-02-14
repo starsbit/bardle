@@ -1,5 +1,5 @@
 import { RULES } from '../constants/rules';
-import { getDayOfYear, timeActive } from './date';
+import { getDayOfYear, timeActive } from './date-utils';
 
 describe('Date Utils', () => {
   describe('getDayOfYear', () => {

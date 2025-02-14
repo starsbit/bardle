@@ -5,7 +5,7 @@ import { GameAnswer, GameResult, GameState } from '../models/game';
 import { GuessCookie } from '../models/guess-cookie';
 import { StudentListData } from '../models/student';
 import { DEFAULT_STUDENT_LIST, StudentList } from '../models/student-list';
-import { getDayOfYear } from '../utils/date';
+import { getDayOfYear } from '../utils/date-utils';
 import { LocalStorageService } from './local-storage.service';
 import { StudentService } from './student.service';
 
