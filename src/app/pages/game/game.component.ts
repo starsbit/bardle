@@ -13,6 +13,7 @@ import { TutorialComponent } from '../../components/tutorial/tutorial.component'
 import { YesterdaysStudentComponent } from '../../components/yesterdays-student/yesterdays-student.component';
 import { Student } from '../../models/student';
 import { GameService } from '../../services/game.service';
+import { TranslateService } from '../../services/translate.service';
 
 @Component({
   selector: 'ba-game',
@@ -36,7 +37,10 @@ export class GameComponent implements OnInit, OnDestroy {
   public yesterdayStudent: Student | null = null;
   public todaysStudent: Student | null = null;
 
-  constructor(private gameService: GameService) {}
+  constructor(
+    private readonly gameService: GameService,
+    private readonly translateService: TranslateService
+  ) {}
 
   ngOnInit() {
     this.subscriptions.add(
@@ -51,6 +55,13 @@ export class GameComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscriptions.unsubscribe();
+  }
+
+  get todaysStudentName(): string {
+    if (this.translateService.getCurrentLang().code === 'ja') {
+      return this.todaysStudent ? this.todaysStudent.nativeName : '...';
+    }
+    return this.todaysStudent ? this.todaysStudent.fullName : '...';
   }
 
   private handleGuessChange() {
