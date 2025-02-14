@@ -41,7 +41,10 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/_routes.json",
+              "src/sitemap.xml",
+              "src/robots.txt"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
