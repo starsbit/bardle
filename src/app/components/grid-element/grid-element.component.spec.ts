@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Student } from '../../models/student';
 import { StudentList } from '../../models/student-list';
-import { getStudentListTestData } from '../../utils/test-data';
+import { getStudentListTestData } from '../../utils/test-data-utils';
 import { GridElementComponent } from './grid-element.component';
 
 describe('GridElementComponent', () => {

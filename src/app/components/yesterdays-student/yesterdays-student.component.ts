@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Student } from '../../models/student';
 import { TranslateService } from '../../services/translate.service';
-import { timeActive } from '../../utils/date';
+import { timeActive } from '../../utils/date-utils';
 
 @Component({
   selector: 'ba-yesterdays-student',

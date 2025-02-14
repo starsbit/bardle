@@ -4,7 +4,7 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { Student } from '../../models/student';
-import { hashCode } from '../../utils/hash';
+import { hashCode } from '../../utils/hash-utils';
 import { AssetService } from './asset.service';
 
 describe('AssetService', () => {
@@ -80,7 +80,7 @@ describe('AssetService', () => {
       role: 'TestRole',
     } as Student;
     expect(service.getSchoolIconLocation(student)).toBe(
-      '/en-US//assets/images/schools/TestSchool.png'
+      '/en-US//assets/images/schools/Unknown.png'
     );
   });
 

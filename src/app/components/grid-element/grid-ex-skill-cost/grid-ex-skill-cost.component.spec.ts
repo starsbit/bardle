@@ -7,7 +7,7 @@ import {
 import { By } from '@angular/platform-browser';
 import { Student } from '../../../models/student';
 import { StudentList } from '../../../models/student-list';
-import { getStudentListTestData } from '../../../utils/test-data';
+import { getStudentListTestData } from '../../../utils/test-data-utils';
 import { GridElementContainerComponent } from '../grid-wrapper/grid-element-container.component';
 import { GridExSkillCostComponent } from './grid-ex-skill-cost.component';
 

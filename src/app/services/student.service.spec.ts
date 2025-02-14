@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { Student, StudentData, StudentListData } from '../models/student';
 import { StudentList } from '../models/student-list';
-import { hashCode } from '../utils/hash';
+import { hashCode } from '../utils/hash-utils';
 import { StudentService } from './student.service';
 import { StudentClientService } from './web/student-client.service';
 

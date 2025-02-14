@@ -1,4 +1,4 @@
-import { hashCode } from './hash';
+import { hashCode } from './hash-utils';
 
 describe('hashCode', () => {
   it('should return 0 for an empty string', () => {

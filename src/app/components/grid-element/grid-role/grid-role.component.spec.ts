@@ -8,7 +8,7 @@ import { By } from '@angular/platform-browser';
 import { Student } from '../../../models/student';
 import { StudentList } from '../../../models/student-list';
 import { AssetService } from '../../../services/web/asset.service';
-import { getStudentListTestData } from '../../../utils/test-data';
+import { getStudentListTestData } from '../../../utils/test-data-utils';
 import { GridElementContainerComponent } from '../grid-wrapper/grid-element-container.component';
 import { GridRoleComponent } from './grid-role.component';
 
