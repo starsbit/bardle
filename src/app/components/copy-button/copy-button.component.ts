@@ -20,9 +20,8 @@ export class CopyButtonComponent {
     'school',
     'role',
     'damageType',
-    'armorType',
+    'weaponType',
     'exSkillCost',
-    'birthday',
     'releaseDate',
   ];
 
