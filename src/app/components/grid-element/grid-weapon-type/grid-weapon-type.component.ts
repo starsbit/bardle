@@ -1,6 +1,5 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
-import { AssetService } from '../../../services/web/asset.service';
 import { GridElementComponent } from '../grid-element.component';
 import { GridElementContainerComponent } from '../grid-wrapper/grid-element-container.component';
 
@@ -11,10 +10,6 @@ import { GridElementContainerComponent } from '../grid-wrapper/grid-element-cont
   styleUrl: './grid-weapon-type.component.scss',
 })
 export class GridWeaponTypeComponent extends GridElementComponent {
-  constructor(public readonly assetService: AssetService) {
-    super();
-  }
-
   override correctGuess() {
     return this.answer?.weaponType === this.guess?.weaponType;
   }
