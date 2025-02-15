@@ -1,0 +1,14 @@
+<ba-grid-element-container
+  [isFlipped]="getFlipString()"
+  [animationDelayMs]="animationDelayMs"
+  [won]="guess === answer"
+>
+  @if(guess) {
+  <div
+    [ngClass]="[correctGuess() ? 'correct-no-text' : 'incorrect-no-text']"
+    class="normal-weapon-type flex items-center justify-center text-center p-2 overflow-hidden h-full"
+  >
+    <span class="block">{{ weaponType }}</span>
+  </div>
+  }
+</ba-grid-element-container>

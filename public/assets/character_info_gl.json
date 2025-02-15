@@ -217,7 +217,7 @@
     "weaponType": "AR",
     "image": "Shiroko.webp",
     "birthday": "2000/05/16",
-    "disabled": false
+    "disabled": true
   },
   "Shun": {
     "id": "Shun",
@@ -457,7 +457,7 @@
     "weaponType": "AR",
     "image": "Serika.webp",
     "birthday": "2000/06/25",
-    "disabled": false
+    "disabled": true
   },
   "Tsubaki": {
     "id": "Tsubaki",

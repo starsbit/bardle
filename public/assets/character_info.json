@@ -217,7 +217,7 @@
     "weaponType": "AR",
     "image": "Shiroko.webp",
     "birthday": "2000/05/16",
-    "disabled": false
+    "disabled": true
   },
   "Shun": {
     "id": "Shun",
@@ -457,7 +457,7 @@
     "weaponType": "AR",
     "image": "Serika.webp",
     "birthday": "2000/06/25",
-    "disabled": false
+    "disabled": true
   },
   "Tsubaki": {
     "id": "Tsubaki",
@@ -4177,6 +4177,26 @@
     "weaponType": "HG",
     "image": "Rio.webp",
     "birthday": "2000/06/06",
+    "disabled": false
+  },
+  "Maki_(Camping)": {
+    "id": "Maki_(Camping)",
+    "fullName": "Konuri Maki (Camping)",
+    "shortName": "Maki (Camping)",
+    "nativeName": "\u5c0f\u5857 \u30de\u30ad",
+    "school": "Millennium",
+    "damageType": "Explosive",
+    "armorType": "Heavy",
+    "role": "Attacker",
+    "combatClass": "Special",
+    "exSkillCost": 4,
+    "positioning": "Back",
+    "height": 149,
+    "outfit": "Camping",
+    "releaseDate": "2025/02/12",
+    "weaponType": "MG",
+    "image": "MakiCamping.webp",
+    "birthday": "2000/08/01",
     "disabled": false
   }
 }

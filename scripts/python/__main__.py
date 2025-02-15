@@ -1,10 +1,11 @@
+import argparse
+
 from check_equality import check_equality, find_minimal_identifier_fields
 from fetch_info import fetch_info
 from global_student_list import disable_student, generate_global_student_list
 from sanitization import check_key_and_id_field, delete_saved_info
-import argparse
 
-INCLUDED_FIELDS = ['school', 'exSkillCost', 'armorType', 'role', 'releaseDate', 'damageType', 'birthday']
+INCLUDED_FIELDS = ['school', 'role', 'damageType', 'exSkillCost', 'weaponType', 'releaseDate']
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Download Blue Archive character information and check for conflicts.")

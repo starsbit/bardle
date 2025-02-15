@@ -6,6 +6,7 @@
   @if(guess !== null) {
   <div [ngClass]="[correctGuess() ? 'correct' : 'incorrect']">
     <img
+      class="p-2"
       [ngSrc]="this.assetService.getRoleIconLocation(guess)"
       width="76"
       height="76"

@@ -19,6 +19,7 @@ INCONSISTEN_STUDENT_LOOKUP = [
     ("Toki (Bunny Girl)", "Toki (Bunny)"),
     ("Kotori (Cheerleader)", "Kotori (Cheer Squad)"),
     ("Kotama (Camping)", "Kotama (Camp)"),
+    ("Maki (Camping)", "Maki (Camp)"),
     ("Hare (Camping)", "Hare (Camp)"),
     ("Shiroko＊Terror", "Shiroko*Terror"),
     ("Yuuka (Pajama)", "Yuuka (Pajamas)"),
