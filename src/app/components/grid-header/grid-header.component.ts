@@ -41,4 +41,8 @@ export class GridHeaderComponent {
   get releaseDate() {
     return $localize`:Release Date|Header for release date grid@@ReleaseDateGrid:Release Date`;
   }
+
+  get weaponType() {
+    return $localize`:Weapon Type|Header for weapon type grid@@WeaponTypeGrid:Weapon Type`;
+  }
 }
