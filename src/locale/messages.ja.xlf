@@ -112,6 +112,16 @@
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="WeaponTypeGrid" datatype="html">
+        <source>Weapon Type</source>
+        <target>武器タイプ</target>
+        <note priority="1" from="description">Header for weapon type grid</note>
+        <note priority="1" from="meaning">Weapon Type</note>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/grid-header/grid-header.component.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="StudentNameSearchLabel" datatype="html">
         <source>Student name</source>
         <target>生徒名</target>
