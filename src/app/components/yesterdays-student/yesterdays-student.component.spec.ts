@@ -35,7 +35,7 @@ describe('YesterdaysStudentComponent', () => {
     const daysActiveText = fixture.debugElement.query(
       By.css('.text-xl.text-white')
     ).nativeElement.textContent;
-    expect(daysActiveText).toContain(`#${timeActive()}`);
+    expect(daysActiveText).toContain(`#${timeActive() - 1}`);
   });
 
   it('should not render anything when display is false', () => {

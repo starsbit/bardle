@@ -13,6 +13,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { Student } from '../../models/student';
 import { StudentList } from '../../models/student-list';
 import { GameService } from '../../services/game.service';
+import { timeActive } from '../../utils/date-utils';
 import { getStudentListTestData } from '../../utils/test-data-utils';
 import { CopyButtonComponent } from './copy-button.component';
 
@@ -27,6 +28,8 @@ describe('CopyButtonComponent', () => {
     getStudentListTestData()[StudentList.GLOBAL]['Aru'];
   const mockTargetStudent: Student =
     getStudentListTestData()[StudentList.GLOBAL]['Hina'];
+
+  const daysActive = timeActive();
 
   beforeEach(async () => {
     clipboardSpy = jasmine.createSpyObj('Clipboard', ['copy']);
@@ -78,7 +81,7 @@ describe('CopyButtonComponent', () => {
     fixture.detectChanges();
     tick(420); // Allow snackbar execution
 
-    const expectedScore = '🟩🟩🟩⬜⬜⬜🟩\n'; // Adjust based on the actual field differences
+    const expectedScore = `Daily Bardle #${daysActive} Feb 15, 2025.\nI guessed the student in 1 attempt and lost\n\n🟩🟩🟩⬜⬜⬜🟩\n`;
     expect(clipboardSpy.copy).toHaveBeenCalledWith(expectedScore);
   }));
 
@@ -94,7 +97,7 @@ describe('CopyButtonComponent', () => {
     fixture.detectChanges();
     tick(); // Process snackbar call
 
-    const expectedScore = '🟩🟩🟩🟩🟩🟩🟩\n'; // All fields match
+    const expectedScore = `Daily Bardle #${daysActive} Feb 15, 2025.\nI guessed the student in 1 attempt and won\n\n🟩🟩🟩🟩🟩🟩🟩\n`;
     expect(clipboardSpy.copy).toHaveBeenCalledWith(expectedScore);
   }));
 

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CountdownConfig, CountdownModule } from 'ngx-countdown';
+import { timeActive } from '../../utils/date-utils';
 import { CopyButtonComponent } from '../copy-button/copy-button.component';
 
 @Component({
@@ -12,6 +13,7 @@ export class ResultComponent {
   @Input() won = false;
   @Input() lost = false;
   @Input() searchedStudent = '';
+  daysActive = timeActive();
 
   countdownConfig: CountdownConfig = {
     timezone: 'UTC',
