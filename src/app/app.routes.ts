@@ -6,7 +6,7 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/game/game.component').then((m) => m.GameComponent),
     data: { animation: 'HomePage' },
-    title: $localize`:Bardle|Bardle Page Name@@BardlePageName:Bardle`,
+    title: $localize`:Bardle|Bardle Page Name@@BardlePageName:Bardle - Blue Archive Wordle Guessing Game`,
   },
   {
     path: 'about',

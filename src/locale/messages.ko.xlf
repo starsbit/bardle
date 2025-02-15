@@ -3,8 +3,8 @@
   <file source-language="en" target-language="ko" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="BardlePageName" datatype="html">
-        <source>Bardle</source>
-        <target>Bardle</target>
+        <source>Bardle - Blue Archive Wordle Guessing Game</source>
+        <target>Bardle - 블루 아카이브 단어 맞추기 게임</target>
         <note priority="1" from="description">Bardle Page Name</note>
         <note priority="1" from="meaning">Bardle</note>
         <context-group purpose="location">
