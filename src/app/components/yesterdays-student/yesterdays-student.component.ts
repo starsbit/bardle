@@ -12,7 +12,7 @@ import { timeActive } from '../../utils/date-utils';
 export class YesterdaysStudentComponent {
   @Input() student: Student | null = null;
   @Input() display = false;
-  numberOfDaysActive = timeActive();
+  numberOfDaysActive = timeActive() - 1;
 
   constructor(private readonly translateService: TranslateService) {}
 

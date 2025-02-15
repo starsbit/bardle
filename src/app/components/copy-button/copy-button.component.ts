@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Student } from '../../models/student';
 import { GameService } from '../../services/game.service';
+import { timeActive } from '../../utils/date-utils';
 
 @Component({
   selector: 'ba-copy-button',
@@ -42,7 +43,19 @@ export class CopyButtonComponent {
     const guessedStudents = guesses.map((guess) => students[guess]);
     const targetStudent = students[answer];
 
-    let scoreReport = '';
+    const attempts = guesses.length;
+    const won = guesses.includes(answer);
+    const date = new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
+    const daysSinceLaunch = timeActive();
+
+    let scoreReport = `Daily Bardle #${daysSinceLaunch} ${date}.\n`;
+    scoreReport += `I guessed the student in ${attempts} attempt${
+      attempts > 1 ? 's' : ''
+    } and ${won ? 'won' : 'lost'}\n\n`;
 
     guessedStudents.forEach((guessedStudent) => {
       this.wantedFields.forEach((field) => {
