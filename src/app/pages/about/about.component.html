@@ -3,12 +3,14 @@
 >
   <div class="container flex flex-col justify-center items-center p-8">
     <div class="p-16 text-left">
-      <h1
-        class="mb-4 font-bold text-2xl"
-        i18n="About|About heading@@AboutHeading"
-      >
-        About
-      </h1>
+      <button (click)="openChangeLogsDialog()">
+        <h1
+          class="mb-4 font-bold text-2xl cursor-pointer hover:text-blue-500 transition-colors duration-200"
+          i18n="About|About heading@@AboutHeading"
+        >
+          About
+        </h1>
+      </button>
 
       <h2
         class="mb-4 text-xl"

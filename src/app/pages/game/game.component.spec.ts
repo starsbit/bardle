@@ -24,6 +24,7 @@ describe('GameComponent', () => {
       'getYesterdaysStudent',
       'getTodaysStudent',
       'getCurrentStudentData',
+      'getLastReadChangeLogDate',
     ]);
 
     gameServiceSpy.$gameStateChange.and.returnValue(
@@ -38,6 +39,9 @@ describe('GameComponent', () => {
     gameServiceSpy.getTodaysStudent.and.returnValue(studentOfTheDay.id);
     gameServiceSpy.getCurrentStudentData.and.returnValue(
       gameDate[StudentList.GLOBAL]
+    );
+    gameServiceSpy.getLastReadChangeLogDate.and.returnValue(
+      new Date().toISOString().slice(0, 10)
     );
 
     TestBed.configureTestingModule({

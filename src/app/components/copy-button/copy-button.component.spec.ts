@@ -80,8 +80,13 @@ describe('CopyButtonComponent', () => {
     component.copyToClipboard();
     fixture.detectChanges();
     tick(420); // Allow snackbar execution
+    const date = new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
 
-    const expectedScore = `Daily Bardle #${daysActive} Feb 15, 2025.\nI guessed the student in 1 attempt and lost\n\n🟩🟩🟩⬜⬜🟩\n`;
+    const expectedScore = `Daily Bardle #${daysActive} ${date}.\nI guessed the student in 1 attempt and lost\n\n🟩🟩🟩⬜⬜🟩\n`;
     expect(clipboardSpy.copy).toHaveBeenCalledWith(expectedScore);
   }));
 
@@ -97,7 +102,12 @@ describe('CopyButtonComponent', () => {
     fixture.detectChanges();
     tick(); // Process snackbar call
 
-    const expectedScore = `Daily Bardle #${daysActive} Feb 15, 2025.\nI guessed the student in 1 attempt and won\n\n🟩🟩🟩🟩🟩🟩\n`;
+    const date = new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
+    const expectedScore = `Daily Bardle #${daysActive} ${date}.\nI guessed the student in 1 attempt and won\n\n🟩🟩🟩🟩🟩🟩\n`;
     expect(clipboardSpy.copy).toHaveBeenCalledWith(expectedScore);
   }));
 

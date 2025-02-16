@@ -10,6 +10,7 @@ import { sanitizeSchool } from '../../utils/student-utils';
 })
 export class AssetService {
   private static readonly ASSET_IMAGES_PATH = '/assets/images';
+  private static readonly ASSET_CHANGELOGS_PATH = '/assets/changelogs.md';
   private static readonly ASSET_PREFIX_PATH = environment.assetLocationPrefix;
   private static readonly BACKGROUND_COUNT = 48;
   private fullImagePath: string;
@@ -56,6 +57,19 @@ export class AssetService {
 
   getRoleIconLocation(student: Student) {
     return `${this.fullImagePath}/roles/${student.role.replace(' ', '')}.png`;
+  }
+
+  getChangeLogsLocation() {
+    if (!environment.production) {
+      return AssetService.ASSET_CHANGELOGS_PATH;
+    }
+    return `${AssetService.ASSET_PREFIX_PATH}/${AssetService.ASSET_CHANGELOGS_PATH}`;
+  }
+
+  getChangeLogs() {
+    return this.http.get(this.getChangeLogsLocation(), {
+      responseType: 'text',
+    });
   }
 
   pickBackgroundOfTheDayLocation() {

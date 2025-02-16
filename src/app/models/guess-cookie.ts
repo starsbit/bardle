@@ -4,4 +4,7 @@ export interface GuessCookie {
   guesses: Record<string, string[]>;
   doy: number;
   lastList: StudentList;
+  // Contains the date of the last time the change log was read
+  // Format YYYY/MM/DD
+  changeLogReadDate?: string;
 }

@@ -1,3 +1,5 @@
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { AboutComponent } from './about.component';
@@ -7,7 +9,9 @@ describe('AboutComponent', () => {
   let fixture: ComponentFixture<AboutComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({}).compileComponents();
+    TestBed.configureTestingModule({
+      providers: [provideHttpClient(), provideHttpClientTesting()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AboutComponent);
     component = fixture.componentInstance;
