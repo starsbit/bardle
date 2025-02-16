@@ -113,6 +113,27 @@ export class GameService {
     return this.gameState.guesses.guesses[this.gameState.activeList];
   }
 
+  getLastReadChangeLogDate() {
+    if (this.gameState === null) {
+      return;
+    }
+    return this.gameState.guesses.changeLogReadDate;
+  }
+
+  setLastReadChangeLogDate(date: string) {
+    if (this.gameState === null || !this.isInitialized) {
+      return;
+    }
+    const guess = this.localStorage.getGuess();
+    guess.changeLogReadDate = date;
+    this.localStorage.setGuess(guess);
+    this.gameState = {
+      ...this.gameState,
+      guesses: guess,
+    };
+    this.gameStateChange.next(this.gameState);
+  }
+
   getCurrentList() {
     if (this.gameState === null) {
       return;

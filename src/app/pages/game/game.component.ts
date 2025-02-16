@@ -4,6 +4,7 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { GridComponent } from '../../components/grid/grid.component';
 import { GuessInputComponent } from '../../components/guess-input/guess-input.component';
@@ -11,9 +12,11 @@ import { ResultComponent } from '../../components/result/result.component';
 import { StudentListSelectionComponent } from '../../components/student-list-selection/student-list-selection.component';
 import { TutorialComponent } from '../../components/tutorial/tutorial.component';
 import { YesterdaysStudentComponent } from '../../components/yesterdays-student/yesterdays-student.component';
+import { ChangeLogsDialogComponent } from '../../dialogs/change-logs/change-logs.component';
 import { Student } from '../../models/student';
 import { GameService } from '../../services/game.service';
 import { TranslateService } from '../../services/translate.service';
+import { AssetService } from '../../services/web/asset.service';
 
 @Component({
   selector: 'ba-game',
@@ -31,6 +34,7 @@ import { TranslateService } from '../../services/translate.service';
 })
 export class GameComponent implements OnInit, OnDestroy {
   private readonly subscriptions = new Subscription();
+  private changeLogs = '';
   public won = false;
   public lost = false;
   public gameStarted = false;
@@ -39,7 +43,9 @@ export class GameComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly gameService: GameService,
-    private readonly translateService: TranslateService
+    private readonly translateService: TranslateService,
+    private readonly dialog: MatDialog,
+    private readonly assetService: AssetService
   ) {}
 
   ngOnInit() {
@@ -49,6 +55,7 @@ export class GameComponent implements OnInit, OnDestroy {
         this.handleResultChange();
         this.handleYesterdayStudentChange();
         this.handleTodaysStudentChange();
+        this.handleCookieChange();
       })
     );
   }
@@ -102,5 +109,47 @@ export class GameComponent implements OnInit, OnDestroy {
       return;
     }
     this.todaysStudent = students[studentId];
+  }
+
+  private handleCookieChange() {
+    const lastChangeLogDate = this.gameService.getLastReadChangeLogDate();
+    if (this.changeLogs) {
+      this.parseChangeLog(this.changeLogs, lastChangeLogDate);
+      return;
+    }
+    this.assetService.getChangeLogs().subscribe((logs) => {
+      this.changeLogs = logs;
+      this.parseChangeLog(logs, lastChangeLogDate);
+    });
+  }
+
+  private openChangeLogs(changeLogs: string): void {
+    this.dialog
+      .open(ChangeLogsDialogComponent, {
+        width: '600px',
+        data: { changeLogs },
+      })
+      .afterClosed()
+      .subscribe(() => {
+        this.gameService.setLastReadChangeLogDate(
+          new Date().toISOString().slice(0, 10)
+        );
+      });
+  }
+
+  private extractFirstDate(logs: string): Date {
+    const dateRegex = /Date:\s*(\d{4}\/\d{2}\/\d{2})/;
+    const match = logs.match(dateRegex);
+    if (match) {
+      return new Date(match[1]);
+    }
+    return new Date();
+  }
+
+  private parseChangeLog(logs: string, lastChangeLogDate?: string): void {
+    const firstDate = this.extractFirstDate(logs);
+    if (!lastChangeLogDate || firstDate > new Date(lastChangeLogDate)) {
+      this.openChangeLogs(logs);
+    }
   }
 }
