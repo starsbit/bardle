@@ -126,7 +126,6 @@ export class GameComponent implements OnInit, OnDestroy {
   private openChangeLogs(changeLogs: string): void {
     this.dialog
       .open(ChangeLogsDialogComponent, {
-        width: '600px',
         data: { changeLogs },
       })
       .afterClosed()
