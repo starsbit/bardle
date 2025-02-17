@@ -1,11 +1,14 @@
-import { GuessCookie } from './guess-cookie';
+import { GuessCookie } from './cookie';
 import { StudentListData } from './student';
 import { StudentList } from './student-list';
 
-export type GameResult = Record<string, {
+export type GameResult = Record<
+  string,
+  {
     won?: boolean;
     lost?: boolean;
-  }>;
+  }
+>;
 
 export type GameAnswer = Record<string, string>;
 

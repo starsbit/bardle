@@ -1,6 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { GuessCookie } from '../models/guess-cookie';
+import { GuessCookie } from '../models/cookie';
 import { DEFAULT_STUDENT_LIST } from '../models/student-list';
 
 @Injectable({
@@ -46,5 +46,13 @@ export class LocalStorageService {
       return '';
     }
     return this.localStorage.getItem(name);
+  }
+
+  getChangeLogReadDate(): string {
+    return this.getLocalStorage('changeLogReadDate') || '';
+  }
+
+  setChangeLogReadDate(date: string): void {
+    this.setLocalStorage('changeLogReadDate', date);
   }
 }

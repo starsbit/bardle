@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { RULES } from '../constants/rules';
-import { GuessCookie } from '../models/guess-cookie';
+import { GuessCookie } from '../models/cookie';
 import { DEFAULT_STUDENT_LIST, StudentList } from '../models/student-list';
 import { getStudentListTestData } from '../utils/test-data-utils';
 import { GameService } from './game.service';

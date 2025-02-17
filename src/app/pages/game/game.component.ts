@@ -15,6 +15,7 @@ import { YesterdaysStudentComponent } from '../../components/yesterdays-student/
 import { ChangeLogsDialogComponent } from '../../dialogs/change-logs/change-logs.component';
 import { Student } from '../../models/student';
 import { GameService } from '../../services/game.service';
+import { LocalStorageService } from '../../services/local-storage.service';
 import { TranslateService } from '../../services/translate.service';
 import { AssetService } from '../../services/web/asset.service';
 
@@ -45,7 +46,8 @@ export class GameComponent implements OnInit, OnDestroy {
     private readonly gameService: GameService,
     private readonly translateService: TranslateService,
     private readonly dialog: MatDialog,
-    private readonly assetService: AssetService
+    private readonly assetService: AssetService,
+    private readonly localStorage: LocalStorageService
   ) {}
 
   ngOnInit() {
@@ -55,9 +57,10 @@ export class GameComponent implements OnInit, OnDestroy {
         this.handleResultChange();
         this.handleYesterdayStudentChange();
         this.handleTodaysStudentChange();
-        this.handleCookieChange();
       })
     );
+
+    this.handleChangeLogDisplay(this.localStorage.getChangeLogReadDate());
   }
 
   ngOnDestroy() {
@@ -111,8 +114,7 @@ export class GameComponent implements OnInit, OnDestroy {
     this.todaysStudent = students[studentId];
   }
 
-  private handleCookieChange() {
-    const lastChangeLogDate = this.gameService.getLastReadChangeLogDate();
+  private handleChangeLogDisplay(lastChangeLogDate?: string): void {
     if (this.changeLogs) {
       this.parseChangeLog(this.changeLogs, lastChangeLogDate);
       return;
@@ -130,7 +132,7 @@ export class GameComponent implements OnInit, OnDestroy {
       })
       .afterClosed()
       .subscribe(() => {
-        this.gameService.setLastReadChangeLogDate(
+        this.localStorage.setChangeLogReadDate(
           new Date().toISOString().slice(0, 10)
         );
       });

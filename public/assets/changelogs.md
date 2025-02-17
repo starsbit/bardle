@@ -1,5 +1,11 @@
 # Bardle
 
+## Version 2.4.1
+
+Date: 2025/02/17
+
+- Fixed bug where the change logs would show up every day
+
 ## Version 2.4.0
 
 Date: 2025/02/16
