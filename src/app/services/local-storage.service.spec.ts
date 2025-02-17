@@ -1,6 +1,6 @@
 import { PLATFORM_ID } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { GuessCookie } from '../models/guess-cookie';
+import { GuessCookie } from '../models/cookie';
 import { DEFAULT_STUDENT_LIST } from '../models/student-list';
 import { LocalStorageService } from './local-storage.service';
 

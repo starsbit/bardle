@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
 import { RULES } from '../constants/rules';
+import { GuessCookie } from '../models/cookie';
 import { GameAnswer, GameResult, GameState } from '../models/game';
-import { GuessCookie } from '../models/guess-cookie';
 import { StudentListData } from '../models/student';
 import { DEFAULT_STUDENT_LIST, StudentList } from '../models/student-list';
 import { getDayOfYear } from '../utils/date-utils';
@@ -111,27 +111,6 @@ export class GameService {
       return;
     }
     return this.gameState.guesses.guesses[this.gameState.activeList];
-  }
-
-  getLastReadChangeLogDate() {
-    if (this.gameState === null) {
-      return;
-    }
-    return this.gameState.guesses.changeLogReadDate;
-  }
-
-  setLastReadChangeLogDate(date: string) {
-    if (this.gameState === null || !this.isInitialized) {
-      return;
-    }
-    const guess = this.localStorage.getGuess();
-    guess.changeLogReadDate = date;
-    this.localStorage.setGuess(guess);
-    this.gameState = {
-      ...this.gameState,
-      guesses: guess,
-    };
-    this.gameStateChange.next(this.gameState);
   }
 
   getCurrentList() {

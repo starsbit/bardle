@@ -5,6 +5,7 @@ import { of } from 'rxjs';
 import { GameState } from '../../models/game';
 import { StudentList } from '../../models/student-list';
 import { GameService } from '../../services/game.service';
+import { LocalStorageService } from '../../services/local-storage.service';
 import { getStudentListTestData } from '../../utils/test-data-utils';
 import { GameComponent } from './game.component';
 
@@ -12,6 +13,7 @@ describe('GameComponent', () => {
   let component: GameComponent;
   let fixture: ComponentFixture<GameComponent>;
   let gameServiceSpy: jasmine.SpyObj<GameService>;
+  let localStorageSpy: jasmine.SpyObj<LocalStorageService>;
   const gameDate = getStudentListTestData();
   const studentOfTheDay = gameDate[StudentList.GLOBAL]['Aru'];
   const studentOfYesterday = gameDate[StudentList.GLOBAL]['Hina'];
@@ -27,6 +29,13 @@ describe('GameComponent', () => {
       'getLastReadChangeLogDate',
     ]);
 
+    localStorageSpy = jasmine.createSpyObj('LocalStorageService', [
+      'getGuess',
+      'setGuess',
+      'getChangeLogReadDate',
+      'setChangeLogReadDate',
+    ]);
+
     gameServiceSpy.$gameStateChange.and.returnValue(
       of({} as unknown as GameState)
     );
@@ -40,7 +49,7 @@ describe('GameComponent', () => {
     gameServiceSpy.getCurrentStudentData.and.returnValue(
       gameDate[StudentList.GLOBAL]
     );
-    gameServiceSpy.getLastReadChangeLogDate.and.returnValue(
+    localStorageSpy.getChangeLogReadDate.and.returnValue(
       new Date().toISOString().slice(0, 10)
     );
 
