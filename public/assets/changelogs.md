@@ -1,5 +1,11 @@
 # Bardle
 
+## Version 2.4.2
+
+Date: 2025/02/18
+
+- Improve the copy string for sharing the result
+
 ## Version 2.4.1
 
 Date: 2025/02/17
