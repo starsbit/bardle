@@ -51,7 +51,8 @@ export class CopyButtonComponent {
     });
     const daysSinceLaunch = timeActive();
 
-    let scoreReport = `Daily Bardle #${daysSinceLaunch} ${date}.\n`;
+    let scoreReport = `Daily Blue Archive Wordle #${daysSinceLaunch} ${date} on https://bardle.net.\n`;
+    scoreReport += `Student list: ${this.gameService.getCurrentList()} students\n`;
     scoreReport += `I guessed the student in ${attempts} attempt${
       attempts > 1 ? 's' : ''
     } and ${won ? 'won' : 'lost'}\n\n`;
