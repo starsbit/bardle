@@ -1,6 +1,6 @@
 # Bardle
 
-A [Blue Archive](https://bluearchive.nexon.com/) [Wordle](https://en.wikipedia.org/wiki/Wordle) game variant. Guess the hidden student in 6 tries. A new student to guess is available each day.
+A [Blue Archive](https://bluearchive.nexon.com/) [Wordle](https://en.wikipedia.org/wiki/Wordle) game variant. Guess the hidden student in 5 tries. A new student to guess is available each day.
 
 The game is hosted at [bardle.net](https://bardle.net/).
 
