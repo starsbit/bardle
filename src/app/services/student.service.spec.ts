@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { Student, StudentData, StudentListData } from '../models/student';
 import { StudentList } from '../models/student-list';
+import { getCurrentUTCDateNoTime } from '../utils/date-utils';
 import { hashCode } from '../utils/hash-utils';
 import { StudentService } from './student.service';
 import { StudentClientService } from './web/student-client.service';
@@ -41,7 +42,7 @@ describe('StudentService', () => {
       };
       const yesterday = new Date();
       yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-      const formattedDate = `${String(yesterday.getUTCDate()).padStart(
+      const formattedDate = `${String(yesterday.getDate()).padStart(
         2,
         '0'
       )}.${String(yesterday.getUTCMonth() + 1).padStart(
@@ -62,8 +63,8 @@ describe('StudentService', () => {
         '1': { id: '1', fullName: 'Student 1' } as Student,
         '2': { id: '2', fullName: 'Student 2' } as Student,
       };
-      const today = new Date();
-      const formattedDate = `${String(today.getUTCDate()).padStart(
+      const today = getCurrentUTCDateNoTime();
+      const formattedDate = `${String(today.getDate()).padStart(
         2,
         '0'
       )}.${String(today.getUTCMonth() + 1).padStart(

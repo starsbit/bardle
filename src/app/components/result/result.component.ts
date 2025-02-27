@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CountdownConfig, CountdownModule } from 'ngx-countdown';
-import { timeActive } from '../../utils/date-utils';
+import { getCurrentUTCDate, timeActive } from '../../utils/date-utils';
 import { CopyButtonComponent } from '../copy-button/copy-button.component';
 
 @Component({
@@ -23,9 +23,8 @@ export class ResultComponent {
 
   private getSecondsUntilEndOfDay(): number {
     const now = new Date();
-    const endOfDay = new Date(
-      Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1)
-    );
+    const endOfDay = getCurrentUTCDate();
+    endOfDay.setUTCHours(23, 59, 59, 999);
     const diff = endOfDay.getTime() - now.getTime();
     return Math.floor(diff / 1000);
   }
