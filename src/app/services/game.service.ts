@@ -5,7 +5,7 @@ import { GuessCookie } from '../models/cookie';
 import { GameAnswer, GameResult, GameState } from '../models/game';
 import { StudentListData } from '../models/student';
 import { DEFAULT_STUDENT_LIST, StudentList } from '../models/student-list';
-import { getCurrentUTCDate, getDayOfYear } from '../utils/date-utils';
+import { getCurrentUTCDateNoTime, getDayOfYear } from '../utils/date-utils';
 import { LocalStorageService } from './local-storage.service';
 import { StudentService } from './student.service';
 
@@ -15,7 +15,7 @@ import { StudentService } from './student.service';
 export class GameService {
   private gameState: GameState | null = null;
   private isInitialized = false;
-  private readonly doy = getDayOfYear(getCurrentUTCDate());
+  private readonly doy = getDayOfYear(getCurrentUTCDateNoTime());
   private readonly gameStateChange = new ReplaySubject<GameState>(1);
 
   constructor(

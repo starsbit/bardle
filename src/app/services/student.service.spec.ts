@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { Student, StudentData, StudentListData } from '../models/student';
 import { StudentList } from '../models/student-list';
-import { getCurrentUTCDate } from '../utils/date-utils';
+import { getCurrentUTCDateNoTime } from '../utils/date-utils';
 import { hashCode } from '../utils/hash-utils';
 import { StudentService } from './student.service';
 import { StudentClientService } from './web/student-client.service';
@@ -42,7 +42,7 @@ describe('StudentService', () => {
       };
       const yesterday = new Date();
       yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-      const formattedDate = `${String(yesterday.getUTCDate()).padStart(
+      const formattedDate = `${String(yesterday.getDate()).padStart(
         2,
         '0'
       )}.${String(yesterday.getUTCMonth() + 1).padStart(
@@ -63,10 +63,14 @@ describe('StudentService', () => {
         '1': { id: '1', fullName: 'Student 1' } as Student,
         '2': { id: '2', fullName: 'Student 2' } as Student,
       };
-      const today = getCurrentUTCDate();
-      const formattedDate = `${String(today).padStart(2, '0')}.${String(
-        today.getUTCMonth() + 1
-      ).padStart(2, '0')}.${today.getUTCFullYear()}`;
+      const today = getCurrentUTCDateNoTime();
+      const formattedDate = `${String(today.getDate()).padStart(
+        2,
+        '0'
+      )}.${String(today.getUTCMonth() + 1).padStart(
+        2,
+        '0'
+      )}.${today.getUTCFullYear()}`;
       const index = hashCode(formattedDate) % Object.keys(students).length;
       const keys: string[] = Object.keys(students);
       const expectedStudent = students[keys[index]];

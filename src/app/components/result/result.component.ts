@@ -23,7 +23,8 @@ export class ResultComponent {
 
   private getSecondsUntilEndOfDay(): number {
     const now = new Date();
-    const endOfDay = new Date(getCurrentUTCDate());
+    const endOfDay = getCurrentUTCDate();
+    endOfDay.setUTCHours(23, 59, 59, 999);
     const diff = endOfDay.getTime() - now.getTime();
     return Math.floor(diff / 1000);
   }
