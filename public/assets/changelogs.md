@@ -1,5 +1,11 @@
 # Bardle
 
+## Version 2.4.3
+
+Date: 2025/02/27
+
+- Fixed a bug where the UTC timezone was not used everywhere for student checking
+
 ## Version 2.4.2
 
 Date: 2025/02/18
