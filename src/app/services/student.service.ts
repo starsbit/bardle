@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { forkJoin, map, of, tap } from 'rxjs';
 import { Student, StudentData, StudentListData } from '../models/student';
 import { StudentList } from '../models/student-list';
-import { getCurrentUTCDate } from '../utils/date-utils';
 import { hashCode } from '../utils/hash-utils';
 import { StudentClientService } from './web/student-client.service';
 
@@ -15,11 +14,15 @@ export class StudentService {
   constructor(private readonly studentClientService: StudentClientService) {}
 
   getYesterdaysStudent(students: StudentData): Student {
-    const yesterday = getCurrentUTCDate();
+    const yesterday = new Date();
     yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-    const formattedDate = `${String(yesterday).padStart(2, '0')}.${String(
-      yesterday.getUTCMonth() + 1
-    ).padStart(2, '0')}.${yesterday.getUTCFullYear()}`;
+    const formattedDate = `${String(yesterday.getUTCDate()).padStart(
+      2,
+      '0'
+    )}.${String(yesterday.getUTCMonth() + 1).padStart(
+      2,
+      '0'
+    )}.${yesterday.getUTCFullYear()}`;
     return this.handleDisabledCharacters(
       this.getStudent(students, formattedDate),
       students
@@ -28,9 +31,13 @@ export class StudentService {
 
   getTodaysStudent(students: StudentData): Student {
     const today = new Date();
-    const formattedDate = `${String(today).padStart(2, '0')}.${String(
-      today.getUTCMonth() + 1
-    ).padStart(2, '0')}.${today.getUTCFullYear()}`;
+    const formattedDate = `${String(today.getUTCDate()).padStart(
+      2,
+      '0'
+    )}.${String(today.getUTCMonth() + 1).padStart(
+      2,
+      '0'
+    )}.${today.getUTCFullYear()}`;
     return this.handleDisabledCharacters(
       this.getStudent(students, formattedDate),
       students
