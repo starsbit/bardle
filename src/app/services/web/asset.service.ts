@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Student } from '../../models/student';
-import { getCurrentUTCDate } from '../../utils/date-utils';
 import { hashCode } from '../../utils/hash-utils';
 import { sanitizeSchool } from '../../utils/student-utils';
 
@@ -74,10 +73,14 @@ export class AssetService {
   }
 
   pickBackgroundOfTheDayLocation() {
-    const today = getCurrentUTCDate();
-    const formattedDate = `${String(today).padStart(2, '0')}.${String(
-      today.getUTCMonth() + 1
-    ).padStart(2, '0')}.${today.getUTCFullYear()}`;
+    const today = new Date();
+    const formattedDate = `${String(today.getUTCDate()).padStart(
+      2,
+      '0'
+    )}.${String(today.getUTCMonth() + 1).padStart(
+      2,
+      '0'
+    )}.${today.getUTCFullYear()}`;
     return this.getBackgroundLocation(hashCode(formattedDate));
   }
 }
