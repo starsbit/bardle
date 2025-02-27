@@ -4,6 +4,7 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { Student } from '../../models/student';
+import { getCurrentUTCDate } from '../../utils/date-utils';
 import { hashCode } from '../../utils/hash-utils';
 import { AssetService } from './asset.service';
 
@@ -96,14 +97,10 @@ describe('AssetService', () => {
   });
 
   it('should return correct background of the day location', () => {
-    const today = new Date();
-    const formattedDate = `${String(today.getUTCDate()).padStart(
-      2,
-      '0'
-    )}.${String(today.getUTCMonth() + 1).padStart(
-      2,
-      '0'
-    )}.${today.getUTCFullYear()}`;
+    const today = getCurrentUTCDate();
+    const formattedDate = `${String(today).padStart(2, '0')}.${String(
+      today.getUTCMonth() + 1
+    ).padStart(2, '0')}.${today.getUTCFullYear()}`;
     const expectedIndex = hashCode(formattedDate) % 48;
     const expectedBackground =
       expectedIndex < 10
