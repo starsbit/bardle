@@ -1,0 +1,5 @@
+.result-container {
+  > * + * {
+    margin-left: 0.25rem;
+  }
+}
