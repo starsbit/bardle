@@ -225,8 +225,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="SolutionLabel" datatype="html">
-        <source> The searched student was <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;text-xl incorrect-text&quot;&gt;"/><x id="INTERPOLATION" equiv-text="{{ searchedStudent }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
-        <target> 被搜查的學生是  <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;text-xl incorrect-text&quot;&gt;"/><x id="INTERPOLATION" equiv-text="{{ searchedStudent }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <source> The searched student was </source>
+        <target> 被搜查的學生是  </target>
         <note priority="1" from="description">Solution label</note>
         <note priority="1" from="meaning">The searched student was</note>
         <context-group purpose="location">
@@ -309,8 +309,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="YesterdaysStudentLabel" datatype="html">
-        <source> Yesterdays student was <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;text-xl incorrect-text&quot;&gt;"/><x id="INTERPOLATION" equiv-text="{{ student.fullName }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span class=&quot;text-xl text-white&quot;&gt;"/> #<x id="INTERPOLATION_1" equiv-text="{{ numberOfDaysActive }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
-        <target> 昨天的學生是<x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;text-xl incorrect-text&quot;&gt;"/><x id="INTERPOLATION" equiv-text="{{ student.fullName }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN_1" ctype="x-span_1" equiv-text="&lt;span class=&quot;text-xl text-white&quot;&gt;"/> #<x id="INTERPOLATION_1" equiv-text="{{ numberOfDaysActive }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <source> Yesterdays student was </source>
+        <target> 昨天的學生是 </target>
         <note priority="1" from="description">Yesterdays student
           label</note>
         <note priority="1" from="meaning">Yesterdays student was</note>

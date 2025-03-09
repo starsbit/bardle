@@ -1,5 +1,11 @@
 # Bardle
 
+## Version 2.5.0
+
+Date: 2025/03/09
+
+- Added a new feature to show the students icons in the result.
+
 ## Version 2.4.3
 
 Date: 2025/02/27

@@ -1,18 +1,22 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { CountdownConfig, CountdownModule } from 'ngx-countdown';
+import { Student } from '../../models/student';
+import { AssetService } from '../../services/web/asset.service';
 import { getCurrentUTCDate, timeActive } from '../../utils/date-utils';
 import { CopyButtonComponent } from '../copy-button/copy-button.component';
 
 @Component({
   selector: 'ba-result',
-  imports: [CountdownModule, CopyButtonComponent],
+  imports: [CountdownModule, CopyButtonComponent, NgOptimizedImage],
   templateUrl: './result.component.html',
   styleUrl: './result.component.scss',
 })
 export class ResultComponent {
   @Input() won = false;
   @Input() lost = false;
-  @Input() searchedStudent = '';
+  @Input() searchedStudent: Student | null = null;
+  @Input() searchedStudentName = '';
   daysActive = timeActive();
 
   countdownConfig: CountdownConfig = {
@@ -20,6 +24,8 @@ export class ResultComponent {
     leftTime: this.getSecondsUntilEndOfDay(),
     format: 'HH:mm:ss',
   };
+
+  constructor(public readonly assetService: AssetService) {}
 
   private getSecondsUntilEndOfDay(): number {
     const now = new Date();

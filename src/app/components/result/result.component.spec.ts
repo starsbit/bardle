@@ -3,11 +3,14 @@ import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { CountdownModule } from 'ngx-countdown';
+import { StudentList } from '../../models/student-list';
+import { getStudentListTestData } from '../../utils/test-data-utils';
 import { ResultComponent } from './result.component';
 
 describe('ResultComponent', () => {
   let component: ResultComponent;
   let fixture: ComponentFixture<ResultComponent>;
+  const searchedStudent = getStudentListTestData()[StudentList.GLOBAL]['Aru'];
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -17,6 +20,9 @@ describe('ResultComponent', () => {
 
     fixture = TestBed.createComponent(ResultComponent);
     component = fixture.componentInstance;
+
+    component.searchedStudent = searchedStudent;
+    component.searchedStudentName = searchedStudent.fullName;
     fixture.detectChanges();
   });
 
@@ -34,12 +40,11 @@ describe('ResultComponent', () => {
 
   it('should display the searched student name when won or lost is true', () => {
     component.won = true;
-    component.searchedStudent = 'John Doe';
     fixture.detectChanges();
 
     const studentElement = fixture.debugElement.query(By.css('.incorrect-text'))
       .nativeElement.textContent;
-    expect(studentElement).toContain('John Doe');
+    expect(studentElement).toContain(searchedStudent.fullName);
   });
 
   it('should show the copy button when won or lost is true', () => {

@@ -1,3 +1,5 @@
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Student } from '../../models/student';
@@ -11,7 +13,9 @@ describe('YesterdaysStudentComponent', () => {
   let fixture: ComponentFixture<YesterdaysStudentComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({}).compileComponents();
+    TestBed.configureTestingModule({
+      providers: [provideHttpClient(), provideHttpClientTesting()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(YesterdaysStudentComponent);
     component = fixture.componentInstance;
@@ -33,7 +37,7 @@ describe('YesterdaysStudentComponent', () => {
     expect(studentText).toContain(mockStudent.fullName);
 
     const daysActiveText = fixture.debugElement.query(
-      By.css('.text-xl.text-white')
+      By.css('.text-xl.text-white.days-active')
     ).nativeElement.textContent;
     expect(daysActiveText).toContain(`#${timeActive() - 1}`);
   });
