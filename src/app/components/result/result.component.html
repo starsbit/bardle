@@ -14,16 +14,28 @@
         <countdown [config]="countdownConfig"></countdown>
       </p>
       @if (won || lost) {
-      <div class="flex items-center justify-center">
+      <div class="flex items-center justify-center flex-col">
         <p
           class="text-xl text-white"
           i18n="The searched student was|Solution label@@SolutionLabel"
         >
           The searched student was
-          <span class="text-xl incorrect-text">{{ searchedStudent }}</span>
-          #{{ daysActive }}
         </p>
-        <ba-copy-button></ba-copy-button>
+        <div class="flex flex-row items-center space-x-1">
+          <img
+            [ngSrc]="
+              searchedStudent
+                ? this.assetService.getStudentIconLocation(searchedStudent)
+                : ''
+            "
+            width="40"
+            height="40"
+            [alt]="searchedStudentName"
+          />
+          <span class="text-xl incorrect-text">{{ searchedStudentName }}</span>
+          <span class="text-xl text-white">#{{ daysActive }}</span>
+          <ba-copy-button></ba-copy-button>
+        </div>
       </div>
       }
     </div>

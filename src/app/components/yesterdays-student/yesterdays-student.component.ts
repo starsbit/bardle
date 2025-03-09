@@ -1,11 +1,13 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Student } from '../../models/student';
 import { TranslateService } from '../../services/translate.service';
+import { AssetService } from '../../services/web/asset.service';
 import { timeActive } from '../../utils/date-utils';
 
 @Component({
   selector: 'ba-yesterdays-student',
-  imports: [],
+  imports: [NgOptimizedImage],
   templateUrl: './yesterdays-student.component.html',
   styleUrl: './yesterdays-student.component.scss',
 })
@@ -14,7 +16,10 @@ export class YesterdaysStudentComponent {
   @Input() display = false;
   numberOfDaysActive = timeActive() - 1;
 
-  constructor(private readonly translateService: TranslateService) {}
+  constructor(
+    public readonly assetService: AssetService,
+    private readonly translateService: TranslateService
+  ) {}
 
   get studentName(): string {
     if (this.translateService.getCurrentLang().code === 'ja') {
