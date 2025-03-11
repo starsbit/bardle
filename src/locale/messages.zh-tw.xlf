@@ -298,15 +298,25 @@
           <context context-type="linenumber">49,54</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="Tutorial" datatype="html">
-        <source> Press the <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;material-icons&quot;&gt;"/>content_copy<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> to copy your score! </source>
-        <target> 按<x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;material-icons&quot;&gt;"/>content_copy<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>複製您的分數！ </target>
+      <trans-unit id="TutorialFifth" datatype="html">
+        <source> Press <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;material-icons&quot;&gt;"/>content_copy<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> to copy your score! </source>
+        <target> 按 <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;material-icons&quot;&gt;"/>content_copy<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>复制您的分数！ </target>
         <note priority="1" from="description">Fifth line of tutorial</note>
         <note priority="1" from="meaning">Press the to copy your score!</note>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/tutorial/tutorial.component.html</context>
           <context context-type="linenumber">56,58</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="TutorialSixth" datatype="html">
+        <source> Press <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;material-icons&quot;&gt;"/>refresh<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> to guess a new student! </source>
+        <target> 按 <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;material-icons&quot;&gt;"/>refresh<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> 猜一个新学生！ </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/tutorial/tutorial.component.html</context>
+          <context context-type="linenumber">66,68</context>
+        </context-group>
+        <note priority="1" from="description">Sixth line of tutorial</note>
+        <note priority="1" from="meaning">Press to guess a new student</note>
       </trans-unit>
       <trans-unit id="YesterdaysStudentLabel" datatype="html">
         <source> Yesterdays student was </source>
