@@ -3,8 +3,11 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  Input,
+  OnChanges,
   OnDestroy,
   OnInit,
+  SimpleChanges,
 } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -28,7 +31,9 @@ import { GameService } from '../../services/game.service';
   styleUrls: ['./student-list-selection.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StudentListSelectionComponent implements OnInit, OnDestroy {
+export class StudentListSelectionComponent implements OnInit, OnDestroy, OnChanges
+{
+  @Input() disabled = false;
   studentLists = Object.values(StudentList);
   selectedStudentList = new FormControl<StudentList | null>(null);
 
@@ -63,6 +68,16 @@ export class StudentListSelectionComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscriptions.unsubscribe();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['disabled']) {
+      if (changes['disabled'].currentValue) {
+        this.selectedStudentList.disable();
+      } else {
+        this.selectedStudentList.enable();
+      }
+    }
   }
 
   onStudentListChange(studentList: StudentList) {
