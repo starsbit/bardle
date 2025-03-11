@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { GridComponent } from '../../components/grid/grid.component';
 import { GuessInputComponent } from '../../components/guess-input/guess-input.component';
+import { InfinteModeComponent } from '../../components/infinte-mode/infinte-mode.component';
 import { ResultComponent } from '../../components/result/result.component';
 import { StudentListSelectionComponent } from '../../components/student-list-selection/student-list-selection.component';
 import { TutorialComponent } from '../../components/tutorial/tutorial.component';
@@ -28,6 +29,7 @@ import { AssetService } from '../../services/web/asset.service';
     TutorialComponent,
     YesterdaysStudentComponent,
     ResultComponent,
+    InfinteModeComponent,
   ],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss',
@@ -39,6 +41,7 @@ export class GameComponent implements OnInit, OnDestroy {
   public won = false;
   public lost = false;
   public gameStarted = false;
+  public infiniteMode = false;
   public yesterdayStudent: Student | null = null;
   public todaysStudent: Student | null = null;
 
@@ -72,6 +75,15 @@ export class GameComponent implements OnInit, OnDestroy {
       return this.todaysStudent ? this.todaysStudent.nativeName : '...';
     }
     return this.todaysStudent ? this.todaysStudent.fullName : '...';
+  }
+
+  onRefresh() {
+    this.gameService.refresh();
+  }
+
+  onInfiniteModeChange(event: boolean) {
+    this.infiniteMode = event;
+    this.gameService.setInfiniteMode(this.infiniteMode);
   }
 
   private handleGuessChange() {

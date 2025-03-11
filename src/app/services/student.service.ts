@@ -41,6 +41,10 @@ export class StudentService {
     );
   }
 
+  getRandomStudent(students: StudentData): Student {
+    return this.getStudent(students, String(Math.random()));
+  }
+
   getStudent(students: StudentData, seed: string): Student {
     const index = hashCode(seed) % Object.keys(students).length;
     const keys: string[] = Object.keys(students);
