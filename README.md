@@ -38,3 +38,9 @@ The `character_info_gl.json` contains estimated release dates since no official 
 ### Anomalies
 
 Some characters may be called differently in SchaleDB and the wiki. The script will attempt to match the names but some characters may not be matched correctly. These differences need to be maintained manually in `schaledb_utils.py`.
+
+## Gameplay
+
+The game support two modes: JP and GL. The mode can be changed by changing the selection in interface. The game will remember the last selected mode.
+
+If you finish a game you can enter the _infinite_ mode. Here you can guess as many students as you want. The game will __not__ remember your progress.
