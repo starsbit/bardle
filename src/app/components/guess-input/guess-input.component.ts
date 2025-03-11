@@ -59,6 +59,8 @@ export class GuessInputComponent implements OnInit, OnDestroy {
         } else {
           this.students = [];
         }
+        // reset the filtered options
+        this.inputReset();
       })
     );
   }

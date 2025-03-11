@@ -4,6 +4,7 @@
     <div
       class="w-full h-fit p-2 border ba-text-box-bg border-gray-300 rounded bg-black text-center"
     >
+      @if (displayNextStudentCountdown) {
       <p
         class="text-xl text-white"
         i18n="
@@ -13,7 +14,7 @@
         Next student in
         <countdown [config]="countdownConfig"></countdown>
       </p>
-      @if (won || lost) {
+      } @if (won || lost) {
       <div class="flex items-center justify-center flex-col">
         <p
           class="text-xl text-white"
@@ -34,7 +35,13 @@
           />
           <span class="text-xl incorrect-text">{{ searchedStudentName }}</span>
           <span class="text-xl text-white">#{{ daysActive }}</span>
+          @if (displayCopyButton) {
           <ba-copy-button></ba-copy-button>
+          } @if (displayRefreshButton) {
+          <button class="refresh-button" (click)="onRefresh()">
+            <mat-icon class="refresh-button-icon">refresh</mat-icon>
+          </button>
+          }
         </div>
       </div>
       }

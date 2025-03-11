@@ -15,6 +15,7 @@ import { StudentService } from './student.service';
 export class GameService {
   private gameState: GameState | null = null;
   private isInitialized = false;
+  private infiniteMode = false;
   private readonly doy = getDayOfYear(getCurrentUTCDateNoTime());
   private readonly gameStateChange = new ReplaySubject<GameState>(1);
 
@@ -33,11 +34,17 @@ export class GameService {
     return this.gameStateChange.asObservable();
   }
 
+  refresh() {
+    this.initializeGameState();
+  }
+
   setGuess(guesses: GuessCookie) {
     if (this.gameState === null || !this.isInitialized) {
       return;
     }
-    this.localStorage.setGuess(guesses);
+    if (!this.infiniteMode) {
+      this.localStorage.setGuess(guesses);
+    }
     this.gameState = {
       ...this.gameState,
       guesses: guesses,
@@ -69,6 +76,11 @@ export class GameService {
       result,
     };
     this.gameStateChange.next(this.gameState);
+  }
+
+  setInfiniteMode(infiniteMode: boolean) {
+    this.infiniteMode = infiniteMode;
+    this.initializeGameState();
   }
 
   addGuess(guess: string) {
@@ -155,8 +167,15 @@ export class GameService {
     return this.gameState.answer[this.gameState.activeList];
   }
 
+  getInfiniteMode() {
+    return this.infiniteMode;
+  }
+
   private initializeGameState() {
-    const guesses = this.createInitialGuess();
+    const populatedGuess = this.createInitialGuess();
+    const guesses = this.getInfiniteMode()
+      ? this.createEmptyGuess()
+      : populatedGuess;
     const activeList = this.createInitialListSelection();
 
     this.createStudentData().subscribe((students) => {
@@ -177,20 +196,25 @@ export class GameService {
   }
 
   private createInitialGuess() {
-    let guess = this.localStorage.getGuess();
+    const guess = this.localStorage.getGuess();
 
     if (!guess || guess.doy !== this.doy) {
-      guess = {
-        guesses: {
-          japan: [],
-          global: [],
-        },
-        doy: this.doy,
-        lastList: guess?.lastList ?? this.createInitialListSelection(),
-      };
-      this.localStorage.setGuess(guess);
+      const emptyGuess = this.createEmptyGuess(guess.lastList);
+      this.localStorage.setGuess(emptyGuess);
+      return emptyGuess;
     }
     return guess;
+  }
+
+  private createEmptyGuess(lastList?: StudentList) {
+    return {
+      guesses: {
+        japan: [],
+        global: [],
+      },
+      doy: this.doy,
+      lastList: lastList ?? this.createInitialListSelection(),
+    };
   }
 
   private createInitialGameResult(guess: GuessCookie, gameAnswer: GameAnswer) {
@@ -208,20 +232,32 @@ export class GameService {
     }
     let guesses: string[] = guess.guesses[StudentList.JAPAN];
     let lost = guesses.length >= RULES.MAX_GUESSES;
+    let won = guesses.includes(gameAnswer[StudentList.JAPAN]);
     gameResult[StudentList.JAPAN] = {
-      won: guesses.includes(gameAnswer[StudentList.JAPAN]),
+      won: won,
       lost: lost,
     };
     guesses = guess.guesses[StudentList.GLOBAL];
     lost = guesses.length >= RULES.MAX_GUESSES;
+    won = guesses.includes(gameAnswer[StudentList.GLOBAL]);
     gameResult[StudentList.GLOBAL] = {
-      won: guesses.includes(gameAnswer[StudentList.GLOBAL]),
+      won: won,
       lost: lost,
     };
     return gameResult;
   }
 
   private createInitialGameAnswer(studentData: StudentListData) {
+    if (this.infiniteMode) {
+      const todaysStudents: GameAnswer = {};
+      todaysStudents[StudentList.JAPAN] = this.studentService.getRandomStudent(
+        studentData[StudentList.JAPAN]
+      ).id;
+      todaysStudents[StudentList.GLOBAL] = this.studentService.getRandomStudent(
+        studentData[StudentList.GLOBAL]
+      ).id;
+      return todaysStudents;
+    }
     const todaysStudents: GameAnswer = {};
     todaysStudents[StudentList.JAPAN] = this.studentService.getTodaysStudent(
       studentData[StudentList.JAPAN]

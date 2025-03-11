@@ -49,12 +49,22 @@
         Type any student's name to begin.
       </p>
 
+      @if (displayCopyButton) {
       <p
         class="text-xl text-white"
-        i18n="Press the to copy your score!|Fifth line of tutorial@@Tutorial"
+        i18n="Press to copy your score!|Fifth line of tutorial@@TutorialFifth"
       >
-        Press the <i class="material-icons">content_copy</i> to copy your score!
+        Press <i class="material-icons">content_copy</i> to copy your score!
       </p>
+      } @if (displayRefreshButton) {
+      <p
+        class="text-xl text-white"
+        i18n="
+          Press to guess a new student|Sixth line of tutorial@@TutorialSixth"
+      >
+        Press <i class="material-icons">refresh</i> to guess a new student!
+      </p>
+      }
     </div>
   </div>
 </section>

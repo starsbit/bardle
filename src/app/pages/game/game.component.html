@@ -1,19 +1,33 @@
-<div>
-  <ba-student-list-selection></ba-student-list-selection>
+<div class="pt-12">
+  <ba-student-list-selection
+    [disabled]="infiniteMode"
+  ></ba-student-list-selection>
   <ba-guess-input></ba-guess-input>
   <ba-result
     [lost]="lost"
     [won]="won"
+    [displayCopyButton]="!infiniteMode"
+    [displayNextStudentCountdown]="!infiniteMode"
+    [displayRefreshButton]="infiniteMode"
     [searchedStudent]="todaysStudent"
     [searchedStudentName]="todaysStudentName"
+    (refresh)="onRefresh()"
   ></ba-result>
   @if (gameStarted) {
   <ba-grid></ba-grid>
   } @else {
-  <ba-tutorial></ba-tutorial>
-  }
+  <ba-tutorial
+    [displayCopyButton]="!infiniteMode"
+    [displayRefreshButton]="infiniteMode"
+  ></ba-tutorial>
+  } @if ((!gameStarted || won || lost) && !infiniteMode) {
   <ba-yesterdays-student
     [student]="yesterdayStudent"
-    [display]="!gameStarted || won || lost"
+    [display]="true"
   ></ba-yesterdays-student>
+  } @if (won || lost || infiniteMode) {
+  <ba-infinte-mode
+    (infiniteMode)="onInfiniteModeChange($event)"
+  ></ba-infinte-mode>
+  }
 </div>

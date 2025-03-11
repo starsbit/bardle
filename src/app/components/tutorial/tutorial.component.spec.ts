@@ -32,7 +32,18 @@ describe('TutorialComponent', () => {
 
     expect(texts).toContain("Guess today's Blue Archive student!");
     expect(texts).toContain("Type any student's name to begin.");
-    expect(texts).toContain('Press the content_copy to copy your score!');
+    expect(texts).toContain('Press content_copy to copy your score!');
+  });
+
+  it('should display the refresh button if displayed', () => {
+    component.displayRefreshButton = true;
+    fixture.detectChanges();
+
+    const textElements = fixture.debugElement.queryAll(
+      By.css('p.text-xl.text-white')
+    );
+    const texts = textElements.map((el) => el.nativeElement.textContent.trim());
+    expect(texts).toContain('Press refresh to guess a new student!');
   });
 
   it('should display color explanations', () => {

@@ -1,5 +1,11 @@
 # Bardle
 
+## Version 2.6.0
+
+Date: 2025/03/12
+
+- Added infinite mode
+
 ## Version 2.5.0
 
 Date: 2025/03/09
