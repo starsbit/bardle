@@ -4238,5 +4238,25 @@
     "image": "JuriPart-Timer.webp",
     "birthday": "2000/10/20",
     "disabled": false
+  },
+  "Izumi_(New_Year)": {
+    "id": "Izumi_(New_Year)",
+    "fullName": "Shishid\u014d Izumi (New Year)",
+    "shortName": "Izumi (New Year)",
+    "nativeName": "\u7345\u5b50\u5802 \u30a4\u30ba\u30df",
+    "school": "Gehenna",
+    "damageType": "Explosive",
+    "armorType": "Light",
+    "role": "Support",
+    "combatClass": "Special",
+    "exSkillCost": 5,
+    "positioning": "Back",
+    "height": 161,
+    "outfit": "New Year",
+    "releaseDate": "2025/03/19",
+    "weaponType": "MG",
+    "image": "IzumiNewYear.webp",
+    "birthday": "2000/05/11",
+    "disabled": false
   }
 }
