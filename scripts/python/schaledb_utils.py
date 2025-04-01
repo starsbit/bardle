@@ -33,7 +33,8 @@ INCONSISTEN_STUDENT_LOOKUP = [
     ("Hasumi (Sportswear)", "Hasumi (Track)"),
     ("Haruna (Sportswear)", "Haruna (Track)"),
     ("Hoshino (Battle)", "Hoshino (Armed)"),
-    ("Juri (Part-Timer)", "Juri (Part-time Job)")
+    ("Juri (Part-Timer)", "Juri (Part-time Job)"),
+    ("Sumire (Part-Timer)", "Sumire (Part-time Job)"),
 ]
 
 def translate_wiki_to_schale(wiki_name):
