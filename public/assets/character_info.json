@@ -4298,5 +4298,25 @@
     "image": "SumirePart-Timer.webp",
     "birthday": "2000/08/20",
     "disabled": false
+  },
+  "Saori_(Dress)": {
+    "id": "Saori_(Dress)",
+    "fullName": "Jomae Saori (Dress)",
+    "shortName": "Saori (Dress)",
+    "nativeName": "\u9320\u524d \u30b5\u30aa\u30ea",
+    "school": "Arius",
+    "damageType": "Sonic",
+    "armorType": "Light",
+    "role": "Attacker",
+    "combatClass": "Striker",
+    "exSkillCost": 4,
+    "positioning": "Middle",
+    "height": 167,
+    "outfit": "Dress",
+    "releaseDate": "2025/04/09",
+    "weaponType": "AR",
+    "image": "SaoriDress.webp",
+    "birthday": "2000/09/03",
+    "disabled": false
   }
 }
