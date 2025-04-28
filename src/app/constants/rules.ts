@@ -14,4 +14,5 @@ export const NON_EVENT_SCHOOLS = [
   'Shanhaijing',
   'Trinity',
   'Valkyrie',
+  'Highlander',
 ];
