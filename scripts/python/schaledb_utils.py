@@ -35,9 +35,9 @@ INCONSISTEN_STUDENT_LOOKUP = [
     ("Hoshino (Battle)", "Hoshino (Armed)"),
     ("Juri (Part-Timer)", "Juri (Part-time Job)"),
     ("Sumire (Part-Timer)", "Sumire (Part-time Job)"),
-    ("Mari (Pop Idol)", "Mari (Idol)"),
-    ("Sakurako (Pop Idol)", "Sakurako (Idol)"),
-    ("Mine (Pop Idol)", "Mine (Idol)"),
+    ("Mari (Idol)", "Mari (Pop Idol)"),
+    ("Sakurako (Idol)", "Sakurako (Pop Idol)"),
+    ("Mine (Idol)", "Mine (Pop Idol)"),
 ]
 
 def translate_wiki_to_schale(wiki_name):
