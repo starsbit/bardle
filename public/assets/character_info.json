@@ -4378,5 +4378,25 @@
     "image": "Aoba.webp",
     "birthday": "2000/07/19",
     "disabled": false
+  },
+  "Pina_(Guide)": {
+    "id": "Pina_(Guide)",
+    "fullName": "Asahina Pina (Guide)",
+    "shortName": "Pina (Guide)",
+    "nativeName": "\u671d\u6bd4\u5948 \u30d5\u30a3\u30fc\u30ca",
+    "school": "Hyakkiyako",
+    "damageType": "Explosive",
+    "armorType": "Heavy",
+    "role": "Attacker",
+    "combatClass": "Special",
+    "exSkillCost": 6,
+    "positioning": "Back",
+    "height": 165,
+    "outfit": "Guide",
+    "releaseDate": "2025/05/14",
+    "weaponType": "MG",
+    "image": "PinaGuide.webp",
+    "birthday": "2000/11/03",
+    "disabled": false
   }
 }
