@@ -4438,5 +4438,25 @@
     "image": "Niya.webp",
     "birthday": "2000/01/01",
     "disabled": false
+  },
+  "Natsu_(Band)": {
+    "id": "Natsu_(Band)",
+    "fullName": "Yutori Natsu (Band)",
+    "shortName": "Natsu (Band)",
+    "nativeName": "\u67da\u9ce5 \u30ca\u30c4",
+    "school": "Trinity",
+    "damageType": "Explosive",
+    "armorType": "Special",
+    "role": "Healer",
+    "combatClass": "Striker",
+    "exSkillCost": 4,
+    "positioning": "Front",
+    "height": 152,
+    "outfit": "Band",
+    "releaseDate": "2025/06/04",
+    "weaponType": "SMG",
+    "image": "NatsuBand.webp",
+    "birthday": "2000/12/04",
+    "disabled": false
   }
 }
