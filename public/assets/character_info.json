@@ -4589,7 +4589,7 @@
     "armorType": "Elastic",
     "role": "Support",
     "combatClass": "Special",
-    "exSkillCost": null,
+    "exSkillCost": 3,
     "positioning": "Back",
     "height": 160,
     "outfit": "Swimsuit",
