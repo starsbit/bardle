@@ -24,7 +24,7 @@ describe('SocialLinksComponent', () => {
   it('should contain social media links', () => {
     const links = fixture.debugElement.queryAll(By.css('a'));
 
-    expect(links.length).toBe(1);
+    expect(links.length).toBe(4);
     expect(links[0].nativeElement.href).toContain('https://x.com/starsbit1');
     expect(links[1].nativeElement.href).toContain('https://ko-fi.com/starsbit');
     expect(links[2].nativeElement.href).toContain(
@@ -38,7 +38,7 @@ describe('SocialLinksComponent', () => {
   it('should contain social media images with correct sources', () => {
     const images = fixture.debugElement.queryAll(By.css('img'));
 
-    expect(images.length).toBe(1);
+    expect(images.length).toBe(4);
     expect(images[0].nativeElement.getAttribute('ngSrc')).toBe(
       'assets/images/social-logos/x.svg'
     );
