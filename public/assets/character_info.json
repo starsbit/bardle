@@ -4658,5 +4658,25 @@
     "image": "Kanoe.webp",
     "birthday": "2000/11/02",
     "disabled": false
+  },
+  "Misaki_(Swimsuit)": {
+    "id": "Misaki_(Swimsuit)",
+    "fullName": "Imashino Misaki (Swimsuit)",
+    "shortName": "Misaki (Swimsuit)",
+    "nativeName": "\u6212\u91ce \u30df\u30b5\u30ad",
+    "school": "Arius",
+    "damageType": "Explosive",
+    "armorType": "Special",
+    "role": "Attacker",
+    "combatClass": "Special",
+    "exSkillCost": 6,
+    "positioning": "Back",
+    "height": 163,
+    "outfit": "Swimsuit",
+    "releaseDate": "2025/09/03",
+    "weaponType": "RL",
+    "image": "MisakiSwimsuit.webp",
+    "birthday": "2000/01/13",
+    "disabled": false
   }
 }
