@@ -15,4 +15,6 @@ export const NON_EVENT_SCHOOLS = [
   'Trinity',
   'Valkyrie',
   'Highlander',
+  'Wildhunt',
+  'Kronos',
 ];
