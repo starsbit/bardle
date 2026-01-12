@@ -1,5 +1,12 @@
 # Bardle
 
+## Version 2.6.1
+
+Date: 2026/03/12
+
+- Migrated codebase to Angular 21
+- Fixed automatic student list update
+
 ## Version 2.6.0
 
 Date: 2025/03/12
