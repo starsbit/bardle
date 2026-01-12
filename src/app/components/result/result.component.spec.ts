@@ -2,7 +2,6 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { CountdownModule } from 'ngx-countdown';
 import { StudentList } from '../../models/student-list';
 import { getStudentListTestData } from '../../utils/test-data-utils';
 import { ResultComponent } from './result.component';
@@ -14,7 +13,6 @@ describe('ResultComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [CountdownModule],
       providers: [provideHttpClient(), provideHttpClientTesting()],
     }).compileComponents();
 

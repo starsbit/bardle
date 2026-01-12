@@ -1,7 +1,7 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { CountdownConfig, CountdownModule } from 'ngx-countdown';
+import { CountdownComponent, CountdownConfig } from 'ngx-countdown';
 import { Student } from '../../models/student';
 import { AssetService } from '../../services/web/asset.service';
 import { getCurrentUTCDate, timeActive } from '../../utils/date-utils';
@@ -10,7 +10,7 @@ import { CopyButtonComponent } from '../copy-button/copy-button.component';
 @Component({
   selector: 'ba-result',
   imports: [
-    CountdownModule,
+    CountdownComponent,
     CopyButtonComponent,
     NgOptimizedImage,
     MatIconModule,

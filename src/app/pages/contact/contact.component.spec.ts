@@ -32,6 +32,6 @@ describe('ContactComponent', () => {
       .nativeElement as HTMLElement;
 
     expect(yearElement).toBeTruthy();
-    expect(yearElement.textContent).toContain(new Date().getFullYear());
+    expect(yearElement.textContent).toContain(new Date().getFullYear().toString());
   });
 });
