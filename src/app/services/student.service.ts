@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { forkJoin, map, of, tap } from 'rxjs';
 import { Student, StudentData, StudentListData } from '../models/student';
 import { StudentList } from '../models/student-list';
@@ -10,9 +10,9 @@ import { StudentClientService } from './web/student-client.service';
   providedIn: 'root',
 })
 export class StudentService {
-  private students: StudentListData | null = null;
+  private readonly studentClientService = inject(StudentClientService);
 
-  constructor(private readonly studentClientService: StudentClientService) {}
+  private students: StudentListData | null = null;
 
   getYesterdaysStudent(students: StudentData): Student {
     const yesterday = getCurrentUTCDateNoTime();

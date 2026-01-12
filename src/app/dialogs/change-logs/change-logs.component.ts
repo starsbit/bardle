@@ -1,5 +1,5 @@
 // filepath: /e:/projects/bardle/src/app/dialogs/change-logs/change-logs.component.ts
-import { Component, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   MAT_DIALOG_DATA,
   MatDialogActions,
@@ -23,9 +23,9 @@ import { MarkdownModule, provideMarkdown } from 'ngx-markdown';
   templateUrl: './change-logs.component.html',
   styleUrls: ['./change-logs.component.scss'],
 })
-export class ChangeLogsDialogComponent {
-  constructor(
-    private dialogRef: MatDialogRef<ChangeLogsDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { changeLogs: string }
-  ) {}
+export class ChangeLogsDialogComponent {  private dialogRef = inject<MatDialogRef<ChangeLogsDialogComponent>>(MatDialogRef);
+  data = inject<{
+    changeLogs: string;
+}>(MAT_DIALOG_DATA);
+
 }

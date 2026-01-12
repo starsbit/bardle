@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { StudentData } from '../../models/student';
 
@@ -7,8 +7,9 @@ import { StudentData } from '../../models/student';
   providedIn: 'root',
 })
 export class StudentClientService {
+  private readonly http = inject(HttpClient);
+
   private static readonly ASSET_PREFIX_PATH = environment.assetLocationPrefix;
-  constructor(private readonly http: HttpClient) {}
 
   getStudentsJp() {
     if (!environment.production) {

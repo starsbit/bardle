@@ -1,5 +1,5 @@
 import { TitleCasePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -21,11 +21,13 @@ import { Language, TranslateService } from '../../services/translate.service';
   styleUrl: './language-selection.component.scss',
 })
 export class LanguageSelectionComponent {
+  private translateService = inject(TranslateService);
+
   selectedLanguage: FormControl<Language | null>;
   languages: Language[] = [];
   baseUrl = environment.baseUrl;
 
-  constructor(private translateService: TranslateService) {
+  constructor() {
     this.selectedLanguage = new FormControl<Language | null>(
       this.translateService.getCurrentLang()
     );

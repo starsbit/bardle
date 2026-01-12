@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { GridComponent } from '../../components/grid/grid.component';
@@ -36,6 +31,12 @@ import { AssetService } from '../../services/web/asset.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GameComponent implements OnInit, OnDestroy {
+  private readonly gameService = inject(GameService);
+  private readonly translateService = inject(TranslateService);
+  private readonly dialog = inject(MatDialog);
+  private readonly assetService = inject(AssetService);
+  private readonly localStorage = inject(LocalStorageService);
+
   private readonly subscriptions = new Subscription();
   private changeLogs = '';
   public won = false;
@@ -44,14 +45,6 @@ export class GameComponent implements OnInit, OnDestroy {
   public infiniteMode = false;
   public yesterdayStudent: Student | null = null;
   public todaysStudent: Student | null = null;
-
-  constructor(
-    private readonly gameService: GameService,
-    private readonly translateService: TranslateService,
-    private readonly dialog: MatDialog,
-    private readonly assetService: AssetService,
-    private readonly localStorage: LocalStorageService
-  ) {}
 
   ngOnInit() {
     this.subscriptions.add(

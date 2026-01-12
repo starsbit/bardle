@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { GuessCookie } from '../models/cookie';
 import { DEFAULT_STUDENT_LIST } from '../models/student-list';
 
@@ -7,9 +7,11 @@ import { DEFAULT_STUDENT_LIST } from '../models/student-list';
   providedIn: 'root',
 })
 export class LocalStorageService {
+  private platformId = inject(PLATFORM_ID);
+
   localStorage!: Storage;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: string) {
+  constructor() {
     if (!isPlatformBrowser(this.platformId) || !document.defaultView) {
       return;
     }

@@ -1,10 +1,5 @@
 import { AsyncPipe, NgOptimizedImage } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -35,6 +30,10 @@ import { AssetService } from '../../services/web/asset.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GuessInputComponent implements OnInit, OnDestroy {
+  private readonly gameService = inject(GameService);
+  private readonly translateService = inject(TranslateService);
+  readonly assetService = inject(AssetService);
+
   guessInputControl = new FormControl('');
   students: Student[] = [];
   filteredOptions!: Observable<Student[]>;
@@ -43,11 +42,7 @@ export class GuessInputComponent implements OnInit, OnDestroy {
 
   private readonly subscriptions = new Subscription();
 
-  constructor(
-    private readonly gameService: GameService,
-    private readonly translateService: TranslateService,
-    public readonly assetService: AssetService
-  ) {
+  constructor() {
     this.subscriptions.add(
       this.gameService.$gameStateChange().subscribe(() => {
         this.checkGameResult();

@@ -2,14 +2,16 @@ import { formatDate, registerLocaleData } from '@angular/common';
 import localeJa from '@angular/common/locales/ja';
 import localeKo from '@angular/common/locales/ko';
 import localeCn from '@angular/common/locales/zh-Hans';
-import { Inject, LOCALE_ID, Pipe, PipeTransform } from '@angular/core';
+import { LOCALE_ID, Pipe, PipeTransform, inject } from '@angular/core';
 
 @Pipe({
   name: 'displayBirthdayFormat',
   pure: true,
 })
 export class DisplayBirthdayFormatPipe implements PipeTransform {
-  constructor(@Inject(LOCALE_ID) private locale: string) {
+  private locale = inject(LOCALE_ID);
+
+  constructor() {
     registerLocaleData(localeJa);
     registerLocaleData(localeCn);
     registerLocaleData(localeKo);

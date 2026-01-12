@@ -1,10 +1,19 @@
+import { LOCALE_ID } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
 import { DisplayDateFormatPipe } from './display-date-format.pipe';
 
 describe('DisplayDateFormatPipe', () => {
   let pipe: DisplayDateFormatPipe;
 
   beforeEach(() => {
-    pipe = new DisplayDateFormatPipe('en');
+    TestBed.configureTestingModule({
+      providers: [
+        DisplayDateFormatPipe,
+        { provide: LOCALE_ID, useValue: 'en' },
+      ],
+    });
+
+    pipe = TestBed.inject(DisplayDateFormatPipe);
   });
 
   it('should be created', () => {

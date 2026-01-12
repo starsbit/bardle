@@ -1,5 +1,5 @@
 import { NgStyle } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AssetService } from '../../services/web/asset.service';
 
 @Component({
@@ -10,9 +10,11 @@ import { AssetService } from '../../services/web/asset.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BackgroundComponent {
+  private readonly assetService = inject(AssetService);
+
   backgroundImageUrl = '';
 
-  constructor(private readonly assetService: AssetService) {
+  constructor() {
     this.backgroundImageUrl =
       this.assetService.pickBackgroundOfTheDayLocation();
   }

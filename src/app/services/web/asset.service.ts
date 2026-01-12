@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Student } from '../../models/student';
 import { getCurrentUTCDateNoTime } from '../../utils/date-utils';
@@ -10,13 +10,15 @@ import { sanitizeSchool } from '../../utils/student-utils';
   providedIn: 'root',
 })
 export class AssetService {
+  private readonly http = inject(HttpClient);
+
   private static readonly ASSET_IMAGES_PATH = '/assets/images';
   private static readonly ASSET_CHANGELOGS_PATH = '/assets/changelogs.md';
   private static readonly ASSET_PREFIX_PATH = environment.assetLocationPrefix;
   private static readonly BACKGROUND_COUNT = 48;
   private fullImagePath: string;
 
-  constructor(private readonly http: HttpClient) {
+  constructor() {
     if (environment.production) {
       this.fullImagePath = `${AssetService.ASSET_PREFIX_PATH}/${AssetService.ASSET_IMAGES_PATH}`;
     } else {

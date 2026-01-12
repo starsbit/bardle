@@ -1,12 +1,5 @@
 import { NgClass, NgStyle } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  Input,
-  OnChanges,
-  SimpleChanges,
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, SimpleChanges, inject } from '@angular/core';
 
 @Component({
   selector: 'ba-grid-element-container',
@@ -16,6 +9,8 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridElementContainerComponent implements OnChanges {
+  private readonly cdr = inject(ChangeDetectorRef);
+
   // it has to be a string else the change detection won't work
   // because it does not pick up changes when going from true -> true for example
   @Input() isFlipped = '';
@@ -23,8 +18,6 @@ export class GridElementContainerComponent implements OnChanges {
   @Input() won = false;
   childrenHidden = true;
   startWinAnimation = false;
-
-  constructor(private readonly cdr: ChangeDetectorRef) {}
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['isFlipped'] && changes['isFlipped'].currentValue) {

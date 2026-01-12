@@ -1,3 +1,4 @@
+import { LOCALE_ID } from '@angular/core';
 import {
   ComponentFixture,
   fakeAsync,
@@ -15,6 +16,7 @@ import { GridReleaseDateComponent } from './grid-release-date.component';
 describe('GridReleaseDateComponent', () => {
   let component: GridReleaseDateComponent;
   let fixture: ComponentFixture<GridReleaseDateComponent>;
+  let displayDatePipe: DisplayDateFormatPipe;
 
   const mockStudentAru: Student =
     getStudentListTestData()[StudentList.GLOBAL]['Aru'];
@@ -22,8 +24,14 @@ describe('GridReleaseDateComponent', () => {
     getStudentListTestData()[StudentList.GLOBAL]['Mika'];
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({}).compileComponents();
+    await TestBed.configureTestingModule({
+      providers: [
+        DisplayDateFormatPipe,
+        { provide: LOCALE_ID, useValue: 'en' },
+      ],
+    }).compileComponents();
 
+    displayDatePipe = TestBed.inject(DisplayDateFormatPipe);
     fixture = TestBed.createComponent(GridReleaseDateComponent);
     component = fixture.componentInstance;
   });
@@ -123,7 +131,7 @@ describe('GridReleaseDateComponent', () => {
 
     const spanElement = fixture.debugElement.query(By.css('span'));
     expect(spanElement.nativeElement.textContent.trim()).toBe(
-      new DisplayDateFormatPipe('en').transform(mockStudentAru.releaseDate)
+      displayDatePipe.transform(mockStudentAru.releaseDate)
     );
   }));
 

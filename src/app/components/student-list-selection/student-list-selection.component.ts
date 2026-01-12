@@ -1,14 +1,5 @@
 import { TitleCasePipe } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, inject } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -33,16 +24,14 @@ import { GameService } from '../../services/game.service';
 })
 export class StudentListSelectionComponent implements OnInit, OnDestroy, OnChanges
 {
+  private readonly gameService = inject(GameService);
+  private readonly cdr = inject(ChangeDetectorRef);
+
   @Input() disabled = false;
   studentLists = Object.values(StudentList);
   selectedStudentList = new FormControl<StudentList | null>(null);
 
   private readonly subscriptions = new Subscription();
-
-  constructor(
-    private readonly gameService: GameService,
-    private readonly cdr: ChangeDetectorRef
-  ) {}
 
   ngOnInit() {
     this.subscriptions.add(

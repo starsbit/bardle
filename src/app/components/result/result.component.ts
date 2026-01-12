@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { CountdownComponent, CountdownConfig } from 'ngx-countdown';
 import { Student } from '../../models/student';
@@ -19,6 +19,8 @@ import { CopyButtonComponent } from '../copy-button/copy-button.component';
   styleUrl: './result.component.scss',
 })
 export class ResultComponent {
+  readonly assetService = inject(AssetService);
+
   @Input() won = false;
   @Input() lost = false;
   @Input() displayCopyButton = true;
@@ -36,8 +38,6 @@ export class ResultComponent {
     leftTime: this.getSecondsUntilEndOfDay(),
     format: 'HH:mm:ss',
   };
-
-  constructor(public readonly assetService: AssetService) {}
 
   onRefresh() {
     this.refresh.emit();

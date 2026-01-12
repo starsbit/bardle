@@ -1,5 +1,5 @@
 import { Clipboard } from '@angular/cdk/clipboard';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
@@ -14,6 +14,10 @@ import { timeActive } from '../../utils/date-utils';
   styleUrl: './copy-button.component.scss',
 })
 export class CopyButtonComponent {
+  private clipboard = inject(Clipboard);
+  private snackbar = inject(MatSnackBar);
+  private gameService = inject(GameService);
+
   private readonly correctIcon = '🟩';
   private readonly incorrectIcon = '⬜';
   private readonly wantedFields = [
@@ -24,12 +28,6 @@ export class CopyButtonComponent {
     'exSkillCost',
     'releaseDate',
   ];
-
-  constructor(
-    private clipboard: Clipboard,
-    private snackbar: MatSnackBar,
-    private gameService: GameService
-  ) {}
 
   copyToClipboard() {
     const guesses = this.gameService.getCurrentGuesses();

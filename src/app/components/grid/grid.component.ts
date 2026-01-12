@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { RULES } from '../../constants/rules';
 import { Student } from '../../models/student';
@@ -14,15 +14,13 @@ import { GridRowComponent } from '../grid-row/grid-row.component';
   imports: [GridHeaderComponent, GridRowComponent],
 })
 export class GridComponent implements OnInit, OnDestroy {
+  private readonly gameService = inject(GameService);
+  private readonly cdr = inject(ChangeDetectorRef);
+
   answer: Student | null = null;
   guesses: (Student | null)[] = [];
   list: StudentList | undefined = undefined;
   private subscriptions = new Subscription();
-
-  constructor(
-    private readonly gameService: GameService,
-    private readonly cdr: ChangeDetectorRef
-  ) {}
 
   ngOnInit() {
     this.subscriptions.add(

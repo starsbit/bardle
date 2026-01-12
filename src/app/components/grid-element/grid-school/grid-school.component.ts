@@ -1,5 +1,5 @@
 import { NgClass, NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AssetService } from '../../../services/web/asset.service';
 import { sanitizeSchool } from '../../../utils/student-utils';
 import { GridElementComponent } from '../grid-element.component';
@@ -13,9 +13,8 @@ import { GridElementContainerComponent } from '../grid-wrapper/grid-element-cont
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridSchoolComponent extends GridElementComponent {
-  constructor(public readonly assetService: AssetService) {
-    super();
-  }
+  readonly assetService = inject(AssetService);
+
 
   override correctGuess() {
     return this.answer?.school === this.guess?.school;

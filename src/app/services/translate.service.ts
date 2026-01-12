@@ -1,10 +1,13 @@
-import { Inject, Injectable, LOCALE_ID } from '@angular/core';
+import { Injectable, LOCALE_ID, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TranslateService {
+  private locale = inject(LOCALE_ID);
+  private router = inject(Router);
+
   private static readonly AVAILABLE_LANGUAGES: Language[] = [
     {
       code: 'en',
@@ -26,10 +29,9 @@ export class TranslateService {
 
   selectedLocale: Language = TranslateService.AVAILABLE_LANGUAGES[0];
 
-  constructor(
-    @Inject(LOCALE_ID) private locale: string,
-    private router: Router
-  ) {
+  constructor() {
+    const locale = this.locale;
+
     switch (locale) {
       case 'ja':
         this.selectedLocale = TranslateService.AVAILABLE_LANGUAGES[1];

@@ -1,3 +1,4 @@
+import { LOCALE_ID } from '@angular/core';
 import {
   ComponentFixture,
   fakeAsync,
@@ -24,11 +25,17 @@ describe('GridBirthdayComponent', () => {
     ...getStudentListTestData()[StudentList.GLOBAL]['Hina'],
     birthday: '2000/07/05', // July 5th
   };
-  const birthdayPipe = new DisplayBirthdayFormatPipe('en');
+  let birthdayPipe: DisplayBirthdayFormatPipe;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({}).compileComponents();
+    await TestBed.configureTestingModule({
+      providers: [
+        DisplayBirthdayFormatPipe,
+        { provide: LOCALE_ID, useValue: 'en' },
+      ],
+    }).compileComponents();
 
+    birthdayPipe = TestBed.inject(DisplayBirthdayFormatPipe);
     fixture = TestBed.createComponent(GridBirthdayComponent);
     component = fixture.componentInstance;
   });

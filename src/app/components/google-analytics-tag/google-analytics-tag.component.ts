@@ -1,11 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import {
-  Component,
-  ElementRef,
-  Inject,
-  PLATFORM_ID,
-  Renderer2,
-} from '@angular/core';
+import { Component, ElementRef, PLATFORM_ID, Renderer2, inject } from '@angular/core';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -15,15 +9,15 @@ import { environment } from '../../../environments/environment';
   styleUrl: './google-analytics-tag.component.scss',
 })
 export class GoogleAnalyticsTagComponent {
+  readonly platformId = inject(PLATFORM_ID);
+  private readonly renderer = inject(Renderer2);
+  private readonly el = inject(ElementRef);
+
   trackingCode = environment.googleAnalyticsTrackingCode;
 
   private readonly gtagApi = 'https://www.googletagmanager.com/gtag/js?id=';
 
-  constructor(
-    @Inject(PLATFORM_ID) readonly platformId: object,
-    private readonly renderer: Renderer2,
-    private readonly el: ElementRef
-  ) {
+  constructor() {
     if (!isPlatformBrowser(this.platformId)) {
       return;
     }

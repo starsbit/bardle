@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
 import { RULES } from '../constants/rules';
 import { GuessCookie } from '../models/cookie';
@@ -13,16 +13,16 @@ import { StudentService } from './student.service';
   providedIn: 'root',
 })
 export class GameService {
+  private readonly localStorage = inject(LocalStorageService);
+  private readonly studentService = inject(StudentService);
+
   private gameState: GameState | null = null;
   private isInitialized = false;
   private infiniteMode = false;
   private readonly doy = getDayOfYear(getCurrentUTCDateNoTime());
   private readonly gameStateChange = new ReplaySubject<GameState>(1);
 
-  constructor(
-    private readonly localStorage: LocalStorageService,
-    private readonly studentService: StudentService
-  ) {
+  constructor() {
     this.initializeGameState();
   }
 
