@@ -42,14 +42,18 @@ def generate_info_from_url(url, image_name):
     # Fetch the HTML content of the webpage
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
     response = requests.get(url, headers=headers)
-    response.raise_for_status()
+    try:
+        response.raise_for_status()
+    except requests.exceptions.HTTPError as e:
+        print("ERROR: Could not fetch the webpage. Skipping character at URL:", url)
+        print(e)
     html_content = response.content
 
     # Parse the HTML
     soup = BeautifulSoup(html_content, 'html.parser')
 
     # Find the desired table element
-    table = soup.find('table', class_='wikitable character')
+    table = soup.find('table', class_='wikitable ba-template-character character')
 
     ex_skill_cost = None
 
