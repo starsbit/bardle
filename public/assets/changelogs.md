@@ -2,13 +2,13 @@
 
 ## Version 2.6.2
 
-Date: 2026/03/12
+Date: 2026/01/12
 
 - Added new school to known list "Wild Hunt Academy of Arts"
 
 ## Version 2.6.1
 
-Date: 2026/03/12
+Date: 2026/01/12
 
 - Migrated codebase to Angular 21
 - Fixed automatic student list update
