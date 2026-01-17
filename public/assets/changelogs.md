@@ -1,5 +1,11 @@
 # Bardle
 
+## Version 2.7.0
+
+Date: 2026/01/17
+
+- Added win streak feature
+
 ## Version 2.6.2
 
 Date: 2026/01/12
