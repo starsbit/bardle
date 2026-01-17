@@ -96,22 +96,27 @@ export class GameService {
     const guesses = { ...this.gameState.guesses };
     guesses.guesses[this.gameState.activeList].push(guess);
     this.setGuess(guesses);
-    if (
-      guesses.guesses[this.gameState.activeList].length >= RULES.MAX_GUESSES
-    ) {
-      this.setResult({
-        ...this.gameState.result,
-        [this.gameState.activeList]: {
-          lost: true,
-          ...this.gameState.result[this.gameState.activeList],
-        },
-      });
-    }
     if (guess === this.gameState.answer[this.gameState.activeList]) {
+      if (!this.infiniteMode) {
+        this.updateStreakOnWin(this.gameState.activeList);
+      }
       this.setResult({
         ...this.gameState.result,
         [this.gameState.activeList]: {
           won: true,
+          ...this.gameState.result[this.gameState.activeList],
+        },
+      });
+    } else if (
+      guesses.guesses[this.gameState.activeList].length >= RULES.MAX_GUESSES
+    ) {
+      if (!this.infiniteMode) {
+        this.updateStreakOnLoss(this.gameState.activeList);
+      }
+      this.setResult({
+        ...this.gameState.result,
+        [this.gameState.activeList]: {
+          lost: true,
           ...this.gameState.result[this.gameState.activeList],
         },
       });
@@ -169,6 +174,72 @@ export class GameService {
 
   getInfiniteMode() {
     return this.infiniteMode;
+  }
+
+  getCurrentStreak(): number {
+    if (this.gameState === null || this.infiniteMode) {
+      return 0;
+    }
+    const streakData = this.localStorage.getStreakForList(this.gameState.activeList);
+    const currentYear = getCurrentUTCDateNoTime().getUTCFullYear();
+
+    if (streakData.lastWinYear !== currentYear && streakData.lastWinYear !== currentYear - 1) {
+      return 0;
+    }
+    if (streakData.lastWinYear === currentYear - 1 && streakData.lastWinDoy !== this.getDaysInYear(currentYear - 1)) {
+      return 0;
+    }
+    if (streakData.lastWinYear === currentYear && this.doy - streakData.lastWinDoy > 1) {
+      return 0;
+    }
+    return streakData.count;
+  }
+
+  private isConsecutiveDay(prevDoy: number, prevYear: number, currentDoy: number, currentYear: number): boolean {
+    if (prevYear === currentYear) {
+      return currentDoy - prevDoy === 1;
+    }
+    if (prevYear === currentYear - 1) {
+      const lastDayOfPrevYear = this.getDaysInYear(prevYear);
+      return prevDoy === lastDayOfPrevYear && currentDoy === 1;
+    }
+    return false;
+  }
+
+  private getDaysInYear(year: number): number {
+    return ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) ? 366 : 365;
+  }
+
+  private updateStreakOnWin(list: StudentList): void {
+    const streakData = this.localStorage.getStreakForList(list);
+    const currentYear = getCurrentUTCDateNoTime().getUTCFullYear();
+
+    if (streakData.lastWinDoy === this.doy && streakData.lastWinYear === currentYear) {
+      return;
+    }
+
+    if (this.isConsecutiveDay(streakData.lastWinDoy, streakData.lastWinYear, this.doy, currentYear)) {
+      this.localStorage.setStreakForList(list, {
+        count: streakData.count + 1,
+        lastWinDoy: this.doy,
+        lastWinYear: currentYear,
+      });
+    } else {
+      this.localStorage.setStreakForList(list, {
+        count: 1,
+        lastWinDoy: this.doy,
+        lastWinYear: currentYear,
+      });
+    }
+  }
+
+  private updateStreakOnLoss(list: StudentList): void {
+    const currentYear = getCurrentUTCDateNoTime().getUTCFullYear();
+    this.localStorage.setStreakForList(list, {
+      count: 0,
+      lastWinDoy: this.doy,
+      lastWinYear: currentYear,
+    });
   }
 
   private initializeGameState() {

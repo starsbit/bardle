@@ -49,11 +49,17 @@ export class CopyButtonComponent {
     });
     const daysSinceLaunch = timeActive();
 
+    const streak = this.gameService.getCurrentStreak();
+
     let scoreReport = `Daily Blue Archive Wordle #${daysSinceLaunch} ${date} on https://bardle.net.\n`;
     scoreReport += `Student list: ${this.gameService.getCurrentList()} students\n`;
     scoreReport += `I guessed the student in ${attempts} attempt${
       attempts > 1 ? 's' : ''
-    } and ${won ? 'won' : 'lost'}\n\n`;
+    } and ${won ? 'won' : 'lost'}\n`;
+    if (streak > 0) {
+      scoreReport += `Current streak: ${streak} day${streak > 1 ? 's' : ''}\n`;
+    }
+    scoreReport += '\n';
 
     guessedStudents.forEach((guessedStudent) => {
       this.wantedFields.forEach((field) => {

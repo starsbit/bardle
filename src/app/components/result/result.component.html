@@ -35,14 +35,23 @@
           />
           <span class="text-xl incorrect-text">{{ searchedStudentName }}</span>
           <span class="text-xl text-white">#{{ daysActive }}</span>
-          @if (displayCopyButton) {
+          @if (streak === 0 && displayCopyButton) {
           <ba-copy-button></ba-copy-button>
-          } @if (displayRefreshButton) {
+          }
+          @if (displayRefreshButton) {
           <button class="refresh-button" (click)="onRefresh()">
             <mat-icon class="refresh-button-icon">refresh</mat-icon>
           </button>
           }
         </div>
+        @if (streak > 0) {
+        <div class="flex flex-row items-center justify-center mt-2">
+          <span class="text-xl text-white">Streak: {{ streak }}</span>
+          @if (displayCopyButton) {
+          <ba-copy-button></ba-copy-button>
+          }
+        </div>
+        }
       </div>
       }
     </div>

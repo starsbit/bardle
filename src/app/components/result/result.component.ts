@@ -28,6 +28,7 @@ export class ResultComponent {
   @Input() displayRefreshButton = false;
   @Input() searchedStudent: Student | null = null;
   @Input() searchedStudentName = '';
+  @Input() streak = 0;
 
   @Output() refresh = new EventEmitter<void>();
 

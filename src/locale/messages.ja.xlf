@@ -391,8 +391,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="ContactText" datatype="html">
-        <source> You can find me also <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://starsbit.space&quot; class=&quot;text-gray-600 underline&quot;           &gt;"/>here<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a         &gt;"/></source>
-        <target> 私を見つけることができます <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://starsbit.space&quot; class=&quot;text-gray-600 underline&quot;           &gt;"/>こちら<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a         &gt;"/>でも</target>
+        <source> You can find me here</source>
+        <target> こちらで私を見つけられます</target>
         <note priority="1" from="description">Contact Text</note>
         <note priority="1" from="meaning">Contact</note>
         <context-group purpose="location">

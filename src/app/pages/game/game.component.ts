@@ -43,6 +43,7 @@ export class GameComponent implements OnInit, OnDestroy {
   public lost = false;
   public gameStarted = false;
   public infiniteMode = false;
+  public currentStreak = 0;
   public yesterdayStudent: Student | null = null;
   public todaysStudent: Student | null = null;
 
@@ -93,10 +94,12 @@ export class GameComponent implements OnInit, OnDestroy {
     if (!gameResult) {
       this.won = false;
       this.lost = false;
+      this.currentStreak = 0;
       return;
     }
     this.won = gameResult.won || false;
     this.lost = gameResult.lost || false;
+    this.currentStreak = this.infiniteMode ? 0 : this.gameService.getCurrentStreak();
   }
 
   private handleYesterdayStudentChange() {

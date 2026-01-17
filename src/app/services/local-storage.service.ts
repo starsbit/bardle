@@ -1,7 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Injectable, PLATFORM_ID, inject } from '@angular/core';
-import { GuessCookie } from '../models/cookie';
-import { DEFAULT_STUDENT_LIST } from '../models/student-list';
+import { GuessCookie, StreakCookie, StreakData } from '../models/cookie';
+import { DEFAULT_STUDENT_LIST, StudentList } from '../models/student-list';
 
 @Injectable({
   providedIn: 'root',
@@ -56,5 +56,30 @@ export class LocalStorageService {
 
   setChangeLogReadDate(date: string): void {
     this.setLocalStorage('changeLogReadDate', date);
+  }
+
+  getStreak(): StreakCookie {
+    const cookie = this.getLocalStorage('streaks');
+    if (cookie) {
+      return JSON.parse(cookie);
+    }
+    return {
+      streaks: {},
+    };
+  }
+
+  setStreak(streakCookie: StreakCookie): void {
+    this.setLocalStorage('streaks', JSON.stringify(streakCookie));
+  }
+
+  getStreakForList(list: StudentList): StreakData {
+    const streakCookie = this.getStreak();
+    return streakCookie.streaks[list] ?? { count: 0, lastWinDoy: -1, lastWinYear: -1 };
+  }
+
+  setStreakForList(list: StudentList, streakData: StreakData): void {
+    const streakCookie = this.getStreak();
+    streakCookie.streaks[list] = streakData;
+    this.setStreak(streakCookie);
   }
 }

@@ -11,3 +11,13 @@ export interface ChangeLogCookie {
   // Format YYYY/MM/DD
   changeLogReadDate?: string;
 }
+
+export interface StreakData {
+  count: number;
+  lastWinDoy: number;
+  lastWinYear: number;
+}
+
+export interface StreakCookie {
+  streaks: Record<string, StreakData>;
+}
