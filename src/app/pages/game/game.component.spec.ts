@@ -27,6 +27,7 @@ describe('GameComponent', () => {
       'getTodaysStudent',
       'getCurrentStudentData',
       'getLastReadChangeLogDate',
+      'getCurrentStreak'
     ]);
 
     localStorageSpy = jasmine.createSpyObj('LocalStorageService', [

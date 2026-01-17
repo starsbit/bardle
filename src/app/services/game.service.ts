@@ -5,7 +5,10 @@ import { GuessCookie } from '../models/cookie';
 import { GameAnswer, GameResult, GameState } from '../models/game';
 import { StudentListData } from '../models/student';
 import { DEFAULT_STUDENT_LIST, StudentList } from '../models/student-list';
-import { getCurrentUTCDateNoTime, getDayOfYear } from '../utils/date-utils';
+import {
+  getCurrentUTCDateNoTime as getCurrentUTCDateNoTimeUtil,
+  getDayOfYear as getDayOfYearUtil,
+} from '../utils/date-utils';
 import { LocalStorageService } from './local-storage.service';
 import { StudentService } from './student.service';
 
@@ -19,11 +22,18 @@ export class GameService {
   private gameState: GameState | null = null;
   private isInitialized = false;
   private infiniteMode = false;
-  private readonly doy = getDayOfYear(getCurrentUTCDateNoTime());
   private readonly gameStateChange = new ReplaySubject<GameState>(1);
 
   constructor() {
     this.initializeGameState();
+  }
+
+  private getCurrentUTCDateNoTime(): Date {
+    return getCurrentUTCDateNoTimeUtil();
+  }
+
+  private getCurrentDayOfYear(date: Date = this.getCurrentUTCDateNoTime()): number {
+    return getDayOfYearUtil(date);
   }
 
   getGameState() {
@@ -181,27 +191,50 @@ export class GameService {
       return 0;
     }
     const streakData = this.localStorage.getStreakForList(this.gameState.activeList);
-    const currentYear = getCurrentUTCDateNoTime().getUTCFullYear();
+    const currentDate = this.getCurrentUTCDateNoTime();
+    const currentYear = currentDate.getUTCFullYear();
+    const currentDoy = this.getCurrentDayOfYear(currentDate);
 
-    if (streakData.lastWinYear !== currentYear && streakData.lastWinYear !== currentYear - 1) {
-      return 0;
+    if (
+      streakData.lastWinYear === currentYear &&
+      streakData.lastWinDoy === currentDoy
+    ) {
+      return streakData.count;
     }
-    if (streakData.lastWinYear === currentYear - 1 && streakData.lastWinDoy !== this.getDaysInYear(currentYear - 1)) {
-      return 0;
+
+    if (
+      this.isConsecutiveDay(
+        streakData.lastWinDoy,
+        streakData.lastWinYear,
+        currentDoy,
+        currentYear
+      )
+    ) {
+      return streakData.count;
     }
-    if (streakData.lastWinYear === currentYear && this.doy - streakData.lastWinDoy > 1) {
-      return 0;
-    }
-    return streakData.count;
+
+    return 0;
   }
 
-  private isConsecutiveDay(prevDoy: number, prevYear: number, currentDoy: number, currentYear: number): boolean {
+  private isConsecutiveDay(
+    prevDoy: number,
+    prevYear: number,
+    currentDoy: number,
+    currentYear: number
+  ): boolean {
+    if (prevDoy < 0 || prevYear < 0) {
+      return false;
+    }
     if (prevYear === currentYear) {
       return currentDoy - prevDoy === 1;
     }
-    if (prevYear === currentYear - 1) {
+    if (prevYear === currentYear - 1 && currentDoy === 1) {
       const lastDayOfPrevYear = this.getDaysInYear(prevYear);
-      return prevDoy === lastDayOfPrevYear && currentDoy === 1;
+      // Allow a 1-day tolerance because storing DOY via UTC dates can shift by a day for negative timezones.
+      return (
+        prevDoy === lastDayOfPrevYear ||
+        prevDoy === lastDayOfPrevYear - 1
+      );
     }
     return false;
   }
@@ -212,32 +245,43 @@ export class GameService {
 
   private updateStreakOnWin(list: StudentList): void {
     const streakData = this.localStorage.getStreakForList(list);
-    const currentYear = getCurrentUTCDateNoTime().getUTCFullYear();
+    const currentDate = this.getCurrentUTCDateNoTime();
+    const currentYear = currentDate.getUTCFullYear();
+    const currentDoy = this.getCurrentDayOfYear(currentDate);
 
-    if (streakData.lastWinDoy === this.doy && streakData.lastWinYear === currentYear) {
+    if (streakData.lastWinDoy === currentDoy && streakData.lastWinYear === currentYear) {
       return;
     }
 
-    if (this.isConsecutiveDay(streakData.lastWinDoy, streakData.lastWinYear, this.doy, currentYear)) {
+    if (
+      this.isConsecutiveDay(
+        streakData.lastWinDoy,
+        streakData.lastWinYear,
+        currentDoy,
+        currentYear
+      )
+    ) {
       this.localStorage.setStreakForList(list, {
         count: streakData.count + 1,
-        lastWinDoy: this.doy,
+        lastWinDoy: currentDoy,
         lastWinYear: currentYear,
       });
     } else {
       this.localStorage.setStreakForList(list, {
         count: 1,
-        lastWinDoy: this.doy,
+        lastWinDoy: currentDoy,
         lastWinYear: currentYear,
       });
     }
   }
 
   private updateStreakOnLoss(list: StudentList): void {
-    const currentYear = getCurrentUTCDateNoTime().getUTCFullYear();
+    const currentDate = this.getCurrentUTCDateNoTime();
+    const currentYear = currentDate.getUTCFullYear();
+    const currentDoy = this.getCurrentDayOfYear(currentDate);
     this.localStorage.setStreakForList(list, {
       count: 0,
-      lastWinDoy: this.doy,
+      lastWinDoy: currentDoy,
       lastWinYear: currentYear,
     });
   }
@@ -268,22 +312,25 @@ export class GameService {
 
   private createInitialGuess() {
     const guess = this.localStorage.getGuess();
+    const currentDoy = this.getCurrentDayOfYear();
 
-    if (!guess || guess.doy !== this.doy) {
-      const emptyGuess = this.createEmptyGuess(guess.lastList);
+    if (!guess || guess.doy !== currentDoy) {
+      const lastList = guess ? guess.lastList : undefined;
+      const emptyGuess = this.createEmptyGuess(lastList, currentDoy);
       this.localStorage.setGuess(emptyGuess);
       return emptyGuess;
     }
     return guess;
   }
 
-  private createEmptyGuess(lastList?: StudentList) {
+  private createEmptyGuess(lastList?: StudentList, doy?: number) {
+    const currentDoy = doy ?? this.getCurrentDayOfYear();
     return {
       guesses: {
         japan: [],
         global: [],
       },
-      doy: this.doy,
+      doy: currentDoy,
       lastList: lastList ?? this.createInitialListSelection(),
     };
   }

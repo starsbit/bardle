@@ -39,6 +39,7 @@ describe('CopyButtonComponent', () => {
       'getCurrentAnswer',
       'getCurrentStudentData',
       'getCurrentList',
+      'getCurrentStreak',
     ]);
 
     gameServiceSpy.getCurrentList.and.returnValue(StudentList.GLOBAL);

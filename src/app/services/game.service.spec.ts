@@ -13,6 +13,9 @@ describe('GameService', () => {
   let service: GameService;
   let localStorageSpy: jasmine.SpyObj<LocalStorageService>;
   let studentServiceSpy: jasmine.SpyObj<StudentService>;
+  const mockCurrentDate = (date: Date) =>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    spyOn<any>(service, 'getCurrentUTCDateNoTime').and.returnValue(date);
 
   const studentOfTheDay = getStudentListTestData()[StudentList.GLOBAL]['Aru'];
   const studentOfYesterday =
@@ -29,6 +32,7 @@ describe('GameService', () => {
       'getStudentData',
       'getTodaysStudent',
       'getYesterdaysStudent',
+      'getRandomStudent',
     ]);
 
     localStorageSpy.getGuess.and.returnValue({
@@ -53,6 +57,8 @@ describe('GameService', () => {
     studentServiceSpy.getTodaysStudent.and.returnValue(studentOfTheDay);
 
     studentServiceSpy.getYesterdaysStudent.and.returnValue(studentOfYesterday);
+
+    studentServiceSpy.getRandomStudent.and.returnValue(studentOfTheDay);
 
     TestBed.configureTestingModule({
       providers: [
@@ -195,7 +201,7 @@ describe('GameService', () => {
 
       it('should return streak count for valid consecutive streak', () => {
         const currentDate = new Date('2025-04-15');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
         const currentDoy = dateUtils.getDayOfYear(currentDate);
 
         localStorageSpy.getStreakForList.and.returnValue({
@@ -209,7 +215,7 @@ describe('GameService', () => {
 
       it('should return 0 for stale streak (missed more than one day)', () => {
         const currentDate = new Date('2025-04-15');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
         const currentDoy = dateUtils.getDayOfYear(currentDate);
 
         localStorageSpy.getStreakForList.and.returnValue({
@@ -223,7 +229,7 @@ describe('GameService', () => {
 
       it('should return streak for yesterday win (still valid)', () => {
         const currentDate = new Date('2025-04-15');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
         const currentDoy = dateUtils.getDayOfYear(currentDate);
 
         localStorageSpy.getStreakForList.and.returnValue({
@@ -237,7 +243,7 @@ describe('GameService', () => {
 
       it('should return 0 for very old year', () => {
         const currentDate = new Date('2025-04-15');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
 
         localStorageSpy.getStreakForList.and.returnValue({
           count: 10,
@@ -250,7 +256,7 @@ describe('GameService', () => {
 
       it('should handle year boundary - Dec 31 to Jan 1', () => {
         const currentDate = new Date('2025-01-01');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
 
         localStorageSpy.getStreakForList.and.returnValue({
           count: 7,
@@ -263,7 +269,7 @@ describe('GameService', () => {
 
       it('should return 0 for previous year but not last day', () => {
         const currentDate = new Date('2025-01-01');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
 
         localStorageSpy.getStreakForList.and.returnValue({
           count: 7,
@@ -278,7 +284,7 @@ describe('GameService', () => {
     describe('updateStreakOnWin', () => {
       it('should increment streak for consecutive day win', () => {
         const currentDate = new Date('2025-04-15');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
         const currentDoy = dateUtils.getDayOfYear(currentDate);
 
         localStorageSpy.getStreakForList.and.returnValue({
@@ -297,7 +303,7 @@ describe('GameService', () => {
 
       it('should reset streak to 1 for win after missed days', () => {
         const currentDate = new Date('2025-04-15');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
         const currentDoy = dateUtils.getDayOfYear(currentDate);
 
         localStorageSpy.getStreakForList.and.returnValue({
@@ -316,7 +322,7 @@ describe('GameService', () => {
 
       it('should not update streak if already won today', () => {
         const currentDate = new Date('2025-04-15');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
         const currentDoy = dateUtils.getDayOfYear(currentDate);
 
         localStorageSpy.getStreakForList.and.returnValue({
@@ -346,7 +352,7 @@ describe('GameService', () => {
 
       it('should handle year boundary win (Dec 31 -> Jan 1)', () => {
         const currentDate = new Date('2025-01-01');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
 
         localStorageSpy.getStreakForList.and.returnValue({
           count: 5,
@@ -366,7 +372,7 @@ describe('GameService', () => {
     describe('updateStreakOnLoss', () => {
       it('should reset streak to 0 on loss', () => {
         const currentDate = new Date('2025-04-15');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
 
         localStorageSpy.getStreakForList.and.returnValue({
           count: 10,
@@ -398,7 +404,7 @@ describe('GameService', () => {
     describe('getDaysInYear (via getCurrentStreak logic)', () => {
       it('should handle leap year correctly (366 days)', () => {
         const currentDate = new Date('2025-01-01');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
 
         localStorageSpy.getStreakForList.and.returnValue({
           count: 5,
@@ -411,7 +417,7 @@ describe('GameService', () => {
 
       it('should handle non-leap year correctly (365 days)', () => {
         const currentDate = new Date('2026-01-01');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
 
         localStorageSpy.getStreakForList.and.returnValue({
           count: 5,
@@ -426,7 +432,7 @@ describe('GameService', () => {
     describe('streak per list isolation', () => {
       it('should track streaks separately for japan and global lists', () => {
         const currentDate = new Date('2025-04-15');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
         const currentDoy = dateUtils.getDayOfYear(currentDate);
 
         const japanStreak: StreakData = { count: 5, lastWinDoy: currentDoy - 1, lastWinYear: 2025 };
@@ -448,7 +454,7 @@ describe('GameService', () => {
     describe('streak update timing', () => {
       it('should update streak before notifying state change on win', () => {
         const currentDate = new Date('2025-04-15');
-        spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(currentDate);
+        mockCurrentDate(currentDate);
         const currentDoy = dateUtils.getDayOfYear(currentDate);
 
         localStorageSpy.getStreakForList.and.returnValue({
