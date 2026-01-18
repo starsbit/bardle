@@ -1,5 +1,11 @@
 # Bardle
 
+## Version 2.7.1
+
+Date: 2026/01/18
+
+- Fixed the link to the website when sharing your result
+
 ## Version 2.7.0
 
 Date: 2026/01/17
