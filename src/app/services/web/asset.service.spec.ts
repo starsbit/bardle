@@ -65,12 +65,12 @@ describe('AssetService', () => {
     );
   });
 
-  it('should return correct background location for index wrapping (modulo 48)', () => {
+  it('should return correct background location for index wrapping (modulo number of backgrounds)', () => {
     expect(service.getBackgroundLocation(49)).toBe(
-      '/en-US//assets/images/backgrounds/01.png'
+      `/en-US//assets/images/backgrounds/${49 % AssetService['BACKGROUND_COUNT']}.png`
     );
     expect(service.getBackgroundLocation(95)).toBe(
-      '/en-US//assets/images/backgrounds/47.png'
+      `/en-US//assets/images/backgrounds/${95 % AssetService['BACKGROUND_COUNT']}.png`
     );
   });
 
