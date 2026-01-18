@@ -15,7 +15,7 @@ export class AssetService {
   private static readonly ASSET_IMAGES_PATH = '/assets/images';
   private static readonly ASSET_CHANGELOGS_PATH = '/assets/changelogs.md';
   private static readonly ASSET_PREFIX_PATH = environment.assetLocationPrefix;
-  private static readonly BACKGROUND_COUNT = 48;
+  private static readonly BACKGROUND_COUNT = 38;
   private fullImagePath: string;
 
   constructor() {
