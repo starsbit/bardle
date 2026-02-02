@@ -51,7 +51,7 @@ export class CopyButtonComponent {
 
     const streak = this.gameService.getCurrentStreak();
 
-    let scoreReport = `Daily Blue Archive Wordle #${daysSinceLaunch} ${date} on https://bardle.net/ \n`;
+    let scoreReport = `Daily Blue Archive Wordle #${daysSinceLaunch} ${date} on https://bardle.starsbit.space/ \n`;
     scoreReport += `Student list: ${this.gameService.getCurrentList()} students\n`;
     scoreReport += `I guessed the student in ${attempts} attempt${
       attempts > 1 ? 's' : ''

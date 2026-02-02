@@ -4,5 +4,5 @@ export const environment: Environment = {
   googleAnalyticsTrackingCode: 'G-8QWBE016HK',
   production: true,
   assetLocationPrefix: '/en-US',
-  baseUrl: 'https://bardle.net/',
+  baseUrl: 'https://bardle.starsbit.space/',
 };

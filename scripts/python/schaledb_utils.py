@@ -38,6 +38,10 @@ INCONSISTEN_STUDENT_LOOKUP = [
     ("Mari (Idol)", "Mari (Pop Idol)"),
     ("Sakurako (Idol)", "Sakurako (Pop Idol)"),
     ("Mine (Idol)", "Mine (Pop Idol)"),
+    ("Rio (Battle)", "Rio (Armed)"),
+    ("Toki (Battle)", "Toki (Armed)"),
+    ("Himari (Battle)", "Himari (Armed)"),
+    ("Aris (Battle)", "Aris (Armed)"),
 ]
 
 def translate_wiki_to_schale(wiki_name):

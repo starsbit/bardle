@@ -2,7 +2,7 @@
 
 A [Blue Archive](https://bluearchive.nexon.com/) [Wordle](https://en.wikipedia.org/wiki/Wordle) game variant. Guess the hidden student in 5 tries. A new student to guess is available each day.
 
-The game is hosted at [bardle.net](https://bardle.net/).
+The game is hosted at [bardle.starsbit.space](https://bardle.starsbit.space/).
 
 ## Development
 
