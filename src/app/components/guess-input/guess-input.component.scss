@@ -2,6 +2,8 @@
   color: whitesmoke;
   margin-top: 8px;
   margin-bottom: 8px;
+  --mat-option-hover-state-layer-color: rgba(0, 0, 0, 0.08);
+  --mat-option-focus-state-layer-color: rgba(0, 0, 0, 0.12);
 }
 
 ::ng-deep .mdc-list-item__primary-text {
