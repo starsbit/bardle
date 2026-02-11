@@ -1,5 +1,12 @@
 # Bardle
 
+## Version 2.8.0
+
+Date: 2026/02/11
+
+- Move domain from bardle.net to bardle.starsbit.space
+- Added visual clue for selection hover and focus
+
 ## Version 2.7.1
 
 Date: 2026/01/18
