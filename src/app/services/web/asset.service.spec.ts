@@ -56,21 +56,24 @@ describe('AssetService', () => {
     );
   });
 
-  it('should return correct background location for index below 1', () => {
+  it('should return correct background location for index 0', () => {
     expect(service.getBackgroundLocation(0)).toBe(
-      '/en-US//assets/images/backgrounds/01.png'
+      '/en-US//assets/images/backgrounds/00.png'
     );
+  });
+
+  it('should return correct background location for negative index', () => {
     expect(service.getBackgroundLocation(-5)).toBe(
-      '/en-US//assets/images/backgrounds/01.png'
+      `/en-US//assets/images/backgrounds/${String((-5 % 29 + 29) % 29).padStart(2, '0')}.png`
     );
   });
 
   it('should return correct background location for index wrapping (modulo number of backgrounds)', () => {
     expect(service.getBackgroundLocation(49)).toBe(
-      `/en-US//assets/images/backgrounds/${49 % AssetService['BACKGROUND_COUNT']}.png`
+      `/en-US//assets/images/backgrounds/${String(49 % AssetService['BACKGROUND_COUNT']).padStart(2, '0')}.png`
     );
     expect(service.getBackgroundLocation(95)).toBe(
-      `/en-US//assets/images/backgrounds/${95 % AssetService['BACKGROUND_COUNT']}.png`
+      `/en-US//assets/images/backgrounds/${String(95 % AssetService['BACKGROUND_COUNT']).padStart(2, '0')}.png`
     );
   });
 
@@ -102,11 +105,9 @@ describe('AssetService', () => {
       today.getUTCMonth() + 1
     ).padStart(2, '0')}.${today.getUTCFullYear()}`;
     const expectedIndex =
-      hashCode(formattedDate) % AssetService['BACKGROUND_COUNT'];
+      ((hashCode(formattedDate) % AssetService['BACKGROUND_COUNT']) + AssetService['BACKGROUND_COUNT']) % AssetService['BACKGROUND_COUNT'];
     const expectedBackground =
-      expectedIndex < 10
-        ? `/en-US//assets/images/backgrounds/0${expectedIndex}.png`
-        : `/en-US//assets/images/backgrounds/${expectedIndex}.png`;
+      `/en-US//assets/images/backgrounds/${String(expectedIndex).padStart(2, '0')}.png`;
 
     expect(service.pickBackgroundOfTheDayLocation()).toBe(expectedBackground);
   });

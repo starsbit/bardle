@@ -15,7 +15,7 @@ export class AssetService {
   private static readonly ASSET_IMAGES_PATH = '/assets/images';
   private static readonly ASSET_CHANGELOGS_PATH = '/assets/changelogs.md';
   private static readonly ASSET_PREFIX_PATH = environment.assetLocationPrefix;
-  private static readonly BACKGROUND_COUNT = 38;
+  private static readonly BACKGROUND_COUNT = 29;
   private fullImagePath: string;
 
   constructor() {
@@ -43,14 +43,8 @@ export class AssetService {
   }
 
   getBackgroundLocation(index: number) {
-    if (index < 1) {
-      index = 1;
-    }
-    index = index % AssetService.BACKGROUND_COUNT;
-    if (index < 10) {
-      return `${this.fullImagePath}/backgrounds/0${index}.png`;
-    }
-    return `${this.fullImagePath}/backgrounds/${index}.png`;
+    index = ((index % AssetService.BACKGROUND_COUNT) + AssetService.BACKGROUND_COUNT) % AssetService.BACKGROUND_COUNT;
+    return `${this.fullImagePath}/backgrounds/${String(index).padStart(2, '0')}.png`;
   }
 
   getSchoolIconLocation(student: Student) {
