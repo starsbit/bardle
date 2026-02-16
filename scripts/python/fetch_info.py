@@ -53,7 +53,7 @@ def generate_info_from_url(url, image_name):
     soup = BeautifulSoup(html_content, 'html.parser')
 
     # Find the desired table element
-    table = soup.find('table', class_='wikitable ba-template-character character')
+    table = soup.find('table', class_='wikitable ba-template-character character citizen-table-nowrap')
 
     ex_skill_cost = None
 
