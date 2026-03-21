@@ -44,6 +44,7 @@ INCONSISTEN_STUDENT_LOOKUP = [
     ("Aris (Battle)", "Aris (Armed)"),
     ("Eimi (Battle)", "Eimi (Armed)"),
     ("Yuzu (Battle)", "Yuzu (Armed)"),
+    ("Koyuki (Pajama)", "Koyuki (Pajamas)")
 ]
 
 def translate_wiki_to_schale(wiki_name):
