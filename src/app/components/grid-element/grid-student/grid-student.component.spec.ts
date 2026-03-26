@@ -19,6 +19,11 @@ describe('GridStudentComponent', () => {
 
   const mockStudent: Student =
     getStudentListTestData()[StudentList.GLOBAL]['Aru'];
+  const hina: Student = getStudentListTestData()[StudentList.GLOBAL]['Hina'];
+  const hinaSwimsuit: Student =
+    getStudentListTestData()[StudentList.GLOBAL]['Hina_(Swimsuit)'];
+  const hinaDress: Student =
+    getStudentListTestData()[StudentList.GLOBAL]['Hina_(Dress)'];
 
   beforeEach(async () => {
     mockAssetServiceSpy = jasmine.createSpyObj('AssetService', [
@@ -72,6 +77,85 @@ describe('GridStudentComponent', () => {
     tick(420);
 
     const divElement = fixture.debugElement.query(By.css('div > div > div'));
+    expect(divElement.nativeElement.classList).toContain('incorrect');
+  }));
+
+  describe('partialGuess()', () => {
+    it('should return false when guess is an exact match', () => {
+      component.guess = hina;
+      component.answer = hina;
+      expect(component.partialGuess()).toBeFalse();
+    });
+
+    it('should return true when guessing base version with answer being alternate version', () => {
+      component.guess = hina;
+      component.answer = hinaSwimsuit;
+      expect(component.partialGuess()).toBeTrue();
+    });
+
+    it('should return true when guessing alternate version with answer being base version', () => {
+      component.guess = hinaSwimsuit;
+      component.answer = hina;
+      expect(component.partialGuess()).toBeTrue();
+    });
+
+    it('should return true when guessing one alternate version with answer being another alternate version', () => {
+      component.guess = hinaSwimsuit;
+      component.answer = hinaDress;
+      expect(component.partialGuess()).toBeTrue();
+    });
+
+    it('should return false when guess and answer share no base name', () => {
+      component.guess = mockStudent;
+      component.answer = hina;
+      expect(component.partialGuess()).toBeFalse();
+    });
+
+    it('should return false when guess is null', () => {
+      component.guess = null;
+      component.answer = hina;
+      expect(component.partialGuess()).toBeFalse();
+    });
+
+    it('should return false when answer is null', () => {
+      component.guess = hina;
+      component.answer = null;
+      expect(component.partialGuess()).toBeFalse();
+    });
+  });
+
+  it('should apply the partial class when the guess is an alternate version', fakeAsync(() => {
+    component.guess = hinaSwimsuit;
+    component.answer = hina;
+    fixture.detectChanges();
+    fixture.whenStable();
+    tick(420);
+
+    const divElement = fixture.debugElement.query(By.css('div > div > div'));
+    expect(divElement.nativeElement.classList).toContain('partial');
+  }));
+
+  it('should not apply partial class when guess and answer are the same student', fakeAsync(() => {
+    component.guess = hina;
+    component.answer = hina;
+    fixture.detectChanges();
+    fixture.whenStable();
+    tick(420);
+
+    const divElement = fixture.debugElement.query(By.css('div > div > div'));
+    expect(divElement.nativeElement.classList).not.toContain('partial');
+    expect(divElement.nativeElement.classList).toContain('correct');
+  }));
+
+  it('should not apply partial class when guess and answer share no base name', fakeAsync(() => {
+    component.guess = mockStudent;
+    component.answer = hina;
+    fixture.detectChanges();
+    fixture.whenStable();
+    tick(420);
+
+    const divElement = fixture.debugElement.query(By.css('div > div > div'));
+    expect(divElement.nativeElement.classList).not.toContain('partial');
     expect(divElement.nativeElement.classList).toContain('incorrect');
   }));
 

@@ -19,6 +19,16 @@ export class GridStudentComponent extends GridElementComponent {
     return this.answer?.fullName === this.guess?.fullName;
   }
 
+  partialGuess() {
+    if (this.correctGuess()) return false;
+    const baseName = (name: string) => name.replace(/\s*\(.*\)\s*$/, '').trim();
+    return (
+      !!this.answer &&
+      !!this.guess &&
+      baseName(this.answer.fullName) === baseName(this.guess.fullName)
+    );
+  }
+
   get fullName() {
     return this.guess?.fullName;
   }

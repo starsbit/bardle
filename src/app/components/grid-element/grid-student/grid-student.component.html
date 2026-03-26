@@ -4,7 +4,7 @@
   [won]="guess === answer"
 >
   @if(guess) {
-  <div [ngClass]="[correctGuess() ? 'correct' : 'incorrect']">
+  <div [ngClass]="[correctGuess() ? 'correct' : partialGuess() ? 'partial' : 'incorrect']">
     <img
       class="grid-icon"
       [ngSrc]="this.assetService.getStudentIconLocation(guess)"

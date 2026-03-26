@@ -1,5 +1,11 @@
 # Bardle
 
+## Version 2.9.0
+
+Date: 2026/03/26
+
+- Guessing an alternate version of the correct student (e.g. Sorasaki Hina (Swimsuit) instead of Sorasaki Hina) now shows a yellow student icon instead of a grey one
+
 ## Version 2.8.0
 
 Date: 2026/02/11
