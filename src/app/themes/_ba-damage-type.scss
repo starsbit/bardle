@@ -27,3 +27,8 @@
   @extend .base-damage-type;
   color: #9a49a9;
 }
+
+.chemical {
+  @extend .base-damage-type;
+  color: #067167;
+}
