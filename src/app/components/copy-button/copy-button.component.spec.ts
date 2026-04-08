@@ -90,7 +90,7 @@ describe('CopyButtonComponent', () => {
       day: 'numeric',
     });
 
-    const expectedScore = `Daily Blue Archive Wordle #${daysActive} ${date} on https://bardle.starsbit.space/ \nStudent list: global students\nI guessed the student in 1 attempt and lost\n\n🟩🟩🟩⬜⬜🟩\n`;
+    const expectedScore = `Daily Blue Archive Wordle #${daysActive} ${date} on https://bardle.starsbit.space/ \nStudent list: global students\nI guessed the student in 1 attempt and lost\n\n⬜🟩🟩🟩⬜⬜🟩\n`;
     expect(clipboardSpy.copy).toHaveBeenCalledWith(expectedScore);
   }));
 
@@ -111,7 +111,31 @@ describe('CopyButtonComponent', () => {
       month: 'short',
       day: 'numeric',
     });
-    const expectedScore = `Daily Blue Archive Wordle #${daysActive} ${date} on https://bardle.starsbit.space/ \nStudent list: global students\nI guessed the student in 1 attempt and won\n\n🟩🟩🟩🟩🟩🟩\n`;
+    const expectedScore = `Daily Blue Archive Wordle #${daysActive} ${date} on https://bardle.starsbit.space/ \nStudent list: global students\nI guessed the student in 1 attempt and won\n\n🟩🟩🟩🟩🟩🟩🟩\n`;
+    expect(clipboardSpy.copy).toHaveBeenCalledWith(expectedScore);
+  }));
+
+  it('should use the similar icon when a variant of the answer student is guessed', fakeAsync(() => {
+    const hinaSwimsuit: Student =
+      getStudentListTestData()[StudentList.GLOBAL]['Hina_(Swimsuit)'];
+    gameServiceSpy.getCurrentGuesses.and.returnValue(['Hina_(Swimsuit)']);
+    gameServiceSpy.getCurrentAnswer.and.returnValue('Hina');
+    gameServiceSpy.getCurrentStudentData.and.returnValue({
+      'Hina_(Swimsuit)': hinaSwimsuit,
+      Hina: mockTargetStudent,
+    });
+
+    component.copyToClipboard();
+    fixture.detectChanges();
+    tick();
+
+    const date = new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
+    // Hina_(Swimsuit) vs Hina: portrait=🟨 (same base name), school=🟩, role=🟩, damageType=🟩, weaponType=🟩, exSkillCost=⬜ (3≠7), releaseDate=⬜
+    const expectedScore = `Daily Blue Archive Wordle #${daysActive} ${date} on https://bardle.starsbit.space/ \nStudent list: global students\nI guessed the student in 1 attempt and lost\n\n🟨🟩🟩🟩🟩⬜⬜\n`;
     expect(clipboardSpy.copy).toHaveBeenCalledWith(expectedScore);
   }));
 

@@ -19,6 +19,7 @@ export class CopyButtonComponent {
   private gameService = inject(GameService);
 
   private readonly correctIcon = '🟩';
+  private readonly similarIcon = '🟨';
   private readonly incorrectIcon = '⬜';
   private readonly wantedFields = [
     'school',
@@ -61,7 +62,16 @@ export class CopyButtonComponent {
     }
     scoreReport += '\n';
 
+    const baseName = (name: string) => name.replace(/\s*\(.*\)\s*$/, '').trim();
+
     guessedStudents.forEach((guessedStudent) => {
+      if (guessedStudent.fullName === targetStudent.fullName) {
+        scoreReport += this.correctIcon;
+      } else if (baseName(guessedStudent.fullName) === baseName(targetStudent.fullName)) {
+        scoreReport += this.similarIcon;
+      } else {
+        scoreReport += this.incorrectIcon;
+      }
       this.wantedFields.forEach((field) => {
         if (
           guessedStudent[field as keyof Student] ===
