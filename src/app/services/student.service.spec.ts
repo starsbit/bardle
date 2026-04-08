@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { Student, StudentData, StudentListData } from '../models/student';
 import { StudentList } from '../models/student-list';
+import * as dateUtils from '../utils/date-utils';
 import { getCurrentUTCDateNoTime } from '../utils/date-utils';
 import { hashCode } from '../utils/hash-utils';
 import { StudentService } from './student.service';
@@ -40,9 +41,9 @@ describe('StudentService', () => {
         '1': { id: '1', fullName: 'Student 1' } as Student,
         '2': { id: '2', fullName: 'Student 2' } as Student,
       };
-      const yesterday = new Date();
+      const yesterday = getCurrentUTCDateNoTime();
       yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-      const formattedDate = `${String(yesterday.getDate()).padStart(
+      const formattedDate = `${String(yesterday.getUTCDate()).padStart(
         2,
         '0'
       )}.${String(yesterday.getUTCMonth() + 1).padStart(
@@ -55,6 +56,24 @@ describe('StudentService', () => {
 
       expect(service.getYesterdaysStudent(students)).toEqual(expectedStudent);
     });
+
+    it('should use UTC date as the seed, not the local date', () => {
+      // April 8 2026 UTC midnight — in UTC-N timezones getDate() returns April 7
+      const utcMidnight = new Date(Date.UTC(2026, 3, 8));
+      const yesterday = new Date(Date.UTC(2026, 3, 7)); // April 7 UTC
+      spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(utcMidnight);
+
+      const students: StudentData = {
+        '1': { id: '1', fullName: 'Student 1' } as Student,
+        '2': { id: '2', fullName: 'Student 2' } as Student,
+      };
+
+      spyOn(service, 'getStudent').and.callThrough();
+      service.getYesterdaysStudent(students);
+
+      const expectedSeed = `${String(yesterday.getUTCDate()).padStart(2, '0')}.${String(yesterday.getUTCMonth() + 1).padStart(2, '0')}.${yesterday.getUTCFullYear()}`;
+      expect(service.getStudent).toHaveBeenCalledWith(students, expectedSeed);
+    });
   });
 
   describe('getTodaysStudent', () => {
@@ -64,7 +83,7 @@ describe('StudentService', () => {
         '2': { id: '2', fullName: 'Student 2' } as Student,
       };
       const today = getCurrentUTCDateNoTime();
-      const formattedDate = `${String(today.getDate()).padStart(
+      const formattedDate = `${String(today.getUTCDate()).padStart(
         2,
         '0'
       )}.${String(today.getUTCMonth() + 1).padStart(
@@ -76,6 +95,44 @@ describe('StudentService', () => {
       const expectedStudent = students[keys[index]];
 
       expect(service.getTodaysStudent(students)).toEqual(expectedStudent);
+    });
+
+    it('should use UTC date as the seed, not the local date', () => {
+      // April 8 2026 UTC midnight — in UTC-N timezones getDate() returns April 7
+      const utcMidnight = new Date(Date.UTC(2026, 3, 8));
+      spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(utcMidnight);
+
+      const students: StudentData = {
+        '1': { id: '1', fullName: 'Student 1' } as Student,
+        '2': { id: '2', fullName: 'Student 2' } as Student,
+      };
+
+      spyOn(service, 'getStudent').and.callThrough();
+      service.getTodaysStudent(students);
+
+      // Seed must use getUTCDate() = 8, not getDate() which is 7 in UTC-N timezones
+      const expectedSeed = `${String(utcMidnight.getUTCDate()).padStart(2, '0')}.${String(utcMidnight.getUTCMonth() + 1).padStart(2, '0')}.${utcMidnight.getUTCFullYear()}`;
+      expect(service.getStudent).toHaveBeenCalledWith(students, expectedSeed);
+    });
+
+    it('should produce the same student for all timezones at the same UTC moment', () => {
+      // Simulate users in different timezones seeing the same UTC midnight date.
+      // All must see the same student regardless of local time offset.
+      const utcMidnightApril8 = new Date(Date.UTC(2026, 3, 8));
+      spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(utcMidnightApril8);
+
+      const students: StudentData = {
+        '1': { id: '1', fullName: 'Student 1' } as Student,
+        '2': { id: '2', fullName: 'Student 2' } as Student,
+        '3': { id: '3', fullName: 'Student 3' } as Student,
+      };
+
+      const result = service.getTodaysStudent(students);
+
+      // The expected student is always keyed off the UTC date string "08.04.2026"
+      const utcSeed = '08.04.2026';
+      const expected = service.getStudent(students, utcSeed);
+      expect(result).toEqual(expected);
     });
   });
 

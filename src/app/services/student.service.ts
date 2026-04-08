@@ -17,7 +17,7 @@ export class StudentService {
   getYesterdaysStudent(students: StudentData): Student {
     const yesterday = getCurrentUTCDateNoTime();
     yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-    const formattedDate = `${String(yesterday.getDate()).padStart(
+    const formattedDate = `${String(yesterday.getUTCDate()).padStart(
       2,
       '0'
     )}.${String(yesterday.getUTCMonth() + 1).padStart(
@@ -32,7 +32,7 @@ export class StudentService {
 
   getTodaysStudent(students: StudentData): Student {
     const today = getCurrentUTCDateNoTime();
-    const formattedDate = `${String(today.getDate()).padStart(2, '0')}.${String(
+    const formattedDate = `${String(today.getUTCDate()).padStart(2, '0')}.${String(
       today.getUTCMonth() + 1
     ).padStart(2, '0')}.${today.getUTCFullYear()}`;
     return this.handleDisabledCharacters(
