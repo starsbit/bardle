@@ -2,7 +2,6 @@ import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { Student, StudentData, StudentListData } from '../models/student';
 import { StudentList } from '../models/student-list';
-import * as dateUtils from '../utils/date-utils';
 import { getCurrentUTCDateNoTime } from '../utils/date-utils';
 import { hashCode } from '../utils/hash-utils';
 import { StudentService } from './student.service';
@@ -58,10 +57,11 @@ describe('StudentService', () => {
     });
 
     it('should use UTC date as the seed, not the local date', () => {
-      // April 8 2026 UTC midnight — in UTC-N timezones getDate() returns April 7
-      const utcMidnight = new Date(Date.UTC(2026, 3, 8));
-      const yesterday = new Date(Date.UTC(2026, 3, 7)); // April 7 UTC
-      spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(utcMidnight);
+      // Mock "now" to April 8 2026 UTC midnight.
+      // getCurrentUTCDateNoTime() will derive yesterday as April 7 UTC.
+      // With the bug, getDate() in UTC-N timezones would return April 6 for midnight-UTC April 7.
+      jasmine.clock().install();
+      jasmine.clock().mockDate(new Date(Date.UTC(2026, 3, 8)));
 
       const students: StudentData = {
         '1': { id: '1', fullName: 'Student 1' } as Student,
@@ -71,8 +71,10 @@ describe('StudentService', () => {
       spyOn(service, 'getStudent').and.callThrough();
       service.getYesterdaysStudent(students);
 
-      const expectedSeed = `${String(yesterday.getUTCDate()).padStart(2, '0')}.${String(yesterday.getUTCMonth() + 1).padStart(2, '0')}.${yesterday.getUTCFullYear()}`;
-      expect(service.getStudent).toHaveBeenCalledWith(students, expectedSeed);
+      // Yesterday in UTC is April 7 — seed must be '07.04.2026'
+      expect(service.getStudent).toHaveBeenCalledWith(students, '07.04.2026');
+
+      jasmine.clock().uninstall();
     });
   });
 
@@ -98,9 +100,11 @@ describe('StudentService', () => {
     });
 
     it('should use UTC date as the seed, not the local date', () => {
-      // April 8 2026 UTC midnight — in UTC-N timezones getDate() returns April 7
-      const utcMidnight = new Date(Date.UTC(2026, 3, 8));
-      spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(utcMidnight);
+      // Mock "now" to April 8 2026 UTC midnight.
+      // In UTC-N timezones, getDate() on this Date returns April 7 — that was the bug.
+      // The fix uses getUTCDate() which always returns 8 regardless of timezone.
+      jasmine.clock().install();
+      jasmine.clock().mockDate(new Date(Date.UTC(2026, 3, 8)));
 
       const students: StudentData = {
         '1': { id: '1', fullName: 'Student 1' } as Student,
@@ -110,16 +114,17 @@ describe('StudentService', () => {
       spyOn(service, 'getStudent').and.callThrough();
       service.getTodaysStudent(students);
 
-      // Seed must use getUTCDate() = 8, not getDate() which is 7 in UTC-N timezones
-      const expectedSeed = `${String(utcMidnight.getUTCDate()).padStart(2, '0')}.${String(utcMidnight.getUTCMonth() + 1).padStart(2, '0')}.${utcMidnight.getUTCFullYear()}`;
-      expect(service.getStudent).toHaveBeenCalledWith(students, expectedSeed);
+      // Seed must be '08.04.2026' (UTC date), not '07.04.2026' (local date in UTC-N)
+      expect(service.getStudent).toHaveBeenCalledWith(students, '08.04.2026');
+
+      jasmine.clock().uninstall();
     });
 
     it('should produce the same student for all timezones at the same UTC moment', () => {
-      // Simulate users in different timezones seeing the same UTC midnight date.
-      // All must see the same student regardless of local time offset.
-      const utcMidnightApril8 = new Date(Date.UTC(2026, 3, 8));
-      spyOn(dateUtils, 'getCurrentUTCDateNoTime').and.returnValue(utcMidnightApril8);
+      // All users at the same UTC moment must see the same student.
+      // The seed must be derived from UTC date components, not local ones.
+      jasmine.clock().install();
+      jasmine.clock().mockDate(new Date(Date.UTC(2026, 3, 8)));
 
       const students: StudentData = {
         '1': { id: '1', fullName: 'Student 1' } as Student,
@@ -128,11 +133,10 @@ describe('StudentService', () => {
       };
 
       const result = service.getTodaysStudent(students);
-
-      // The expected student is always keyed off the UTC date string "08.04.2026"
-      const utcSeed = '08.04.2026';
-      const expected = service.getStudent(students, utcSeed);
+      const expected = service.getStudent(students, '08.04.2026');
       expect(result).toEqual(expected);
+
+      jasmine.clock().uninstall();
     });
   });
 
