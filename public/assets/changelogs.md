@@ -1,5 +1,11 @@
 # Bardle
 
+## Version 2.9.1
+
+Date: 2026/04/08
+
+- Fixing an issue where the character of the day selection can be influenced by timezones
+
 ## Version 2.9.0
 
 Date: 2026/03/26
