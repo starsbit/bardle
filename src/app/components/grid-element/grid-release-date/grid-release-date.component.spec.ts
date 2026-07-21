@@ -1,4 +1,3 @@
-import { LOCALE_ID } from '@angular/core';
 import {
   ComponentFixture,
   fakeAsync,
@@ -8,7 +7,6 @@ import {
 import { By } from '@angular/platform-browser';
 import { Student } from '../../../models/student';
 import { StudentList } from '../../../models/student-list';
-import { DisplayDateFormatPipe } from '../../../pipes/display-date-format.pipe';
 import { getStudentListTestData } from '../../../utils/test-data-utils';
 import { GridElementContainerComponent } from '../grid-wrapper/grid-element-container.component';
 import { GridReleaseDateComponent } from './grid-release-date.component';
@@ -16,22 +14,15 @@ import { GridReleaseDateComponent } from './grid-release-date.component';
 describe('GridReleaseDateComponent', () => {
   let component: GridReleaseDateComponent;
   let fixture: ComponentFixture<GridReleaseDateComponent>;
-  let displayDatePipe: DisplayDateFormatPipe;
 
   const mockStudentAru: Student =
     getStudentListTestData()[StudentList.GLOBAL]['Aru'];
-  const mockStudentHina: Student =
+  const mockStudentMika: Student =
     getStudentListTestData()[StudentList.GLOBAL]['Mika'];
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      providers: [
-        DisplayDateFormatPipe,
-        { provide: LOCALE_ID, useValue: 'en' },
-      ],
-    }).compileComponents();
+    await TestBed.configureTestingModule({}).compileComponents();
 
-    displayDatePipe = TestBed.inject(DisplayDateFormatPipe);
     fixture = TestBed.createComponent(GridReleaseDateComponent);
     component = fixture.componentInstance;
   });
@@ -49,28 +40,26 @@ describe('GridReleaseDateComponent', () => {
 
   it('should correctly determine an incorrect guess', () => {
     component.guess = mockStudentAru;
-    component.answer = mockStudentHina;
+    component.answer = mockStudentMika;
     fixture.detectChanges();
     expect(component.correctGuess()).toBeFalse();
   });
 
-  it('should determine if guess date is earlier than answer date', () => {
+  it('should determine if guess order is earlier than answer order', () => {
     component.guess = mockStudentAru;
-    component.answer = mockStudentHina;
+    component.answer = mockStudentMika;
     fixture.detectChanges();
-    expect(component.isGuessDateSmaller()).toBe(
-      new Date(mockStudentAru.releaseDate) <
-        new Date(mockStudentHina.releaseDate)
+    expect(component.isGuessOrderSmaller()).toBe(
+      mockStudentAru.releaseOrder < mockStudentMika.releaseOrder
     );
   });
 
-  it('should determine if guess date is later than answer date', () => {
-    component.guess = mockStudentHina;
+  it('should determine if guess order is later than answer order', () => {
+    component.guess = mockStudentMika;
     component.answer = mockStudentAru;
     fixture.detectChanges();
-    expect(component.isGuessDateBigger()).toBe(
-      new Date(mockStudentHina.releaseDate) >
-        new Date(mockStudentAru.releaseDate)
+    expect(component.isGuessOrderBigger()).toBe(
+      mockStudentMika.releaseOrder > mockStudentAru.releaseOrder
     );
   });
 
@@ -87,7 +76,7 @@ describe('GridReleaseDateComponent', () => {
 
   it('should apply incorrect class when the guess is incorrect', fakeAsync(() => {
     component.guess = mockStudentAru;
-    component.answer = mockStudentHina;
+    component.answer = mockStudentMika;
     fixture.detectChanges();
     fixture.whenStable();
     tick(420);
@@ -96,42 +85,41 @@ describe('GridReleaseDateComponent', () => {
     expect(divElement.nativeElement.classList).toContain('incorrect');
   }));
 
-  it('should apply "arrow-up" class if the guess date is earlier than the answer date', fakeAsync(() => {
+  it('should apply "arrow-up" class if the guess order is earlier than the answer order', fakeAsync(() => {
     component.guess = mockStudentAru;
-    component.answer = mockStudentHina;
+    component.answer = mockStudentMika;
     fixture.detectChanges();
     fixture.whenStable();
     tick(420);
 
     const divElement = fixture.debugElement.query(By.css('div > div > div'));
-    if (component.isGuessDateSmaller()) {
+    if (component.isGuessOrderSmaller()) {
       expect(divElement.nativeElement.classList).toContain('arrow-up');
     }
   }));
 
-  it('should apply "arrow-down" class if the guess date is later than the answer date', fakeAsync(() => {
-    component.guess = mockStudentHina;
+  it('should apply "arrow-down" class if the guess order is later than the answer order', fakeAsync(() => {
+    component.guess = mockStudentMika;
     component.answer = mockStudentAru;
     fixture.detectChanges();
     fixture.whenStable();
     tick(420);
 
     const divElement = fixture.debugElement.query(By.css('div > div > div'));
-    if (component.isGuessDateBigger()) {
+    if (component.isGuessOrderBigger()) {
       expect(divElement.nativeElement.classList).toContain('arrow-down');
     }
   }));
 
-  it('should render the correctly formatted release date', fakeAsync(() => {
+  it('should render the one-based release order', fakeAsync(() => {
     component.guess = mockStudentAru;
     component.answer = mockStudentAru;
     fixture.detectChanges();
-    fixture.whenStable();
     tick(420);
 
     const spanElement = fixture.debugElement.query(By.css('span'));
     expect(spanElement.nativeElement.textContent.trim()).toBe(
-      displayDatePipe.transform(mockStudentAru.releaseDate)
+      `#${mockStudentAru.releaseOrder + 1}`
     );
   }));
 

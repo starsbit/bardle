@@ -27,7 +27,7 @@ export class CopyButtonComponent {
     'damageType',
     'weaponType',
     'exSkillCost',
-    'releaseDate',
+    'releaseOrder',
   ];
 
   copyToClipboard() {

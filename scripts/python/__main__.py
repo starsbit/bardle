@@ -4,8 +4,16 @@ from check_equality import check_equality, find_minimal_identifier_fields
 from fetch_info import fetch_info
 from global_student_list import disable_student, generate_global_student_list
 from sanitization import check_key_and_id_field, delete_saved_info
+from schaledb_utils import fetch_schaledb_en, fetch_schaledb_jp
 
-INCLUDED_FIELDS = ['school', 'role', 'damageType', 'exSkillCost', 'weaponType', 'releaseDate']
+INCLUDED_FIELDS = [
+    'school',
+    'role',
+    'damageType',
+    'exSkillCost',
+    'weaponType',
+    'releaseOrder',
+]
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Download Blue Archive character information and check for conflicts.")
@@ -18,13 +26,15 @@ if __name__ == "__main__":
         print("Deleting saved information done.")
         
     print("Fetching information...")
-    jp_list = fetch_info()
+    en_data = fetch_schaledb_en()
+    jp_data = fetch_schaledb_jp()
+    jp_list = fetch_info(en_data, jp_data)
     print("Fetching information done.")
     print("Checking key and id field...")
     jp_list = check_key_and_id_field(jp_list)
     print("Checking key and id field done.")
     print("Generating global student list...")
-    gl_list = generate_global_student_list()
+    gl_list = generate_global_student_list(jp_list, en_data)
     print("Generating global student list done.")
     print("Checking equality...")
     conflicts = check_equality(jp_list, INCLUDED_FIELDS)

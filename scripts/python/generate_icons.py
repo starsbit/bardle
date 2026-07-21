@@ -1,38 +1,39 @@
 import os
 
 from folder_management import get_character_image_folder
-from schaledb_utils import fetch_icon, get_schale_db, translate_schale_to_wiki
+from schaledb_utils import JP_REGION, fetch_icon, fetch_schaledb_en, get_students_by_id
 
 
-def generate_icon_name(name: str):
-    return name.replace("_", "").replace("(", "").replace(")", "").replace(" ", "") + ".webp"
+def generate_icon_name(student_id: str) -> str:
+    return student_id.replace("_", "").replace("(", "").replace(")", "") + ".webp"
 
-def generate_icons():
+
+def generate_icons(schaledb_data: dict | None = None):
     image_folder = get_character_image_folder()
-
-    # Create the folder if it does not exist
     os.makedirs(image_folder, exist_ok=True)
 
-    schale_db = get_schale_db()
+    students = get_students_by_id(schaledb_data or fetch_schaledb_en())
+    released_students = {
+        student_id: student
+        for student_id, student in students.items()
+        if student.get("IsReleased", [False])[JP_REGION]
+    }
+    existing_icons = set(os.listdir(image_folder))
+    expected_icons = {
+        generate_icon_name(student_id) for student_id in released_students
+    }
 
-    # Get all existing icons
-    icons = os.listdir(image_folder)
+    for file_name in existing_icons - expected_icons:
+        if file_name.endswith(".webp"):
+            print(f"Removing stale icon {file_name}")
+            os.remove(image_folder + file_name)
 
-    # Get all the student names
-    student_names = [generate_icon_name(translate_schale_to_wiki(student["Name"])) for student in schale_db.values()]
-
-    # Remove all the icons that are not in the student names
-    for icon in icons:
-        if icon not in student_names:
-            print("Removing icon", icon)
-            os.remove(image_folder + icon)
-    
-    # Filter out the students that already have an icon
-    schale_db = {student["Id"]: student for student in schale_db.values() if generate_icon_name(translate_schale_to_wiki(student["Name"])) not in icons}
-
-    for student in schale_db.values():
-        print("Generating icon for", student["Name"])
-        file_name = generate_icon_name(translate_schale_to_wiki(student["Name"]))
+    for student_id, student in released_students.items():
+        file_name = generate_icon_name(student_id)
+        file_path = image_folder + file_name
+        if file_name in existing_icons and os.path.getsize(file_path) > 0:
+            continue
+        print(f"Downloading icon for {student_id}")
         image = fetch_icon(student["Id"])
-        with open(image_folder + file_name, 'wb') as image_file:
+        with open(file_path, "wb") as image_file:
             image_file.write(image)

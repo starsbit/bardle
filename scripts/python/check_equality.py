@@ -26,7 +26,7 @@ def check_equality(characters, included_fields):
     return same_characters
 
 def find_minimal_identifier_fields(characters):
-    EXCLUDED_FIELDS = ['id', 'fullName', 'shortName', 'nativeName', 'image', 'releaseDate', 'outfit', 'birthday']
+    EXCLUDED_FIELDS = ['id', 'fullName', 'shortName', 'nativeName', 'image', 'releaseOrder', 'outfit', 'birthday']
     # Extract all possible fields
     all_fields = set()
     for character in characters.values():

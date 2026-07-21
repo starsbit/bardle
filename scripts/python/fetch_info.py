@@ -1,177 +1,108 @@
-import datetime
-import json
 import os
 import re
 
-import requests
-from bs4 import BeautifulSoup
-from filter_existing_students import filter_existing_students
 from folder_management import get_asset_folder
 from generate_icons import generate_icon_name, generate_icons
 from json_utils import dump_data, load_jp_data
-from schaledb_utils import generate_wiki_article_list_from_schaledb
+from schaledb_utils import (
+    ARMOR_TYPE_MAP,
+    BULLET_TYPE_MAP,
+    JP_REGION,
+    ROLE_MAP,
+    SCHOOL_MAP,
+    SQUAD_TYPE_MAP,
+    fetch_schaledb_en,
+    fetch_schaledb_jp,
+    get_outfit,
+    get_student_id,
+    get_students_by_id,
+)
 
 
-def extract_integer(s):
-    match = re.search(r'\d+', s)
-    if match:
-        return int(match.group())
-    else:
-        return None
+def extract_integer(value: str):
+    match = re.search(r"\d+", value)
+    return int(match.group()) if match else None
 
 
-def separate_names(name_string):
-    # Regular expression to match the Latin name and Japanese name
-    match = re.search(r"[^\x00-\x7F]+(?:\s[^\x00-\x7F]+)*$", name_string)
-    if match:
-        split_index = match.start()
-        latin_name = name_string[:split_index].strip()
-        japanese_name = name_string[split_index:].strip()
-        return latin_name, japanese_name
-    return name_string, ""
-
-def format_birthday(bday_str):
+def format_birthday(value: str) -> str:
+    """Convert SchaleDB's M/D birthday to the date-shaped format used by Bardle."""
     try:
-        date_obj = datetime.datetime.strptime(bday_str, "%B %d")
-        return date_obj.strftime("2000/%m/%d")
-    except ValueError:
-        return bday_str  # Return the original string if parsing fails
+        month, day = value.split("/")
+        return f"2000/{int(month):02d}/{int(day):02d}"
+    except (ValueError, AttributeError):
+        return value
 
-def generate_info_from_url(url, image_name):
 
-    # Fetch the HTML content of the webpage
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
-    response = requests.get(url, headers=headers)
-    try:
-        response.raise_for_status()
-    except requests.exceptions.HTTPError as e:
-        print("ERROR: Could not fetch the webpage. Skipping character at URL:", url)
-        print(e)
-    html_content = response.content
+def _full_name(student: dict) -> str:
+    family_name = student.get("FamilyName", "")
+    personal_name = student.get("PersonalName", student.get("Name", ""))
+    return " ".join(part.strip() for part in (family_name, personal_name) if part.strip())
 
-    # Parse the HTML
-    soup = BeautifulSoup(html_content, 'html.parser')
 
-    # Find the desired table element
-    table = soup.find('table', class_='wikitable ba-template-character character citizen-table-nowrap')
+def build_character_info(en_student: dict, jp_student: dict | None) -> dict:
+    student_id = get_student_id(en_student)
+    outfit = get_outfit(en_student)
+    full_name = _full_name(en_student)
+    if outfit != "Default":
+        full_name += f" ({outfit})"
 
-    ex_skill_cost = None
+    ex_costs = en_student.get("Skills", {}).get("Ex", {}).get("Cost", [])
+    return {
+        "id": student_id,
+        "fullName": full_name,
+        "shortName": en_student["Name"],
+        "nativeName": _full_name(jp_student) if jp_student else "",
+        "school": SCHOOL_MAP.get(
+            en_student.get("School", ""), en_student.get("School", "")
+        ),
+        "damageType": BULLET_TYPE_MAP.get(
+            en_student.get("BulletType", ""), en_student.get("BulletType", "")
+        ),
+        "armorType": ARMOR_TYPE_MAP.get(
+            en_student.get("ArmorType", ""), en_student.get("ArmorType", "")
+        ),
+        "role": ROLE_MAP.get(
+            en_student.get("TacticRole", ""), en_student.get("TacticRole", "")
+        ),
+        "combatClass": SQUAD_TYPE_MAP.get(
+            en_student.get("SquadType", ""), en_student.get("SquadType", "")
+        ),
+        "exSkillCost": ex_costs[0] if ex_costs else None,
+        "positioning": en_student.get("Position", ""),
+        "height": extract_integer(en_student.get("CharHeightMetric", "")) or 0,
+        "outfit": outfit,
+        "releaseOrder": en_student["DefaultOrder"],
+        "weaponType": en_student.get("WeaponType", ""),
+        "image": generate_icon_name(student_id),
+        "birthday": format_birthday(en_student.get("BirthDay", "")),
+        "disabled": False,
+    }
 
-    for text in soup.find_all(text=True):
-        # Check if the text contains "Cost"
-        if "Cost" in text and text != 'Cost Recovery\n':
-            # Print the first occurrence and break the loop
-            ex_skill_cost = extract_integer(text)
-            break
 
-    if not table:
-        print("Character Table not found on the webpage.")
+def build_jp_student_list(en_data: dict, jp_data: dict, existing_info: dict) -> dict:
+    jp_by_schale_id = {int(key): value for key, value in jp_data.items()}
+    characters = {}
 
-    # Extract the required information from the table
-    if table:
-        # Find relevant elements within the table
-        full_name = table.find('th', text='Full Name').find_next('td').text.strip()
-        height = extract_integer(table.find('th', text='Height').find_next('td').text.strip())
-        school = table.find('td', title=True).text.strip()
-        damage_type = table.find('th', text='Damage Type').find_next('td').text.strip()
-        armor_type = table.find('th', text='Armor Type').find_next('td').text.strip()
-        role_positioning = table.find('th', text='Role').find_next('td').find_next('td').text.strip()
-        combat_class = table.find('th', text='Combat Class').find_next('td').text.strip()
-        name = soup.find('th', class_='character-name').text.strip().replace(" ", "_")
-        releaseDateJP = soup.find('th', text='Release Date JP').find_next('td').text.strip()
-        weaponType = soup.find('div', class_='weapon-text').text.strip()
-        bday = soup.find('th', text='Birthday').find_next('td').text.strip()
+    for student_id, student in get_students_by_id(en_data).items():
+        if not student.get("IsReleased", [False])[JP_REGION]:
+            continue
 
-        if height is None:
-            # Shun Small is the only character with no height listed
-            height = 0
+        info = build_character_info(student, jp_by_schale_id.get(student["Id"]))
+        info["disabled"] = existing_info.get(student_id, {}).get("disabled", False)
+        characters[student_id] = info
 
-        bday = format_birthday(bday)
+    return characters
 
-        full_name, native_name = separate_names(full_name)
 
-        role = role_positioning.split('/')[0]
-        positioning = role_positioning.split('/')[1]
+def fetch_info(en_data: dict | None = None, jp_data: dict | None = None) -> dict:
+    en_data = en_data or fetch_schaledb_en()
+    jp_data = jp_data or fetch_schaledb_jp()
 
-        match = re.search(r'\((.*?)\)', name)
-        outfit = "Default"
-        if match:
-            outfit = match.group(1).replace("_", " ")
+    generate_icons(en_data)
 
-        # add the outfit to the name if it is not the default outfit
-        if outfit != "Default":
-            full_name = full_name + " (" + outfit + ")"
-
-        # Create a dictionary
-        character_info = {
-            "id": name,
-            "fullName": full_name,
-            "shortName": name.replace("_", " "),
-            "nativeName": native_name,
-            "school": school,
-            "damageType": damage_type,
-            "armorType": armor_type,
-            "role": role,
-            "combatClass": combat_class,
-            "exSkillCost": ex_skill_cost,
-            "positioning": positioning,
-            "height": height,
-            "outfit": outfit,
-            "releaseDate": releaseDateJP,
-            "weaponType": weaponType,
-            "image": image_name,
-            "birthday": bday,
-            "disabled": False
-        }
-
-        print("Character Information:", character_info)
-
-        return character_info
-        
-def generate_url_from_string(article_name):
-    # Generate the URL from the string
-    url = "https://bluearchive.wiki/wiki/" + article_name.replace(" ", "_")
-    return url
-
-def fetch_info():
-
-    # Get all the PNG files from the folder
-    folder_path = get_asset_folder()
-
-    # Generate the icons
-    print("Generating icons...")
-    generate_icons()
-
-    # Get all the articles from the schaledb
-    print("Getting all articles from the schaledb...")
-    all_articles = generate_wiki_article_list_from_schaledb()
-
-    print("All articles:", all_articles)
-
-    filtered_articles = filter_existing_students(all_articles)
-    print("Filtered articles:", filtered_articles)
-
-    existing_info = {}
-    print("Loading existing character info if available...")
-    if os.path.exists(folder_path + 'character_info.json'):
-        existing_info = load_jp_data()
-        
-
-    for article_name in filtered_articles:
-        # Generate the URL
-        url = generate_url_from_string(article_name)
-        print("URL for", article_name, ":", url)
-
-        # Generate the character information from the URL
-        info = generate_info_from_url(url, generate_icon_name(article_name))
-        
-        existing_info[info["id"]] = info
-        print("\n")
-
-    # Dump merged data into character_info.json
-    dump_data(existing_info, folder_path + 'character_info.json')
-
-    print("Merged data dumped into character_info.json")
-
-    return existing_info
-    
+    character_info_path = get_asset_folder() + "character_info.json"
+    existing_info = load_jp_data() if os.path.exists(character_info_path) else {}
+    characters = build_jp_student_list(en_data, jp_data, existing_info)
+    dump_data(characters, character_info_path)
+    print(f"Wrote {len(characters)} JP students to {character_info_path}")
+    return characters

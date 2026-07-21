@@ -1,5 +1,13 @@
 # Bardle
 
+## Version 2.10.0
+
+Date: 2026/07/21
+
+- Student names, metadata, release order, and regional availability are now sourced directly from SchaleDB
+- Replaced estimated global release dates with SchaleDB's global release status
+- Replaced the release date clue with release order
+
 ## Version 2.9.1
 
 Date: 2026/04/08

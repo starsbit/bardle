@@ -1,40 +1,35 @@
 import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { DisplayDateFormatPipe } from '../../../pipes/display-date-format.pipe';
 import { GridElementComponent } from '../grid-element.component';
 import { GridElementContainerComponent } from '../grid-wrapper/grid-element-container.component';
 
 @Component({
   selector: 'ba-grid-release-date',
-  imports: [GridElementContainerComponent, DisplayDateFormatPipe, NgClass],
+  imports: [GridElementContainerComponent, NgClass],
   templateUrl: './grid-release-date.component.html',
   styleUrl: './grid-release-date.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridReleaseDateComponent extends GridElementComponent {
-  isGuessDateBigger(): boolean {
+  isGuessOrderBigger(): boolean {
     if (!this.guess || !this.answer) {
       return false;
     }
-    const guessDate = new Date(this.guess.releaseDate);
-    const answerDate = new Date(this.answer.releaseDate);
-    return guessDate > answerDate;
+    return this.guess.releaseOrder > this.answer.releaseOrder;
   }
 
-  isGuessDateSmaller(): boolean {
+  isGuessOrderSmaller(): boolean {
     if (!this.guess || !this.answer) {
       return false;
     }
-    const guessDate = new Date(this.guess.releaseDate);
-    const answerDate = new Date(this.answer.releaseDate);
-    return guessDate < answerDate;
+    return this.guess.releaseOrder < this.answer.releaseOrder;
   }
 
   override correctGuess(): boolean {
-    return this.guess?.releaseDate === this.answer?.releaseDate;
+    return this.guess?.releaseOrder === this.answer?.releaseOrder;
   }
 
-  get releaseDate() {
-    return this.guess ? this.guess.releaseDate : '';
+  get releaseOrder(): number {
+    return this.guess?.releaseOrder ?? 0;
   }
 }

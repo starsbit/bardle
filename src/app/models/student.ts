@@ -12,7 +12,7 @@ export interface Student {
   positioning: string;
   height: number;
   outfit: string;
-  releaseDate: string;
+  releaseOrder: number;
   weaponType: string;
   image: string;
   birthday: string;
