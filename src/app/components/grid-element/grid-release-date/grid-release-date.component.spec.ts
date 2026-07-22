@@ -45,21 +45,21 @@ describe('GridReleaseDateComponent', () => {
     expect(component.correctGuess()).toBeFalse();
   });
 
-  it('should determine if guess order is earlier than answer order', () => {
+  it('should determine if guess date is earlier than answer date', () => {
     component.guess = mockStudentAru;
     component.answer = mockStudentMika;
     fixture.detectChanges();
-    expect(component.isGuessOrderSmaller()).toBe(
-      mockStudentAru.releaseOrder < mockStudentMika.releaseOrder
+    expect(component.isGuessDateSmaller()).toBe(
+      mockStudentAru.releaseDate < mockStudentMika.releaseDate
     );
   });
 
-  it('should determine if guess order is later than answer order', () => {
+  it('should determine if guess date is later than answer date', () => {
     component.guess = mockStudentMika;
     component.answer = mockStudentAru;
     fixture.detectChanges();
-    expect(component.isGuessOrderBigger()).toBe(
-      mockStudentMika.releaseOrder > mockStudentAru.releaseOrder
+    expect(component.isGuessDateBigger()).toBe(
+      mockStudentMika.releaseDate > mockStudentAru.releaseDate
     );
   });
 
@@ -85,7 +85,7 @@ describe('GridReleaseDateComponent', () => {
     expect(divElement.nativeElement.classList).toContain('incorrect');
   }));
 
-  it('should apply "arrow-up" class if the guess order is earlier than the answer order', fakeAsync(() => {
+  it('should apply "arrow-up" class if the guess date is earlier than the answer date', fakeAsync(() => {
     component.guess = mockStudentAru;
     component.answer = mockStudentMika;
     fixture.detectChanges();
@@ -93,12 +93,12 @@ describe('GridReleaseDateComponent', () => {
     tick(420);
 
     const divElement = fixture.debugElement.query(By.css('div > div > div'));
-    if (component.isGuessOrderSmaller()) {
+    if (component.isGuessDateSmaller()) {
       expect(divElement.nativeElement.classList).toContain('arrow-up');
     }
   }));
 
-  it('should apply "arrow-down" class if the guess order is later than the answer order', fakeAsync(() => {
+  it('should apply "arrow-down" class if the guess date is later than the answer date', fakeAsync(() => {
     component.guess = mockStudentMika;
     component.answer = mockStudentAru;
     fixture.detectChanges();
@@ -106,21 +106,19 @@ describe('GridReleaseDateComponent', () => {
     tick(420);
 
     const divElement = fixture.debugElement.query(By.css('div > div > div'));
-    if (component.isGuessOrderBigger()) {
+    if (component.isGuessDateBigger()) {
       expect(divElement.nativeElement.classList).toContain('arrow-down');
     }
   }));
 
-  it('should render the one-based release order', fakeAsync(() => {
+  it('should render the release month and year', fakeAsync(() => {
     component.guess = mockStudentAru;
     component.answer = mockStudentAru;
     fixture.detectChanges();
     tick(420);
 
     const spanElement = fixture.debugElement.query(By.css('span'));
-    expect(spanElement.nativeElement.textContent.trim()).toBe(
-      `#${mockStudentAru.releaseOrder + 1}`
-    );
+    expect(spanElement.nativeElement.textContent.trim()).toBe('Nov 2021');
   }));
 
   it('should correctly pass inputs to ba-grid-element-container', fakeAsync(() => {

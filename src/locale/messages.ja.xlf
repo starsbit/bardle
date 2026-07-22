@@ -102,11 +102,11 @@
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="ReleaseOrderGrid" datatype="html">
-        <source>Release Order</source>
-        <target>実装順</target>
-        <note priority="1" from="description">Header for release order grid</note>
-        <note priority="1" from="meaning">Release Order</note>
+      <trans-unit id="ReleaseDateGrid" datatype="html">
+        <source>Release Date</source>
+        <target>発売日</target>
+        <note priority="1" from="description">Header for release date grid</note>
+        <note priority="1" from="meaning">Release Date</note>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/grid-header/grid-header.component.ts</context>
           <context context-type="linenumber">42</context>

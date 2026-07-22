@@ -22,6 +22,7 @@ describe('ChangeLogsDialogComponent', () => {
   - Added new "copy string" when copying the result
   - Change guess attributes
   - Added change logs
+  - Visit [Bardle](https://bardle.starsbit.space/)
 
   ## Version 2.0.0
 
@@ -66,6 +67,16 @@ describe('ChangeLogsDialogComponent', () => {
     expect(markdownElement.nativeElement.innerText).toContain('Version 2.4.0');
     expect(markdownElement.nativeElement.innerText).toContain('Version 2.0.0');
     expect(markdownElement.nativeElement.innerText).toContain('Version 1.0.0');
+  });
+
+  it('should render changelog links as clickable anchors', () => {
+    const link = fixture.debugElement.query(By.css('markdown a'));
+
+    expect(link).toBeTruthy();
+    expect(link.nativeElement.textContent).toContain('Bardle');
+    expect(link.nativeElement.getAttribute('href')).toBe(
+      'https://bardle.starsbit.space/'
+    );
   });
 
   it('should display "No change logs found." if no change logs are provided', () => {

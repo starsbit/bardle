@@ -1,7 +1,5 @@
-import {
-  default as character_info,
-  default as character_info_gl,
-} from '../../../public/assets/character_info.json';
+import character_info from '../../../public/assets/character_info.json';
+import character_info_gl from '../../../public/assets/character_info_gl.json';
 import { StudentData, StudentListData } from '../models/student';
 
 export const getStudentListTestData = (): StudentListData => {

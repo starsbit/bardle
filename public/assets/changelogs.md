@@ -1,5 +1,15 @@
 # Bardle
 
+## Version 2.10.2
+
+Date: 2026/07/22
+
+- We skip one version number. Please complain to [caru](https://x.com/Middovah/status/2078857270012637318).
+- Restored the regional release date clue
+- Release dates are now merged from the Blue Archive Wiki by numeric student ID
+- Newer Global release dates are sourced from their first-release banner schedule
+- We still rely on SchaleDB for most of the data, but we now have a fallback to the Blue Archive Wiki for release dates
+
 ## Version 2.10.0
 
 Date: 2026/07/21

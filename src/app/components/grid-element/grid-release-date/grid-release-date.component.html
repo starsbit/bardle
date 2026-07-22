@@ -7,12 +7,12 @@
   <div
     [ngClass]="[
       correctGuess() ? 'correct' : 'incorrect',
-      isGuessOrderSmaller() ? 'arrow-up' : '',
-      isGuessOrderBigger() ? 'arrow-down' : ''
+      isGuessDateSmaller() ? 'arrow-up' : '',
+      isGuessDateBigger() ? 'arrow-down' : ''
     ]"
     class="flex items-center justify-center text-center p-2 overflow-hidden h-full"
   >
-    <span class="block text-white">#{{ releaseOrder + 1 }}</span>
+    <span class="block text-white">{{ releaseDate | displayDateFormat }}</span>
   </div>
   }
 </ba-grid-element-container>

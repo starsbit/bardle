@@ -38,8 +38,8 @@ export class GridHeaderComponent {
     return $localize`:Birthday|Header for birthday grid@@BirthdayGrid:Birthday`;
   }
 
-  get releaseOrder() {
-    return $localize`:Release Order|Header for release order grid@@ReleaseOrderGrid:Release Order`;
+  get releaseDate() {
+    return $localize`:Release Date|Header for release date grid@@ReleaseDateGrid:Release Date`;
   }
 
   get weaponType() {

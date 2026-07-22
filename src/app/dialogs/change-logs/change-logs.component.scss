@@ -27,3 +27,33 @@
   margin-bottom: 0.5rem;
   color: #4a5568; // Neutral color for text
 }
+
+:host ::ng-deep a {
+  color: #075985;
+  background-color: #e0f2fe;
+  border-radius: 0.25rem;
+  padding: 0.08rem 0.25rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition:
+    color 150ms ease,
+    background-color 150ms ease;
+}
+
+:host ::ng-deep a:visited {
+  color: #6b21a8;
+  background-color: #f3e8ff;
+}
+
+:host ::ng-deep a:hover {
+  color: #0c4a6e;
+  background-color: #bae6fd;
+}
+
+:host ::ng-deep a:focus-visible {
+  outline: 3px solid #0284c7;
+  outline-offset: 2px;
+}
