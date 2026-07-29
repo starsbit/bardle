@@ -1,12 +1,10 @@
 import argparse
 
-from banner_utils import fetch_global_banner_dates, resolve_global_release_dates
 from check_equality import check_equality, find_minimal_identifier_fields
 from fetch_info import fetch_info
 from global_student_list import disable_student, generate_global_student_list
 from sanitization import check_key_and_id_field, delete_saved_info
 from schaledb_utils import fetch_schaledb_en, fetch_schaledb_jp
-from wiki_utils import fetch_release_dates
 
 INCLUDED_FIELDS = [
     'school',
@@ -14,7 +12,7 @@ INCLUDED_FIELDS = [
     'damageType',
     'exSkillCost',
     'weaponType',
-    'releaseDate',
+    'releaseOrder',
 ]
 
 if __name__ == "__main__":
@@ -30,22 +28,13 @@ if __name__ == "__main__":
     print("Fetching information...")
     en_data = fetch_schaledb_en()
     jp_data = fetch_schaledb_jp()
-    jp_release_dates, global_release_dates = fetch_release_dates()
-    global_release_dates = resolve_global_release_dates(
-        en_data,
-        jp_release_dates,
-        global_release_dates,
-        fetch_global_banner_dates(),
-    )
-    jp_list = fetch_info(en_data, jp_data, jp_release_dates)
+    jp_list = fetch_info(en_data, jp_data)
     print("Fetching information done.")
     print("Checking key and id field...")
     jp_list = check_key_and_id_field(jp_list)
     print("Checking key and id field done.")
     print("Generating global student list...")
-    gl_list = generate_global_student_list(
-        jp_list, en_data, global_release_dates
-    )
+    gl_list = generate_global_student_list(jp_list, en_data)
     print("Generating global student list done.")
     print("Checking equality...")
     conflicts = check_equality(jp_list, INCLUDED_FIELDS)

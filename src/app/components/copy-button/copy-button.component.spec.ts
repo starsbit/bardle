@@ -134,7 +134,7 @@ describe('CopyButtonComponent', () => {
       month: 'short',
       day: 'numeric',
     });
-    // Hina_(Swimsuit) vs Hina: portrait=🟨 (same base name), school=🟩, role=🟩, damageType=🟩, weaponType=🟩, exSkillCost=⬜ (3≠7), releaseDate=⬜
+    // Hina_(Swimsuit) vs Hina: portrait=🟨 (same base name), school=🟩, role=🟩, damageType=🟩, weaponType=🟩, exSkillCost=⬜ (3≠7), releaseOrder=⬜
     const expectedScore = `Daily Blue Archive Wordle #${daysActive} ${date} on https://bardle.starsbit.space/ \nStudent list: global students\nI guessed the student in 1 attempt and lost\n\n🟨🟩🟩🟩🟩⬜⬜\n`;
     expect(clipboardSpy.copy).toHaveBeenCalledWith(expectedScore);
   }));

@@ -1,5 +1,13 @@
 # Bardle
 
+## Version 2.10.3
+
+Date: 2026/07/29
+
+- Replaced the regional release date clue with release order again
+- Exact release dates are difficult to generate reliably: most character pages on the Blue Archive Wiki do not document a Global release date, some documented dates use inconsistent month/day ordering, and banner schedules do not cover event-reward students
+- Release order and regional availability now come directly from SchaleDB, avoiding inferred or ambiguous dates
+
 ## Version 2.10.2
 
 Date: 2026/07/22
