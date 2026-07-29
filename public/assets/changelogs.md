@@ -1,6 +1,6 @@
 # Bardle
 
-## Version 2.10.3
+## Version 2.11.0
 
 Date: 2026/07/29
 
