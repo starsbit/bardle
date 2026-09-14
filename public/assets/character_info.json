@@ -5438,5 +5438,25 @@
     "image": "Kotone.webp",
     "birthday": "2000/10/16",
     "disabled": false
+  },
+  "Kasumi_(Swimsuit)": {
+    "id": "Kasumi_(Swimsuit)",
+    "fullName": "Kinugawa Kasumi (Swimsuit)",
+    "shortName": "Kasumi (Swimsuit)",
+    "nativeName": "\u9b3c\u6012\u5ddd \u30ab\u30b9\u30df",
+    "school": "Gehenna",
+    "damageType": "Piercing",
+    "armorType": "Special",
+    "role": "Support",
+    "combatClass": "Special",
+    "exSkillCost": 3,
+    "positioning": "Back",
+    "height": 148,
+    "outfit": "Swimsuit",
+    "releaseOrder": 274,
+    "weaponType": "HG",
+    "image": "KasumiSwimsuit.webp",
+    "birthday": "2000/05/24",
+    "disabled": false
   }
 }

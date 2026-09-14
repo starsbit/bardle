@@ -5178,5 +5178,25 @@
     "image": "Otogi.webp",
     "birthday": "2000/05/20",
     "disabled": false
+  },
+  "Erika": {
+    "id": "Erika",
+    "fullName": "Hatami Erika",
+    "shortName": "Erika",
+    "nativeName": "\u65d7\u898b \u30a8\u30ea\u30ab",
+    "school": "Gehenna",
+    "damageType": "Sonic",
+    "armorType": "Light",
+    "role": "Support",
+    "combatClass": "Special",
+    "exSkillCost": 3,
+    "positioning": "Back",
+    "height": 166,
+    "outfit": "Default",
+    "releaseOrder": 260,
+    "weaponType": "SG",
+    "image": "Erika.webp",
+    "birthday": "2000/02/01",
+    "disabled": false
   }
 }
