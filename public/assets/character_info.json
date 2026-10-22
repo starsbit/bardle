@@ -5279,6 +5279,26 @@
     "birthday": "2000/02/05",
     "disabled": false
   },
+  "Shunling_(Swimsuit)": {
+    "id": "Shunling_(Swimsuit)",
+    "fullName": "Shunling (Swimsuit)",
+    "shortName": "Shunling (Swimsuit)",
+    "nativeName": "\u30b7\u30e5\u30a8\u30ea\u30f3",
+    "school": "Shanhaijing",
+    "damageType": "Sonic",
+    "armorType": "Light",
+    "role": "Attacker",
+    "combatClass": "Striker",
+    "exSkillCost": 5,
+    "positioning": "Back",
+    "height": 0,
+    "outfit": "Swimsuit",
+    "releaseOrder": 265,
+    "weaponType": "SR",
+    "image": "ShunlingSwimsuit.webp",
+    "birthday": "2000/02/05",
+    "disabled": false
+  },
   "Kisaki_(Swimsuit)": {
     "id": "Kisaki_(Swimsuit)",
     "fullName": "Ryuuge Kisaki (Swimsuit)",
@@ -5497,6 +5517,26 @@
     "weaponType": "HG",
     "image": "Erina.webp",
     "birthday": "2000/02/08",
+    "disabled": false
+  },
+  "Tsumugi": {
+    "id": "Tsumugi",
+    "fullName": "Shiina Tsumugi",
+    "shortName": "Tsumugi",
+    "nativeName": "\u690e\u540d \u30c4\u30e0\u30ae",
+    "school": "Wildhunt",
+    "damageType": "Piercing",
+    "armorType": "Special",
+    "role": "Tank",
+    "combatClass": "Striker",
+    "exSkillCost": 3,
+    "positioning": "Front",
+    "height": 162,
+    "outfit": "Default",
+    "releaseOrder": 277,
+    "weaponType": "SMG",
+    "image": "Tsumugi.webp",
+    "birthday": "2000/03/11",
     "disabled": false
   }
 }
