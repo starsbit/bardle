@@ -1,0 +1,10 @@
+.git
+.github
+.claude
+.angular
+.vercel
+node_modules
+dist
+temp
+coverage
+scripts/python

@@ -22,7 +22,18 @@ The game has unit tests written with [Jasmine](https://jasmine.github.io/). You 
 
 ### Deploying the Game
 
-The game is hosted on [Vercel](https://vercel.com/). The game is automatically deployed when changes are pushed to the `master` branch.
+The game is self-hosted on the homelab k3s cluster (`shipyard`, chart in [starsbit/shipyard](https://github.com/starsbit/shipyard), app `bardle`). The `Dockerfile` builds all locales and serves them with unprivileged nginx on port 8080; `deploy/nginx.conf` mirrors the routing of `vercel.json` (`/` redirects to `/en-US/`, every locale is an SPA with its own `index.html`).
+
+Deployment is pull-based: a timer on the cluster node checks `master` every few minutes and, once the GitHub CI checks of the new commit have passed, rebuilds the image on the node and rolls it out. There is nothing to do besides merging to `master`. Failed CI means the commit is not deployed.
+
+To try the production image locally:
+
+```sh
+docker build -t bardle .
+docker run --rm -p 8080:8080 bardle   # http://localhost:8080/
+```
+
+The game was previously hosted on [Vercel](https://vercel.com/) (`vercel.json`).
 
 ## Updating Game Data
 
