@@ -40,6 +40,26 @@ jobs:
         env:
           CI: true
 
+  # Builds the production image (Dockerfile) so a broken image never reaches master. The homelab cluster
+  # deploys a master commit only after these checks pass (pull-based, see README "Deploying the Game").
+  docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build production image
+        run: docker build -t bardle:ci .
+
+      - name: Smoke test
+        run: |
+          docker run -d --name bardle -p 8080:8080 bardle:ci
+          for i in $(seq 1 20); do curl -fs http://localhost:8080/healthz && break; sleep 1; done
+          for p in /en-US/ /ja/ /ko/ /zh/ /en-US/some/route; do
+            curl -fs -o /dev/null "http://localhost:8080$p" || { echo "GET $p failed"; docker logs bardle; exit 1; }
+          done
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/)" = 301
+
   create-release:
     needs: build-and-test
     if: startsWith(github.ref, 'refs/tags/v') # Only run if a tag like v2.0.1 is pushed
