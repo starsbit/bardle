@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <!-- Domain move bardle.starsbit.space -> bardle.starsbit.moe: hand the saved game (streaks, guesses, settings
+         live in localStorage, which is per domain) over in the URL fragment, and import it on the new domain. -->
+    <script>
+      (function () {
+        var OLD = 'bardle.starsbit.space', NEW = 'bardle.starsbit.moe', TAG = '#bardle-transfer=';
+        try {
+          if (location.hostname === OLD) {
+            var data = {};
+            for (var i = 0; i < localStorage.length; i++) { var k = localStorage.key(i); data[k] = localStorage.getItem(k); }
+            var payload = Object.keys(data).length ? TAG + encodeURIComponent(JSON.stringify(data)) : '';
+            location.replace('https://' + NEW + location.pathname + location.search + payload);
+          } else if (location.hash.indexOf(TAG) === 0) {
+            var saved = JSON.parse(decodeURIComponent(location.hash.slice(TAG.length)));
+            for (var key in saved) { if (localStorage.getItem(key) === null) localStorage.setItem(key, saved[key]); }
+            history.replaceState(null, '', location.pathname + location.search);
+          }
+        } catch (e) {
+          if (location.hostname === OLD) location.replace('https://' + NEW + location.pathname + location.search);
+        }
+      })();
+    </script>
     <meta charset="utf-8" />
     <title>Bardle - ブルーアーカイブ・ワードル当てゲーム</title>
     <base href="/" />
@@ -11,14 +32,14 @@
     />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://bardle.starsbit.space/ja/" />
+    <link rel="canonical" href="https://bardle.starsbit.moe/ja/" />
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Bardle - ブルーアーカイブ・ワードル当てゲーム" />
     <meta property="og:description" content="隠されたブルーアーカイブ生を6回で当てよう。毎日新しい生徒が登場します。" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://bardle.starsbit.space/ja/" />
-    <meta property="og:image" content="https://bardle.starsbit.space/favicon.ico" />
+    <meta property="og:url" content="https://bardle.starsbit.moe/ja/" />
+    <meta property="og:image" content="https://bardle.starsbit.moe/favicon.ico" />
     <meta property="og:site_name" content="Bardle" />
     <meta property="og:locale" content="ja_JP" />
 
@@ -26,7 +47,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Bardle - ブルーアーカイブ・ワードル当てゲーム" />
     <meta name="twitter:description" content="隠されたブルーアーカイブ生を6回で当てよう。毎日新しい生徒が登場します。" />
-    <meta name="twitter:image" content="https://bardle.starsbit.space/favicon.ico" />
+    <meta name="twitter:image" content="https://bardle.starsbit.moe/favicon.ico" />
 
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link

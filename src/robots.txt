@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: https://bardle.starsbit.space/sitemap.xml
+Sitemap: https://bardle.starsbit.moe/sitemap.xml

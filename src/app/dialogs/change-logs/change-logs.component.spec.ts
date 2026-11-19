@@ -22,7 +22,7 @@ describe('ChangeLogsDialogComponent', () => {
   - Added new "copy string" when copying the result
   - Change guess attributes
   - Added change logs
-  - Visit [Bardle](https://bardle.starsbit.space/)
+  - Visit [Bardle](https://bardle.starsbit.moe/)
 
   ## Version 2.0.0
 
@@ -75,7 +75,7 @@ describe('ChangeLogsDialogComponent', () => {
     expect(link).toBeTruthy();
     expect(link.nativeElement.textContent).toContain('Bardle');
     expect(link.nativeElement.getAttribute('href')).toBe(
-      'https://bardle.starsbit.space/'
+      'https://bardle.starsbit.moe/'
     );
   });
 
