@@ -1,5 +1,11 @@
 # Bardle
 
+## Version 2.11.1
+
+Date: 2026/11/20
+
+- Moved domain from bardle.starsbit.space to bardle.starsbit.moe. Your streaks, guesses and settings are carried over automatically the first time you open the old address.
+
 ## Version 2.11.0
 
 Date: 2026/07/29
